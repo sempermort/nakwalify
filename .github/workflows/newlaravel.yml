@@ -33,9 +33,9 @@ jobs:
         DB_CONNECTION: sqlite
         DB_DATABASE: database/database.sqlite
       run: vendor/bin/phpunit
-      
-      
-// .github/workflows/laravel.yml
+
+
+
 
 deploy:
 
@@ -63,7 +63,7 @@ deploy:
 
           cd /var/www/html/
 
-          git checkout -f 
+          git checkout -f
 
           git pull
 
