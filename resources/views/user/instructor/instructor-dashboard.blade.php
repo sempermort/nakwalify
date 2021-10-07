@@ -46,7 +46,7 @@
             <div class="col-xl-3 col-lg-6 col-md-6">
                 <div class="card_dash">
                     <div class="card_dash_left">
-                        <h5>Total Students</h5>
+                        <h5>Total trainees</h5>
                         <h2>2650</h2>
                         <span class="crdbg_4">New 245</span>
                     </div>
@@ -79,11 +79,11 @@
                     <div class="col-md-4">
                         <div class="card cardc rounded ">
                             <img class="card-img-top w-100" width="295" height="165"
-                                src="{{asset('assets/images/photos/anders-jilden-307322-500.jpg')}}"
+                              src="{{asset('assets/images/about/company-2.jpg')}}"
                                 alt="Card image cap">
                             <div class="m-2">
                                 <p class="card-text  d-flex justify-content-between">
-                                    <small class="card-text">23,162 students </small>
+                                    <small class="card-text">23,162 trainees </small>
                                     <small class="card-text">1h 50m</small>
                                 </p>
 
@@ -104,11 +104,11 @@
                     <br>
                     <div class="col-md-4">
                         <div class="card cardc rounded mb-3">
-                            <img class="card-img-top" width="295" height="165"
+                            <img class="card-img-top w-100" width="295" height="165"
                                 src="{{asset('assets/images/about/company-3.jpg')}}" alt="Card image cap">
                             <div class="m-2">
                                 <p class="card-text  d-flex justify-content-between">
-                                    <small class="card-text">23,162 students </small>
+                                    <small class="card-text">23,162 trainees </small>
                                     <small class="card-text">1h 50m</small>
                                 </p>
 
@@ -128,11 +128,11 @@
                     <br>
                     <div class="col-md-4">
                         <div class="card cardc rounded mb-3">
-                            <img class="card-img-top" width="295" height="165"
+                            <img class="card-img-top w-100" width="295" height="165"
                                 src="{{asset('assets/images/about/company-2.jpg')}}" alt="Card image cap">
                             <div class="m-2">
                                 <p class="card-text m-2 d-flex justify-content-between">
-                                    <small class="card-text">23,162 students </small>
+                                    <small class="card-text">23,162 trainees </small>
                                     <small class="card-text">1h 50m</small>
                                 </p>
 
@@ -155,11 +155,11 @@
                     <div class="col-md-4">
                         <div class="card cardc rounded ">
                             <img class="card-img-top w-100" width="295" height="165"
-                                src="{{asset('assets/images/photos/anders-jilden-307322-500.jpg')}}"
+                              src="{{asset('assets/images/about/company-2.jpg')}}"
                                 alt="Card image cap">
                             <div class="m-2">
                                 <p class="card-text  d-flex justify-content-between">
-                                    <small class="card-text">23,162 students </small>
+                                    <small class="card-text">23,162 trainees </small>
                                     <small class="card-text">1h 50m</small>
                                 </p>
 
@@ -180,11 +180,11 @@
                     <br>
                     <div class="col-md-4">
                         <div class="card cardc rounded mb-3">
-                            <img class="card-img-top" width="295" height="165"
+                            <img class="card-img-top w-100" width="295" height="165"
                                 src="{{asset('assets/images/about/company-3.jpg')}}" alt="Card image cap">
                             <div class="m-2">
                                 <p class="card-text  d-flex justify-content-between">
-                                    <small class="card-text">23,162 students </small>
+                                    <small class="card-text">23,162 trainees </small>
                                     <small class="card-text">1h 50m</small>
                                 </p>
 
@@ -204,11 +204,11 @@
                     <br>
                     <div class="col-md-4">
                         <div class="card cardc rounded mb-3">
-                            <img class="card-img-top" width="295" height="165"
+                            <img class="card-img-top w-100" width="295" height="165"
                                 src="{{asset('assets/images/about/company-2.jpg')}}" alt="Card image cap">
                             <div class="m-2">
                                 <p class="card-text  d-flex justify-content-between">
-                                    <small class="card-text">23,162 students </small>
+                                    <small class="card-text">23,162 trainees </small>
                                     <small class="card-text">1h 50m</small>
                                 </p>
 
@@ -241,11 +241,11 @@
                     <div class="col-md-4">
                         <div class="card cardc rounded ">
                             <img class="card-img-top w-100" width="295" height="165"
-                                src="{{asset('assets/images/photos/anders-jilden-307322-500.jpg')}}"
+                              src="{{asset('assets/images/about/company-2.jpg')}}"
                                 alt="Card image cap">
                             <div class="m-2">
                                 <p class="card-text  d-flex justify-content-between">
-                                    <small class="card-text">23,162 students </small>
+                                    <small class="card-text">23,162 trainees </small>
                                     <small class="card-text">1h 50m</small>
                                 </p>
 
@@ -266,11 +266,11 @@
                     <br>
                     <div class="col-md-4">
                         <div class="card cardc rounded mb-3">
-                            <img class="card-img-top" width="295" height="165"
+                            <img class="card-img-top w-100" width="295" height="165"
                                 src="{{asset('assets/images/about/company-3.jpg')}}" alt="Card image cap">
                             <div class="m-2">
                                 <p class="card-text  d-flex justify-content-between">
-                                    <small class="card-text">23,162 students </small>
+                                    <small class="card-text">23,162 trainees </small>
                                     <small class="card-text">1h 50m</small>
                                 </p>
 
@@ -290,11 +290,11 @@
                     <br>
                     <div class="col-md-4">
                         <div class="card cardc rounded mb-3">
-                            <img class="card-img-top" width="295" height="165"
+                            <img class="card-img-top w-100" width="295" height="165"
                                 src="{{asset('assets/images/about/company-2.jpg')}}" alt="Card image cap">
                             <div class="m-2">
                                 <p class="card-text  d-flex justify-content-between">
-                                    <small class="card-text">23,162 students </small>
+                                    <small class="card-text">23,162 trainees </small>
                                     <small class="card-text">1h 50m</small>
                                 </p>
 
@@ -317,11 +317,11 @@
                     <div class="col-md-4">
                         <div class="card cardc rounded ">
                             <img class="card-img-top w-100" width="295" height="165"
-                                src="{{asset('assets/images/photos/anders-jilden-307322-500.jpg')}}"
+                              src="{{asset('assets/images/about/company-2.jpg')}}"
                                 alt="Card image cap">
                             <div class="m-2">
                                 <p class="card-text m-2 d-flex justify-content-between">
-                                    <small class="card-text">23,162 students </small>
+                                    <small class="card-text">23,162 trainees </small>
                                     <small class="card-text">1h 50m</small>
                                 </p>
 
@@ -342,11 +342,11 @@
                     <br>
                     <div class="col-md-4">
                         <div class="card cardc rounded mb-3">
-                            <img class="card-img-top" width="295" height="165"
+                            <img class="card-img-top w-100" width="295" height="165"
                                 src="{{asset('assets/images/about/company-3.jpg')}}" alt="Card image cap">
                             <div class="m-2">
                                 <p class="card-text  d-flex justify-content-between">
-                                    <small class="card-text">23,162 students </small>
+                                    <small class="card-text">23,162 trainees </small>
                                     <small class="card-text">1h 50m</small>
                                 </p>
 
@@ -368,11 +368,11 @@
                     <br>
                     <div class="col-md-4">
                         <div class="card cardc rounded mb-3">
-                            <img class="card-img-top" width="295" height="165"
+                            <img class="card-img-top w-100" width="295" height="165"
                                 src="{{asset('assets/images/about/company-2.jpg')}}" alt="Card image cap">
                             <div class="m-2">
                                 <p class="card-text  d-flex justify-content-between">
-                                    <small class="card-text">23,162 students </small>
+                                    <small class="card-text">23,162 trainees </small>
                                     <small class="card-text">1h 50m</small>
                                 </p>
 

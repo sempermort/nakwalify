@@ -22,12 +22,13 @@
                         </video>
                         <div class="mt-0   d-none d-md-block d-lg-block">
                             <strong>
-                                <p class="m-0 tshs" id="demo">Tshs 25000 </p>
+                                <p class="m-0 tshs" id="demo">Tshs {{$selcoz->price}}</p>
                             </strong>
                             <button class=" border-0 p-2 btn  btn-info col-md-12  mt-0 mb-1 text-white">Add
                                 to Cart</button>
-                            <button class="btn btn-outline-dark  p-2   col-md-12 mt-1 mb-1 ">Buy
-                                Now</button>
+                            <button class="btn btn-outline-dark  p-2   col-md-12 mt-1 mb-1 "><a
+                                    href="{{route('viewcourse',$selcoz->id)}}">Buy
+                                    Now</a> </button>
                             <small class="m-0 text-center">
                                 <p class="m-0  p-0">30-Day Money-Back Guarantee </p>
                             </small>
@@ -81,12 +82,8 @@
                     </div>
                     <div class="col-md-8 ">
                         <div class="cont mb-4">
-                            <h4 class=" "><strong>Complete Python Developer in 2021: Zero to Mastery<strong></h4>
-                            <p class="font-weight-bold">How to become a Python 3 Developer and get hired! Build 12+
-                                projects, learn Web
-                                Development,
-                                Machine
-                                Learning + more!</p>
+                            <h4 class=" "><strong>{{$selcoz->course_title}}<strong></h4>
+                            <p class="font-weight-bold">{{$selcoz->course_subt}}</p>
                             <div class="  d-flex">
                                 <div class="m-1 text-warning">
                                     <span class="">4.7</span>
@@ -98,7 +95,7 @@
                                 </div>
                                 <span class="m-1"> (28,900 ratings)
 
-                                    115,948 students
+                                    115,948 trainees
                                 </span>
                             </div>
                             <div class="">
@@ -133,88 +130,13 @@
 </div>
 <div class="container mt-0 pl-2">
     <h6 class="font-weight-bolder m-3">What you will learn</h6>
-    <div class="d-flex flex-sm-nowrap flex-rap justify-content-between border  col-md-8">
-
-        <ul class="collection  border-0">
-
-            <li class="collection-item border-0">
-                <div><a href="#!" class="mr-2 primary-content"><i class="material-icons">done</i></a>Become
-                    a professional Python Developer and get hired</div>
-            </li>
-            <li class="collection-item border-0">
-                <div><a href="#!" class="mr-2 primary-content"><i class="material-icons">done</i></a>Learn
-                    Object Oriented Programming</div>
-            </li>
-            <li class="collection-item border-0">
-                <div><a href="#!" class="mr-2 primary-content"><i class="material-icons">done</i></a>Build
-                    12+ real world Python projects you can show off</div>
-            </li>
-            <li class="collection-item border-0">
-                <div><a href="#!" class="mr-2 primary-content"><i class="material-icons">done</i></a>Learn
-                    Machine Learning with Python</div>
-            </li>
-            <li class="collection-item border-0">
-                <div><a href="#!" class="mr-2 primary-content"><i class="material-icons">done</i></a>Learn
-                    Data Science - Analyze and Visualize Data</div>
-            </li>
-            <li class="collection-item border-0">
-                <div><a href="#!" class="mr-2 primary-content"><i class="material-icons">done</i></a>Use
-                    Python to process: Images, CSVs, PDFs, and other Files</div>
-            </li>
-            <li class="collection-item border-0">
-                <div><a href="#!" class="mr-2 primary-content"><i class="material-icons">done</i></a>Use
-                    Python to send Emails and SMS</div>
-            </li>
-            <li class="collection-item border-0">
-                <div><a href="#!" class="mr-2 primary-content"><i class="material-icons">done</i></a>Learn
-                    to Test, Debug and Handle Errors in your Python programs</div>
-            </li>
-
-        </ul>
-
-        <ul class="collection  border-0">
-
-            <li class="collection-item border-0">
-                <div><a href="#!" class="mr-2 primary-content"><i class="material-icons">done</i></a>Master
-                    modern
-                    Python 3.9(latest) fundamentals as well as advanced topics</div>
-            </li>
-            <li class="collection-item border-0">
-                <div><a href="#!" class="mr-2 primary-content"><i class="material-icons">done</i></a>Learn
-                    Function
-                    Programming</div>
-            </li>
-            <li class="collection-item border-0">
-                <div><a href="#!" class="mr-2 primary-content"><i class="material-icons">done</i></a>Learn how
-                    to
-                    use Python in Web Development</div>
-            </li>
-            <li class="collection-item border-0">
-                <div><a href="#!" class="mr-2 primary-content"><i class="material-icons">done</i></a>Use Python
-                    to
-                    process: Images, CSVs, PDFs, and other Files</div>
-            </li>
-            <li class="collection-item border-0">
-                <div><a href="#!" class="mr-2 primary-content"><i class="material-icons">done</i></a>Use Python
-                    to
-                    send Emails and SMS</div>
-            </li>
-            <li class="collection-item border-0">
-                <div><a href="#!" class="mr-2 primary-content"><i class="material-icons">done</i></a>Use
-                    Python to process: Images, CSVs, PDFs, and other Files</div>
-            </li>
-            <li class="collection-item border-0">
-                <div><a href="#!" class="mr-2 primary-content"><i class="material-icons">done</i></a>Learn to
-                    Test,
-                    Debug and Handle Errors in your Python programs</div>
-            </li>
-            <li class="collection-item border-0">
-                <div><a href="#!" class="mr-2 primary-content"><i class="material-icons">done</i></a>Learn Data
-                    Science - Analyze and Visualize Data</div>
-            </li>
-
-
-        </ul>
+    <div class="grid-container border  col-md-8">
+        @foreach($selcoz->mainwlearn as $learn)
+        <div class="collection-item border-0">
+            <div><a href="#!" class="mr-2 primary-content"><i class="material-icons">done</i></a>
+                {{$learn}} </div>
+        </div>
+        @endforeach
     </div>
 </div>
 
@@ -230,17 +152,53 @@
             <a href="\\"><strong>Expand all Sections</strong></a>
         </div>
     </div>
-
-<div class=""></div>
-    <iframe  src="{{url('/lcontent')}}" height="590" width="900"  class="col-md-8 p-0 ">
+@foreach($vidz as $vida)
+    <div class="coursevida">
+        <p>
+            <a class="" data-toggle="collapse" href="#collapseExample" role="button"
+                aria-expanded="false" aria-controls="collapseExample">
+              {{$vida->video_title}}
+            </a>
+            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample"
+                aria-expanded="false" aria-controls="collapseExample">
+                <span class="material-icons">
+                        play_circle_filled
+                    </span>
+            </button>
+        </p>
+        <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+            {{$vida->video_desc}}
+            </div>
+        </div>
+    </div>
+    @endforeach
+    <iframe src="{{url('/lcontent')}}" height="590" width="900" class="col-md-8 p-0 ">
 
     </iframe>
+    <div class="panel-body mt-5 col-md-8 p-0">
+        <h6 class="font-weight-bolder p-0">Project Description</h4>
+            <p class="p-0">
+                {{$selcoz->course_des}}</p>
+
+    </div>
+
+    <h6 class="font-weight-bolder"> Requirements</h6>
+    <ul class="col-md-8">
+
+        @foreach($selcoz->mainrequire as $req)
+        <li class=" p-2">
+            {{$req}}</li>
+        @endforeach
+    </ul>
+
 </div>
+
 </div>
 <div class="container mt-5">
     <h6 class="font-weight-bolder">Frequently Bought Together</h6>
     <ul class="collection col-md-8">
-        <li class="collection-item pl-2">
+        <li class="collection-item mt-2 pl-2">
             <div class="d-flex flex-nowrap">
                 <div class="card-image mr-2">
                     <img src="{{asset('assets/images/instructor_12.jpg')}}" alt="" class="">
@@ -249,6 +207,10 @@
                     <div class=" d-flex justify-content-between">
 
                         <div class="title font-weight-bolder">Complete Python Developer in 2021:Zero to Mastery
+                            <div class="d-flex justify-content-start mt-4">
+                                <span class="mr-4 font-weight-bold">30.5 total hours</span>
+                                <span class="">Updated 7/2021</span>
+                            </div>
                         </div>
                         <div class="text-warning">4.7 <i class="fa fa-star"></i></div>
                         <div class=""><i class="fa fa-group"></i> 87,317</div>
@@ -261,17 +223,14 @@
                                 favorite_border
                             </i></a>
                     </div>
-                    <div class="d-flex justify-content-start">
-                        <span class="mr-4 font-weight-bold">30.5 total hours</span>
-                        <span class="">Updated 7/2021</span>
-                    </div>
+
                 </div>
             </div>
 
 
         </li>
 
-        <li class="collection-item pl-2">
+        <li class="collection-item mt-2 pl-2">
             <div class="d-flex flex-nowrap">
                 <div class="card-image mr-2">
                     <img src="{{asset('assets/images/instructor_12.jpg')}}" alt="" class="">
@@ -280,6 +239,10 @@
                     <div class=" d-flex justify-content-between">
 
                         <div class="title font-weight-bolder">Complete Python Developer in 2021:Zero to Mastery
+                            <div class="d-flex justify-content-start mt-4">
+                                <span class="mr-4 font-weight-bold">30.5 total hours</span>
+                                <span class="">Updated 7/2021</span>
+                            </div>
                         </div>
                         <div class="text-warning">4.7 <i class="fa fa-star"></i></div>
                         <div class=""><i class="fa fa-group"></i> 87,317</div>
@@ -292,16 +255,13 @@
                                 favorite_border
                             </i></a>
                     </div>
-                    <div class="d-flex justify-content-start">
-                        <span class="mr-4 font-weight-bold">30.5 total hours</span>
-                        <span class="">Updated 7/2021</span>
-                    </div>
+
                 </div>
             </div>
 
 
         </li>
-        <li class="collection-item pl-2">
+        <li class="collection-item mt-2 pl-2">
             <div class="d-flex flex-nowrap">
                 <div class="card-image mr-2">
                     <img src="{{asset('assets/images/instructor_12.jpg')}}" alt="" class="">
@@ -309,12 +269,16 @@
                 <div class="w-100">
                     <div class=" d-flex justify-content-between">
 
-                        <div class="title font-weight-bolder">Complete Python Developer in 2021:Zero to Mastery
+                        <div class="title font-weight-bolder">{{$selcoz->course_title}}
+                            <div class="d-flex justify-content-start mt-4">
+                                <span class="mr-4 font-weight-bold">30.5 total hours</span>
+
+                            </div>
                         </div>
                         <div class="text-warning">4.7 <i class="fa fa-star"></i></div>
                         <div class=""><i class="fa fa-group"></i> 87,317</div>
                         <div>
-                            <div class="">Tshs 25000</div>
+                            <div class="">Tshs {{$selcoz->price}}</div>
                             <div class="faint"><strike>Tshs 45000</strike></div>
                         </div>
                         <a class="btn-floating  waves-effect waves-teal white  btn-large "><i
@@ -322,17 +286,14 @@
                                 favorite_border
                             </i></a>
                     </div>
-                    <div class="d-flex justify-content-start">
-                        <span class="mr-4 font-weight-bold">30.5 total hours</span>
-                        <span class="">Updated 7/2021</span>
-                    </div>
+
                 </div>
             </div>
 
 
         </li>
 
-        <li class="collection-item pl-2">
+        <li class="collection-item mt-2 pl-2">
             <div class="d-flex flex-nowrap">
                 <div class="card-image mr-2">
                     <img src="{{asset('assets/images/instructor_12.jpg')}}" alt="" class="">
@@ -341,6 +302,10 @@
                     <div class=" d-flex justify-content-between">
 
                         <div class="title font-weight-bolder">Complete Python Developer in 2021:Zero to Mastery
+                            <div class="d-flex justify-content-start mt-4">
+                                <span class="mr-4 font-weight-bold">30.5 total hours</span>
+                                <span class="">Updated 7/2021</span>
+                            </div>
                         </div>
                         <div class="text-warning">4.7 <i class="fa fa-star"></i></div>
                         <div class=""><i class="fa fa-group"></i> 87,317</div>
@@ -353,10 +318,7 @@
                                 favorite_border
                             </i></a>
                     </div>
-                    <div class="d-flex justify-content-start">
-                        <span class="mr-4 font-weight-bold">30.5 total hours</span>
-                        <span class="">Updated 7/2021</span>
-                    </div>
+
                 </div>
             </div>
 
@@ -365,25 +327,11 @@
     </ul>
 </div>
 <div class="container mt-5">
-    <h6 class="font-weight-bolder"> Requirements</h6>
-    <ul class="col-md-8">
-        <li class=" p-2">
-            A computer (Windows/Mac/Linux). That's it!</li>
-        <li class=" p-2">
-            No prior knowledge of Python is required.
-        </li>
-        <li class=" p-2">
-            No previous programming experience is needed.
-        </li>
-        <li class=" p-2">
-            Prepare to fall in love with Python and programming!
-        </li>
-    </ul>
 
     <div class="border p-3 col-md-8">
         <h6 class="font-weight-bolder"> Top companies trust Naqualify</h6>
         <p>Get your team access to Naqualify's top 1.000+ courses</p>
-        <div class="text-center">
+        <div class="text-center d-flex justify-content-between">
             <span class="m-2 t-50"> <img src="{{asset('assets/images/payments/applepay.svg')}}" class=" t-50"
                     alt=""></span>
             <span class="m-2 t-50"><img src="{{asset('assets/images/payments/neteller.svg')}}" class=" t-50"
@@ -397,29 +345,7 @@
         </div>
 
     </div>
-    <div class="panel-body mt-3 col-md-8 p-0">
-        <h6 class="font-weight-bolder p-0">Project Description</h4>
-            <p class="p-0">
-                Become a modern and complete Python developer! Join a live online community of over 400,000+
-                developers
-                and a course taught by an industry expert that has actually worked both in Silicon Valley and
-                Toronto.
-                This is a brand new Python course just launched this year (updated this month)! Graduates of
-                Andrei’s
-                courses are now working at Google, Tesla, Amazon, Apple, IBM, JP Morgan, Facebook, + other top tech
-                companies.
-                Note: We encourage you to use the Community Board in this class to ask questions, and
-                share tips and feedback, but we kindly ask that you refrain from using it as a space
-                to promote your classes with a referral or free link.
 
-                Your ultimate workshop project is to create your first Skillshare class, but we’ve
-                broken this big project into four manageable milestones. The Teacher Handbook will
-                be your primary reference and best friend throughout the Teach Challenge and
-                includes all of the information you need to complete each section. All of the
-                relevant sections are linked below, but feel free to read the Handbook from
-                cover-to-cover. It will prepare you well for success on Skillshare!</p>
-
-    </div>
 </div>
 
 </section>

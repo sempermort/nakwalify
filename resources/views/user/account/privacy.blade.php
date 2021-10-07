@@ -458,7 +458,7 @@
                                         </div>
                                         <div class="m-2">
                                             <p class="card-text  d-flex justify-content-between">
-                                                <small class="card-text">23,162 students </small>
+                                                <small class="card-text">23,162 trainees </small>
                                                 <small class="card-text">1h 50m</small>
                                             </p>
 
@@ -492,7 +492,7 @@
                                         </div>
                                         <div class="m-2">
                                             <p class="card-text  d-flex justify-content-between">
-                                                <small class="card-text">23,162 students </small>
+                                                <small class="card-text">23,162 trainees </small>
                                                 <small class="card-text">1h 50m</small>
                                             </p>
 
@@ -525,7 +525,7 @@
                                         </div>
                                         <div class="m-2">
                                             <p class="card-text  d-flex justify-content-between">
-                                                <small class="card-text">23,162 students </small>
+                                                <small class="card-text">23,162 trainees </small>
                                                 <small class="card-text">1h 50m</small>
                                             </p>
 
@@ -558,7 +558,7 @@
                                         </div>
                                         <div class="m-2">
                                             <p class="card-text  d-flex justify-content-between">
-                                                <small class="card-text">23,162 students </small>
+                                                <small class="card-text">23,162 trainees </small>
                                                 <small class="card-text">1h 50m</small>
                                             </p>
 
@@ -591,7 +591,7 @@
                                         </div>
                                         <div class="m-2">
                                             <p class="card-text  d-flex justify-content-between">
-                                                <small class="card-text">23,162 students </small>
+                                                <small class="card-text">23,162 trainees </small>
                                                 <small class="card-text">1h 50m</small>
                                             </p>
 
@@ -624,7 +624,7 @@
                                         </div>
                                         <div class="m-2">
                                             <p class="card-text  d-flex justify-content-between">
-                                                <small class="card-text">23,162 students </small>
+                                                <small class="card-text">23,162 trainees </small>
                                                 <small class="card-text">1h 50m</small>
                                             </p>
 
@@ -657,7 +657,7 @@
                                         </div>
                                         <div class="m-2">
                                             <p class="card-text  d-flex justify-content-between">
-                                                <small class="card-text">23,162 students </small>
+                                                <small class="card-text">23,162 trainees </small>
                                                 <small class="card-text">1h 50m</small>
                                             </p>
 
@@ -690,7 +690,7 @@
                                         </div>
                                         <div class="m-2">
                                             <p class="card-text  d-flex justify-content-between">
-                                                <small class="card-text">23,162 students </small>
+                                                <small class="card-text">23,162 trainees </small>
                                                 <small class="card-text">1h 50m</small>
                                             </p>
 
@@ -754,7 +754,7 @@
                                         </div>
                                         <div class="m-2">
                                             <p class="card-text  d-flex justify-content-between">
-                                                <small class="card-text">23,162 students </small>
+                                                <small class="card-text">23,162 trainees </small>
                                                 <small class="card-text">1h 50m</small>
                                             </p>
 
@@ -788,7 +788,7 @@
                                         </div>
                                         <div class="m-2">
                                             <p class="card-text  d-flex justify-content-between">
-                                                <small class="card-text">23,162 students </small>
+                                                <small class="card-text">23,162 trainees </small>
                                                 <small class="card-text">1h 50m</small>
                                             </p>
 
@@ -821,7 +821,7 @@
                                         </div>
                                         <div class="m-2">
                                             <p class="card-text  d-flex justify-content-between">
-                                                <small class="card-text">23,162 students </small>
+                                                <small class="card-text">23,162 trainees </small>
                                                 <small class="card-text">1h 50m</small>
                                             </p>
 
@@ -854,7 +854,7 @@
                                         </div>
                                         <div class="m-2">
                                             <p class="card-text  d-flex justify-content-between">
-                                                <small class="card-text">23,162 students </small>
+                                                <small class="card-text">23,162 trainees </small>
                                                 <small class="card-text">1h 50m</small>
                                             </p>
 
@@ -887,7 +887,7 @@
                                         </div>
                                         <div class="m-2">
                                             <p class="card-text  d-flex justify-content-between">
-                                                <small class="card-text">23,162 students </small>
+                                                <small class="card-text">23,162 trainees </small>
                                                 <small class="card-text">1h 50m</small>
                                             </p>
 
@@ -920,7 +920,7 @@
                                         </div>
                                         <div class="m-2">
                                             <p class="card-text  d-flex justify-content-between">
-                                                <small class="card-text">23,162 students </small>
+                                                <small class="card-text">23,162 trainees </small>
                                                 <small class="card-text">1h 50m</small>
                                             </p>
 
@@ -953,7 +953,7 @@
                                         </div>
                                         <div class="m-2">
                                             <p class="card-text  d-flex justify-content-between">
-                                                <small class="card-text">23,162 students </small>
+                                                <small class="card-text">23,162 trainees </small>
                                                 <small class="card-text">1h 50m</small>
                                             </p>
 
@@ -986,7 +986,7 @@
                                         </div>
                                         <div class="m-2">
                                             <p class="card-text  d-flex justify-content-between">
-                                                <small class="card-text">23,162 students </small>
+                                                <small class="card-text">23,162 trainees </small>
                                                 <small class="card-text">1h 50m</small>
                                             </p>
 
@@ -1053,7 +1053,7 @@
                                                 </div>
                                                 <div class="m-2">
                                                     <p class="card-text  d-flex justify-content-between">
-                                                        <small class="card-text">23,162 students </small>
+                                                        <small class="card-text">23,162 trainees </small>
                                                         <small class="card-text">1h 50m</small>
                                                     </p>
 
@@ -1091,7 +1091,7 @@
                                                 </div>
                                                 <div class="m-2">
                                                     <p class="card-text  d-flex justify-content-between">
-                                                        <small class="card-text">23,162 students </small>
+                                                        <small class="card-text">23,162 trainees </small>
                                                         <small class="card-text">1h 50m</small>
                                                     </p>
 
@@ -1128,7 +1128,7 @@
                                                 </div>
                                                 <div class="m-2">
                                                     <p class="card-text  d-flex justify-content-between">
-                                                        <small class="card-text">23,162 students </small>
+                                                        <small class="card-text">23,162 trainees </small>
                                                         <small class="card-text">1h 50m</small>
                                                     </p>
 
@@ -1170,7 +1170,7 @@
                                                 </div>
                                                 <div class="m-2">
                                                     <p class="card-text  d-flex justify-content-between">
-                                                        <small class="card-text">23,162 students </small>
+                                                        <small class="card-text">23,162 trainees </small>
                                                         <small class="card-text">1h 50m</small>
                                                     </p>
 
@@ -1208,7 +1208,7 @@
                                                 </div>
                                                 <div class="m-2">
                                                     <p class="card-text  d-flex justify-content-between">
-                                                        <small class="card-text">23,162 students </small>
+                                                        <small class="card-text">23,162 trainees </small>
                                                         <small class="card-text">1h 50m</small>
                                                     </p>
 
@@ -1245,7 +1245,7 @@
                                                 </div>
                                                 <div class="m-2">
                                                     <p class="card-text  d-flex justify-content-between">
-                                                        <small class="card-text">23,162 students </small>
+                                                        <small class="card-text">23,162 trainees </small>
                                                         <small class="card-text">1h 50m</small>
                                                     </p>
 
@@ -1326,7 +1326,7 @@
                                         </div>
                                         <div class="m-2">
                                             <p class="card-text  d-flex justify-content-between">
-                                                <small class="card-text">23,162 students </small>
+                                                <small class="card-text">23,162 trainees </small>
                                                 <small class="card-text">1h 50m</small>
                                             </p>
 
@@ -1370,7 +1370,7 @@
                                         </div>
                                         <div class="m-2">
                                             <p class="card-text  d-flex justify-content-between">
-                                                <small class="card-text">23,162 students </small>
+                                                <small class="card-text">23,162 trainees </small>
                                                 <small class="card-text">1h 50m</small>
                                             </p>
 
@@ -1414,7 +1414,7 @@
                                         </div>
                                         <div class="m-2">
                                             <p class="card-text  d-flex justify-content-between">
-                                                <small class="card-text">23,162 students </small>
+                                                <small class="card-text">23,162 trainees </small>
                                                 <small class="card-text">1h 50m</small>
                                             </p>
 
@@ -1458,7 +1458,7 @@
                                         </div>
                                         <div class="m-2">
                                             <p class="card-text  d-flex justify-content-between">
-                                                <small class="card-text">23,162 students </small>
+                                                <small class="card-text">23,162 trainees </small>
                                                 <small class="card-text">1h 50m</small>
                                             </p>
 
@@ -1502,7 +1502,7 @@
                                         </div>
                                         <div class="m-2">
                                             <p class="card-text  d-flex justify-content-between">
-                                                <small class="card-text">23,162 students </small>
+                                                <small class="card-text">23,162 trainees </small>
                                                 <small class="card-text">1h 50m</small>
                                             </p>
 
@@ -1546,7 +1546,7 @@
                                         </div>
                                         <div class="m-2">
                                             <p class="card-text  d-flex justify-content-between">
-                                                <small class="card-text">23,162 students </small>
+                                                <small class="card-text">23,162 trainees </small>
                                                 <small class="card-text">1h 50m</small>
                                             </p>
 
@@ -1590,7 +1590,7 @@
                                         </div>
                                         <div class="m-2">
                                             <p class="card-text  d-flex justify-content-between">
-                                                <small class="card-text">23,162 students </small>
+                                                <small class="card-text">23,162 trainees </small>
                                                 <small class="card-text">1h 50m</small>
                                             </p>
 
@@ -1634,7 +1634,7 @@
                                         </div>
                                         <div class="m-2">
                                             <p class="card-text  d-flex justify-content-between">
-                                                <small class="card-text">23,162 students </small>
+                                                <small class="card-text">23,162 trainees </small>
                                                 <small class="card-text">1h 50m</small>
                                             </p>
 
@@ -1695,7 +1695,7 @@
                                         </div>
                                         <div class="m-2">
                                             <p class="card-text  d-flex justify-content-between">
-                                                <small class="card-text">23,162 students </small>
+                                                <small class="card-text">23,162 trainees </small>
                                                 <small class="card-text">1h 50m</small>
                                             </p>
 
@@ -1729,7 +1729,7 @@
                                         </div>
                                         <div class="m-2">
                                             <p class="card-text  d-flex justify-content-between">
-                                                <small class="card-text">23,162 students </small>
+                                                <small class="card-text">23,162 trainees </small>
                                                 <small class="card-text">1h 50m</small>
                                             </p>
 
@@ -1762,7 +1762,7 @@
                                         </div>
                                         <div class="m-2">
                                             <p class="card-text  d-flex justify-content-between">
-                                                <small class="card-text">23,162 students </small>
+                                                <small class="card-text">23,162 trainees </small>
                                                 <small class="card-text">1h 50m</small>
                                             </p>
 
@@ -1795,7 +1795,7 @@
                                         </div>
                                         <div class="m-2">
                                             <p class="card-text  d-flex justify-content-between">
-                                                <small class="card-text">23,162 students </small>
+                                                <small class="card-text">23,162 trainees </small>
                                                 <small class="card-text">1h 50m</small>
                                             </p>
 
@@ -1828,7 +1828,7 @@
                                         </div>
                                         <div class="m-2">
                                             <p class="card-text  d-flex justify-content-between">
-                                                <small class="card-text">23,162 students </small>
+                                                <small class="card-text">23,162 trainees </small>
                                                 <small class="card-text">1h 50m</small>
                                             </p>
 
@@ -1861,7 +1861,7 @@
                                         </div>
                                         <div class="m-2">
                                             <p class="card-text  d-flex justify-content-between">
-                                                <small class="card-text">23,162 students </small>
+                                                <small class="card-text">23,162 trainees </small>
                                                 <small class="card-text">1h 50m</small>
                                             </p>
 
@@ -1894,7 +1894,7 @@
                                         </div>
                                         <div class="m-2">
                                             <p class="card-text  d-flex justify-content-between">
-                                                <small class="card-text">23,162 students </small>
+                                                <small class="card-text">23,162 trainees </small>
                                                 <small class="card-text">1h 50m</small>
                                             </p>
 
@@ -1927,7 +1927,7 @@
                                         </div>
                                         <div class="m-2">
                                             <p class="card-text  d-flex justify-content-between">
-                                                <small class="card-text">23,162 students </small>
+                                                <small class="card-text">23,162 trainees </small>
                                                 <small class="card-text">1h 50m</small>
                                             </p>
 
@@ -1991,7 +1991,7 @@
                                         </div>
                                         <div class="m-2">
                                             <p class="card-text  d-flex justify-content-between">
-                                                <small class="card-text">23,162 students </small>
+                                                <small class="card-text">23,162 trainees </small>
                                                 <small class="card-text">1h 50m</small>
                                             </p>
 
@@ -2025,7 +2025,7 @@
                                         </div>
                                         <div class="m-2">
                                             <p class="card-text  d-flex justify-content-between">
-                                                <small class="card-text">23,162 students </small>
+                                                <small class="card-text">23,162 trainees </small>
                                                 <small class="card-text">1h 50m</small>
                                             </p>
 
@@ -2058,7 +2058,7 @@
                                         </div>
                                         <div class="m-2">
                                             <p class="card-text  d-flex justify-content-between">
-                                                <small class="card-text">23,162 students </small>
+                                                <small class="card-text">23,162 trainees </small>
                                                 <small class="card-text">1h 50m</small>
                                             </p>
 
@@ -2091,7 +2091,7 @@
                                         </div>
                                         <div class="m-2">
                                             <p class="card-text  d-flex justify-content-between">
-                                                <small class="card-text">23,162 students </small>
+                                                <small class="card-text">23,162 trainees </small>
                                                 <small class="card-text">1h 50m</small>
                                             </p>
 
@@ -2124,7 +2124,7 @@
                                         </div>
                                         <div class="m-2">
                                             <p class="card-text  d-flex justify-content-between">
-                                                <small class="card-text">23,162 students </small>
+                                                <small class="card-text">23,162 trainees </small>
                                                 <small class="card-text">1h 50m</small>
                                             </p>
 
@@ -2157,7 +2157,7 @@
                                         </div>
                                         <div class="m-2">
                                             <p class="card-text  d-flex justify-content-between">
-                                                <small class="card-text">23,162 students </small>
+                                                <small class="card-text">23,162 trainees </small>
                                                 <small class="card-text">1h 50m</small>
                                             </p>
 
@@ -2190,7 +2190,7 @@
                                         </div>
                                         <div class="m-2">
                                             <p class="card-text  d-flex justify-content-between">
-                                                <small class="card-text">23,162 students </small>
+                                                <small class="card-text">23,162 trainees </small>
                                                 <small class="card-text">1h 50m</small>
                                             </p>
 
@@ -2223,7 +2223,7 @@
                                         </div>
                                         <div class="m-2">
                                             <p class="card-text  d-flex justify-content-between">
-                                                <small class="card-text">23,162 students </small>
+                                                <small class="card-text">23,162 trainees </small>
                                                 <small class="card-text">1h 50m</small>
                                             </p>
 
@@ -2287,7 +2287,7 @@
                                         </div>
                                         <div class="m-2">
                                             <p class="card-text  d-flex justify-content-between">
-                                                <small class="card-text">23,162 students </small>
+                                                <small class="card-text">23,162 trainees </small>
                                                 <small class="card-text">1h 50m</small>
                                             </p>
 
@@ -2321,7 +2321,7 @@
                                         </div>
                                         <div class="m-2">
                                             <p class="card-text  d-flex justify-content-between">
-                                                <small class="card-text">23,162 students </small>
+                                                <small class="card-text">23,162 trainees </small>
                                                 <small class="card-text">1h 50m</small>
                                             </p>
 
@@ -2354,7 +2354,7 @@
                                         </div>
                                         <div class="m-2">
                                             <p class="card-text  d-flex justify-content-between">
-                                                <small class="card-text">23,162 students </small>
+                                                <small class="card-text">23,162 trainees </small>
                                                 <small class="card-text">1h 50m</small>
                                             </p>
 
@@ -2387,7 +2387,7 @@
                                         </div>
                                         <div class="m-2">
                                             <p class="card-text  d-flex justify-content-between">
-                                                <small class="card-text">23,162 students </small>
+                                                <small class="card-text">23,162 trainees </small>
                                                 <small class="card-text">1h 50m</small>
                                             </p>
 
@@ -2420,7 +2420,7 @@
                                         </div>
                                         <div class="m-2">
                                             <p class="card-text  d-flex justify-content-between">
-                                                <small class="card-text">23,162 students </small>
+                                                <small class="card-text">23,162 trainees </small>
                                                 <small class="card-text">1h 50m</small>
                                             </p>
 
@@ -2453,7 +2453,7 @@
                                         </div>
                                         <div class="m-2">
                                             <p class="card-text  d-flex justify-content-between">
-                                                <small class="card-text">23,162 students </small>
+                                                <small class="card-text">23,162 trainees </small>
                                                 <small class="card-text">1h 50m</small>
                                             </p>
 
@@ -2486,7 +2486,7 @@
                                         </div>
                                         <div class="m-2">
                                             <p class="card-text  d-flex justify-content-between">
-                                                <small class="card-text">23,162 students </small>
+                                                <small class="card-text">23,162 trainees </small>
                                                 <small class="card-text">1h 50m</small>
                                             </p>
 
@@ -2519,7 +2519,7 @@
                                         </div>
                                         <div class="m-2">
                                             <p class="card-text  d-flex justify-content-between">
-                                                <small class="card-text">23,162 students </small>
+                                                <small class="card-text">23,162 trainees </small>
                                                 <small class="card-text">1h 50m</small>
                                             </p>
 

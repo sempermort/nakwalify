@@ -23,7 +23,7 @@
     <link href="{{ asset('assets/bootstrap-4.3.1-dist/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet">
 
-
+    <link href="{{ asset('css/multitemslide.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 </head>
 
@@ -31,7 +31,7 @@
 
 
 
-<header class="header clearfix justify-content-between mb-4 " style="background-color: #3a9982;">
+    <header class="header clearfix justify-content-between mb-4 " style="background-color: #3a9982;">
         <button type="button" id="toggleMenu" class="toggle_menu">
             <i class="material-icons-outlined bg-transparent">menu</i>
         </button>
@@ -47,8 +47,8 @@
                 <div class="input-group-prepend  col-4">
 
                     <div class="dropdown show ">
-                        <a class="font-weight-bolder navt text-black" href="#">
-                            <p class="p-0 m-0 text-nowrap">Browse <i class="fa fa-chevron-down"></i> </p>
+                        <a class="font-weight-bolder navt text-black">
+                            <p class="pr-2 m-1   border-right ">Browse <i class="fa fa-chevron-down ml-5  "></i> </p>
                         </a>
                         <div class=" bg-white dropnav" style=" ">
                             <div class="">
@@ -452,6 +452,7 @@
                         </div>
                     </div>
                 </li>
+                @auth
                 <li class="dropdown">
                     <a href="create_new_course.html#" class="opts_account" title="Account">
                         My Learning
@@ -467,14 +468,17 @@
                                     <div class="title font-weight-bolder">Complete Python Developer in 2021:Zero to
                                         Mastery
                                     </div>
-                                    <a href="http//" class="title font-weight-bolder text-blue" style="color: blue;">start Learning
+                                    <a href="http//" class="title font-weight-bolder text-blue"
+                                        style="color: blue;">start Learning
                                     </a>
                                 </div>
 
                             </div>
                         </div>
                         <div class="m-2 border-top">
-                            <a href="{{url('/myaccount')}}" class="btn btn-block bg-black text-white font-weight-bolder " >Go to Mylearning</a>
+                            <a href="{{url('/myaccount')}}"
+                                class="btn btn-block bg-black text-white font-weight-bolder ">Go to
+                                Mylearning</a>
 
                         </div>
 
@@ -487,7 +491,7 @@
                         </span>
                     </a>
                     <div class=" dropdown-content text-center">
-                    <div class="d-flex flex-nowrap m-2">
+                        <div class="d-flex flex-nowrap m-2">
                             <div class="card-image ">
                                 <img src="{{asset('assets/images/instructor_12.jpg')}}" alt="" class="">
                             </div>
@@ -504,13 +508,15 @@
                             </div>
                         </div>
                         <div class="m-2 border-top">
-                            <br>
-                            <a href="{{url('/coursepurches')}}"class="btn btn-outline-dark btn-block text-dark font-weight-bolder ">Add to cart</a>
+                            <a href="{{url('/coursepurches')}}"
+                                class="btn btn-outline-dark btn-block text-dark font-weight-bolder ">Add to cart</a>
 
                         </div>
-                        <hr>
+
                         <div class="m-2 border-top">
-                            <a href="{{url('/mylearning')}}" class="btn btn-block bg-black text-white font-weight-bolder ">Go to Withlist</a>
+                            <a href="{{url('/myaccount')}}"
+                                class="btn btn-block bg-black text-white font-weight-bolder ">Go to
+                                Wishlist</a>
 
                         </div>
                     </div>
@@ -530,74 +536,106 @@
                                 </div>
                             </div>
                         </a>
-                        <a href="create_new_course.html#" class="channel_my item dropdown-item"">
+                        <a href="create_new_course.html#" class="channel_my item dropdown-item">
                             <div class=" profile_link">
-                            <img src="./assets/images/left-imgs/img-2.jpg" alt="">
-                            <div class="pd_content">
-                                <p class="p-0 m-0 font-weight-bold">Jassica Smith</p>
-                                <p class="p-0 m-0">Added New Review In Video <strong>Full Stack PHP Developer</strong>.
-                                </p>
-                                <span class="nm_time">12 min ago</span>
+                                <img src="./assets/images/left-imgs/img-2.jpg" alt="">
+                                <div class="pd_content">
+                                    <p class="p-0 m-0 font-weight-bold">Jassica Smith</p>
+                                    <p class="p-0 m-0">Added New Review In Video <strong>Full Stack PHP
+                                            Developer</strong>.
+                                    </p>
+                                    <span class="nm_time">12 min ago</span>
+                                </div>
                             </div>
+                        </a>
+                        <a href="create_new_course.html#" class="channel_my item dropdown-item">
+                            <div class="profile_link">
+                                <img src="./assets/images/left-imgs/img-9.jpg" alt="">
+                                <div class="pd_content p-0 m-0">
+                                    <p> Your Membership Approved <strong>Upload Video</strong>.</p>
+                                    <span class="nm_time">20 min ago</span>
+                                </div>
+                            </div>
+                        </a>
+                        <a class="vbm_btn" href="instructor_notifications.html">View All <i
+                                class='uil uil-arrow-right dropdown-item"'></i></a>
                     </div>
-                    </a>
-                    <a href="create_new_course.html#" class="channel_my item dropdown-item">
-                        <div class="profile_link">
-                            <img src="./assets/images/left-imgs/img-9.jpg" alt="">
-                            <div class="pd_content p-0 m-0">
-                                <p> Your Membership Approved <strong>Upload Video</strong>.</p>
-                                <span class="nm_time">20 min ago</span>
-                            </div>
-                        </div>
-                    </a>
-                    <a class="vbm_btn" href="instructor_notifications.html">View All <i
-                            class='uil uil-arrow-right dropdown-item"'></i></a>
-        </div>
-        </li>
-        <li class=" dropdown">
-            <a href="create_new_course.html#" class="opts_account" title="Account">
-                <img src="./assets/images/hd_dp.jpg" alt="">
-            </a>
-            <div class=" dropdown-content">
-                <div class="channel_my">
-                    <div class="profile_link">
+                </li>
+                <li class=" dropdown">
+                    <a href="create_new_course.html#" class="opts_account" title="Account">
                         <img src="./assets/images/hd_dp.jpg" alt="">
-                        <div class="pd_content">
-                            <div class="rhte85">
-                                <h6>Joginder Singh</h6>
-                                <div class="mef78" title="Verify">
-                                    <i class='uil uil-check-circle'></i>
+                    </a>
+                    <div class=" dropdown-content">
+                        <div class="channel_my">
+                            <div class="profile_link">
+                                <img src="./assets/images/hd_dp.jpg" alt="">
+                                <div class="pd_content">
+                                    <div class="rhte85">
+                                        <h6>{{ Auth::user()->fname }} {{ Auth::user()->lname }}</h6>
+                                        <div class="mef78" title="Verify">
+                                            <i class='uil uil-check-circle'></i>
+                                        </div>
+                                    </div>
+                                    @if(Auth::user()->role_id=='2')
+                                    <div class="hacker-medals m-3 d-flex">
+                                        <div class="hacker-medal "><img
+                                                src="https://hrcdn.net/community-frontend/assets/badges/gold_small-39fafc44b8.svg"
+                                                height="25">24</div>
+                                        <div class="hacker-medal"><img
+                                                src="https://hrcdn.net/community-frontend/assets/badges/silver_small-642ca0f0a7.svg"
+                                                height="25">0</div>
+                                        <div class="hacker-medal"><img
+                                                src="https://hrcdn.net/community-frontend/assets/badges/bronze_small-4e1f12bf64.svg"
+                                                height="25">2</div>
+                                    </div>
+                                    @endif
+
                                 </div>
                             </div>
 
                         </div>
+                        <div class="night_mode_switch__btn">
+                            <a href="create_new_course.html#" id="night-mode" class="btn-night-mode">
+                                <i class="uil uil-moon"></i> Night mode
+                                <span class="btn-night-mode-switch">
+                                    <span class="uk-switch-button"></span>
+                                </span>
+                            </a>
+                        </div>
+                        @if(Auth::user()->role_id=='2')
+
+                        <div class="border-bottom mb-2">
+                            <a href="{{url('/myaccount')}}" class="item channel_item">My Learning</a>
+                            <a href="{{url('/coursepurches')}}" class="item channel_item">My cart</a>
+                            <a href="{{url('/myaccount')}}" class="item channel_item">Wishlist</a>
+                            <a href="membership.html" class="item channel_item"></a>
+                        </div>
+                        @endif
+                        <div class="">
+                            <a href="{{url('/accsetting')}}" class="item channel_item">Setting</a>
+                            <a href="{{route('logout')}}" class="item channel_item">Sign Out</a>
+                            <a href="instructor_dashboard.html" class="item channel_item">Language English <i
+                                    class="fa fa-globe "></i></a>
+                        </div>
+
                     </div>
+                </li>
+                @endauth
+                @guest
+                <li class="ml-3">
+                    <button data-toggle="modal" data-target="#signin" class="opts_account text-white" title="Account">
+                        Login
+                    </button>
 
-                </div>
-                <div class="night_mode_switch__btn">
-                    <a href="create_new_course.html#" id="night-mode" class="btn-night-mode">
-                        <i class="uil uil-moon"></i> Night mode
-                        <span class="btn-night-mode-switch">
-                            <span class="uk-switch-button"></span>
-                        </span>
-                    </a>
-                </div>
-                <div class="border-bottom mb-2">
-                    <a href="instructor_dashboard.html" class="item channel_item">My Learning</a>
-                    <a href="{{url('/coursepurches')}}" class="item channel_item">My cart</a>
-                    <a href="{{url('/myaccount')}}" class="item channel_item">Wishlist</a>
-                    <a href="membership.html" class="item channel_item"></a>
-                </div>
-                <div class="">
-                    <a href="{{url('/accsetting')}}" class="item channel_item">Setting</a>
-                    <a href="sign_in.html" class="item channel_item">Sign Out</a>
-                    <a href="instructor_dashboard.html" class="item channel_item">Language English <i
-                            class="fa fa-globe "></i></a>
-                </div>
+                </li>
+                <li class="ml-3">
+                    <button data-toggle="modal" data-target="#register" class="opts_account text-white" title="Account">
+                        Register
+                    </button>
 
-            </div>
-        </li>
-        </ul>
+                </li>
+                @endguest
+            </ul>
         </div>
     </header>
 
@@ -662,18 +700,21 @@
 
 
         <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.js"
-            integrity="sha256-DrT5NfxfbHvMHux31Lkhxg42LY6of8TaYyK50jnxRnM=" crossorigin="anonymous"></script>
+            ></script>
 
         <script src="{{ asset('assets/bootstrap-4.3.1-dist/js/bootstrap.min.js') }}"></script>
         <script src="{{ asset('assets/js/night-mode.js') }}"></script>
-        <script src="{{ asset('js/vertical-responsive-menu.js') }}"></script>
-        <script src="{{ asset('js/materialize.js') }}"></script>
-        <script>
-        $(document).ready(function() {
-            $('.collapsible').collapsible();
 
-        });
+        <!-- <script src="{{ asset('js/app.js') }}"></script> -->
+        <script src="{{ asset('js/slides.js') }}">
+        </script>
+
+
+        <script>
+        // $(document).ready(function() {
+        //     $('.collapsible').collapsible();
+
+        // });
 
         $('.nastay').on('click', 'a', function() {
 
@@ -715,6 +756,229 @@
                 $('.nav1').addClass('d-blockl');
             });
         </script>
+        <script>
+        $('.nastay').on('click', 'a', function() {
+
+            $(this).addClass('active').addClass('noHover')
+                .siblings().removeClass('active').removeClass('noHover');
+            location.href = $(this).getAttribute("href");
+        });
+        $(".filt").click(function() {
+            $("#chkfilter").toggle();
+        });
+        </script>
+
+        <script>
+        <!-- Initialize the plugin
+        -->
+        $(".card-img-overlay").mouseover(function
+        ()
+        {
+        $(this).find($(".jss16")).css({
+        "display":
+        "flex"
+        });
+        });
+        $(".card-img-overlay").mouseout(function
+        ()
+        {
+        $(this).find($(".jss16")).css({
+        "display":
+        "none"
+        });
+        });
+        $(document).ready(function()
+        {
+        // SideNav
+
+        // $(".button-collapse").sideNav2();
+        // SideNav   Scrollbar Initialization
+        // var sideNavScrollbar = document.querySelector('.custom-scrollbar');
+        // var ps =new PerfectScrollbar(sideNavScrollbar);
+        });
+        $('.navt').mouseover(function()
+        {
+        $(".dropnav").toggle();
+        });
+        $('.dropnav').mouseleave(function()
+        {
+        $(this).toggle();
+        });
+        $('.nav1').mouseover(function()
+        {
+        });
+        $('.nav1').on('mouseover',
+        'a',
+        function()
+        {
+        $('.nav2').removeClass('d-nonel').addClass('d-blockl');
+        $(".nav1").addClass('border-right');
+        });
+        $('.nav2').on('mouseover',
+        'a',
+        function()
+        {
+        $('.nav2').addClass('border-right');
+        $('.nav3').removeClass('d-nonel').addClass('d-blockl');
+        $('.nav1').addClass('d-blockl');
+        });
+
+var totalv=0;
+var currentv=0;
+var currenturl=0;
+var modal= 0
+function vidliclicked(url,counv,currev,id) {
+    ajaxed4(id);
+totalv=counv;
+currentv=currev;
+currenturl=url;
+modal= document.getElementById('modal');
+if(modal!=null){
+    modal.remove();
+    }
+
+var video = document.getElementById('mainvid');
+var source = document.createElement('source');
+
+source.setAttribute('src', url);
+
+while (video.firstChild) {
+    video.removeChild(video.lastChild);
+}
+video.append(source);
+video.load();
+video.play();
+
+
+};
+var tv= document.querySelector('video');
+var contain= document.getElementById('mediav');
+tv.addEventListener('ended',onplayerchange);
+function onplayerchange(evnt)
+{
+
+ if(totalv-currentv>=0){
+      contain.insertAdjacentHTML( 'beforeend',
+        '<div id="modal" class="video-js w-100 h-100 card-img-overlay">' +
+          '<div id="message">Increase conversions by adding this modal window at the end of your videos!!</div>' +
+          '<div class="d-flex justify-content-center">'+
+          '<button class="btn btn-info mr-5" type="button" id="button1">Previous Video</button></button>' +
+          '<button type="button" class="btn btn-success ml-5" id="button2">Next Video</button></button></div>' +
+          '<div class="text-center m-3"><button type="button" id="replayvideo" class="btn btn-default text-white"><i class="fas fa-redo"></i></button>' +
+        '</div> </div>'
+        );
+
+ }
+ else{
+
+    contain.insertAdjacentHTML( 'beforeend',
+        '<div id="modal" class="video-js w-100 h-100 card-img-overlay">' +
+          '<div class="text-center" id="message">Welcome To naQualify</div>' +
+          '<div class="text-center"><button id="replayvideo" class="btn btn-default"><i class="fas fa-redo"></i></button>' +
+        '</div> </div>'
+        );
+ }
+
+ $('#replayvideo').on('click',function() {
+    $('#vids'+currentv).click();
+});
+
+
+
+    $('#button2').on('click',function() {
+
+         if(totalv-currentv>0){
+             var temp=currentv+1;
+             $('#vids'+temp).css('pointer-events','auto');
+                  $('#vids'+temp).click();
+         }
+         else{
+            $('#vids'+currentvp).css('pointer-events','auto');
+            $('#vids'+currentv).click();
+         }
+})
+
+
+    $('#button1').on('click',function() {
+
+          if(totalv-currentv>=0&&currentv!=1){
+            var temp=currentv-1;
+                   $('#vids'+temp).click();
+          }
+          else {
+
+             $('#vids'+currentv).click();
+          }
+ })
+}
+
+function viewpdf(url) {
+            const pdfviewer = document.getElementById('pspdfkit');
+                  pdfviewer.data=url;
+            $('#myModal').modal('show');
+};
+
+
+
+
+function ajaxed4(id) {
+
+
+var form_data = new FormData();
+form_data.append('id', id);
+var token = $("meta[name='csrf-token']").attr("content");
+$.ajax({
+    type: 'POST',
+    url: "{{ route('pptpics') }}",
+    data: form_data,
+    cache: false,
+    headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+    contentType: false,
+    processData: false,
+    beforeSend: function(){
+                    $('.loading-overlay-image-container').show();
+                    $('.loading-overlay').show();
+                    },
+    complete: function(){
+                        $('.loading-overlay-image-container').hide();
+                    $('.loading-overlay').hide();
+                    },
+    success: (data) => {
+        made5(data)
+
+    },
+    error: function(data) {
+        console.log(data);
+    }
+});
+};
+
+
+function made5(data) {
+
+
+var carol = document.getElementById('carol');
+document.querySelectorAll('.carol-it').forEach(e => e.remove());
+for(let i=0; i<data.length;i++){
+
+    var lin ="http://127.0.0.1:8000/get-ppt/"+data[i].file_path.split("/").pop();
+
+var imgcaro =  '<div class="carousel-item carol-it">'+
+        '<img src="'+lin+'" width="400"'+
+        'id="mainvid" height="240" class="d-block w-100"'+
+        'alt=""+data.course_file_title+"">'+
+        '</div>';
+
+                    $('#carol').append($(imgcaro ));
+
+}
+                    };
+
+
+
+        </script>
 </body>
+
+
 
 </html>

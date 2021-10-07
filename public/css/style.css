@@ -517,7 +517,6 @@ strong {
     color: rgba(148, 145, 145, 0.7);
     vertical-align: top;
     display: inline-block;
-    font-family: "Material Icons";
     font-weight: normal;
     font-style: normal;
     /* font-size: 15px; */
@@ -706,3 +705,87 @@ margin: 0 5px;
 
     color: #0b3244!important;
 }
+.form-rounded {
+    border-radius: 1rem;
+    box-shadow: inset 0 1px 4px rgba(0,0,0,.1) !important;
+    }
+.malabel {
+    background-color: #17a2b8;
+    color: white;
+    padding: 0.5rem;
+    font-family: sans-serif;
+    border-radius: 0.3rem;
+    cursor: pointer;
+  }
+
+  #file-chosen{
+    margin-left: 0.3rem;
+    font-family: sans-serif;
+  }
+
+
+  #modal {
+    background: #424242b2;
+    width: 640px;
+    height: 264px;
+    font-family: open sans-serif;
+    opacity: 0.97;
+  }
+
+  #message {
+    font-size: 2.5em;
+    padding: 6%;
+    text-align: center;
+    color: #c3c3c3;
+  }
+
+  #replay-video {
+    font-size: 2.5em;
+    text-align: center;
+    margin: 5%;
+    color: white;
+  }
+  .loading-overlay {
+    display: none;
+    background: rgba( 26, 26, 26, 0.7 );
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    top: 0;
+}
+
+.loading-overlay-image-container {
+    display: none;
+    position: fixed;
+    z-index: 7;
+    top: 50%;
+    left: 50%;
+    transform: translate( -50%, -50% );
+}
+
+.loading-overlay-img {
+    width: 160px;
+    height: 160px;
+    border-radius: 5px;
+
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto ;
+    grid-template-rows:  auto auto ;
+    grid-gap: 2px;
+  }
+  .grid-container > div {
+    background-color: rgba(255, 255, 255, 0.6);
+
+  }
+  .dnot{
+      display:none;
+  }
+
+  .tabcontent {
+    display: none;
+
+  }
+

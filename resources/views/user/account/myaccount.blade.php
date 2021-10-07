@@ -17,7 +17,7 @@
                         <nav>
                             <div class="nav nav-tabs tab_crse" id="nav-tab" role="tablist">
                                 <a class="nav-item nav-link active" id="nav-about-tab" data-toggle="tab"
-                                    href="#nav-about" role="tab" aria-selected="true">All Courses</a>
+                                href="#nav-about" role="tab" aria-selected="true">All Courses</a>
                                 <a class="nav-item nav-link" id="nav-purchased-tab" data-toggle="tab"
                                     href="#nav-purchased" role="tab" aria-selected="false">Purchased</a>
                                 <a class="nav-item nav-link" id="nav-reviews-tab" data-toggle="tab" href="#nav-reviews"
@@ -60,13 +60,13 @@
                                         </div>
                                         <div class="row mt-5">
                                             <div class="col-md-4">
-                                                <div class="card cardc rounded ">
-                                                    <img class="card-img-top w-100" width="295" height="165"
-                                                        src="{{asset('assets/images/photos/anders-jilden-307322-500.jpg')}}"
+                                                <div class="card cardc rounded mb-3">
+                                                    <img class="card-img-top" width="295" height="165"
+                                                        src="{{asset('assets/images/about/company-2.jpg')}}"
                                                         alt="Card image cap">
                                                     <div class="m-2">
-                                                        <p class="card-text  d-flex justify-content-between">
-                                                            <small class="card-text">23,162 students </small>
+                                                        <p class="card-text m-2 d-flex justify-content-between">
+                                                            <small class="card-text">23,162 trainees </small>
                                                             <small class="card-text">1h 50m</small>
                                                         </p>
 
@@ -83,7 +83,6 @@
                                                                 </span></small>
                                                         </p>
                                                     </div>
-
                                                 </div>
                                             </div>
                                             <br>
@@ -94,7 +93,7 @@
                                                         alt="Card image cap">
                                                     <div class="m-2">
                                                         <p class="card-text  d-flex justify-content-between">
-                                                            <small class="card-text">23,162 students </small>
+                                                            <small class="card-text">23,162 trainees </small>
                                                             <small class="card-text">1h 50m</small>
                                                         </p>
 
@@ -121,7 +120,7 @@
                                                         alt="Card image cap">
                                                     <div class="m-2">
                                                         <p class="card-text m-2 d-flex justify-content-between">
-                                                            <small class="card-text">23,162 students </small>
+                                                            <small class="card-text">23,162 trainees </small>
                                                             <small class="card-text">1h 50m</small>
                                                         </p>
 
@@ -144,13 +143,13 @@
                                         </div>
                                         <div class="row mt-5">
                                             <div class="col-md-4">
-                                                <div class="card cardc rounded ">
-                                                    <img class="card-img-top w-100" width="295" height="165"
-                                                        src="{{asset('assets/images/photos/anders-jilden-307322-500.jpg')}}"
+                                                <div class="card cardc rounded mb-3">
+                                                    <img class="card-img-top" width="295" height="165"
+                                                        src="{{asset('assets/images/about/company-2.jpg')}}"
                                                         alt="Card image cap">
                                                     <div class="m-2">
-                                                        <p class="card-text  d-flex justify-content-between">
-                                                            <small class="card-text">23,162 students </small>
+                                                        <p class="card-text m-2 d-flex justify-content-between">
+                                                            <small class="card-text">23,162 trainees </small>
                                                             <small class="card-text">1h 50m</small>
                                                         </p>
 
@@ -167,7 +166,6 @@
                                                                 </span></small>
                                                         </p>
                                                     </div>
-
                                                 </div>
                                             </div>
                                             <br>
@@ -178,7 +176,7 @@
                                                         alt="Card image cap">
                                                     <div class="m-2">
                                                         <p class="card-text  d-flex justify-content-between">
-                                                            <small class="card-text">23,162 students </small>
+                                                            <small class="card-text">23,162 trainees </small>
                                                             <small class="card-text">1h 50m</small>
                                                         </p>
 
@@ -205,7 +203,7 @@
                                                         alt="Card image cap">
                                                     <div class="m-2">
                                                         <p class="card-text  d-flex justify-content-between">
-                                                            <small class="card-text">23,162 students </small>
+                                                            <small class="card-text">23,162 trainees </small>
                                                             <small class="card-text">1h 50m</small>
                                                         </p>
 
@@ -267,7 +265,7 @@
                                                 </a>
                                                 <div class="hs_content">
                                                     <div class="eps_dots eps_dots10 more_dropdown">
-                                                        <a href="my_student_profile_view.html#"><i
+                                                        <a href="my_trainee_profile_view.html#"><i
                                                                 class="uil uil-ellipsis-v"></i></a>
                                                         <div class="dropdown-content">
                                                             <span><i class="uil uil-download-alt"></i>Download</span>
@@ -280,7 +278,7 @@
                                                     </div>
                                                     <a href="course_detail_view.html" class="crse14s title900">Complete
                                                         Python Bootcamp: Go from zero to hero in Python 3</a>
-                                                    <a href="my_student_profile_view.html#" class="crse-cate">Web
+                                                    <a href="my_trainee_profile_view.html#" class="crse-cate">Web
                                                         Development | Python</a>
 
                                                 </div>
@@ -303,7 +301,7 @@
                                                 </a>
                                                 <div class="hs_content">
                                                     <div class="eps_dots eps_dots10 more_dropdown">
-                                                        <a href="my_student_profile_view.html#"><i
+                                                        <a href="my_trainee_profile_view.html#"><i
                                                                 class="uil uil-ellipsis-v"></i></a>
                                                         <div class="dropdown-content">
                                                             <span><i class="uil uil-download-alt"></i>Download</span>
@@ -436,12 +434,12 @@
                                                                 rel="noopener noreferrer">Art
                                                                 Journaling for Self-Care: 3 Exercises for Reflection and
                                                                 Growth</a> </p>
-                                                                <p class="card-text ">
-                                                              <small>
-                                                              Art
+                                                        <p class="card-text ">
+                                                            <small>
+                                                                Art
                                                                 Journaling for Self-Care: 3 Exercises for Reflection and
                                                                 Growth
-                                                              </small>
+                                                            </small>
                                                         </p>
                                                         <div class="d-flex  pl-3 pr-3">
 
@@ -495,7 +493,7 @@
                                                         alt="Card image cap">
                                                     <div class="m-2">
                                                         <p class="card-text  d-flex justify-content-between">
-                                                            <small class="card-text">23,162 students </small>
+                                                            <small class="card-text">23,162 trainees </small>
                                                             <small class="card-text">1h 50m</small>
                                                         </p>
 
@@ -524,7 +522,7 @@
                                                         alt="Card image cap">
                                                     <div class="m-2">
                                                         <p class="card-text m-2 d-flex justify-content-between">
-                                                            <small class="card-text">23,162 students </small>
+                                                            <small class="card-text">23,162 trainees </small>
                                                             <small class="card-text">1h 50m</small>
                                                         </p>
 

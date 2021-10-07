@@ -39,7 +39,7 @@ class LoginController extends Controller
         return $this->redirectTo;
             break;
         case 2:
-                $this->redirectTo = '/user';
+                $this->redirectTo = '/category';
             return $this->redirectTo;
             break;
         case 3:
@@ -61,6 +61,6 @@ class LoginController extends Controller
      */
     public function __construct()
     {
-     //   $this->middleware('guest')->except('logout');
+      $this->middleware('guest')->except('logout');
     }
 }

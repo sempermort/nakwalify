@@ -14,12 +14,19 @@
         href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
         rel="stylesheet">
 
-<style>
-body, html {width: 100%; height: 100%; margin: 0; padding: 0}
-iframe::-webkit-scrollbar {
-    display: none;
-}
-</style>
+    <style>
+    body,
+    html {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0
+    }
+
+    iframe::-webkit-scrollbar {
+        display: none;
+    }
+    </style>
     <link href="{{ asset('css/materialize.css') }}" rel="stylesheet">
 </head>
 
@@ -27,59 +34,60 @@ iframe::-webkit-scrollbar {
 
 
     <div class="collapsible h-100">
-<li>
-        <div class="collapsible-header">
-            <div class="material-icons">
-                expand_more
-            </div>
-            <div class="d-flex justify-content-between w-100">
-                <div class="font-weight-bold">Introduction</div>
-                <div class="d-flex justify-content-between col-3">
-                    <p class="text-nowrap">3 lectures </p>
-                    <p class="text-nowrap">• 9min</p>
+        <li>
+            <div class="collapsible-header">
+                <div class="material-icons">
+                    expand_more
                 </div>
-            </div>
-        </div>
-        <div class="collapsible-body">
-            <div class="d-flex justify-content-between w-100">
-                <span class="material-icons">
-                    play_circle_filled
-                </span>
-                <div class="d-flex justify-content-between w-100  m-1 pl-2">
-                    <div class=""><a href="http://" class="underline" target="_blank" rel="noopener noreferrer">Course
-                            Outline</a> </div>
+                <div class="d-flex justify-content-between w-100">
+                    <div class="font-weight-bold">Introduction</div>
                     <div class="d-flex justify-content-between col-3">
-                        <div class="div"><a href="http://" class="text-" target="_blank"
-                                rel="noopener noreferrer">preview</a> </div>
-                        <div class="div">05:57</div>
+                        <p class="text-nowrap">3 lectures </p>
+                        <p class="text-nowrap">• 9min</p>
                     </div>
                 </div>
             </div>
-            <div class="d-flex justify-content-between w-100">
-                <span class="material-icons">
-                    insert_drive_file
-                </span>
-                <div class="d-flex justify-content-between w-100 m-1 pl-2">
-                    <div class="">Join Our Online Classroom</div>
-                    <div class="d-flex justify-content-between col-3">
-                        <div class="div"></div>
-                        <div class="div">01:15</div>
+            <div class="collapsible-body">
+                <div class="d-flex justify-content-between w-100">
+                    <span class="material-icons">
+                        play_circle_filled
+                    </span>
+                    <div class="d-flex justify-content-between w-100  m-1 pl-2">
+                        <div class=""><a href="http://" class="underline" target="_blank"
+                                rel="noopener noreferrer">Course
+                                Outline</a> </div>
+                        <div class="d-flex justify-content-between col-3">
+                            <div class="div"><a href="http://" class="text-" target="_blank"
+                                    rel="noopener noreferrer">preview</a> </div>
+                            <div class="div">05:57</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between w-100">
+                    <span class="material-icons">
+                        insert_drive_file
+                    </span>
+                    <div class="d-flex justify-content-between w-100 m-1 pl-2">
+                        <div class="">Join Our Online Classroom</div>
+                        <div class="d-flex justify-content-between col-3">
+                            <div class="div"></div>
+                            <div class="div">01:15</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between w-100">
+                    <span class="material-icons">
+                        insert_drive_file
+                    </span>
+                    <div class="d-flex justify-content-between w-100 m-1 pl-2">
+                        <div class="">Excercise: Meet The Community</div>
+                        <div class="d-flex justify-content-between col-3">
+                            <div class="div"> </div>
+                            <div class="div">01:25</div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="d-flex justify-content-between w-100">
-                <span class="material-icons">
-                    insert_drive_file
-                </span>
-                <div class="d-flex justify-content-between w-100 m-1 pl-2">
-                    <div class="">Excercise: Meet The Community</div>
-                    <div class="d-flex justify-content-between col-3">
-                        <div class="div"> </div>
-                        <div class="div">01:25</div>
-                    </div>
-                </div>
-            </div>
-        </div>
         </li>
         <li>
             <div class="collapsible-header">

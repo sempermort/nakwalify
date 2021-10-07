@@ -12,7 +12,7 @@
                             <h4>Billing Details</h4>
                             <img src="images/line.svg" alt="">
                         </div>
-                     
+
                         <div class="d-flex flex-nowrap m-2">
                             <div class="card-image ">
                                 <img src="{{asset('assets/images/instructor_12.jpg')}}" alt="" class="">
@@ -177,27 +177,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="chckout_order_dt">
-                            <div class="checkout_title">
-                                <h4>Order Details</h4>
-                                <img src="images/line.svg" alt="">
-                            </div>
-                            <div class="order_dt_section">
-                                <div class="order_title">
-                                    <h4>Complete Python Bootcamp: Go from zero to hero in Python 3</h4>
-                                    <div class="order_price">$15</div>
-                                </div>
-                                <div class="order_title">
-                                    <h4 class="font-weight-bold">Discount</h4>
-                                    <div class="order_price">$5</div>
-                                </div>
-                                <div class="order_title">
-                                    <h3>Total</h3>
-                                    <div class="order_price">$10</div>
-                                </div>
-                                <button class="chckot_btn" type="submit">Confirm Checkout</button>
-                            </div>
-                        </div>
+                       
                     </div>
                 </div>
                 <div class="col-lg-4">
@@ -219,7 +199,9 @@
                                 <h2>Total</h2>
                                 <div class="order_price5">$10</div>
                             </div>
-                            <div class="scr_text"><i class="uil uil-lock-alt"></i>Secure checkout</div>
+                            <div class="scr_text"><i class="uil uil-lock-alt">
+
+                            <button class="chckot_btn" type="submit">Confirm Checkout</button>
                         </div>
                     </div>
                 </div>

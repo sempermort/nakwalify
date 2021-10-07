@@ -29,8 +29,6 @@
     <link href="{{ asset('assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/vendor/semantic/semantic.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
-
-
 </head>
 
 <body>
@@ -52,8 +50,8 @@
                 <div class="input-group-prepend  col-4">
 
                     <div class="dropdown show ">
-                        <a class="font-weight-bolder navt text-black" href="#">
-                            <p class="p-0 m-0 text-nowrap">Browse <i class="fa fa-chevron-down"></i> </p>
+                        <a class="font-weight-bolder navt text-black">
+                            <p class="pr-2 m-1   border-right ">Browse <i class="fa fa-chevron-down ml-5  "></i> </p>
                         </a>
                         <div class=" bg-white dropnav" style=" ">
                             <div class="">
@@ -457,6 +455,7 @@
                         </div>
                     </div>
                 </li>
+                @auth
                 <li class="dropdown">
                     <a href="create_new_course.html#" class="opts_account" title="Account">
                         My Learning
@@ -540,74 +539,105 @@
                                 </div>
                             </div>
                         </a>
-                        <a href="create_new_course.html#" class="channel_my item dropdown-item"">
+                        <a href="create_new_course.html#" class="channel_my item dropdown-item">
                             <div class=" profile_link">
-                            <img src="./assets/images/left-imgs/img-2.jpg" alt="">
-                            <div class="pd_content">
-                                <p class="p-0 m-0 font-weight-bold">Jassica Smith</p>
-                                <p class="p-0 m-0">Added New Review In Video <strong>Full Stack PHP Developer</strong>.
-                                </p>
-                                <span class="nm_time">12 min ago</span>
+                                <img src="./assets/images/left-imgs/img-2.jpg" alt="">
+                                <div class="pd_content">
+                                    <p class="p-0 m-0 font-weight-bold">Jassica Smith</p>
+                                    <p class="p-0 m-0">Added New Review In Video <strong>Full Stack PHP
+                                            Developer</strong>.
+                                    </p>
+                                    <span class="nm_time">12 min ago</span>
+                                </div>
                             </div>
+                        </a>
+                        <a href="create_new_course.html#" class="channel_my item dropdown-item">
+                            <div class="profile_link">
+                                <img src="./assets/images/left-imgs/img-9.jpg" alt="">
+                                <div class="pd_content p-0 m-0">
+                                    <p> Your Membership Approved <strong>Upload Video</strong>.</p>
+                                    <span class="nm_time">20 min ago</span>
+                                </div>
+                            </div>
+                        </a>
+                        <a class="vbm_btn" href="instructor_notifications.html">View All <i
+                                class='uil uil-arrow-right dropdown-item"'></i></a>
                     </div>
-                    </a>
-                    <a href="create_new_course.html#" class="channel_my item dropdown-item">
-                        <div class="profile_link">
-                            <img src="./assets/images/left-imgs/img-9.jpg" alt="">
-                            <div class="pd_content p-0 m-0">
-                                <p> Your Membership Approved <strong>Upload Video</strong>.</p>
-                                <span class="nm_time">20 min ago</span>
-                            </div>
-                        </div>
-                    </a>
-                    <a class="vbm_btn" href="instructor_notifications.html">View All <i
-                            class='uil uil-arrow-right dropdown-item"'></i></a>
-        </div>
-        </li>
-        <li class=" dropdown">
-            <a href="create_new_course.html#" class="opts_account" title="Account">
-                <img src="./assets/images/hd_dp.jpg" alt="">
-            </a>
-            <div class=" dropdown-content">
-                <div class="channel_my">
-                    <div class="profile_link">
+                </li>
+                <li class=" dropdown">
+                    <a class="opts_account" title="Account">
                         <img src="./assets/images/hd_dp.jpg" alt="">
-                        <div class="pd_content">
-                            <div class="rhte85">
-                                <h6>Joginder Singh</h6>
-                                <div class="mef78" title="Verify">
-                                    <i class='uil uil-check-circle'></i>
+                    </a>
+                    <div class=" dropdown-content">
+                        <div class="channel_my">
+                            <div class="profile_link">
+                                <img src="./assets/images/hd_dp.jpg" alt="">
+                                <div class="pd_content">
+                                    <div class="rhte85">
+                                        <h6>{{ Auth::user()->fname }} {{ Auth::user()->lname }}</h6>
+                                        <div class="mef78" title="Verify">
+                                            <i class='uil uil-check-circle'></i>
+                                        </div>
+                                    </div>
+                                    @if(Auth::user()->role_id=='2')
+                                    <div class="hacker-medals m-3 d-flex">
+                                        <div class="hacker-medal "><img
+                                                src="https://hrcdn.net/community-frontend/assets/badges/gold_small-39fafc44b8.svg"
+                                                height="25">24</div>
+                                        <div class="hacker-medal"><img
+                                                src="https://hrcdn.net/community-frontend/assets/badges/silver_small-642ca0f0a7.svg"
+                                                height="25">0</div>
+                                        <div class="hacker-medal"><img
+                                                src="https://hrcdn.net/community-frontend/assets/badges/bronze_small-4e1f12bf64.svg"
+                                                height="25">2</div>
+                                    </div>
+                                    @endif
                                 </div>
                             </div>
 
                         </div>
+                        <div class="night_mode_switch__btn">
+                            <a href="create_new_course.html#" id="night-mode" class="btn-night-mode">
+                                <i class="uil uil-moon"></i> Night mode
+                                <span class="btn-night-mode-switch">
+                                    <span class="uk-switch-button"></span>
+                                </span>
+                            </a>
+                        </div>
+                        @if(Auth::user()->role_id=='2')
+
+                        <div class="border-bottom mb-2">
+                            <a href="{{url('/myaccount')}}" class="item channel_item">My Learning</a>
+                            <a href="{{url('/coursepurches')}}" class="item channel_item">My cart</a>
+                            <a href="{{url('/myaccount')}}" class="item channel_item">Wishlist</a>
+                            <a href="membership.html" class="item channel_item"></a>
+                        </div>
+                        @endif
+                        <div class="">
+                            <a href="{{url('/accsetting')}}" class="item channel_item">Setting</a>
+                            <a href="{{url('/logout')}}" class="item channel_item">Sign Out</a>
+                            <a href="instructor_dashboard.html" class="item channel_item">Language English <i
+                                    class="fa fa-globe "></i></a>
+                        </div>
+
                     </div>
-
-                </div>
-                <div class="night_mode_switch__btn">
-                    <a href="create_new_course.html#" id="night-mode" class="btn-night-mode">
-                        <i class="uil uil-moon"></i> Night mode
-                        <span class="btn-night-mode-switch">
-                            <span class="uk-switch-button"></span>
-                        </span>
+                </li>
+                @endauth
+                @guest
+                <li class="">
+                    <a href="{{route('register')}}" class="opts_account" title="Account">
+                        Login
                     </a>
-                </div>
-                <div class="border-bottom mb-2">
-                    <a href="{{url('/myaccount')}}" class="item channel_item">My Learning</a>
-                    <a href="{{url('/coursepurches')}}" class="item channel_item">My cart</a>
-                    <a href="{{url('/myaccount')}}" class="item channel_item">Wishlist</a>
-                    <a href="membership.html" class="item channel_item"></a>
-                </div>
-                <div class="">
-                    <a href="{{url('/accsetting')}}" class="item channel_item">Setting</a>
-                    <a href="sign_in.html" class="item channel_item">Sign Out</a>
-                    <a href="instructor_dashboard.html" class="item channel_item">Language English <i
-                            class="fa fa-globe "></i></a>
-                </div>
 
-            </div>
-        </li>
-        </ul>
+                </li>
+                <li class="">
+                    <a href="{{route('login')}}" class="opts_account" title="Account">
+                        Register
+                    </a>
+
+                </li>
+                @endguest
+            </ul>
         </div>
     </header>
 
@@ -631,7 +661,7 @@
                         <li class="menu--item">
                             <a href="{{url('analytics')}}" class="menu--link" title="Analyics">
                                 <i class='uil uil-analysis menu--icon'></i>
-                                <span class="menu--label">Analyics</span>
+                                <span class="menu--label">Analytics</span>
                             </a>
                         </li>
                         <li class="menu--item">
@@ -718,6 +748,11 @@
     </div>
     <br>
     <br>
+    <div class="loading-overlay"></div>
+<div class="loading-overlay-image-container">
+    <img src="{{asset('assets/images/loading.svg')}}" class="loading-overlay-img"/>
+<progress class="" value="0" id="progressob"></progress>
+</div>
 
     <div class="wrapper ">
         <main class="" style="">
@@ -735,28 +770,28 @@
                 <div class="col-9">
                     <div class="row ">
                         <div class="col-3 p-1 ">
-                            <p class="nav-link m-0"><strong>Company</p></strong>
+                            <p class="nav-link m-0"><strong>Company</strong></p>
                             <a class="nav-link" href="#">About</a>
                             <a class="nav-link" href="#">Careers</a>
                             <a class="nav-link" href="#">Partinerships</a>
                             <a class="nav-link" href="#">Social Media</a>
                         </div>
                         <div class="col-3 p-1 ">
-                            <p class="nav-link m-0"><strong>Community</p></strong>
+                            <p class="nav-link m-0"><strong>Community</strong></p>
                             <a class="nav-link" href="#">Free Classes</a>
                             <a class="nav-link" href="#">Business</a>
                             <a class="nav-link" href="#">packages</a>
                             <a class="nav-link" href="#">Feature</a>
                         </div>
                         <div class="col-3 p-1 ">
-                            <p class="nav-link m-0"><strong>Contact</p></strong>
+                            <p class="nav-link m-0"><strong>Contact</strong></p>
                             <a class="nav-link" href="#">Resource</a>
                             <a class="nav-link" href="#">Recource</a>
                             <a class="nav-link" href="#">Resource</a>
                         </div>
 
                         <div class="col-3 p-1 ">
-                            <p class="nav-link m-0"><strong>More</p></strong>
+                            <p class="nav-link m-0"><strong>More</strong></p>
                             <a class="nav-link" href="#">Help</a>
                             <a class="nav-link" href="#">Privacy</a>
                             <a class="nav-link" href="#">Terms</a>
@@ -773,6 +808,530 @@
 
         <script src="{{ asset('assets/js/jquery-3.3.1.min.js') }}"></script>
 
+           <script>
+
+
+var ia=1;
+        function addans(e) {
+            var html =
+            '<div class="form-group d-flex justify-content-between wrans">'+
+            '<input class="form-control mr-2 form-rounded  " type="text"' +
+            'placeholder="Answer" id="  + id +  " name="answer['+ia+']"'+
+            'value="">'+
+            '<div class="form-check">'+
+            '<input type="checkbox" name="correct['+ia+']"  class="form-check-input"'+
+            'id="exampleCheck'+ia+'">'+
+            '<label class="form-check-label" for="exampleCheck'+ia+'">'+
+            '<i class="fas fa-check"></i></label>'+
+            '</div></div>';
+
+            $(html).appendTo("#wrans");
+            ia++;
+        };
+
+
+        $("#wra").on("click", ".removeq", function() {
+            $(this).closest('.wraqa').remove();
+
+        });
+
+        $('.linka').on('click', 'a', function() {
+
+            $(this).addClass('active')
+                .siblings().removeClass('active');
+            var url = location.pathname
+            location.href = url + this.getAttribute('href');
+            $(this.getAttribute('href')).addClass('active').addClass('show')
+                .siblings().removeClass('active').removeClass('show');
+        });
+        </script>
+        <script>
+        $('.nastay').on('click', 'a', function() {
+
+            $(this).addClass('active').addClass('noHover')
+                .siblings().removeClass('active').removeClass('noHover');
+            var url = location.pathname
+            location.href = url + this.getAttribute('href');
+            $(this.getAttribute('href')).addClass('active').addClass('show')
+                .siblings().removeClass('active').removeClass('show');
+        });
+        $(".filt").click(function() {
+            $("#chkfilter").toggle();
+        });
+
+        //vitm
+        $('.v-itm').on('click', 'li', function() {
+            $(this).addClass('active').siblings().removeClass('active');
+        });
+        //browse
+
+        $('.navt').mouseover(function() {
+            $(".dropnav").toggle();
+        });
+        $('.dropnav').mouseleave(function() {
+            $(this).toggle();
+        });
+        $('.nav1').mouseover(function() {});
+        $('.nav1').on('mouseover',
+            'a',
+            function() {
+                $('.nav2').removeClass('d-nonel').addClass('d-blockl');
+                $(".nav1").addClass('border-right');
+            });
+        $('.nav2').on('mouseover',
+            'a',
+            function() {
+                $('.nav2').addClass('border-right');
+                $('.nav3').removeClass('d-nonel').addClass('d-blockl');
+                $('.nav1').addClass('d-blockl');
+            });
+        </script>
+        <script>
+        $('.nastay').on('click', 'a', function() {
+            $(this).addClass('active').addClass('noHover')
+                .siblings().removeClass('active').removeClass('noHover');
+            location.href = $(this).getAttribute("href");
+        });
+        $(".filt").click(function() {
+            $("#chkfilter").toggle();
+        });
+        </script>
+
+        <script>
+        <!-- Initialize the plugin
+        -->
+        $(".card-img-overlay").mouseover(function()
+        {
+        $(this).find($(".jss16")).css({
+        "display":
+        "flex"
+        });
+        });
+        $(".card-img-overlay").mouseout(function()
+        {
+        $(this).find($(".jss16")).css({
+        "display":
+        "none"
+        });
+        });
+
+        $('.navt').mouseover(function()
+        {
+           $(".dropnav").toggle();
+        });
+        $('.dropnav').mouseleave(function()
+        {
+           $(this).toggle();
+        });
+        $('.nav1').mouseover(function()
+        {
+        });
+        $('.nav1').on('mouseover', 'a', function()
+        {
+            $('.nav2').removeClass('d-nonel').addClass('d-blockl');
+            $(".nav1").addClass('border-right');
+            });
+            $('.nav2').on('mouseover',
+            'a',
+        function()
+        {
+            $('.nav2').addClass('border-right');
+            $('.nav3').removeClass('d-nonel').addClass('d-blockl');
+            $('.nav1').addClass('d-blockl');
+            }
+        );
+        </script>
+     <script>
+        const actualBtn = document.getElementById('actual-btn');
+        const fileChosen = document.getElementById('file-chosen');
+
+        actualBtn.addEventListener('change', function() {
+            fileChosen.textContent = this.files[0].name;
+
+        });
+
+        const filepdf = document.getElementById('pdf-btn');
+
+        filepdf.addEventListener('change', function(e) {
+            made2(URL.createObjectURL(this.files[0]),this.files[0].name,e);
+        });
+
+        const fileppt = document.getElementById('pptxes');
+
+        fileppt.addEventListener('change', function(e) {
+
+            for (let i = 0; i < this.files.length; i++) {
+    let pic = this.files[i];
+
+    made3(URL.createObjectURL(pic),pic.name,e);
+}
+
+});
+
+
+        var i=1;
+        function made(url,name,id) {
+            var results = "http://127.0.0.1:8000/get-video/" +url.split("/").pop();
+         var resultId = "http://127.0.0.1:8000/addquestion/" +id;
+            var btnhtml =
+                '<div class="d-flex justify-content-between  w-100" id="'+name.slice(0, 4)+'">'+
+                '<div class=" w-90 btn btn-info mb-2 vditem">Video ' + i + ' <a class=""' +
+                'onclick="viditemclicked(\''+results+'\')"><i class="pl-2 fa fa-play"></i></a>'+
+                '<a class="ml-3" href="'+resultId+'">Q<i class="pl-2 fa fa-plus "></i></a>'+
+                 '</div>' +
+                '<button type="button" id="byn'+i+'" class="btn btn-default delvid mb-2 w-10"'+
+                'onclick="destvid(\'' + name+ '\')" >' +
+                '<i class="pl-2 fa fa-times "></i></button></div>';
+            $("#vidb").append($(btnhtml));
+
+            i++;
+
+        };
+
+        var i2 = 1;
+
+        function made2(url,name,e) {
+            var nam1=name.toString().split(".pdf");
+            var nam2=nam1.toString().replace(/_/gi, ' ');
+                var btnhtml2 =
+                    '<tr class="" id="'+name.slice(0, 4)+'">'+
+                    '<td>' + nam2+ '</td>'+
+                    '<td><button type="button" class="btn btn-success m-1"'+
+                    'onclick="openpdf(\'' + url+ '\')">Preview</button>'+
+                    '<button type="button" id="byn'+i2+'"class="btn btn-danger ml-1"'+ 'onclick="destvid2(\'' + name+ '\')" >' +
+                    'Delete<i class="pl-2 fa fa-times "></i></button></td>'+
+                    '</tr>';
+                    $("#pdfb").append($(btnhtml2));
+                    // ajaxed2();
+                    i2++;
+                    };
+                    var i3 = 1;
+                    function made3(url,name,e) {
+
+            var nam1=name.toString().split(".").pop();
+            var nam2=nam1.toString().replace(/_/gi, ' ');
+                var btnhtml2 =
+                    '<tr class="" id="'+name.slice(0, 4)+'">'+
+                    '<td>' + nam2+ '</td>'+
+                    '<td><button type="button" class="btn btn-success m-1"'+
+                    'onclick="openpdf(\'' + url+ '\')">Preview</button>'+
+                    '<button type="button" id="byn'+i3+'"class="btn btn-danger ml-1"'+ 'onclick="destvid2(\'' + name+ '\')" >' +
+                    'Delete<i class="pl-2 fa fa-times "></i></button></td>'+
+                    '</tr>';
+                    $("#ppt").append($(btnhtml2));
+                    // ajaxed2();
+                    i2++;
+                    };
+                    var form=document.getElementById("vidform");
+           function ajaxed() {
+            var objprogress=document.getElementById("progressob");
+            var pptxes=document.getElementById("pptxes").files;
+            var ppts=document.getElementById("pptxes")
+            var description=document.getElementById("description");
+            var form_data = new FormData();
+
+            form_data.append( 'course_id', $('input[name=course_id]').val());
+            form_data.append('videos', $('#actual-btn').prop('files')[0]);
+            form_data.append('description', description.value);
+            form_data.append('pdfes', $('#pdf-btn').prop('files')[0]);
+
+
+            for (let i = 0; i < pptxes.length; i++) {
+            form_data.append("pptxes["+i+"]", pptxes[i]);
+            }
+
+            var answer = $('input[name*=answer]');
+            for (var i = 0; i < answer.length; i++) {
+                form_data.append(answer[i].name, answer[i].value); }
+
+            var token = $("meta[name='csrf-token']").attr("content");
+            $.ajax({
+                type: 'POST',
+                url: "{{route('addcontentpost') }}",
+                data: form_data,
+                processData: false,
+                contentType: false,
+                "_token": token,
+                success:function(data){
+                if ((data.errors)) {
+                alert(data.errors);
+                }
+                else {
+
+                    made(data.video_path,data.video_title,data.id);
+            }},
+               xhr: function()
+                {
+                    var xhr = new XMLHttpRequest();
+                    //Upload progress
+
+                    xhr.upload.addEventListener("progress", function(evt){
+                    if (evt.lengthComputable) {
+
+                        //Do something with upload progress
+                        objprogress.max=evt.total;
+                        objprogress.value=evt.loaded;
+                    }
+                    }, false);
+
+                    return xhr;
+                },
+                beforeSend: function(xhr){
+                       $('.loading-overlay-image-container').show();
+                       $('.loading-overlay').show();
+                    },
+                complete: function(data){
+                        $('.loading-overlay-image-container').hide();
+                       $('.loading-overlay').hide();
+                    },
+
+
+
+
+                error: function(data) {
+                    $('.loading-overlay-image-container').hide();
+                    $('.loading-overlay').hide();
+
+                }
+
+
+        });
+        };
+
+
+        function ajaxed2() {
+
+            var file_data = $('#pdf-btn').prop('files')[0];
+            var form_data = new FormData();
+            form_data.append('pdfs', file_data);
+            var token = $("meta[name='csrf-token']").attr("content");
+            $.ajax({
+                type: 'POST',
+                url: "{{ route('addpdfsajax') }}",
+                data: form_data,
+                cache: false,
+                "_token": token,
+                contentType: false,
+                processData: false,
+                beforeSend: function(){
+                                $('.loading-overlay-image-container').show();
+                                $('.loading-overlay').show();
+                                },
+                complete: function(){
+                                    $('.loading-overlay-image-container').hide();
+                                $('.loading-overlay').hide();
+                                },
+                success: (data) => {
+                    console.log(data);
+                },
+                error: function(data) {
+                    console.log(data);
+                }
+            });
+};
+
+
+function ajaxed3() {
+            var objprogress=document.getElementById("progressob");
+            var questiontype=document.getElementById("questiontype");
+            var answer = document.getElementsByName('answer[]');
+
+            var form_data = new FormData();
+
+            form_data.append( 'question', $('input[name=question]').val());
+            form_data.append( 'questiontype', questiontype.value);
+
+            var answer = $('input[name*=answer]');
+            for (var i = 0; i < answer.length; i++) {
+                form_data.append(answer[i].name, answer[i].value); }
+
+                var answertype = $('input:checkbox[name*=correct]');
+
+            for (var i = 0; i < answertype.length; i++) {
+                if(answertype[i].checked){
+
+                form_data.append(answertype[i].name, answertype[i].value);
+                }
+                }
+
+
+            form_data.append( 'video_id', $('input[name=video_id]').val());
+
+            var token = $("meta[name='csrf-token']").attr("content");
+            $.ajax({
+                type: 'POST',
+                headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+                url: "{{route('savquestion') }}",
+                data: form_data,
+                processData: false,
+                contentType: false,
+                success:function(data){
+                if ((data.errors)) {
+                alert(data.errors);
+                }
+                else {
+                    var wraqass=document.getElementById("wrans");
+                    var ans1 = document.getElementsByName('answer[0]');
+            var qstn = document.getElementsByName('question');
+                     made4(data.question);
+                     while(wraqass.firstChild) {
+                        wraqass.removeChild(wraqass.lastChild);}
+                    qstn.value="";
+ans1.value="";
+
+            }},
+               xhr: function()
+                {
+                    var xhr = new XMLHttpRequest();
+                    //Upload progress
+
+                    xhr.upload.addEventListener("progress", function(evt){
+                    if (evt.lengthComputable) {
+
+                        //Do something with upload progress
+                        objprogress.max=evt.total;
+                        objprogress.value=evt.loaded;
+                    }
+                    }, false);
+
+                    return xhr;
+                },
+                beforeSend: function(xhr){
+                       $('.loading-overlay-image-container').show();
+                       $('.loading-overlay').show();
+                    },
+                complete: function(data){
+                        $('.loading-overlay-image-container').hide();
+                       $('.loading-overlay').hide();
+                    },
+
+
+
+
+                error: function(data) {
+                    $('.loading-overlay-image-container').hide();
+                    $('.loading-overlay').hide();
+
+                }
+
+
+        });
+        };
+        function viditemclicked(url) {
+
+
+            var video = document.getElementById('vidcanva');
+            var source = document.createElement('source');
+
+            source.setAttribute('src', url);
+
+            while (video.firstChild) {
+                video.removeChild(video.lastChild);
+            }
+            video.append(source);
+            video.load();
+            video.play();
+
+            var vidtab = document.getElementById("vidtab");
+            vidtab.classList.remove("dnot");
+            var descr = document.getElementById("descr");
+            descr.classList.remove("dnot");
+        };
+
+
+        function coverimagepreview(url) {
+
+            var pic = document.getElementById('view__imgi');
+            var label = document.getElementById('labelpic');
+
+            label.textContent = url.value;
+            if (url.files && url.files[0]) {
+                                    var ImageDir = new FileReader();
+                                    ImageDir.onload = function (e) {
+                                        $('#viewimgi').attr('src', e.target.result);
+                                        $('#viewimgi').css('height', 'auto');
+                                        label.textContent = url.value;
+                                    }
+                                    ImageDir.readAsDataURL(url.files[0]);
+                                }
+};
+  function covervidpreview(url) {
+
+    var video = document.getElementById('covercanva');
+    var source = document.createElement('source');
+    var label = document.getElementById('labelvid');
+    source.setAttribute('src', URL.createObjectURL(url.files[0],url.files[0].name));
+    label.textContent = url.value;
+    while (video.firstChild) {
+        video.removeChild(video.lastChild);
+    }
+    video.append(source);
+    video.load();
+    video.play();
+
+
+};
+
+
+        function openpdf(url) {
+            const pdfviewer = document.getElementById('pspdfkit');
+            pdfviewer.data=url;
+            $('#myModal').modal('show');
+};
+
+        function destvid(name) {
+            fileChosen.textContent="";
+            $("#" + name.slice(0, 4)+ "").remove();
+            var id = name;
+            var token = $("meta[name='csrf-token']").attr("content");
+            $.ajax(
+                {
+                    url: "destroyvid/" + id,
+                    type: 'DELETE',
+                    data: {
+                        "id": id,
+                        "_token": token,
+                    },
+                    beforeSend: function(){
+                       $('.loading-overlay-image-container').show();
+                       $('.loading-overlay').show();
+                    },
+                    complete: function(){
+                        $('.loading-overlay-image-container').hide();
+                       $('.loading-overlay').hide();
+                    },
+                    success: function() {
+                        console.log("it Works");
+                    }
+
+                });
+
+        };
+        function destvid2(name) {
+            fileChosen.textContent="";
+            $("#" + name.slice(0, 4)+ "").remove();
+            var id = name;
+            var token = $("meta[name='csrf-token']").attr("content");
+            $.ajax(
+                {
+                    url: "destroyvid/" + id,
+                    type: 'DELETE',
+                    data: {
+                        "id": id,
+                        "_token": token,
+                    },
+                    success: function() {
+                        console.log("it Works");
+                    }
+
+                });
+
+        };
+
+
+
+        </script>
+
         <script src="{{ asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
         <script src="{{ asset('js/popper.min.js') }}"></script>
         <script src="{{ asset('assets/vendor/OwlCarousel/owl.carousel.js') }}"></script>
@@ -785,6 +1344,7 @@
         <script src="{{ asset('assets/plugins/OwlCarousel2-2.2.1/owl.carousel.js') }}"></script>
         <script src="{{ asset('assets/plugins/easing/easing.js') }}"></script>
         <script src="{{ asset('assets/js/custom.js') }}"></script>
+
 
 </body>
 

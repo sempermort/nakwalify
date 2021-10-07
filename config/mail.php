@@ -36,14 +36,18 @@ return [
     'mailers' => [
         'smtp' => [
             'transport' => 'smtp',
-            'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
-            'port' => env('MAIL_PORT', 587),
-            'encryption' => env('MAIL_ENCRYPTION', 'tls'),
-            'username' => env('MAIL_USERNAME'),
-            'password' => env('MAIL_PASSWORD'),
-            'timeout' => null,
-            'auth_mode' => null,
+            'host' => 'smtp.gmail.com',
+            'port' =>  587,
+            'username' => 'jacksonmorton5@gmail.com',
+            'password' => 'ohywjafvxvqhlzoo',
+            'encryption' => 'tls',
         ],
+
+            'gmail' => [
+                'transport' => 'gmail',
+                'username' => 'jacksonmorton5@gmail.com',
+                'password' => 'ohywjafvxvqhlzoo',
+            ],
 
         'ses' => [
             'transport' => 'ses',
@@ -84,8 +88,8 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
-        'name' => env('MAIL_FROM_NAME', 'Example'),
+        'address' => env('MAIL_FROM_ADDRESS', 'jacksonmorton5@gmail.com'),
+        'name' => env('MAIL_FROM_NAME', 'Naqualify'),
     ],
 
     /*
