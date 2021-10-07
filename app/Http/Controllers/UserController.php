@@ -391,7 +391,7 @@ public function  postaddCover(Request $request)
 
                     $coursecovervid=new Course_files();
                     $filed=$request->file('covervid');
-                    $filename = $filed->getClientOriginalName();
+                  $filename = $filed->getClientOriginalName();
 
                    $path=$filed->store('/covervid');
                    $coursecovervid->course_id=$request->courseid;;
