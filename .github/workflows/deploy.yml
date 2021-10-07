@@ -15,12 +15,21 @@ jobs:
 
       - name: Deployment
 
-          - uses: LuisEnMarroquin/setup-ssh-action@v2.0.0
+        uses: appleboy/ssh-action@master
 
-             with:
-               ORIGIN: ${{ secrets.SSH_HOST }} # example.com || 8.8.8.8
-               SSHKEY: ${{ secrets.SSH_PRIMARY_KEY }} # ----- BEGIN RSA PRIVATE KEY----- ...
-               NAME: production
-               PORT: ${{ secrets.PORT }} # 3000
-               USER: ${{ secrets.USERNAME }} # admin
-          - run: ssh production ls --help
+        with:
+          host: ${{ secrets.SSH_HOST }}
+
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+
+          username: ${{ secrets.SSH_USERNAME }}
+
+          script: |
+
+          #  cd /var/www/html/
+          cd /var/www/nakwalify.com/html/nakwalify-app/
+
+            git checkout -f
+
+            git pull
