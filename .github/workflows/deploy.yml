@@ -30,7 +30,7 @@ jobs:
           script: |
 
 
-            cd /var/www/nakwalify.com/html/nakwalify-app/
+            cd /var/www/nakwalify.com/html/nakwalify/
 
             git checkout -f
 
