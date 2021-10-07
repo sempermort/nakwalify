@@ -383,7 +383,7 @@ public function  postaddCover(Request $request)
                      $coursecoverpic->course_id=$request->courseid;
                      $coursecoverpic->course_file_title=$filename;
                      $coursecoverpic->file_type="coverpic";
-                        $coursecoverpic->file_path=$path;
+                     $coursecoverpic->file_path=$path;
 
                 }
                 if($request->hasfile('covervideo'))
