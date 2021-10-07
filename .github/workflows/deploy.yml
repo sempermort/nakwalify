@@ -20,14 +20,14 @@ jobs:
         with:
           host: ${{ secrets.SSH_HOST }}
 
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          key: ${{ secrets.SSH_PRIMARY_KEY }}
 
 
           username: ${{ secrets.SSH_USERNAME }}
 
           script: |
 
-            
+
             cd /var/www/nakwalify.com/html/nakwalify-app/
 
             git checkout -f
