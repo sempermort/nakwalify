@@ -375,7 +375,7 @@ public function  postaddCover(Request $request)
 
                 if($request->hasfile('coverpic'))
                 {
-                     $coursecoverpic=new Course_files();
+                      $coursecoverpic=new Course_files();
                      $filed=$request->file('coverpic');
                      $filename = $filed->getClientOriginalName();
 
