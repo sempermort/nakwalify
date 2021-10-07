@@ -22,8 +22,7 @@ jobs:
 
           key: ${{ secrets.SSH_PRIVATE_KEY }}
 
-          password: ${{ jack2jack@ }}
-
+          
           username: ${{ secrets.SSH_USERNAME }}
 
           script: |
