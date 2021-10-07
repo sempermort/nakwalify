@@ -163,7 +163,7 @@
                 aria-expanded="false" aria-controls="collapseExample">
                 <span class="material-icons">
                         play_circle_filled
-                    </span>
+                </span>
             </button>
         </p>
         <div class="collapse" id="collapseExample">
