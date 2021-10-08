@@ -16,7 +16,8 @@ class categories extends Seeder
             DB::table('subcategories')->insert([
                 'category_name' => Str::random(2),
                 
-            ]);
+            ]); 
+            
             DB::table('subcategories')->insert([
                 'subcategory_name' => Str::random(2),
                 'category_id' => int::random(2),
