@@ -100,8 +100,7 @@ public function postaddCourse(Request $request)
     $validatedData = $request->validate([
         'course_title' => 'required|unique:courses,course_title',
         'course_subt' => 'required',
-        'language' => 'required',
-       
+        'language' => 'required',       
         'mainrequire' => 'required',
         'mainwlearn' => 'required',
         'price' => 'required',
