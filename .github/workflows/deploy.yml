@@ -33,4 +33,4 @@ jobs:
             cd /var/www/nakwalify.com/html/nakwalify/
 
             
-            git pull
+             git config pull.ff only   
