@@ -309,7 +309,7 @@
 
         function made5(data) {
 
-            var  APP_URL = {!! json_encode(url('/')) !!}
+            var APP_URL = {!! json_encode(url('/')) !!}
         var carol = document.getElementById('carol');
         document.querySelectorAll('.carol-it').forEach(e => e.remove());
         for(let i=0; i<data.length;i++){ 
