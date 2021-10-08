@@ -133,10 +133,9 @@ html {
     }
 
     .regform {
-        position: relative !important;
-        width: 75% !important;
+      
         margin: auto !important ;
-        background: #f4f4f4 !important;
+    
     }
 
     .pvw105 {
@@ -493,7 +492,7 @@ strong {
 }
 .regform {
     top: 115px;
-    width: 30%;
+    margin:2.5em;
     border-radius: 15px;
     background: #f4f4f4;
 }
@@ -789,3 +788,8 @@ margin: 0 5px;
 
   }
 
+  @font-face {
+    font-family: "Kaushan_Script";
+    src:  url('../assets/fonts/Kaushan_Script/KaushanScript-Regular.ttf');
+
+  }
