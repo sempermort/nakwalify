@@ -21,7 +21,7 @@ class Course extends Model
      * @var array
      */
     protected $fillable = [
-        'course_title','course_subt', 'course_des','language', 'category_Id','subcategory_id',
+        'course_title','course_subt', 'course_des','language',
         'price','mainrequire','mainwlearn',
     ];
 
