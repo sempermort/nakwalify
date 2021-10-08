@@ -309,11 +309,11 @@
 
         function made5(data) {
 
-
+            var  APP_URL = {!! json_encode(url('/')) !!}
         var carol = document.getElementById('carol');
         document.querySelectorAll('.carol-it').forEach(e => e.remove());
         for(let i=0; i<data.length;i++){ 
-            var lin="http://127.0.0.1:8000/get-ppt/" +data[i].file_path.split("/").pop();
+            var lin=APP_URL+"/get-ppt/" +data[i].file_path.split("/").pop();
             var imgcaro='<div class="carousel-item carol-it">' + 
         '<img src="' +lin+'" width="400"'+
         ' id="mainvid" height="240" class="d-block w-100"'+
