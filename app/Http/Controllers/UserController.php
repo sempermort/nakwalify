@@ -90,9 +90,10 @@ public function pptpics(Request $request){
 // Add course page 1
 public function addCourse()
 { 
-    
+
 $corses=Category::all();
 $subcorses=Subcategory::all();
+
 
      return view('user.instructor.create-courses')->with('corses',$corses)->with('subcorses',$subcorses);
 }
