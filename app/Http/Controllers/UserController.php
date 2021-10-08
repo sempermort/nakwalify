@@ -93,7 +93,7 @@ public function addCourse()
 $corses=Category::all();
 $subcorses=Subcategory::all();
 
-    return view('user.instructor.create-courses')->with('corses',$corses)->with('subcorses',$subcorses);
+     return view('user.instructor.create-courses')->with('corses',$corses)->with('subcorses',$subcorses);
 }
 public function postaddCourse(Request $request)
 {
