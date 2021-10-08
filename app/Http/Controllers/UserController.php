@@ -92,6 +92,7 @@ public function addCourse()
 { 
 
 $corses=Category::all();
+
 $subcorses=Subcategory::all();
 
 
