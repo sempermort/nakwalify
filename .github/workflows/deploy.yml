@@ -34,3 +34,5 @@ jobs:
 
             
              git config pull.ff only   
+              
+             git  Checkout -f

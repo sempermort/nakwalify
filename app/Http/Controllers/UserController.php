@@ -425,7 +425,7 @@ public function courseDetail($id)
        
 
     return view('user.instructor.coursedetail')->with('selcoz',$selcoz)
-    ->with('vidz',$vidz);
+      ->with('vidz',$vidz);
 }
 
 public function addcategory(Request $request)
