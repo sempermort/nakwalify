@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Course;
+use App\Models\Category;
+use App\Models\Subcategory;
 use App\Models\Videos;
 use App\Models\Questions;
 use App\Models\Answers;
@@ -88,7 +90,10 @@ public function pptpics(Request $request){
 // Add course page 1
 public function addCourse()
 {
-    return view('user.instructor.create-courses');
+$corses=Category::all();
+$subcorses=Subcategory::all();
+
+    return view('user.instructor.create-courses')->with('corses',$corses)->with('subcorses',$subcorses);
 }
 public function postaddCourse(Request $request)
 {
@@ -359,8 +364,13 @@ public function destroypdf($id,Request $request){
 //Add cover page 3 save all
 public function  addCover($id)
 {
-   $courseid= Videos::find($id)->course_id;
-    return view('user.instructor.addcover')->with('courseid',$courseid);
+
+   if( $id!=null){
+    return view('user.instructor.addcover')->with('courseid',$id);
+   }
+   else{
+    return redirect()->route('addcontent',['id'=>$id]);
+   }
 }
 
 public function  postaddCover(Request $request)
@@ -409,10 +419,30 @@ return redirect()->route('viewcourse',['id'=>$request->courseid]);
 
 public function courseDetail($id)
 {
-    $selcoz=Course::find($id);
-    $vidz=Videos::where("course_id",$id)->get();
+
+        $selcoz=Course::find($id);
+        $vidz=Videos::where("course_id",$id)->get();
+       
+
     return view('user.instructor.coursedetail')->with('selcoz',$selcoz)
-    ->with('vidzz',$vidz);
+    ->with('vidz',$vidz);
+}
+
+public function addcategory(Request $request)
+{
+    $category = Category::create([
+        'category_name' => $request->categoryname,
+    ]);
+    return Response()->json($category);
+   }
+public function addsubcategory(Request $request)
+{
+    $subcategory = SubCategory::create([
+        'subcategory_name' => $request->subcategoryname,
+        'category_id' => $request->categ-id,
+    ]);
+
+    return Response()->json($subcategory);
 }
 
 public function deleteacc()

@@ -32,7 +32,7 @@
         <nav class="navbar navbar-expand-lg" style="background-color: #3a9982;">
 
             <a href="{{url('/')}}" class="navbar-brand"
-                style="font-family:'Kaushan_Script'; font-weight: bolder;  font-size :35px!important; color:#1e526a !important;">nakwalify</a>
+                style="font-family:'Kaushan_Script'; font-weight: bolder;  font-size :35px!important; color:#fff !important;">nakwalify</a>
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -41,8 +41,10 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
                 <ul class="navbar-nav ml-auto">
-                    <li class="dropdown d-none">
-                        <a href="create_new_course.html#" class="opts_account" title="Account">
+                  
+                    @auth
+                    <li class="dropdown ml-4">
+                        <a href="create_new_course.html#" class="opts_account text-white" title="Account">
                             Naqualify Business
                         </a>
                         <div class=" dropdown-content text-center">
@@ -57,9 +59,8 @@
                             </div>
                         </div>
                     </li>
-                    @auth
-                    <li class="dropdown">
-                        <a href="create_new_course.html#" class="opts_account" title="Account">
+                    <li class="dropdown ml-4">
+                        <a href="create_new_course.html#" class="opts_account text-white" title="Account">
                             My Learning
                         </a>
                         <div class=" dropdown-content">
@@ -91,7 +92,7 @@
 
                         </div>
                     </li>
-                    <li class="dropdown">
+                    <li class="dropdown ml-4">
                         <a href="create_new_course.html#" class="opts_account" title="Account">
                             <span class="material-icons-outlined text-white " style="font-size:20px">
                                 favorite_border
@@ -132,9 +133,9 @@
                             </div>
                         </div>
                     </li>
-                    <li class="ui dropdown">
+                    <li class="dropdown ml-4">
                         <a href="" class="option_links  " id="dropdownMenuButton" title="Notifications"><i
-                                class='fa fa-bell'></i><span class="noti_count">3</span></a>
+                                class='fa fa-bell'></i><span class="noti_count"></span></a>
                         <div class="dropdown-content overflow-auto" aria-labelledby="dropdownMenuButton">
                             <a href="create_new_course.html#" class="channel_my item dropdown-item">
                                 <div class="profile_link">
@@ -382,18 +383,11 @@
         </script>
 
         <script>
-        <!-- Initialize the plugin
-        -->
-        $(".card-img-overlay").mouseover(function
-        ()
-        {
-        $(this).find($(".jss16")).css({
-        "display":
-        "flex"
+        <!-- Initialize the plugin-->
+        $(".card-img-overlay").mouseover(function()       {
+        $(this).find($(".jss16")).css({"display":"flex"});
         });
-        });
-        $(".card-img-overlay").mouseout(function
-        ()
+        $(".card-img-overlay").mouseout(function ()
         {
         $(this).find($(".jss16")).css({
         "display":
@@ -402,26 +396,12 @@
         });
         $(document).ready(function()
         {
-        //
-        SideNav
-        //
-        $(".button-collapse").sideNav2();
-        //
-        SideNav
-        Scrollbar
-        Initialization
-        //
-        var
-        sideNavScrollbar
-        =
-        document.querySelector('.custom-scrollbar');
-        //
-        var
-        ps
-        =
-        new
-        PerfectScrollbar(sideNavScrollbar);
-        });
+        //        SideNav
+        //        $(".button-collapse").sideNav2();
+        //        SideNav        Scrollbar        Initialization
+        
+        //var        sideNavScrollbar        =        document.querySelector('.custom-scrollbar');
+        //        var        ps        =        new        PerfectScrollbar(sideNavScrollbar);  });
         $('.navt').mouseover(function()
         {
         $(".dropnav").toggle();
@@ -440,216 +420,13 @@
         $('.nav2').removeClass('d-nonel').addClass('d-blockl');
         $(".nav1").addClass('border-right');
         });
-        $('.nav2').on('mouseover',
-        'a',
-        function()
+        $('.nav2').on('mouseover','a',  function()
         {
         $('.nav2').addClass('border-right');
         $('.nav3').removeClass('d-nonel').addClass('d-blockl');
         $('.nav1').addClass('d-blockl');
         });
-        var
-        totalv
-        =
-        0;
-        var
-        currentv
-        =
-        0;
-        var
-        currenturl
-        =
-        0;
-        var
-        modal
-        =
-        0
-        function
-        vidliclicked(url,
-        counv,
-        currev,
-        id)
-        {
-        ajaxed4(id);
-        totalv
-        =
-        counv;
-        currentv
-        =
-        currev;
-        currenturl
-        =
-        url;
-        modal
-        =
-        document.getElementById('modal');
-        if
-        (modal
-        !=
-        null)
-        {
-        modal.remove();
-        }
-        var
-        video
-        =
-        document.getElementById('mainvid');
-        var
-        source
-        =
-        document.createElement('source');
-        source.setAttribute('src',
-        url);
-        while
-        (video.firstChild)
-        {
-        video.removeChild(video.lastChild);
-        }
-        video.append(source);
-        video.load();
-        video.play();
-        };
-        var
-        tv
-        =
-        document.querySelector('video');
-        var
-        contain
-        =
-        document.getElementById('mediav');
-        tv.addEventListener('ended',
-        onplayerchange);
-        function
-        onplayerchange(evnt)
-        {
-        if
-        (totalv
-        -
-        currentv
-        >=
-        0)
-        {
-        contain.insertAdjacentHTML(
-        'beforeend',
-        '
-        <div id="modal" class="video-js w-100 h-100 card-img-overlay">' +
-            '<div id="message">Increase conversions by adding this modal window at the end of your videos!!</div>' +
-            '<div class="d-flex justify-content-center">'+
-                '<button class="btn btn-info mr-5" type="button" id="button1">Previous Video</button></button>' +
-                '<button type="button" class="btn btn-success ml-5" id="button2">Next Video</button></button></div>' +
-            '<div class="text-center m-3"><button type="button" id="replayvideo" class="btn btn-default text-white"><i
-                        class="fas fa-redo"></i></button>' +
-                '</div>
-        </div>'
-        );
-
-        }
-        else{
-
-        contain.insertAdjacentHTML( 'beforeend',
-        '<div id="modal" class="video-js w-100 h-100 card-img-overlay">' +
-            '<div class="text-center" id="message">Welcome To naQualify</div>' +
-            '<div class="text-center"><button id="replayvideo" class="btn btn-default"><i
-                        class="fas fa-redo"></i></button>' +
-                '</div>
-        </div>'
-        );
-        }
-
-        $('#replayvideo').on('click',function() {
-        $('#vids'+currentv).click();
-        });
-
-
-
-        $('#button2').on('click',function() {
-
-        if(totalv-currentv>0){
-        var temp=currentv+1;
-        $('#vids'+temp).css('pointer-events','auto');
-        $('#vids'+temp).click();
-        }
-        else{
-        $('#vids'+currentvp).css('pointer-events','auto');
-        $('#vids'+currentv).click();
-        }
-        })
-
-
-        $('#button1').on('click',function() {
-
-        if(totalv-currentv>=0&&currentv!=1){
-        var temp=currentv-1;
-        $('#vids'+temp).click();
-        }
-        else {
-
-        $('#vids'+currentv).click();
-        }
-        })
-        }
-
-        function viewpdf(url) {
-        const pdfviewer = document.getElementById('pspdfkit');
-        pdfviewer.data=url;
-        $('#myModal').modal('show');
-        };
-
-
-
-
-        function ajaxed4(id) {
-
-
-        var form_data = new FormData();
-        form_data.append('id', id);
-        var token = $("meta[name='csrf-token']").attr("content");
-        $.ajax({
-        type: 'POST',
-        url: "{{ route('pptpics') }}",
-        data: form_data,
-        cache: false,
-        headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
-        contentType: false,
-        processData: false,
-        beforeSend: function(){
-        $('.loading-overlay-image-container').show();
-        $('.loading-overlay').show();
-        },
-        complete: function(){
-        $('.loading-overlay-image-container').hide();
-        $('.loading-overlay').hide();
-        },
-        success: (data) => {
-        made5(data)
-
-        },
-        error: function(data) {
-        console.log(data);
-        }
-        });
-        };
-
-
-        function made5(data) {
-
-
-        var carol = document.getElementById('carol');
-        document.querySelectorAll('.carol-it').forEach(e => e.remove());
-        for(let i=0; i<data.length;i++){ var lin="http://127.0.0.1:8000/get-ppt/" +data[i].file_path.split("/").pop();
-            var imgcaro='<div class="carousel-item carol-it">' + '<img src="' +lin+'" width="400"'+
-        ' id="mainvid" height="240" class="d-block w-100"'+
-        ' alt="" +data.course_file_title+"">'+
-            '
-    </div>';
-
-    $('#carol').append($(imgcaro ));
-
-    }
-    };
-
-
-
+      
     </script>
 </body>
 

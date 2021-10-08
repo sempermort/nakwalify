@@ -33,222 +33,244 @@
 
 <body>
 
+<div class="loading-overlay"></div>
+<div class="loading-overlay-image-container">
+    <img src="{{asset('assets/images/loading.svg')}}" class="loading-overlay-img"/>
+<progress class="" value="0" id="progressob"></progress>
+</div>
+    <header class=" mb-5  ">
 
-    <header class="header clearfix justify-content-between mb-4 " style="background-color: #3a9982;">
+        <nav class="navbar navbar-expand-lg" style="background-color: #3a9982;">
 
-        <h2 class="main_logo font-weight-bolder text-info " style="font-family:'Kaushan_Script';  " id="logo">
-            <a href="{{url('/')}}"  style=" font-weight: bolder; font-size :40px!important; color:#1e526a !important;">nakwalify<a>
-</h2>
+            <a href="{{url('/')}}" class="navbar-brand"
+                style="font-family:'Kaushan_Script'; font-weight: bolder;  font-size :35px!important; color:#fff !important;">nakwalify</a>
 
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="material-icons-outlined bg-transparent">menu</i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
+                <ul class="navbar-nav ml-auto">
 
-
-        <div class="header_right m-1">
-            <ul>
-                <li class="dropdown">
-                    <a href="create_new_course.html#" class="opts_account" title="Account">
-                        Naqualify Business
-                    </a>
-                    <div class=" dropdown-content text-center">
-                        <p class="font-weight-bold m-2">Get your team access to over 6,000 top Udemy courses, anytime,
-                            anywhere.</p>
-                        <div class="m-2">
-                            <button class="btn btn-block bg-black text-white ">Try Naqualify Business</button>
-
-                        </div>
-                    </div>
-                </li>
-                @auth
-                <li class="dropdown">
-                    <a href="create_new_course.html#" class="opts_account" title="Account">
-                        My Learning
-                    </a>
-                    <div class=" dropdown-content">
-                        <div class="d-flex flex-nowrap m-2">
-                            <div class="card-image ">
-                                <img src="{{asset('assets/images/instructor_12.jpg')}}" alt="" class="">
-                            </div>
-                            <div class="w-100">
-                                <div class=" m-1">
-
-                                    <div class="title font-weight-bolder">Complete Python Developer in 2021:Zero to
-                                        Mastery
-                                    </div>
-                                    <a href="http//" class="title font-weight-bolder text-blue"
-                                        style="color: blue;">start Learning
-                                    </a>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="m-2 border-top">
-                            <a href="{{url('/myaccount')}}"
-                                class="btn btn-block bg-black text-white font-weight-bolder ">Go to
-                                Mylearning</a>
-
-                        </div>
-
-                    </div>
-                </li>
-                <li class="dropdown">
-                    <a href="create_new_course.html#" class="opts_account" title="Account">
-                        <span class="material-icons-outlined text-white " style="font-size:20px">
-                            favorite_border
-                        </span>
-                    </a>
-                    <div class=" dropdown-content text-center">
-                        <div class="d-flex flex-nowrap m-2">
-                            <div class="card-image ">
-                                <img src="{{asset('assets/images/instructor_12.jpg')}}" alt="" class="">
-                            </div>
-                            <div class="w-100">
-                                <div class=" m-1">
-
-                                    <div class="title font-weight-bolder">Complete Python Developer in 2021:Zero to
-                                        Mastery
-                                    </div>
-                                    <a href="#" class="title font-weight-bolder " style="color: blue;">start Learning
-                                    </a>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="m-2 border-top">
-                            <a href="{{url('/coursepurches')}}"
-                                class="btn btn-outline-dark btn-block text-dark font-weight-bolder ">Add to cart</a>
-
-                        </div>
-
-                        <div class="m-2 border-top">
-                            <a href="{{url('/myaccount')}}"
-                                class="btn btn-block bg-black text-white font-weight-bolder ">Go to
-                                Wishlist</a>
-
-                        </div>
-                    </div>
-                </li>
-                <li class="ui dropdown">
-                    <a href="" class="option_links  " id="dropdownMenuButton" title="Notifications"><i
-                            class='fa fa-bell'></i><span class="noti_count">3</span></a>
-                    <div class="dropdown-content overflow-auto" aria-labelledby="dropdownMenuButton">
-                        <a href="create_new_course.html#" class="channel_my item dropdown-item">
-                            <div class="profile_link">
-                                <img src="./assets/images/left-imgs/img-1.jpg" alt="">
-                                <div class="pd_content p-0 m-0">
-                                    <p class="p-0 m-0 font-weight-bold">Rock William</p>
-                                    <p class="p-0 m-0">Like Your Comment On Video <strong>How to create sidebar
-                                            menu</strong>.</p>
-                                    <span class="nm_time">2 min ago</span>
-                                </div>
-                            </div>
+                    @auth
+                    <li class="dropdown ml-4">
+                        <a href="create_new_course.html#" class="opts_account text-white" title="Account">
+                            Naqualify Business
                         </a>
-                        <a href="create_new_course.html#" class="channel_my item dropdown-item">
-                            <div class=" profile_link">
-                                <img src="./assets/images/left-imgs/img-2.jpg" alt="">
-                                <div class="pd_content">
-                                    <p class="p-0 m-0 font-weight-bold">Jassica Smith</p>
-                                    <p class="p-0 m-0">Added New Review In Video <strong>Full Stack PHP
-                                            Developer</strong>.
-                                    </p>
-                                    <span class="nm_time">12 min ago</span>
-                                </div>
+                        <div class=" dropdown-content text-center">
+                            <p class="font-weight-bold m-2">Get your team access to over 6,000 top Udemy
+                                courses,
+                                anytime,
+                                anywhere.</p>
+                            <div class="m-2">
+                                <button class="btn btn-block bg-black text-white ">Try Naqualify
+                                    Business</button>
+
                             </div>
+                        </div>
+                    </li>
+                    <li class="dropdown ml-4">
+                        <a href="create_new_course.html#" class="opts_account text-white" title="Account">
+                            My Learning
                         </a>
-                        <a href="create_new_course.html#" class="channel_my item dropdown-item">
-                            <div class="profile_link">
-                                <img src="./assets/images/left-imgs/img-9.jpg" alt="">
-                                <div class="pd_content p-0 m-0">
-                                    <p> Your Membership Approved <strong>Upload Video</strong>.</p>
-                                    <span class="nm_time">20 min ago</span>
+                        <div class=" dropdown-content">
+                            <div class="d-flex flex-nowrap m-2">
+                                <div class="card-image ">
+                                    <img src="{{asset('assets/images/instructor_12.jpg')}}" alt="" class="">
                                 </div>
-                            </div>
-                        </a>
-                        <a class="vbm_btn" href="instructor_notifications.html">View All <i
-                                class='uil uil-arrow-right dropdown-item"'></i></a>
-                    </div>
-                </li>
-                <li class=" dropdown">
-                    <a class="opts_account" title="Account">
-                        <img src="./assets/images/hd_dp.jpg" alt="">
-                    </a>
-                    <div class=" dropdown-content">
-                        <div class="channel_my">
-                            <div class="profile_link">
-                                <img src="./assets/images/hd_dp.jpg" alt="">
-                                <div class="pd_content">
-                                    <div class="rhte85">
-                                        <h6>{{ Auth::user()->fname }} {{ Auth::user()->lname }}</h6>
-                                        <div class="mef78" title="Verify">
-                                            <i class='uil uil-check-circle'></i>
+                                <div class="w-100">
+                                    <div class=" m-1">
+
+                                        <div class="title font-weight-bolder">Complete Python Developer in
+                                            2021:Zero
+                                            to
+                                            Mastery
                                         </div>
+                                        <a href="http//" class="title font-weight-bolder text-blue"
+                                            style="color: blue;">start Learning
+                                        </a>
                                     </div>
-                                    @if(Auth::user()->role_id=='2')
-                                    <div class="hacker-medals m-3 d-flex">
-                                        <div class="hacker-medal "><img
-                                                src="https://hrcdn.net/community-frontend/assets/badges/gold_small-39fafc44b8.svg"
-                                                height="25">24</div>
-                                        <div class="hacker-medal"><img
-                                                src="https://hrcdn.net/community-frontend/assets/badges/silver_small-642ca0f0a7.svg"
-                                                height="25">0</div>
-                                        <div class="hacker-medal"><img
-                                                src="https://hrcdn.net/community-frontend/assets/badges/bronze_small-4e1f12bf64.svg"
-                                                height="25">2</div>
-                                    </div>
-                                    @endif
+
                                 </div>
+                            </div>
+                            <div class="m-2 border-top">
+                                <a href="{{url('/myaccount')}}"
+                                    class="btn btn-block bg-black text-white font-weight-bolder ">Go to
+                                    Mylearning</a>
+
                             </div>
 
                         </div>
-                        <div class="night_mode_switch__btn">
-                            <a href="create_new_course.html#" id="night-mode" class="btn-night-mode">
-                                <i class="uil uil-moon"></i> Night mode
-                                <span class="btn-night-mode-switch">
-                                    <span class="uk-switch-button"></span>
-                                </span>
+                    </li>
+                    <li class="dropdown ml-4">
+                        <a href="create_new_course.html#" class="opts_account" title="Account">
+                            <span class="material-icons-outlined text-white " style="font-size:20px">
+                                favorite_border
+                            </span>
+                        </a>
+                        <div class=" dropdown-content text-center">
+                            <div class="d-flex flex-nowrap m-2">
+                                <div class="card-image ">
+                                    <img src="{{asset('assets/images/instructor_12.jpg')}}" alt="" class="">
+                                </div>
+                                <div class="w-100">
+                                    <div class=" m-1">
+
+                                        <div class="title font-weight-bolder">Complete Python Developer in
+                                            2021:Zero
+                                            to
+                                            Mastery
+                                        </div>
+                                        <a href="#" class="title font-weight-bolder " style="color: blue;">start
+                                            Learning
+                                        </a>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="m-2 border-top">
+                                <a href="{{url('/coursepurches')}}"
+                                    class="btn btn-outline-dark btn-block text-dark font-weight-bolder ">Add to
+                                    cart</a>
+
+                            </div>
+
+                            <div class="m-2 border-top">
+                                <a href="{{url('/myaccount')}}"
+                                    class="btn btn-block bg-black text-white font-weight-bolder ">Go to
+                                    Wishlist</a>
+
+                            </div>
+                        </div>
+                    </li>
+                    <li class="dropdown ml-4">
+                        <a href="" class="option_links text-white " id="dropdownMenuButton" title="Notifications"><i
+                                class='fa fa-bell'></i><span class="noti_count"></span></a>
+                        <div class="dropdown-content overflow-auto" aria-labelledby="dropdownMenuButton">
+                            <a href="create_new_course.html#" class="channel_my item dropdown-item">
+                                <div class="profile_link">
+                                    <img src="./assets/images/left-imgs/img-1.jpg" alt="">
+                                    <div class="pd_content p-0 m-0">
+                                        <p class="p-0 m-0 font-weight-bold">Rock William</p>
+                                        <p class="p-0 m-0">Like Your Comment On Video <strong>How to create
+                                                sidebar
+                                                menu</strong>.</p>
+                                        <span class="nm_time">2 min ago</span>
+                                    </div>
+                                </div>
                             </a>
+                            <a href="create_new_course.html#" class="channel_my item dropdown-item">
+                                <div class=" profile_link">
+                                    <img src="./assets/images/left-imgs/img-2.jpg" alt="">
+                                    <div class="pd_content">
+                                        <p class="p-0 m-0 font-weight-bold">Jassica Smith</p>
+                                        <p class="p-0 m-0">Added New Review In Video <strong>Full Stack PHP
+                                                Developer</strong>.
+                                        </p>
+                                        <span class="nm_time">12 min ago</span>
+                                    </div>
+                                </div>
+                            </a>
+                            <a href="create_new_course.html#" class="channel_my item dropdown-item">
+                                <div class="profile_link">
+                                    <img src="./assets/images/left-imgs/img-9.jpg" alt="">
+                                    <div class="pd_content p-0 m-0">
+                                        <p> Your Membership Approved <strong>Upload Video</strong>.</p>
+                                        <span class="nm_time">20 min ago</span>
+                                    </div>
+                                </div>
+                            </a>
+                            <a class="vbm_btn" href="instructor_notifications.html">View All <i
+                                    class='uil uil-arrow-right dropdown-item"'></i></a>
                         </div>
-                        @if(Auth::user()->role_id=='2')
+                    </li>
+                    <li class=" dropdown">
+                        <a href="create_new_course.html#" class="opts_account" title="Account">
+                            <img src="./assets/images/hd_dp.jpg" alt="">
+                        </a>
+                        <div class=" dropdown-content">
+                            <div class="channel_my">
+                                <div class="profile_link">
+                                    <img src="./assets/images/hd_dp.jpg" alt="">
+                                    <div class="pd_content">
+                                        <div class="rhte85">
+                                            <h6>{{ Auth::user()->fname }} {{ Auth::user()->lname }}</h6>
+                                            <div class="mef78" title="Verify">
+                                                <i class='uil uil-check-circle'></i>
+                                            </div>
+                                        </div>
+                                        @if(Auth::user()->role_id=='2')
+                                        <div class="hacker-medals m-3 d-flex">
+                                            <div class="hacker-medal "><img
+                                                    src="https://hrcdn.net/community-frontend/assets/badges/gold_small-39fafc44b8.svg"
+                                                    height="25">24</div>
+                                            <div class="hacker-medal"><img
+                                                    src="https://hrcdn.net/community-frontend/assets/badges/silver_small-642ca0f0a7.svg"
+                                                    height="25">0</div>
+                                            <div class="hacker-medal"><img
+                                                    src="https://hrcdn.net/community-frontend/assets/badges/bronze_small-4e1f12bf64.svg"
+                                                    height="25">2</div>
+                                        </div>
+                                        @endif
 
-                        <div class="border-bottom mb-2">
-                            <a href="{{url('/myaccount')}}" class="item channel_item">My Learning</a>
-                            <a href="{{url('/coursepurches')}}" class="item channel_item">My cart</a>
-                            <a href="{{url('/myaccount')}}" class="item channel_item">Wishlist</a>
-                            <a href="membership.html" class="item channel_item"></a>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="night_mode_switch__btn">
+                                <a href="create_new_course.html#" id="night-mode" class="btn-night-mode">
+                                    <i class="uil uil-moon"></i> Night mode
+                                    <span class="btn-night-mode-switch">
+                                        <span class="uk-switch-button"></span>
+                                    </span>
+                                </a>
+                            </div>
+                            @if(Auth::user()->role_id=='2')
+
+                            <div class="border-bottom mb-2">
+                                <a href="{{url('/myaccount')}}" class="item channel_item">My Learning</a>
+                                <a href="{{url('/coursepurches')}}" class="item channel_item">My cart</a>
+                                <a href="{{url('/myaccount')}}" class="item channel_item">Wishlist</a>
+                                <a href="membership.html" class="item channel_item"></a>
+                            </div>
+                            @endif
+                            <div class="">
+                                <a href="{{url('/accsetting')}}" class="item channel_item">Setting</a>
+                                <a href="{{route('logout')}}" class="item channel_item">Sign Out</a>
+                                <a href="instructor_dashboard.html" class="item channel_item">Language English
+                                    <i class="fa fa-globe "></i></a>
+                            </div>
+
                         </div>
-                        @endif
-                        <div class="">
-                            <a href="{{url('/accsetting')}}" class="item channel_item">Setting</a>
-                            <a href="{{url('/logout')}}" class="item channel_item">Sign Out</a>
-                            <a href="instructor_dashboard.html" class="item channel_item">Language English <i
-                                    class="fa fa-globe "></i></a>
-                        </div>
+                    </li>
+                    @endauth
+                    @guest
+                    <li class="ml-3">
+                        <button data-toggle="modal" data-target="#signin" class="opts_account text-white"
+                            title="Account">
+                            Login
+                        </button>
 
-                    </div>
-                </li>
-                @endauth
-                @guest
-                <li class="">
-                    <a href="{{route('register')}}" class="opts_account" title="Account">
-                        Login
-                    </a>
+                    </li>
+                    <li class="ml-3">
+                        <button data-toggle="modal" data-target="#register" class="opts_account text-white"
+                            title="Account">
+                            Register
+                        </button>
 
-                </li>
-                <li class="">
-                    <a href="{{route('login')}}" class="opts_account" title="Account">
-                        Register
-                    </a>
+                    </li>
+                    @endguest
+                </ul>
+            </div>
 
-                </li>
-                @endguest
-            </ul>
-        </div>
-        <button type="button" id="toggleMenu" class="toggle_menu">
-            <i class="material-icons-outlined bg-transparent">menu</i>
-        </button>
+
+
+        </nav>
     </header>
 
-    <div>
-        <nav class="vertical_nav pt-3  ">
+    <div class="">
+        <nav class="vertical_nav mt-5   ">
             <div class="left_section menu_left" id="js-menu">
                 <div class="left_section">
                     <ul>
@@ -350,17 +372,13 @@
             </div>
 
         </nav>
-
     </div>
-    <br>
-    <br>
     <div class="loading-overlay"></div>
 <div class="loading-overlay-image-container">
     <img src="{{asset('assets/images/loading.svg')}}" class="loading-overlay-img"/>
 <progress class="" value="0" id="progressob"></progress>
 </div>
-
-    <div class="wrapper ">
+    <div class="wrapper  p-0">
         <main class="" style="">
             @yield('content')
         </main>
@@ -414,22 +432,21 @@
 
         <script src="{{ asset('assets/js/jquery-3.3.1.min.js') }}"></script>
 
-           <script>
+        <script>
+        var ia = 1;
 
-
-var ia=1;
         function addans(e) {
             var html =
-            '<div class="form-group d-flex justify-content-between wrans">'+
-            '<input class="form-control mr-2 form-rounded  " type="text"' +
-            'placeholder="Answer" id="  + id +  " name="answer['+ia+']"'+
-            'value="">'+
-            '<div class="form-check">'+
-            '<input type="checkbox" name="correct['+ia+']"  class="form-check-input"'+
-            'id="exampleCheck'+ia+'">'+
-            '<label class="form-check-label" for="exampleCheck'+ia+'">'+
-            '<i class="fas fa-check"></i></label>'+
-            '</div></div>';
+                '<div class="form-group d-flex justify-content-between wrans">' +
+                '<input class="form-control mr-2 form-rounded  " type="text"' +
+                'placeholder="Answer" id="  + id +  " name="answer[' + ia + ']"' +
+                'value="">' +
+                '<div class="form-check">' +
+                '<input type="checkbox" name="correct[' + ia + ']"  class="form-check-input"' +
+                'id="exampleCheck' + ia + '">' +
+                '<label class="form-check-label" for="exampleCheck' + ia + '">' +
+                '<i class="fas fa-check"></i></label>' +
+                '</div></div>';
 
             $(html).appendTo("#wrans");
             ia++;
@@ -520,34 +537,35 @@ var ia=1;
         "none"
         });
         });
-
         $('.navt').mouseover(function()
         {
-           $(".dropnav").toggle();
+        $(".dropnav").toggle();
         });
         $('.dropnav').mouseleave(function()
         {
-           $(this).toggle();
+        $(this).toggle();
         });
         $('.nav1').mouseover(function()
         {
         });
-        $('.nav1').on('mouseover', 'a', function()
-        {
-            $('.nav2').removeClass('d-nonel').addClass('d-blockl');
-            $(".nav1").addClass('border-right');
-            });
-            $('.nav2').on('mouseover',
-            'a',
+        $('.nav1').on('mouseover',
+        'a',
         function()
         {
-            $('.nav2').addClass('border-right');
-            $('.nav3').removeClass('d-nonel').addClass('d-blockl');
-            $('.nav1').addClass('d-blockl');
-            }
+        $('.nav2').removeClass('d-nonel').addClass('d-blockl');
+        $(".nav1").addClass('border-right');
+        });
+        $('.nav2').on('mouseover',
+        'a',
+        function()
+        {
+        $('.nav2').addClass('border-right');
+        $('.nav3').removeClass('d-nonel').addClass('d-blockl');
+        $('.nav1').addClass('d-blockl');
+        }
         );
         </script>
-     <script>
+        <script>
         const actualBtn = document.getElementById('actual-btn');
         const fileChosen = document.getElementById('file-chosen');
 
@@ -559,7 +577,7 @@ var ia=1;
         const filepdf = document.getElementById('pdf-btn');
 
         filepdf.addEventListener('change', function(e) {
-            made2(URL.createObjectURL(this.files[0]),this.files[0].name,e);
+            made2(URL.createObjectURL(this.files[0]), this.files[0].name, e);
         });
 
         const fileppt = document.getElementById('pptxes');
@@ -567,26 +585,28 @@ var ia=1;
         fileppt.addEventListener('change', function(e) {
 
             for (let i = 0; i < this.files.length; i++) {
-    let pic = this.files[i];
+                let pic = this.files[i];
 
-    made3(URL.createObjectURL(pic),pic.name,e);
-}
+                made3(URL.createObjectURL(pic), pic.name, e);
+            }
 
-});
+        });
 
 
-        var i=1;
-        function made(url,name,id) {
-            var results = "http://127.0.0.1:8000/get-video/" +url.split("/").pop();
-         var resultId = "http://127.0.0.1:8000/addquestion/" +id;
+        var i = 1;
+
+        function made(url, name, id) {
+          var  APP_URL = {!! json_encode(url('/')) !!}
+            var results = APP_URL+"/get-video/" + url.split("/").pop();
+            var resultId = APP_URL+"/addquestion/" + id;
             var btnhtml =
-                '<div class="d-flex justify-content-between  w-100" id="'+name.slice(0, 4)+'">'+
+                '<div class="d-flex justify-content-between  w-100" id="' + name.slice(0, 4) + '">' +
                 '<div class=" w-90 btn btn-info mb-2 vditem">Video ' + i + ' <a class=""' +
-                'onclick="viditemclicked(\''+results+'\')"><i class="pl-2 fa fa-play"></i></a>'+
-                '<a class="ml-3" href="'+resultId+'">Q<i class="pl-2 fa fa-plus "></i></a>'+
-                 '</div>' +
-                '<button type="button" id="byn'+i+'" class="btn btn-default delvid mb-2 w-10"'+
-                'onclick="destvid(\'' + name+ '\')" >' +
+                'onclick="viditemclicked(\'' + results + '\')"><i class="pl-2 fa fa-play"></i></a>' +
+                '<a class="ml-3" href="' + resultId + '">Q<i class="pl-2 fa fa-plus "></i></a>' +
+                '</div>' +
+                '<button type="button" id="byn' + i + '" class="btn btn-default delvid mb-2 w-10"' +
+                'onclick="destvid(\'' + name + '\')" >' +
                 '<i class="pl-2 fa fa-times "></i></button></div>';
             $("#vidb").append($(btnhtml));
 
@@ -596,60 +616,65 @@ var ia=1;
 
         var i2 = 1;
 
-        function made2(url,name,e) {
-            var nam1=name.toString().split(".pdf");
-            var nam2=nam1.toString().replace(/_/gi, ' ');
-                var btnhtml2 =
-                    '<tr class="" id="'+name.slice(0, 4)+'">'+
-                    '<td>' + nam2+ '</td>'+
-                    '<td><button type="button" class="btn btn-success m-1"'+
-                    'onclick="openpdf(\'' + url+ '\')">Preview</button>'+
-                    '<button type="button" id="byn'+i2+'"class="btn btn-danger ml-1"'+ 'onclick="destvid2(\'' + name+ '\')" >' +
-                    'Delete<i class="pl-2 fa fa-times "></i></button></td>'+
-                    '</tr>';
-                    $("#pdfb").append($(btnhtml2));
-                    // ajaxed2();
-                    i2++;
-                    };
-                    var i3 = 1;
-                    function made3(url,name,e) {
+        function made2(url, name, e) {
+            var nam1 = name.toString().split(".pdf");
+            var nam2 = nam1.toString().replace(/_/gi, ' ');
+            var btnhtml2 =
+                '<tr class="" id="' + name.slice(0, 4) + '">' +
+                '<td>' + nam2 + '</td>' +
+                '<td><button type="button" class="btn btn-success m-1"' +
+                'onclick="openpdf(\'' + url + '\')">Preview</button>' +
+                '<button type="button" id="byn' + i2 + '"class="btn btn-danger ml-1"' + 'onclick="destvid2(\'' + name +
+                '\')" >' +
+                'Delete<i class="pl-2 fa fa-times "></i></button></td>' +
+                '</tr>';
+            $("#pdfb").append($(btnhtml2));
+            // ajaxed2();
+            i2++;
+        };
+        var i3 = 1;
 
-            var nam1=name.toString().split(".").pop();
-            var nam2=nam1.toString().replace(/_/gi, ' ');
-                var btnhtml2 =
-                    '<tr class="" id="'+name.slice(0, 4)+'">'+
-                    '<td>' + nam2+ '</td>'+
-                    '<td><button type="button" class="btn btn-success m-1"'+
-                    'onclick="openpdf(\'' + url+ '\')">Preview</button>'+
-                    '<button type="button" id="byn'+i3+'"class="btn btn-danger ml-1"'+ 'onclick="destvid2(\'' + name+ '\')" >' +
-                    'Delete<i class="pl-2 fa fa-times "></i></button></td>'+
-                    '</tr>';
-                    $("#ppt").append($(btnhtml2));
-                    // ajaxed2();
-                    i2++;
-                    };
-                    var form=document.getElementById("vidform");
-           function ajaxed() {
-            var objprogress=document.getElementById("progressob");
-            var pptxes=document.getElementById("pptxes").files;
-            var ppts=document.getElementById("pptxes")
-            var description=document.getElementById("description");
+        function made3(url, name, e) {
+
+            var nam1 = name.toString().split(".")[0];
+            var nam2 = nam1.toString().replace(/_/gi, ' ');
+            var btnhtml2 =
+                '<tr class="" id="' + name.slice(0, 4) + '">' +
+                '<td>' + nam2 + '</td>' +
+                '<td><button type="button" class="btn btn-success m-1"' +
+                'onclick="openpdf(\'' + url + '\')">Preview</button>' +
+                '<button type="button" id="byn' + i3 + '"class="btn btn-danger ml-1"' + 'onclick="destvid2(\'' + name +
+                '\')" >' +
+                'Delete<i class="pl-2 fa fa-times "></i></button></td>' +
+                '</tr>';
+            $("#ppt").append($(btnhtml2));
+            // ajaxed2();
+            i2++;
+        };
+        var form = document.getElementById("vidform");
+
+        function ajaxed() {
+            var objprogress = document.getElementById("progressob");
+            var pptxes = document.getElementById("pptxes").files;
+            var ppts = document.getElementById("pptxes")
+            var description = document.getElementById("description");
             var form_data = new FormData();
 
-            form_data.append( 'course_id', $('input[name=course_id]').val());
+            form_data.append('course_id', $('input[name=course_id]').val());
             form_data.append('videos', $('#actual-btn').prop('files')[0]);
             form_data.append('description', description.value);
             form_data.append('pdfes', $('#pdf-btn').prop('files')[0]);
 
 
             for (let i = 0; i < pptxes.length; i++) {
-            form_data.append("pptxes["+i+"]", pptxes[i]);
+                form_data.append("pptxes[" + i + "]", pptxes[i]);
             }
 
             var answer = $('input[name*=answer]');
             for (var i = 0; i < answer.length; i++) {
-                form_data.append(answer[i].name, answer[i].value); }
-
+                form_data.append(answer[i].name, answer[i].value);
+            }
+console.log(form_data);
             var token = $("meta[name='csrf-token']").attr("content");
             $.ajax({
                 type: 'POST',
@@ -658,38 +683,37 @@ var ia=1;
                 processData: false,
                 contentType: false,
                 "_token": token,
-                success:function(data){
-                if ((data.errors)) {
-                alert(data.errors);
-                }
-                else {
+                success: function(data) {
+                    if ((data.errors)) {
+                        alert(data.errors);
+                    } else {
 
-                    made(data.video_path,data.video_title,data.id);
-            }},
-               xhr: function()
-                {
+                        made(data.video_path, data.video_title, data.id);
+                    }
+                },
+                xhr: function() {
                     var xhr = new XMLHttpRequest();
                     //Upload progress
 
-                    xhr.upload.addEventListener("progress", function(evt){
-                    if (evt.lengthComputable) {
+                    xhr.upload.addEventListener("progress", function(evt) {
+                        if (evt.lengthComputable) {
 
-                        //Do something with upload progress
-                        objprogress.max=evt.total;
-                        objprogress.value=evt.loaded;
-                    }
+                            //Do something with upload progress
+                            objprogress.max = evt.total;
+                            objprogress.value = evt.loaded;
+                        }
                     }, false);
 
                     return xhr;
                 },
-                beforeSend: function(xhr){
-                       $('.loading-overlay-image-container').show();
-                       $('.loading-overlay').show();
-                    },
-                complete: function(data){
-                        $('.loading-overlay-image-container').hide();
-                       $('.loading-overlay').hide();
-                    },
+                beforeSend: function(xhr) {
+                    $('.loading-overlay-image-container').show();
+                    $('.loading-overlay').show();
+                },
+                complete: function(data) {
+                    $('.loading-overlay-image-container').hide();
+                    $('.loading-overlay').hide();
+                },
 
 
 
@@ -701,7 +725,7 @@ var ia=1;
                 }
 
 
-        });
+            });
         };
 
 
@@ -719,14 +743,14 @@ var ia=1;
                 "_token": token,
                 contentType: false,
                 processData: false,
-                beforeSend: function(){
-                                $('.loading-overlay-image-container').show();
-                                $('.loading-overlay').show();
-                                },
-                complete: function(){
-                                    $('.loading-overlay-image-container').hide();
-                                $('.loading-overlay').hide();
-                                },
+                beforeSend: function() {
+                    $('.loading-overlay-image-container').show();
+                    $('.loading-overlay').show();
+                },
+                complete: function() {
+                    $('.loading-overlay-image-container').hide();
+                    $('.loading-overlay').hide();
+                },
                 success: (data) => {
                     console.log(data);
                 },
@@ -734,82 +758,85 @@ var ia=1;
                     console.log(data);
                 }
             });
-};
+        };
 
 
-function ajaxed3() {
-            var objprogress=document.getElementById("progressob");
-            var questiontype=document.getElementById("questiontype");
+        function ajaxed3() {
+            var objprogress = document.getElementById("progressob");
+            var questiontype = document.getElementById("questiontype");
             var answer = document.getElementsByName('answer[]');
 
             var form_data = new FormData();
 
-            form_data.append( 'question', $('input[name=question]').val());
-            form_data.append( 'questiontype', questiontype.value);
+            form_data.append('question', $('input[name=question]').val());
+            form_data.append('questiontype', questiontype.value);
 
             var answer = $('input[name*=answer]');
             for (var i = 0; i < answer.length; i++) {
-                form_data.append(answer[i].name, answer[i].value); }
+                form_data.append(answer[i].name, answer[i].value);
+            }
 
-                var answertype = $('input:checkbox[name*=correct]');
+            var answertype = $('input:checkbox[name*=correct]');
 
             for (var i = 0; i < answertype.length; i++) {
-                if(answertype[i].checked){
+                if (answertype[i].checked) {
 
-                form_data.append(answertype[i].name, answertype[i].value);
+                    form_data.append(answertype[i].name, answertype[i].value);
                 }
-                }
+            }
 
 
-            form_data.append( 'video_id', $('input[name=video_id]').val());
+            form_data.append('video_id', $('input[name=video_id]').val());
 
             var token = $("meta[name='csrf-token']").attr("content");
             $.ajax({
                 type: 'POST',
-                headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
                 url: "{{route('savquestion') }}",
                 data: form_data,
                 processData: false,
                 contentType: false,
-                success:function(data){
-                if ((data.errors)) {
-                alert(data.errors);
-                }
-                else {
-                    var wraqass=document.getElementById("wrans");
-                    var ans1 = document.getElementsByName('answer[0]');
-            var qstn = document.getElementsByName('question');
-                     made4(data.question);
-                     while(wraqass.firstChild) {
-                        wraqass.removeChild(wraqass.lastChild);}
-                    qstn.value="";
-ans1.value="";
+                success: function(data) {
+                    if ((data.errors)) {
+                        alert(data.errors);
+                    } else {
+                        var wraqass = document.getElementById("wrans");
+                        var ans1 = document.getElementsByName('answer[0]');
+                        var qstn = document.getElementsByName('question');
+                        made4(data.question);
+                        while (wraqass.firstChild) {
+                            wraqass.removeChild(wraqass.lastChild);
+                        }
+                        qstn.value = "";
+                        ans1.value = "";
 
-            }},
-               xhr: function()
-                {
+                    }
+                },
+                xhr: function() {
                     var xhr = new XMLHttpRequest();
                     //Upload progress
 
-                    xhr.upload.addEventListener("progress", function(evt){
-                    if (evt.lengthComputable) {
+                    xhr.upload.addEventListener("progress", function(evt) {
+                        if (evt.lengthComputable) {
 
-                        //Do something with upload progress
-                        objprogress.max=evt.total;
-                        objprogress.value=evt.loaded;
-                    }
+                            //Do something with upload progress
+                            objprogress.max = evt.total;
+                            objprogress.value = evt.loaded;
+                        }
                     }, false);
 
                     return xhr;
                 },
-                beforeSend: function(xhr){
-                       $('.loading-overlay-image-container').show();
-                       $('.loading-overlay').show();
-                    },
-                complete: function(data){
-                        $('.loading-overlay-image-container').hide();
-                       $('.loading-overlay').hide();
-                    },
+                beforeSend: function(xhr) {
+                    $('.loading-overlay-image-container').show();
+                    $('.loading-overlay').show();
+                },
+                complete: function(data) {
+                    $('.loading-overlay-image-container').hide();
+                    $('.loading-overlay').hide();
+                },
 
 
 
@@ -821,8 +848,9 @@ ans1.value="";
                 }
 
 
-        });
+            });
         };
+
         function viditemclicked(url) {
 
 
@@ -852,90 +880,87 @@ ans1.value="";
 
             label.textContent = url.value;
             if (url.files && url.files[0]) {
-                                    var ImageDir = new FileReader();
-                                    ImageDir.onload = function (e) {
-                                        $('#viewimgi').attr('src', e.target.result);
-                                        $('#viewimgi').css('height', 'auto');
-                                        label.textContent = url.value;
-                                    }
-                                    ImageDir.readAsDataURL(url.files[0]);
-                                }
-};
-  function covervidpreview(url) {
+                var ImageDir = new FileReader();
+                ImageDir.onload = function(e) {
+                    $('#viewimgi').attr('src', e.target.result);
+                    $('#viewimgi').css('height', 'auto');
+                    label.textContent = url.value;
+                }
+                ImageDir.readAsDataURL(url.files[0]);
+            }
+        };
 
-    var video = document.getElementById('covercanva');
-    var source = document.createElement('source');
-    var label = document.getElementById('labelvid');
-    source.setAttribute('src', URL.createObjectURL(url.files[0],url.files[0].name));
-    label.textContent = url.value;
-    while (video.firstChild) {
-        video.removeChild(video.lastChild);
-    }
-    video.append(source);
-    video.load();
-    video.play();
+        function covervidpreview(url) {
+
+            var video = document.getElementById('covercanva');
+            var source = document.createElement('source');
+            var label = document.getElementById('labelvid');
+            source.setAttribute('src', URL.createObjectURL(url.files[0], url.files[0].name));
+            label.textContent = url.value;
+            while (video.firstChild) {
+                video.removeChild(video.lastChild);
+            }
+            video.append(source);
+            video.load();
+            video.play();
 
 
-};
+        };
 
 
         function openpdf(url) {
             const pdfviewer = document.getElementById('pspdfkit');
-            pdfviewer.data=url;
+            pdfviewer.data = url;
             $('#myModal').modal('show');
-};
+        };
 
         function destvid(name) {
-            fileChosen.textContent="";
-            $("#" + name.slice(0, 4)+ "").remove();
+            fileChosen.textContent = "";
+            $("#" + name.slice(0, 4) + "").remove();
             var id = name;
             var token = $("meta[name='csrf-token']").attr("content");
-            $.ajax(
-                {
-                    url: "destroyvid/" + id,
-                    type: 'DELETE',
-                    data: {
-                        "id": id,
-                        "_token": token,
-                    },
-                    beforeSend: function(){
-                       $('.loading-overlay-image-container').show();
-                       $('.loading-overlay').show();
-                    },
-                    complete: function(){
-                        $('.loading-overlay-image-container').hide();
-                       $('.loading-overlay').hide();
-                    },
-                    success: function() {
-                        console.log("it Works");
-                    }
+            $.ajax({
+                url: "destroyvid/" + id,
+                type: 'DELETE',
+                data: {
+                    "id": id,
+                    "_token": token,
+                },
+                beforeSend: function() {
+                    $('.loading-overlay-image-container').show();
+                    $('.loading-overlay').show();
+                },
+                complete: function() {
+                    $('.loading-overlay-image-container').hide();
+                    $('.loading-overlay').hide();
+                },
+                success: function() {
+                    console.log("it Works");
+                }
 
-                });
+            });
 
         };
+
         function destvid2(name) {
-            fileChosen.textContent="";
-            $("#" + name.slice(0, 4)+ "").remove();
+            fileChosen.textContent = "";
+            $("#" + name.slice(0, 4) + "").remove();
             var id = name;
             var token = $("meta[name='csrf-token']").attr("content");
-            $.ajax(
-                {
-                    url: "destroyvid/" + id,
-                    type: 'DELETE',
-                    data: {
-                        "id": id,
-                        "_token": token,
-                    },
-                    success: function() {
-                        console.log("it Works");
-                    }
+            $.ajax({
+                url: "destroyvid/" + id,
+                type: 'DELETE',
+                data: {
+                    "id": id,
+                    "_token": token,
+                },
+                success: function() {
+                    console.log("it Works");
+                }
 
-                });
+            });
 
         };
-
-
-
         </script>
 
         <script src="{{ asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>

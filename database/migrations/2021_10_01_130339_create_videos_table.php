@@ -18,7 +18,7 @@ class CreateVideosTable extends Migration
             $table->integer('course_id');
             $table->string('video_title');
             $table->string('video_path');
-            $table->string('video_desc');
+            $table->longtext('video_desc');
             $table->string('video_type')->nullable();
             $table->timestamps();
         });

@@ -89,7 +89,7 @@ return [
 
     'from' => [
         'address' => env('MAIL_FROM_ADDRESS', 'jacksonmorton5@gmail.com'),
-        'name' => env('MAIL_FROM_NAME', 'Naqualify'),
+        'name' => env('MAIL_FROM_NAME', 'Nakwalify'),
     ],
 
     /*

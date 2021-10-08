@@ -15,7 +15,12 @@
 
         <!-- Styles -->
         <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-
+<style>
+    @font-face {
+    font-family: "Kaushan_Script";
+    src:  url('../assets/fonts/Kaushan_Script/KaushanScript-Regular.ttf');
+  }
+</style>
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
     <link href="{{ asset('assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">

@@ -71,7 +71,7 @@
                   overflow: auto;">
                     <ul class=" list-group border-0  v-itm  table-hover " role="group">
                         <p class="d-flex justify-content-between text-white ">
-                            18 Lessons (3h 5m) <a href="http://"><small class="underline secondary-content">View
+                            1 Lessons (15 m) <a href="http://"><small class="underline secondary-content">View
                                     My Notes</small></a></p>
 
 
@@ -176,6 +176,157 @@
     document.getElementById("defaultOpen").click();
 
  
+
+
+
+
+    var totalv = 0;
+        var currentv = 0;
+        var currenturl = 0;
+        var modal =  0;
+
+        function vidliclicked(url,counv,currev,id)
+        {
+        ajaxed4(id);
+        totalv=counv;
+        currentv=currev;
+        currenturl=url;
+        modal= document.getElementById('modal');
+        if(modal!= null)        {
+        modal.remove();
+        }
+        var   video  = document.getElementById('mainvid');
+        var   source  = document.createElement('source');
+        source.setAttribute('src',   url);
+        while(video.firstChild)
+        {
+        video.removeChild(video.lastChild);
+        }
+        video.append(source);
+        video.load();
+        video.play();
+
+        };
+        var tv   =        document.querySelector('video');
+        var contain        =        document.getElementById('mediav');
+        tv.addEventListener('ended',        onplayerchange);
+        function onplayerchange(evnt)
+        {
+        if(totalv -currentv>=  0) {
+        contain.insertAdjacentHTML('beforeend',
+        '<div id="modal" class="video-js w-100 h-100 card-img-overlay">' +
+            '<div id="message">Increase conversions by adding this modal window at the end of your videos!!</div>' +
+            '<div class="d-flex justify-content-center">'+
+                '<button class="btn btn-info mr-5" type="button" id="button1">Previous Video</button></button>' +
+                '<button type="button" class="btn btn-success ml-5" id="button2">Next Video</button></button></div>' +
+            '<div class="text-center m-3"><button type="button" id="replayvideo" class="btn btn-default text-white"><i class="fas fa-redo"></i></button>' +
+                '</div> </div>'
+        );
+
+        }
+        else{contain.insertAdjacentHTML( 'beforeend',
+        '<div id="modal" class="video-js w-100 h-100 card-img-overlay">' +
+            '<div class="text-center" id="message">Welcome To naQualify</div>' +
+            '<div class="text-center"><button id="replayvideo" class="btn btn-default"><i class="fas fa-redo"></i></button>' +
+                '</div> </div>'
+        );
+        }
+        }
+        $('#replayvideo').on('click',function() {
+        $('#vids'+currentv).click();
+        });
+
+
+
+        $('#button2').on('click',function() {
+
+        if(totalv-currentv>0){
+            var temp=currentv+1;
+            $('#vids'+temp).css('pointer-events','auto');
+            $('#vids'+temp).click();
+            }
+            else{
+            $('#vids'+currentvp).css('pointer-events','auto');
+            $('#vids'+currentv).click();
+            }
+        });
+
+
+        $('#button1').on('click',function() {
+
+            if(totalv-currentv>=0&&currentv!=1){
+            var temp=currentv-1;
+                $('#vids'+temp).click();
+                }
+                else {
+
+                $('#vids'+currentv).click();
+            }
+        });
+        
+
+        function viewpdf(url) {
+        const pdfviewer = document.getElementById('pspdfkit');
+        pdfviewer.data=url;
+        $('#myModal').modal('show');
+        };
+
+
+
+
+        function ajaxed4(id) {
+
+
+        var form_data = new FormData();
+        form_data.append('id', id);
+        var token = $("meta[name='csrf-token']").attr("content");
+        $.ajax({
+        type: 'POST',
+        url: "{{ route('pptpics') }}",
+        data: form_data,
+        cache: false,
+        headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+        contentType: false,
+        processData: false,
+        beforeSend: function(){
+        $('.loading-overlay-image-container').show();
+        $('.loading-overlay').show();
+        },
+        complete: function(){
+        $('.loading-overlay-image-container').hide();
+        $('.loading-overlay').hide();
+        },
+        success: (data) => {
+        made5(data);
+
+        },
+        error: function(data) {
+        console.log(data);
+        }
+        });
+        };
+
+
+        function made5(data) {
+
+
+        var carol = document.getElementById('carol');
+        document.querySelectorAll('.carol-it').forEach(e => e.remove());
+        for(let i=0; i<data.length;i++){ 
+            var lin="http://127.0.0.1:8000/get-ppt/" +data[i].file_path.split("/").pop();
+            var imgcaro='<div class="carousel-item carol-it">' + 
+        '<img src="' +lin+'" width="400"'+
+        ' id="mainvid" height="240" class="d-block w-100"'+
+        ' alt="" +data.course_file_title+"">'+
+        ' </div>';
+
+    $('#carol').append($(imgcaro ));
+
+    }
+    };
+
+
+
 
     </script>
     @endsection

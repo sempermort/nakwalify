@@ -1,9 +1,8 @@
 <x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
+        <a href="{{url('/')}}" class="navbar-brand"
+                style="font-family:'Kaushan_Script'; font-weight: bolder;  font-size :35px!important; color:#1e526a !important;">nakwalify</a>
         </x-slot>
 
         <!-- Session Status -->

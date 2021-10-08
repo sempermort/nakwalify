@@ -79,44 +79,36 @@
                                                         </select>
                                                     </div>
                                                     <div class="col-lg-4 col-md-6">
-                                                        <div class="mt-30 lbel25">
+                                                        <div class="mt-30 d-flex justify-content-between lbel25">
                                                             <label>Course Category*</label>
+                                                            <button type="button"
+                                                            data-toggle="modal" data-target="#category"
+                                                            href="" class="btn btnprimary"><i class="fa fa-plus"></i></button>
                                                         </div>
-                                                        <select class="form-rounded form-control" name="category_Id">
-                                                            <option value="">Select Category</option>
-                                                            <option value="1">Development</option>
-                                                            <option value="2">Business</option>
-                                                            <option value="3">Finance & Accounting</option>
-                                                            <option value="4">IT & Software</option>
-                                                            <option value="5">Office Productivity</option>
-                                                            <option value="6">Personal Development</option>
-                                                            <option value="7">Design</option>
-                                                            <option value="8">Marketing</option>
-                                                            <option value="9">Lifestyle</option>
-                                                            <option value="10">Photography</option>
-                                                            <option value="11">Health & Fitness</option>
-                                                            <option value="12">Music</option>
-                                                            <option value="13">Teaching & Academics</option>
+                                                        <select class="form-rounded form-control" name="category_Id" id="catig">
+
+                                                            @foreach($corses as $coz)
+                                                            <option value="{{$coz->id}}">{{$coz->category_name}}</option>
+                                                            @endforeach
+
                                                         </select>
                                                     </div>
                                                     <div class="col-lg-4 col-md-6">
-                                                        <div class="mt-30 lbel25">
-                                                            <label>Course Subcategory*</label>
+                                                    <div class="mt-30 d-flex justify-content-between lbel25">
+                                                            <label>Course SubCategory*</label>
+                                                            <button type="button"
+                                                            data-toggle="modal" data-target="#subcategory"
+                                                            href="" class="btn btnprimary"><i class="fa fa-plus"></i></button>
                                                         </div>
                                                         <select class="form-rounded form-control   "
-                                                            name="subcategory_Id">
-                                                            <option value="">Select Subcategory</option>
-                                                            <option value="1">Javascript</option>
-                                                            <option value="2">Angular</option>
-                                                            <option value="3">React</option>
-                                                            <option value="4">CSS</option>
-                                                            <option value="5">PHP</option>
-                                                            <option value="6">Node.Js</option>
-                                                            <option value="7">WordPress</option>
-                                                            <option value="8">Vue JS</option>
-                                                            <option value="9">Shopify</option>
-                                                            <option value="10">Magento</option>
-                                                            <option value="11">Open Cart </option>
+                                                            name="subcategory_Id" id="subcatig">
+
+                                                            @foreach($subcorses as $cozi)
+                                                            <option value="{{$cozi->id}}">
+                                                                {{$cozi->category_name}}</option>
+                                                            @endforeach
+
+
                                                         </select>
                                                     </div>
                                                 </div>
@@ -221,6 +213,54 @@
         </div>
     </div>
 </div>
+<!-- Modal -->
+<div class="modal fade" id="category" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle">Add Category</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <div class="form-group">
+                <label for="catgname" class="control-label">Category name</label>
+                <input type="text" for="catgname" class="form-control" />
+            </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" onclick="ajaxed5()" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="subcategory" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle">Add Subcategory</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <div class="form-group">
+                <label for="CD" class="control-label">Subcategory name</label>
+                <input type="text" for="subcatgname" class="form-control" />
+            </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" onclick="ajaxed6()" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 <script>
       const learnarry=[];
         function addwlearnin(){
@@ -255,10 +295,142 @@
 
                   main.push(requires.value);
 
-              
+
                   mainrequire.value=main.slice();
                   requires.value='';
             }
        };
+       function ajaxed5() {
+            var objprogress = document.getElementById("progressob");
+            var form_data = new FormData();
+            form_data.append('categoryname', $('input[name=catgname]').val());
+
+            $.ajax({
+                type: 'POST',
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                url: "{{route('catg') }}",
+                data: form_data,
+                processData: false,
+                contentType: false,
+                success: function(data) {
+                    if ((data.errors)) {
+                        alert(data.errors);
+                    } else {
+                        var tgb='<option value="'+data.id+'">'+data.categoryname+'</option>';
+                        $("#catig").append($(tgb));
+                        }
+
+                },
+                xhr: function() {
+                    var xhr = new XMLHttpRequest();
+                    //Upload progress
+
+                    xhr.upload.addEventListener("progress", function(evt) {
+                        if (evt.lengthComputable) {
+
+                            //Do something with upload progress
+                            objprogress.max = evt.total;
+                            objprogress.value = evt.loaded;
+                        }
+                    }, false);
+
+                    return xhr;
+                },
+                beforeSend: function(xhr) {
+                    $('.loading-overlay-image-container').show();
+                    $('.loading-overlay').show();
+                },
+                complete: function(data) {
+                    $('.loading-overlay-image-container').hide();
+                    $('.loading-overlay').hide();
+                },
+
+
+
+
+                error: function(data) {
+                    $('.loading-overlay-image-container').hide();
+                    $('.loading-overlay').hide();
+
+                }
+
+
+            });
+        };
+
+        function ajaxed6() {
+            var objprogress = document.getElementById("progressob");
+
+            form_data.append('categoryId', $('input[name=categoryname]').val());
+            form_data.append('subcategoryname', $('input[name=subcatgname]').val());
+
+            var token = $("meta[name='csrf-token']").attr("content");
+            $.ajax({
+                type: 'POST',
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                url: "{{route('subcatg') }}",
+                data: form_data,
+                processData: false,
+                contentType: false,
+                success: function(data) {
+                    if ((data.errors)) {
+                        alert(data.errors);
+                    } else {
+
+                        var tgb='<option value="'+data.id+'">'+data.subcategoryname+'</option>';
+                        $("#subcatig").append($(tgb));
+                        }
+
+
+                    },
+
+                xhr: function() {
+                    var xhr = new XMLHttpRequest();
+                    //Upload progress
+
+                    xhr.upload.addEventListener("progress", function(evt) {
+                        if (evt.lengthComputable) {
+
+                            //Do something with upload progress
+                            objprogress.max = evt.total;
+                            objprogress.value = evt.loaded;
+                        }
+                    }, false);
+
+                    return xhr;
+                },
+                beforeSend: function(xhr) {
+                    $('.loading-overlay-image-container').show();
+                    $('.loading-overlay').show();
+                },
+                complete: function(data) {
+                    $('.loading-overlay-image-container').hide();
+                    $('.loading-overlay').hide();
+                },
+
+
+
+
+                error: function(data) {
+                    $('.loading-overlay-image-container').hide();
+                    $('.loading-overlay').hide();
+
+                }
+
+
+            });
+        };
+
+        const chosencat = document.getElementById('file-chosen');
+
+actualBtn.addEventListener('change', function() {
+    fileChosen.textContent = this.files[0].name;
+
+});
+
 </script>
 @endsection

@@ -7,28 +7,33 @@
 
         <div class="bg-black">
             <div class="container" style="padding-top:80px">
-                <div class="nav-wrapper mb-1">
+                <!-- <div class="nav-wrapper mb-1">
                     <div class="d-flex ">
                         <a href="#!" class="breadcrumb-item">Development</a>
                         <a href="#!" class="breadcrumb-item">Programming languages</a>
                         <a href="#!" class="breadcrumb-item active">Python</a>
                     </div>
-                </div>
+                </div> -->
                 <div class="row">
                     <div class="col-md-4 col-lg-3 white p-0 vid-coz " id="vid">
+                    <a class="btn  btn-info text-white  p-2  col-md-12 mt-1 mb-1 "
+                                    href="{{route('viewcourse',$selcoz->id)}}">
                         <video width="400" height="220" poster="{{asset('assets/images/course_4.jpg')}}" class="w-100 "
                             controls>
 
                         </video>
+</a>
                         <div class="mt-0   d-none d-md-block d-lg-block">
                             <strong>
                                 <p class="m-0 tshs" id="demo">Tshs {{$selcoz->price}}</p>
                             </strong>
-                            <button class=" border-0 p-2 btn  btn-info col-md-12  mt-0 mb-1 text-white">Add
-                                to Cart</button>
-                            <button class="btn btn-outline-dark  p-2   col-md-12 mt-1 mb-1 "><a
-                                    href="{{route('viewcourse',$selcoz->id)}}">Buy
-                                    Now</a> </button>
+                            <!-- <button class=" border-0 p-2 btn  btn-info col-md-12  mt-0 mb-1 text-white">Add
+                                to Cart</button> -->
+                            <!-- <button class="btn btn-outline-dark  p-2   col-md-12 mt-1 mb-1 "><a
+                                    href="{{route('viewcourse',$selcoz->id)}}">Go to corse</a> </button> -->
+                                   
+                                    <a class="btn  btn-info text-white  p-2  col-md-12 mt-1 mb-1 "
+                                    href="{{route('viewcourse',$selcoz->id)}}">Go to course</a> 
                             <small class="m-0 text-center">
                                 <p class="m-0  p-0">30-Day Money-Back Guarantee </p>
                             </small>
@@ -39,12 +44,12 @@
                             <li class="collection-item border-0 d-flex justify-content-start"> <span
                                     class="material-icons-outlined">
                                     reset_tv
-                                </span> <span class="m-1"> 30.5 hours on-demand video</span>
+                                </span> <span class="m-1"> 20min  on-demand video</span>
                             </li>
                             <li class="collection-item border-0 d-flex justify-content-start"> <span
                                     class="material-icons-outlined">
                                     insert_drive_file
-                                </span> 53 articles</li>
+                                </span> 1 articles</li>
                             <li class="collection-item border-0 d-flex justify-content-start"> <i
                                     class="fa fa-download mr-2"></i> 20
                                 downloadable
@@ -93,9 +98,9 @@
                                     <i class="fa fa-star"></i>
                                     <i class="fa fa-star-half-o"></i>
                                 </div>
-                                <span class="m-1"> (28,900 ratings)
+                                <span class="m-1"> (3 ratings)
 
-                                    115,948 trainees
+                                    3 trainees
                                 </span>
                             </div>
                             <div class="">
@@ -131,11 +136,13 @@
 <div class="container mt-0 pl-2">
     <h6 class="font-weight-bolder m-3">What you will learn</h6>
     <div class="grid-container border  col-md-8">
-        @foreach($selcoz->mainwlearn as $learn)
+    @foreach( $selcoz->mainwlearn as  $arriy)
+        @foreach( explode(',', $arriy)  as  $learn)
         <div class="collection-item border-0">
             <div><a href="#!" class="mr-2 primary-content"><i class="material-icons">done</i></a>
                 {{$learn}} </div>
         </div>
+        @endforeach
         @endforeach
     </div>
 </div>
@@ -145,25 +152,29 @@
         <h4> <strong>Course Content </strong></h4>
         <div class="d-flex justify-content-between">
             <p>
-                <span>25 sections </span>
-                <span>• 328 lectures </span>
+
+                <span>• {{count($vidz)}} Lessons </span>
+
+
                 <span>• 30h 36m total length</span>
             </P>
-            <a href="\\"><strong>Expand all Sections</strong></a>
+
         </div>
     </div>
-@foreach($vidz as $vida)
+    <div class="col-md-8">
+    @foreach($vidz as $vida)
+
+
     <div class="coursevida">
-        <p>
+        <p class="text-black bg-white d-flex justify-content-between">
             <a class="" data-toggle="collapse" href="#collapseExample" role="button"
                 aria-expanded="false" aria-controls="collapseExample">
-              {{$vida->video_title}}
+              {{explode('.', $vida->video_title)[0]}}
             </a>
             <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample"
                 aria-expanded="false" aria-controls="collapseExample">
-                <span class="material-icons">
-                        play_circle_filled
-                </span>
+                <i class="fa fa-angle-down" aria-hidden="true"></i>
+
             </button>
         </p>
         <div class="collapse" id="collapseExample">
@@ -173,9 +184,7 @@
         </div>
     </div>
     @endforeach
-    <iframe src="{{url('/lcontent')}}" height="590" width="900" class="col-md-8 p-0 ">
 
-    </iframe>
     <div class="panel-body mt-5 col-md-8 p-0">
         <h6 class="font-weight-bolder p-0">Project Description</h4>
             <p class="p-0">
@@ -186,16 +195,20 @@
     <h6 class="font-weight-bolder"> Requirements</h6>
     <ul class="col-md-8">
 
-        @foreach($selcoz->mainrequire as $req)
+        @foreach( $selcoz->mainrequire as  $arri)
+        @foreach( explode(',', $arri)  as  $value)
         <li class=" p-2">
-            {{$req}}</li>
+            {{$value}}</li>
+        @endforeach
         @endforeach
     </ul>
 
 </div>
+    </div>
+
 
 </div>
-<div class="container mt-5">
+<!-- <div class="container mt-5">
     <h6 class="font-weight-bolder">Frequently Bought Together</h6>
     <ul class="collection col-md-8">
         <li class="collection-item mt-2 pl-2">
@@ -346,7 +359,7 @@
 
     </div>
 
-</div>
+</div> -->
 
 </section>
 </div>
