@@ -101,8 +101,7 @@ public function postaddCourse(Request $request)
         'course_title' => 'required|unique:courses,course_title',
         'course_subt' => 'required',
         'language' => 'required',
-        'category_Id' => 'required',
-        'subcategory_Id' => 'required',
+       
         'mainrequire' => 'required',
         'mainwlearn' => 'required',
         'price' => 'required',
