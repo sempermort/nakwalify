@@ -118,7 +118,7 @@
 
                 </div>
             </div>
-            <div id="tab-2" class="tab-pane">
+              <div id="tab-2" class="tab-pane">
                 <div class="panel-body m-5">
                     <h4> First up, review the Teacher Handbook,</h4>
                     <div class=" border rounded">
