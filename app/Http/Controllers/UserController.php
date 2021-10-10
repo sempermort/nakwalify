@@ -402,7 +402,7 @@ public function  postaddCover(Request $request)
 {
     $validatedData = $request->validate([
         'coverpic' => 'required|max:5048',
-        'covervid' => 'required|mimes:mp4|max:100048',
+        
 
     ]);
 
