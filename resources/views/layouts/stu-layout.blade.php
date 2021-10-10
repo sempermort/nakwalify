@@ -25,6 +25,8 @@
 
     <link href="{{ asset('css/multitemslide.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
+        </script>
 </head>
 
 <body>
@@ -313,8 +315,7 @@
 
 
 
-        <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
-        </script>
+   
 
         <script src="{{ asset('assets/bootstrap-4.3.1-dist/js/bootstrap.min.js') }}"></script>
         <script src="{{ asset('assets/js/night-mode.js') }}"></script>
@@ -394,14 +395,7 @@
         "none"
         });
         });
-        $(document).ready(function()
-        {
-        //        SideNav
-        //        $(".button-collapse").sideNav2();
-        //        SideNav        Scrollbar        Initialization
-        
-        //var        sideNavScrollbar        =        document.querySelector('.custom-scrollbar');
-        //        var        ps        =        new        PerfectScrollbar(sideNavScrollbar);  });
+      
         $('.navt').mouseover(function()
         {
         $(".dropnav").toggle();

@@ -21,7 +21,13 @@ class CreateCoursesTable extends Migration
             $table->string('language');
             $table->integer('price');
             $table->json('mainrequire');
-            $table->json('mainwlearn');           
+            $table->json('mainwlearn');
+            $table->Integer('category_Id');            
+            $table->Integer('subcategory_id')->nullable();
+            $table->foreign('subcategory_id')
+            ->references('id')
+            ->on('subcategories')
+            ->onDelete('cascade');
             $table->timestamps();
         });
     }

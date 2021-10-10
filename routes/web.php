@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
-
+use App\Models\Course;
+use App\Models\Mediacover;
 use App\Http\Controllers\BusinessController;
 use Illuminate\Support\Facades\Auth;
 
@@ -20,11 +21,15 @@ use Illuminate\Support\Facades\Auth;
 */
 Auth::routes();
 Route::get('/', function () {
-    return view('welcome');
+    $coz=Course::all();
+    $copic=Mediacover::where('file_type','coverpic')->get();
+    return view('welcome')->with('coz',$coz)->with('copic',$copic);
 });
 
 Route::get('/welcome', function () {
-    return view('welcome');
+    $coz=Course::all();
+    $copic=Mediacover::where('file_type','coverpic')->get();
+    return view('welcome')->with('coz',$coz)->with('copic',$copic);
 })->middleware('guest');
 
 // Route::get('/admin', 'AdminController@index')->name('admin')->middleware('admin');
@@ -79,6 +84,8 @@ Route::delete('destroypdf/{name}', 'App\Http\Controllers\UserController@destroyp
 Route::get('get-video/{name}', 'App\Http\Controllers\UserController@getVideo')->name('get-video');
 Route::get('get-pdf/{name}', 'App\Http\Controllers\UserController@getPdf')->name('get-pdf');
 Route::get('get-ppt/{name}', 'App\Http\Controllers\UserController@getPpt')->name('get-ppt');
+Route::get('get-copic/{name}', 'App\Http\Controllers\UserController@getcopic')->name('get-copic');
+Route::get('get-covid/{name}', 'App\Http\Controllers\UserController@getcovid')->name('get-covid');
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');

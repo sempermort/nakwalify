@@ -45,7 +45,7 @@
             <a href="{{url('/')}}" class="navbar-brand"
                 style="font-family:'Kaushan_Script'; font-weight: bolder;  font-size :35px!important; color:#fff !important;">nakwalify</a>
 
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            <button class="navbar-toggler toggle_menu" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="material-icons-outlined bg-transparent">menu</i>
             </button>
@@ -566,167 +566,10 @@
         );
         </script>
         <script>
-        const actualBtn = document.getElementById('actual-btn');
-        const fileChosen = document.getElementById('file-chosen');
-
-        actualBtn.addEventListener('change', function() {
-            fileChosen.textContent = this.files[0].name;
-
-        });
-
-        const filepdf = document.getElementById('pdf-btn');
-
-        filepdf.addEventListener('change', function(e) {
-            made2(URL.createObjectURL(this.files[0]), this.files[0].name, e);
-        });
-
-        const fileppt = document.getElementById('pptxes');
-
-        fileppt.addEventListener('change', function(e) {
-
-            for (let i = 0; i < this.files.length; i++) {
-                let pic = this.files[i];
-
-                made3(URL.createObjectURL(pic), pic.name, e);
-            }
-
-        });
-
-
-        var i = 1;
-
-        function made(url, name, id) {
-          var  APP_URL = {!! json_encode(url('/')) !!}
-            var results = APP_URL+"/get-video/" + url.split("/").pop();
-            var resultId = APP_URL+"/addquestion/" + id;
-            var btnhtml =
-                '<div class="d-flex justify-content-between  w-100" id="' + name.slice(0, 4) + '">' +
-                '<div class=" w-90 btn btn-info mb-2 vditem">Video ' + i + ' <a class=""' +
-                'onclick="viditemclicked(\'' + results + '\')"><i class="pl-2 fa fa-play"></i></a>' +
-                '<a class="ml-3" href="' + resultId + '">Q<i class="pl-2 fa fa-plus "></i></a>' +
-                '</div>' +
-                '<button type="button" id="byn' + i + '" class="btn btn-default delvid mb-2 w-10"' +
-                'onclick="destvid(\'' + name + '\')" >' +
-                '<i class="pl-2 fa fa-times "></i></button></div>';
-            $("#vidb").append($(btnhtml));
-
-            i++;
-
-        };
-
-        var i2 = 1;
-
-        function made2(url, name, e) {
-            var nam1 = name.toString().split(".pdf");
-            var nam2 = nam1.toString().replace(/_/gi, ' ');
-            var btnhtml2 =
-                '<tr class="" id="' + name.slice(0, 4) + '">' +
-                '<td>' + nam2 + '</td>' +
-                '<td><button type="button" class="btn btn-success m-1"' +
-                'onclick="openpdf(\'' + url + '\')">Preview</button>' +
-                '<button type="button" id="byn' + i2 + '"class="btn btn-danger ml-1"' + 'onclick="destvid2(\'' + name +
-                '\')" >' +
-                'Delete<i class="pl-2 fa fa-times "></i></button></td>' +
-                '</tr>';
-            $("#pdfb").append($(btnhtml2));
-            // ajaxed2();
-            i2++;
-        };
-        var i3 = 1;
-
-        function made3(url, name, e) {
-
-            var nam1 = name.toString().split(".")[0];
-            var nam2 = nam1.toString().replace(/_/gi, ' ');
-            var btnhtml2 =
-                '<tr class="" id="' + name.slice(0, 4) + '">' +
-                '<td>' + nam2 + '</td>' +
-                '<td><button type="button" class="btn btn-success m-1"' +
-                'onclick="openpdf(\'' + url + '\')">Preview</button>' +
-                '<button type="button" id="byn' + i3 + '"class="btn btn-danger ml-1"' + 'onclick="destvid2(\'' + name +
-                '\')" >' +
-                'Delete<i class="pl-2 fa fa-times "></i></button></td>' +
-                '</tr>';
-            $("#ppt").append($(btnhtml2));
-            // ajaxed2();
-            i2++;
-        };
+     
         var form = document.getElementById("vidform");
 
-        function ajaxed() {
-            var objprogress = document.getElementById("progressob");
-            var pptxes = document.getElementById("pptxes").files;
-            var ppts = document.getElementById("pptxes")
-            var description = document.getElementById("description");
-            var form_data = new FormData();
-
-            form_data.append('course_id', $('input[name=course_id]').val());
-            form_data.append('videos', $('#actual-btn').prop('files')[0]);
-            form_data.append('description', description.value);
-            form_data.append('pdfes', $('#pdf-btn').prop('files')[0]);
-
-
-            for (let i = 0; i < pptxes.length; i++) {
-                form_data.append("pptxes[" + i + "]", pptxes[i]);
-            }
-
-            var answer = $('input[name*=answer]');
-            for (var i = 0; i < answer.length; i++) {
-                form_data.append(answer[i].name, answer[i].value);
-            }
-console.log(form_data);
-            var token = $("meta[name='csrf-token']").attr("content");
-            $.ajax({
-                type: 'POST',
-                url: "{{route('addcontentpost') }}",
-                data: form_data,
-                processData: false,
-                contentType: false,
-                "_token": token,
-                success: function(data) {
-                    if ((data.errors)) {
-                        alert(data.errors);
-                    } else {
-
-                        made(data.video_path, data.video_title, data.id);
-                    }
-                },
-                xhr: function() {
-                    var xhr = new XMLHttpRequest();
-                    //Upload progress
-
-                    xhr.upload.addEventListener("progress", function(evt) {
-                        if (evt.lengthComputable) {
-
-                            //Do something with upload progress
-                            objprogress.max = evt.total;
-                            objprogress.value = evt.loaded;
-                        }
-                    }, false);
-
-                    return xhr;
-                },
-                beforeSend: function(xhr) {
-                    $('.loading-overlay-image-container').show();
-                    $('.loading-overlay').show();
-                },
-                complete: function(data) {
-                    $('.loading-overlay-image-container').hide();
-                    $('.loading-overlay').hide();
-                },
-
-
-
-
-                error: function(data) {
-                    $('.loading-overlay-image-container').hide();
-                    $('.loading-overlay').hide();
-
-                }
-
-
-            });
-        };
+       
 
 
         function ajaxed2() {

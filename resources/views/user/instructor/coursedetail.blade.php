@@ -16,12 +16,15 @@
                 </div> -->
                 <div class="row">
                     <div class="col-md-4 col-lg-3 white p-0 vid-coz " id="vid">
-                    <a class="btn  btn-info text-white  p-2  col-md-12 mt-1 mb-1 "
+                    <a class=" "
                                     href="{{route('viewcourse',$selcoz->id)}}">
-                        <video width="400" height="220" poster="{{asset('assets/images/course_4.jpg')}}" class="w-100 "
+                                    <div class="">
+                                    <video width="400" height="220" poster="{{route('get-copic',explode('/',$copic->file_path)[1])}}" class="w-100 object-cover "
                             controls>
 
                         </video>
+                                    </div>
+                      
 </a>
                         <div class="mt-0   d-none d-md-block d-lg-block">
                             <strong>

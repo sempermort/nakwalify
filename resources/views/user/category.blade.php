@@ -145,12 +145,25 @@
 
 
                 <div class="row mt-5">
-                    @foreach($coz as $cozy)
+                    @foreach($coz as $key=>$cozy)
+                
                     <div class="col-md-4">
                         <a href="{{route('coursedetail',$cozy->id)}}">
                         <div class="card cardc rounded ">
-                            <img class="card-img-top w-100" width="295" height="165"
-                                src="{{asset('assets/images/about/company-2.jpg')}}" alt="Card image cap">
+                        <div class="h-250">
+                                        <img class="card-img-top  object-cover h-100 w-100"
+                                            src="{{route('get-copic',explode('/',$copic[$key]->file_path)[1])}}"
+                                            alt="Card image cap">
+                                        <div class="card-img-overlay">
+                                            <span class=" jss16 m-25-auto ">
+                                                <span class="material-icons-round ">
+                                                    play_arrow
+                                                </span>
+                                            </span>
+
+                                        </div>
+                                    </div>
+                           
                             <div class="m-2">
                                 <p class="card-text  d-flex justify-content-between">
                                     <small class="card-text">23,162 trainees </small>

@@ -21,7 +21,7 @@ class Course extends Model
      * @var array
      */
     protected $fillable = [
-        'course_title','course_subt', 'course_des','language',
+        'course_title','course_subt', 'course_des','language', 'category_Id','subcategory_id',
         'price','mainrequire','mainwlearn',
     ];
 
@@ -29,5 +29,9 @@ class Course extends Model
     public function Videos()
     {
         return $this->hasMany(Videos::class);
+    }
+    public function mediacov()
+    {
+        return $this->hasone(Mediacover::class);
     }
 }

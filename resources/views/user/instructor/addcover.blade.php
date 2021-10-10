@@ -111,7 +111,7 @@
                             <div class="step-footer step-tab-pager justify-content-between mb-4">
 
 
-                                    class="btn btn-info col-2">Previous</a>
+                                   <<button type="button" class="btn btn-info col-2">Previous</a>
                                 <button data-direction="next" type="submit"
                                     class="btn btn-info col-2 btn-pill">Save</button>
 

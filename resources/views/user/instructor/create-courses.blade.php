@@ -82,10 +82,10 @@
                                                         <div class="mt-30 d-flex justify-content-between lbel25">
                                                             <label>Course Category*</label>
                                                             <button type="button"
-                                                            data-toggle="modal" data-target="#category"
+                                                            data-toggle="modal" data-target="#categorymodal"
                                                             href="" class="btn btnprimary"><i class="fa fa-plus"></i></button>
                                                         </div>
-                                                        <select class="form-rounded form-control" name="category_Id" id="catig">
+                                                        <select class="form-rounded form-control" name="category_Id" id="category_id" for="category_Id">
 
                                                             @foreach($corses as $coz)
                                                             <option value="{{$coz->id}}">{{$coz->category_name}}</option>
@@ -97,15 +97,15 @@
                                                     <div class="mt-30 d-flex justify-content-between lbel25">
                                                             <label>Course SubCategory*</label>
                                                             <button type="button"
-                                                            data-toggle="modal" data-target="#subcategory"
+                                                            data-toggle="modal" data-target="#subcategorymodal"
                                                             href="" class="btn btnprimary"><i class="fa fa-plus"></i></button>
                                                         </div>
-                                                        <select class="form-rounded form-control   "
-                                                            name="subcategory_Id" id="subcatig">
+                                                        <select class="form-rounded form-control"
+                                                            name="subcategory_Id" for="subcategory_Id" id="subcatig">
 
                                                             @foreach($subcorses as $cozi)
                                                             <option value="{{$cozi->id}}">
-                                                                {{$cozi->category_name}}</option>
+                                                                {{$cozi->subcategory_name}}</option>
                                                             @endforeach
 
 
@@ -184,7 +184,7 @@
                                                             </div>
                                                             <select class="form-rounded form-control  dropdown " name="price">
 
-                                                                <option value="Free">Free</option>
+                                                                <option value="0">Free</option>
                                                                 <option value="10000">10,000 </option>
                                                                 <option value="15000">15,000</option>
                                                                 <option value="25000">25,000 </option>
@@ -214,7 +214,7 @@
     </div>
 </div>
 <!-- Modal -->
-<div class="modal fade" id="category" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="categorymodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -225,8 +225,8 @@
       </div>
       <div class="modal-body">
       <div class="form-group">
-                <label for="catgname" class="control-label">Category name</label>
-                <input type="text" for="catgname" class="form-control" />
+                <label for="categoryname" class="control-label">Category name</label>
+                <input type="text" name="categoryname" id="categoryname" class="form-control" />
             </div>
       </div>
       <div class="modal-footer">
@@ -237,7 +237,7 @@
   </div>
 </div>
 <!-- Modal -->
-<div class="modal fade" id="subcategory" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+<div class="modal fade" id="subcategorymodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -248,8 +248,8 @@
       </div>
       <div class="modal-body">
       <div class="form-group">
-                <label for="CD" class="control-label">Subcategory name</label>
-                <input type="text" for="subcatgname" class="form-control" />
+                <label for="subcatgname" class="control-label">Subcategory name</label>
+                <input type="text" name="subcatgname" class="form-control" />
             </div>
       </div>
       <div class="modal-footer">
@@ -303,7 +303,7 @@
        function ajaxed5() {
             var objprogress = document.getElementById("progressob");
             var form_data = new FormData();
-            form_data.append('categoryname', $('input[name=catgname]').val());
+            form_data.append('category_name', $('input[name=categoryname]').val());
 
             $.ajax({
                 type: 'POST',
@@ -317,10 +317,13 @@
                 success: function(data) {
                     if ((data.errors)) {
                         alert(data.errors);
-                    } else {
-                        var tgb='<option value="'+data.id+'">'+data.categoryname+'</option>';
-                        $("#catig").append($(tgb));
-                        }
+                    } else {                    
+                        var tgb='<option value="'+data.category_id+'">'+data.category_name+'</option>';
+                        $("#category_id").append($(tgb));
+                        $('#categorymodal').modal('hide')
+                   
+            }
+                        
 
                 },
                 xhr: function() {
@@ -362,9 +365,10 @@
 
         function ajaxed6() {
             var objprogress = document.getElementById("progressob");
-
-            form_data.append('categoryId', $('input[name=categoryname]').val());
-            form_data.append('subcategoryname', $('input[name=subcatgname]').val());
+            var cti = document.getElementById("category_id");
+            var form_dat = new FormData();
+            form_dat.append('category_Id', $('#category_id option:selected').val());
+            form_dat.append('subcategory_name', $('input[name=subcatgname]').val());
 
             var token = $("meta[name='csrf-token']").attr("content");
             $.ajax({
@@ -373,7 +377,7 @@
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 },
                 url: "{{route('subcatg') }}",
-                data: form_data,
+                data: form_dat,
                 processData: false,
                 contentType: false,
                 success: function(data) {
@@ -381,11 +385,10 @@
                         alert(data.errors);
                     } else {
 
-                        var tgb='<option value="'+data.id+'">'+data.subcategoryname+'</option>';
+                        var tgb='<option value="'+data.subcategory_id+'">'+data.subcategory_name+'</option>';
                         $("#subcatig").append($(tgb));
+                        $('#subcategorymodal').modal('hide')
                         }
-
-
                     },
 
                 xhr: function() {
@@ -426,11 +429,12 @@
         };
 
         const chosencat = document.getElementById('file-chosen');
+   
 
-actualBtn.addEventListener('change', function() {
-    fileChosen.textContent = this.files[0].name;
+// actualBtn.addEventListener('change', function() {
+//     fileChosen.textContent = this.files[0].name;
 
-});
+// });
 
 </script>
 @endsection

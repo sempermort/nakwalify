@@ -7,6 +7,7 @@ use App\Models\Course;
 use App\Models\Category;
 use App\Models\Subcategory;
 use App\Models\Videos;
+use App\Models\Mediacover;
 use App\Models\Questions;
 use App\Models\Answers;
 use App\Models\Course_files;
@@ -67,16 +68,36 @@ public function getPpt($ppt)
     return $response;
 }
 
+public function getcopic($pic)
+{
+    $fileContents = Storage::disk('local')->get("coverpic/{$pic}");
+    $response = Response($fileContents, 200);
+    $response->header('Content-Type','image/{explode(".",$pic)[1]}');
+
+    return $response;
+}
+public function getcovid($vid)
+{
+    $fileContents = Storage::disk('local')->get("covervid/{$vid}");
+    $response = Response($fileContents, 200);
+    $response->header('Content-Type','image/{explode(".",$vid)[1]}');
+
+    return $response;
+}
 public function  viewCourse($id)
 {  $course=course::find($id);
 
     $videos=Videos::where('course_id',$course->id)->get();
 
-
+    $covid=Mediacover::where('course_id',$id)->where('file_type','covervid')->first();
+    
+    $copic=Mediacover::where('course_id',$id)->where('file_type','coverpic')->first();
      $pdfs=Course_files::where('file_type', 'pdfcourse')->where('videos_id',$videos->first()->id)->get();
     return view('user.instructor.viewcourse')->with('videos', $videos)
      ->with('pdfs', $pdfs)
-    ->with('course', $course);
+    ->with('course', $course)
+    ->with('covid', $covid)
+    ->with('copic', $copic);
 
 }
 
@@ -104,7 +125,9 @@ public function postaddCourse(Request $request)
     $validatedData = $request->validate([
         'course_title' => 'required|unique:courses,course_title',
         'course_subt' => 'required',
-        'language' => 'required',       
+        'language' => 'required',  
+        'category_Id' => 'required',  
+        'subcategory_Id' => 'required',  
         'mainrequire' => 'required',
         'mainwlearn' => 'required',
         'price' => 'required',
@@ -384,34 +407,33 @@ public function  postaddCover(Request $request)
     ]);
 
 
-
                 if($request->hasfile('coverpic'))
                 {
-                      $coursecoverpic=new Course_files();
+                      $coursecoverpic=new Mediacover();
                       $filed=$request->file('coverpic');
                       $filename = $filed->getClientOriginalName();
 
-                      $path=$filed->store('/coverpic');
-                      $coursecoverpic->course_id=$request->courseid;
-                      $coursecoverpic->course_file_title=$filename;
+                     $path=$filed->store('/coverpic');
+                     $coursecoverpic->course_id=$request->courseid;
+                     $coursecoverpic->title=$filename;
                      $coursecoverpic->file_type="coverpic";
                      $coursecoverpic->file_path=$path;
-
+                     $coursecoverpic->save();
                 }
-                if($request->hasfile('covervideo'))
+                if($request->hasfile('covervid'))
                 {
 
-                    $coursecovervid=new Course_files();
-                    $filed=$request->file('covervid');
-                    $filename = $filed->getClientOriginalName();
+                    $coursecovervid=new Mediacover();
+                    $filevid=$request->file('covervid');
+                    $filename = $filevid->getClientOriginalName();
 
-                    $path=$filed->store('/covervid');
+                    $path=$filevid->store('/covervid');
                     $coursecovervid->course_id=$request->courseid;;
-                    $coursecovervid->course_file_title=$filename;
+                    $coursecovervid->title=$filename;
                     $coursecovervid->file_type="covervid";
                     $coursecovervid->file_path=$path;
-
-
+                 
+                    $coursecovervid->save();
                 }
 
 
@@ -421,27 +443,32 @@ return redirect()->route('viewcourse',['id'=>$request->courseid]);
 
 public function courseDetail($id)
 {
-
+    $copic=Mediacover::where('course_id',$id)->where('file_type','coverpic')->first();
         $selcoz=Course::find($id);
         $vidz=Videos::where("course_id",$id)->get();
        
 
     return view('user.instructor.coursedetail')->with('selcoz',$selcoz)
+    ->with('copic',$copic)
       ->with('vidz',$vidz);
 }
 
 public function addcategory(Request $request)
 {
+
     $category = Category::create([
-        'category_name' => $request->categoryname,
+        'category_name' => $request->category_name,
+    
     ]);
+   
     return Response()->json($category);
    }
 public function addsubcategory(Request $request)
 {
+    
     $subcategory = SubCategory::create([
-        'subcategory_name' => $request->subcategoryname,
-        'category_id' => $request->categ-id,
+        'subcategory_name' => $request->subcategory_name,
+        'category_id' => $request->category_Id,
     ]);
 
     return Response()->json($subcategory);
@@ -489,8 +516,9 @@ public function createcert()
 }
 public function category()
 {
+    $copic=Mediacover::where('file_type','coverpic')->get();
     $coz=Course::all();
-    return view('user.category')->with('coz',$coz);
+    return view('user.category')->with('coz',$coz)->with('copic',$copic);
 }
 public function accSetting()
 {

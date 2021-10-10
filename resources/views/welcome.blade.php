@@ -5,134 +5,133 @@
 <section>
     <div class="contan" style="margin-top: -25px;">
         <div class=" regform card col-md-4   ">
-            
-                <div class="m-2">
-                    <div class=" text-center">
-                        <P class="font-weight-bolder pvw105">Sign up to continue</P>
 
-                    </div>
-                    <div class="w-100">
+            <div class="m-2">
+                <div class=" text-center">
+                    <P class="font-weight-bolder pvw105">Sign up to continue</P>
 
-
-                        <div class="tab-content">
-                            <div id="tab-1" class="@tabpane2">
-                                <div class="panel-body">
-                                    <div class="form-horizontal col-md-12  m-auto">
-                                        <a href="{{ url('/redirectgoogle') }}" class="col-12 btn btn-outline-dark">
-                                            <i class="fab fa-google float-left"></i> <span class="text-left">
-                                                Continue With
-                                                Google</a>
-
-                                        <a class="col-12 btn btn-outline-dark">
-                                            <i class="fab fa-facebook float-left"></i>
-                                            <span class="text-left">Continue With
-                                                Facebook</span> </a>
-                                        <a class="col-12 btn btn-outline-dark">
-                                            <i class="fab fa-twitter float-left"></i> <span class="text-left">Continue
-                                                With
-                                                Twitter </span></a>
-                                        <div class="d-flex    text-center w-90">
-                                            <hr class=" col-md-5">
-                                            <p class="col-md-2">or</p>
-                                            <hr class=" col-md-5">
-                                        </div>
-                                        <form method="POST" action="{{ route('register') }}">
-                                            @csrf
-
-                                            <div class=" form-group mb-1">
-                                                <div class="d-flex  justify-content-between">
-                                                    <div style="width: 48%;"> <input type="text" name="fname"
-                                                            value="{{ old('fname') }}" required autocomplete="name"
-                                                            autofocus id="FirstName" class="form-control"
-                                                            placeholder="First Name">
-                                                        @error('fname')
-                                                        <span class="invalid-feedback" role="alert">
-                                                            <strong>{{ $message }}</strong>
-                                                        </span>
-                                                        @enderror
-                                                    </div>
-                                                    <div style="width: 48%;"> <input type="text" name="lname"
-                                                            value="{{ old('lname') }}" required autocomplete="name"
-                                                            autofocus id="lastName" class="form-control"
-                                                            placeholder="larst Name">
-                                                        @error('lname')
-                                                        <span class="invalid-feedback" role="alert">
-                                                            <strong>{{ $message }}</strong>
-                                                        </span>
-                                                        @enderror
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class=" mb-1 form-group">
-                                                <input type="email" name="email" id="email" name="email"
-                                                    value="{{ old('email') }}" required autocomplete="email"
-                                                    class=" form-control" placeholder="Email Address">
-                                                @error('email')
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
-                                                @enderror
-                                            </div>
+                </div>
+                <div class="w-100">
 
 
-                                            <div class=" form-group mb-1">
-                                                <div class="d-flex justify-content-between">
-                                                    <input type="text" name="Ccode" id="Ccode" class="form-control"
-                                                        style="width: 28%;" value="+255">
-                                                    <div>
-                                                        <input type="text" name="phonenumber" id="phonenumber"
-                                                            class="form-control" value="{{ old('phonenumber') }}"
-                                                            required autocomplete="phonenumber" style="width: 68%;">
-                                                        @error('phonenumber') <span class="invalid-feedback"
-                                                            role="alert">
-                                                            <strong>{{ $message }}</strong>
-                                                        </span>
-                                                        @enderror
-                                                    </div>
+                    <div class="tab-content">
+                        <div id="tab-1" class="@tabpane2">
+                            <div class="panel-body">
+                                <div class="form-horizontal col-md-12  m-auto">
+                                    <a href="{{ url('/redirectgoogle') }}" class="col-12 btn btn-outline-dark">
+                                        <i class="fab fa-google float-left"></i> <span class="text-left">
+                                            Continue With
+                                            Google</a>
 
-                                                </div>
-
-                                            </div>
-
-                                            <div class=" form-group">
-                                                <input type="password" name="password" id="password" required
-                                                    autocomplete="new-password" class=" form-control"
-                                                    placeholder="Password">
-                                                @error('password')
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
-                                                @enderror
-                                            </div>
-                                            <div class=" mb-1">
-                                                <input type="password" id="cpassword" class=" form-control"
-                                                    name="password_confirmation" required autocomplete="new-password"
-                                                    placeholder="Confirm Password">
-                                            </div>
-                                            <div class=" form-group m-2">
-                                                <div class="text-center m-auto ">
-                                                    <button class="form-control m-auto w-80 btn-primary">
-                                                        {{ __('Register') }}</button>
-
-                                                    <p>Already a Member <button class=" btn btn-default "
-                                                            style="margin-top: -4px;">Sign
-                                                            In</button></p>
-
-
-                                                </div>
-                                            </div>
-                                        </form>
-
+                                    <a class="col-12 btn btn-outline-dark">
+                                        <i class="fab fa-facebook float-left"></i>
+                                        <span class="text-left">Continue With
+                                            Facebook</span> </a>
+                                    <a class="col-12 btn btn-outline-dark">
+                                        <i class="fab fa-twitter float-left"></i> <span class="text-left">Continue
+                                            With
+                                            Twitter </span></a>
+                                    <div class="d-flex    text-center w-90">
+                                        <hr class=" col-md-5">
+                                        <p class="col-md-2">or</p>
+                                        <hr class=" col-md-5">
                                     </div>
+                                    <form method="POST" action="{{ route('register') }}">
+                                        @csrf
+
+                                        <div class=" form-group mb-1">
+                                            <div class="d-flex  justify-content-between">
+                                                <div style="width: 48%;"> <input type="text" name="fname"
+                                                        value="{{ old('fname') }}" required autocomplete="name"
+                                                        autofocus id="FirstName" class="form-control"
+                                                        placeholder="First Name">
+                                                    @error('fname')
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                    @enderror
+                                                </div>
+                                                <div style="width: 48%;"> <input type="text" name="lname"
+                                                        value="{{ old('lname') }}" required autocomplete="name"
+                                                        autofocus id="lastName" class="form-control"
+                                                        placeholder="larst Name">
+                                                    @error('lname')
+                                                    <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                    @enderror
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class=" mb-1 form-group">
+                                            <input type="email" name="email" id="email" name="email"
+                                                value="{{ old('email') }}" required autocomplete="email"
+                                                class=" form-control" placeholder="Email Address">
+                                            @error('email')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                            @enderror
+                                        </div>
+
+
+                                        <div class=" form-group mb-1">
+                                            <div class="d-flex justify-content-between">
+                                                <input type="text" name="Ccode" id="Ccode" class="form-control"
+                                                    style="width: 28%;" value="+255">
+                                                <div>
+                                                    <input type="text" name="phonenumber" id="phonenumber"
+                                                        class="form-control" value="{{ old('phonenumber') }}" required
+                                                        autocomplete="phonenumber" style="width: 68%;">
+                                                    @error('phonenumber') <span class="invalid-feedback" role="alert">
+                                                        <strong>{{ $message }}</strong>
+                                                    </span>
+                                                    @enderror
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                        <div class=" form-group">
+                                            <input type="password" name="password" id="password" required
+                                                autocomplete="new-password" class=" form-control"
+                                                placeholder="Password">
+                                            @error('password')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                            @enderror
+                                        </div>
+                                        <div class=" mb-1">
+                                            <input type="password" id="cpassword" class=" form-control"
+                                                name="password_confirmation" required autocomplete="new-password"
+                                                placeholder="Confirm Password">
+                                        </div>
+                                        <div class=" form-group m-2">
+                                            <div class="text-center m-auto ">
+                                                <button class="form-control m-auto w-80 btn-primary">
+                                                    {{ __('Register') }}</button>
+
+                                                <p>Already a Member <button class=" btn btn-default "
+                                                        style="margin-top: -4px;">Sign
+                                                        In</button></p>
+
+
+                                            </div>
+                                        </div>
+                                    </form>
+
                                 </div>
                             </div>
-
-                           
                         </div>
 
+
                     </div>
+
                 </div>
-            
+            </div>
+
         </div>
     </div>
 
@@ -171,48 +170,62 @@
 
         <div class="tab-content">
             <div id="tab-1" class="tab-pane active">
-              
-                    <div id="carousel-example4" class="carousel slide m-4" data-interval="false" ride="false"
-                        data-ride="carousel">
-                        <div class="carousel-inneri row  mx-auto" role="listbox">
-                            <div class="carousel-item  col-md-4  active">
 
+                <div id="carousel-example4" class="carousel slide m-4" data-interval="false" ride="false"
+                    data-ride="carousel">
+                    <div class="carousel-inneri  row  mx-auto" role="listbox">
+
+                        @foreach($coz as $key=>$cozy)
+                        <div class="col-md-4    active">
+                            <a href="{{route('coursedetail',$cozy->id)}}">
                                 <div class="card cardc rounded ">
-                                    <img class="card-img-top  w-100" width="295" height="165"
-                                        src="{{asset('assets/images/photos/anders-jilden-307322-500.jpg')}}"
-                                        alt="Card image cap">
-                                    <div class="card-img-overlay">
-                                        <span class=" jss16 m-25-auto ">
-                                            <span class="material-icons-round ">
-                                                play_arrow
+                                    <div class="h-250">
+                                        <img class="card-img-top  object-cover h-100 w-100"
+                                            src="{{route('get-copic',explode('/',$copic[$key]->file_path)[1])}}"
+                                            alt="Card image cap">
+                                        <div class="card-img-overlay">
+                                            <span class=" jss16 m-25-auto ">
+                                                <span class="material-icons-round ">
+                                                    play_arrow
+                                                </span>
                                             </span>
-                                        </span>
+
+                                        </div>
                                     </div>
+
                                     <div class="m-2">
-
-                                        <p class="card-text bold text-center"><a href="http://" target="_blank"
-                                                rel="noopener noreferrer">Art
-                                                Journaling for Self-Care: 3 Exercises for Reflection and
-                                                Growth</a>
+                                        <p class="card-text  d-flex justify-content-between">
+                                            <small class="card-text">23,162 trainees </small>
+                                            <small class="card-text">1h 50m</small>
                                         </p>
-                                        <p class="card-text d-flex justify-content-center">
-                                            <small class="card-text">John Mac-Anthony </small>
 
+
+                                        <p class="card-text bold"><a href="http://" target="_blank"
+                                                rel="noopener noreferrer">{{$cozy->course_subt}}</a> </p>
+                                        <p class="card-text d-flex justify-content-between">
+
+                                            <small class="card-text"><span class="material-icons-outlined">
+                                                    bookmark_border
+                                                </span></small>
                                         </p>
                                     </div>
 
                                 </div>
-                            </div>
+                            </a>
 
-                        <a class="carousel-control-prev " style="margin-left: -24px;" href="#carousel-example4" role="button"
-                            data-slide="prev"><small class=" jss15 bg-white">
+                        </div>
+
+                        @endforeach
+                        <a class="carousel-control-prev " style="margin-left: -24px;" href="#carousel-example4"
+                            role="button" data-slide="prev"><small class=" jss15 bg-white">
                                 <span class="material-icons dark  ">
                                     chevron_left
                                 </span>
                             </small>
 
                         </a>
-                        <a class="carousel-control-next" style="margin-right: -24px;" href="#carousel-example4" role="button" data-slide="next">
+                        <a class="carousel-control-next" style="margin-right: -24px;" href="#carousel-example4"
+                            role="button" data-slide="next">
                             <i class=" jss15  ">
                                 <span class="material-icons dark font-weight-light">
                                     chevron_right
@@ -222,110 +235,110 @@
                             </button>
                         </a>
                     </div>
-          
+
+                </div>
             </div>
-        </div>
-        <div class="mt-5 mb-5">
+            <div class="mt-5 mb-5">
 
-            <div id="carouselExampleIndicators" class="carousel h-400 carousel-fade" data-ride="carousel" style="">
-                <ol class="carousel-indicators ">
-                    <li data-target="#carouselExampleIndicators1" data-slide-to="0" class="active">
-                    </li>
-                    <li data-target="#carouselExampleIndicators1" data-slide-to="1"></li>
-                    <li data-target="#carouselExampleIndicators1" data-slide-to="2"></li>
-                    <li data-target="#carouselExampleIndicators1" data-slide-to="3"></li>
-                </ol>
-                <div class="carousel-inner">
-                    <div class="carousel-item active h-400 ">
-                        <img src="{{asset('assets/images/photos/artem-sapegin-229391-500.jpg')}}"
-                         class="img-fluid  " style="object:scale-down;"  alt="">
-                        <div class="invisiblely">
-                            <div class="carousel-caption slide-top">
-                                <div class=" itm">
-                                    <div class="banner-content">
+                <div id="carouselExampleIndicators" class="carousel h-400 carousel-fade" data-ride="carousel" style="">
+                    <ol class="carousel-indicators ">
+                        <li data-target="#carouselExampleIndicators1" data-slide-to="0" class="active">
+                        </li>
+                        <li data-target="#carouselExampleIndicators1" data-slide-to="1"></li>
+                        <li data-target="#carouselExampleIndicators1" data-slide-to="2"></li>
+                        <li data-target="#carouselExampleIndicators1" data-slide-to="3"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active h-400 ">
+                            <img src="{{asset('assets/images/photos/artem-sapegin-229391-500.jpg')}}"
+                                class="img-fluid center " style="" alt="">
+                            <div class="invisiblely">
+                                <div class="carousel-caption slide-top">
+                                    <div class=" itm">
+                                        <div class="banner-content">
 
-                                        <div class=""><span>Build Meaningful Self-Care Into
-                                                Every Day</span></div>
-                                        <div class="banner-description">Join superstar Jonathan Van Ness and
-                                            best-selling author Chidera Eggerue for this powerful new
-                                            self-care workshop, kicking off July 12th.</div>
-                                        <div class="banner-actions"><a href=""
-                                                class="btn btn-default bg-landing"><span>Join
-                                                    Now</span></a></div>
+                                            <div class=""><span>Build Meaningful Self-Care Into
+                                                    Every Day</span></div>
+                                            <div class="banner-description">Join superstar Jonathan Van Ness and
+                                                best-selling author Chidera Eggerue for this powerful new
+                                                self-care workshop, kicking off July 12th.</div>
+                                            <div class="banner-actions"><a href=""
+                                                    class="btn btn-default bg-landing"><span>Join
+                                                        Now</span></a></div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
                     </div>
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+            <div class="m-5">
+                <div class="row mt-5">
+                    <div class="col-md-4">
+                        <h1 class="font-weight-bolder">What Will You Discover?
+                            <hr>
+                        </h1>
+                        <p class="font-weight-bolder">
+                            Explore new skills, deepen existing passions, and get lost in creativity. What you find
+                            just might surprise and inspire you.
+                        </p>
+                        <button class="btn-outline-dark p-2">Browse Classes</button>
+                    </div>
+                    <div class="col-md-8">
+                        <img src="{{asset('assets/images/ezgif.com-gif-maker.jpg')}}" class="rounded  img-fluid"
+                            width="1048" height="576" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="m-150-20">
+                <div class="row ">
+                    <div class="col-md-8">
+                        <img src="{{asset('assets/images/ezgif.com-gif-maker2.jpg')}}" class="rounded img-fluid"
+                            width="1048" height="576" alt="">
+                    </div>
+                    <div class="col-md-4">
+                        <h1 class="font-weight-bolder">Membership With Meaning
+                            <hr>
+                        </h1>
+                        <p class="font-weight-bolder">
+                            With so much to explore, real projects to create, and the support of fellow-creatives,
+                            Skillshare’s online learning platform empowers you to learn new skills and accomplish
+                            real growth.
+                        </p>
+                        <button class="btn-outline-dark p-2">Browse Projects</button>
+                    </div>
+                </div>
+            </div>
+            <div class="m-150-20">
+                <div class="row mt-5">
+                    <div class="col-md-4">
+                        <h1 class="font-weight-bolder">Online Learning Designed For Real Life
+                            <hr>
+                        </h1>
+                        <p class="font-weight-bolder">
+                            Move your creative journey forward without putting life on hold. Skillshare’s short
+                            online classes help you find inspiration that fits your routine.
+                        </p>
+                        <button class="btn-outline-dark p-2">Try Premimum</button>
+                    </div>
+                    <div class="col-md-8">
+                        <img src="{{asset('assets/images/ezgif.com-gif-maker3.jpg')}}" class="rounded img-fluid"
+                            width="1048" height="576" alt="">
+                    </div>
+                </div>
+            </div>
 
-                </div>
-                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
-            </div>
         </div>
-        <div class="m-5">
-            <div class="row mt-5">
-                <div class="col-md-4">
-                    <h1 class="font-weight-bolder">What Will You Discover?
-                        <hr>
-                    </h1>
-                    <p class="font-weight-bolder">
-                        Explore new skills, deepen existing passions, and get lost in creativity. What you find
-                        just might surprise and inspire you.
-                    </p>
-                    <button class="btn-outline-dark p-2">Browse Classes</button>
-                </div>
-                <div class="col-md-8">
-                    <img src="{{asset('assets/images/ezgif.com-gif-maker.jpg')}}" class="rounded  img-fluid"
-                        width="1048" height="576" alt="">
-                </div>
-            </div>
-        </div>
-        <div class="m-150-20">
-            <div class="row ">
-                <div class="col-md-8">
-                    <img src="{{asset('assets/images/ezgif.com-gif-maker2.jpg')}}" class="rounded img-fluid"
-                        width="1048" height="576" alt="">
-                </div>
-                <div class="col-md-4">
-                    <h1 class="font-weight-bolder">Membership With Meaning
-                        <hr>
-                    </h1>
-                    <p class="font-weight-bolder">
-                        With so much to explore, real projects to create, and the support of fellow-creatives,
-                        Skillshare’s online learning platform empowers you to learn new skills and accomplish
-                        real growth.
-                    </p>
-                    <button class="btn-outline-dark p-2">Browse Projects</button>
-                </div>
-            </div>
-        </div>
-        <div class="m-150-20">
-            <div class="row mt-5">
-                <div class="col-md-4">
-                    <h1 class="font-weight-bolder">Online Learning Designed For Real Life
-                        <hr>
-                    </h1>
-                    <p class="font-weight-bolder">
-                        Move your creative journey forward without putting life on hold. Skillshare’s short
-                        online classes help you find inspiration that fits your routine.
-                    </p>
-                    <button class="btn-outline-dark p-2">Try Premimum</button>
-                </div>
-                <div class="col-md-8">
-                    <img src="{{asset('assets/images/ezgif.com-gif-maker3.jpg')}}" class="rounded img-fluid"
-                        width="1048" height="576" alt="">
-                </div>
-            </div>
-        </div>
-
-    </div>
 </section>
 
 <div class="modal fade  " id="register" tabindex="-1" role="dialog">

@@ -26,22 +26,21 @@
                     </div>
                     <div class="tab-content">
 
-                        <div id="videotab" class="tab-pane  tabcontent">
+                        <div id="videotab" class="tab-pane  h-350 tabcontent">
                             <video width="400" id="mainvid" height="240"
-                                poster="{{asset('assets/images/course_4.jpg')}}" class="w-100  " controls>
-
+                                poster="{{route('get-copic',explode('/',$copic->file_path)[1])}}" class="w-100 h-100 object-cover " controls>
+                                @if(isset($covid->id))
+                                <source src="{{route('get-covid',explode('/',$covid->file_path)[1])}}">@endif
                             </video>
                         </div>
-                        <style>
-
-                        </style>
+                       
                         <div id="pptab" class="tab-pane tabcontent">
 
                             <div id="carouselExampleFade"  class="carousel slide carousel-fade" data-ride="carousel">
                                 <div class="carousel-inner " id="carol">
-                                <div class="carousel-item active">
-                                        <img src="{{asset('assets/images/course_4.jpg')}}" width="400"
-                                            id="mainvid" height="240" class="d-block w-100"
+                                <div class="carousel-item h-350 pl-4 pr-4 active">
+                                        <img src="{{route('get-copic',explode('/',$copic->file_path)[1])}}" width="400"
+                                            id="mainvid" height="240" class=" object-cover h-100 w-100"
                                             alt="">
                                     </div>
 
@@ -170,23 +169,24 @@
         }
         document.getElementById(cityName).style.display = "block";
         evt.currentTarget.className += " active";
-    }
+    };
 
     // Get the element with id="defaultOpen" and click on it
     document.getElementById("defaultOpen").click();
 
- 
 
 
 
 
-    var totalv = 0;
+
+        var totalv = 0;
         var currentv = 0;
         var currenturl = 0;
         var modal =  0;
 
         function vidliclicked(url,counv,currev,id)
         {
+       
         ajaxed4(id);
         totalv=counv;
         currentv=currev;
@@ -207,34 +207,39 @@
         video.play();
 
         };
-        var tv   =        document.querySelector('video');
-        var contain        =        document.getElementById('mediav');
-        tv.addEventListener('ended',        onplayerchange);
+        var tv   = document.querySelector('video');
+        var contain =  document.getElementById('mediav');
+        tv.addEventListener('ended', onplayerchange);
         function onplayerchange(evnt)
         {
-        if(totalv -currentv>=  0) {
+           
+        if(totalv -currentv> 1) {
         contain.insertAdjacentHTML('beforeend',
-        '<div id="modal" class="video-js w-100 h-100 card-img-overlay">' +
-            '<div id="message">Increase conversions by adding this modal window at the end of your videos!!</div>' +
+            '<div id="modal" class="video-js w-100 h-100 card-img-overlay">' +
+            '<div id="message">Increase conversions by adding this'+ 
+            'modal window at the end of your videos!!</div>' +
             '<div class="d-flex justify-content-center">'+
-                '<button class="btn btn-info mr-5" type="button" id="button1">Previous Video</button></button>' +
-                '<button type="button" class="btn btn-success ml-5" id="button2">Next Video</button></button></div>' +
-            '<div class="text-center m-3"><button type="button" id="replayvideo" class="btn btn-default text-white"><i class="fas fa-redo"></i></button>' +
-                '</div> </div>'
+            '<button class="btn btn-info mr-5" type="button" id="button1">Previous Video'+
+            '</button></button>' +
+            '<button type="button" class="btn btn-success ml-5" id="button2">Next Video'+
+            '</button></button></div>' +
+            '<div class="text-center m-3">'+
+            '<button type="button" id="replayvideo" class="btn btn-default text-white">'+
+            '<i class="fas fa-redo"></i></button>' +
+            '</div> </div>'
         );
 
         }
-        else{contain.insertAdjacentHTML( 'beforeend',
-        '<div id="modal" class="video-js w-100 h-100 card-img-overlay">' +
+        else{contain.insertAdjacentHTML('beforeend',
+            '<div id="modal" class="video-js w-100 h-100 card-img-overlay">' +
             '<div class="text-center" id="message">Welcome To naQualify</div>' +
-            '<div class="text-center"><button id="replayvideo" class="btn btn-default"><i class="fas fa-redo"></i></button>' +
+            '<div class="text-center"><button id="replayvideo" class="btn btn-default">'+
+            '<i class="fas fa-redo"></i></button>' +
                 '</div> </div>'
         );
-        }
-        }
-        $('#replayvideo').on('click',function() {
-        $('#vids'+currentv).click();
-        });
+        }};
+
+       
 
 
 
@@ -253,7 +258,6 @@
 
 
         $('#button1').on('click',function() {
-
             if(totalv-currentv>=0&&currentv!=1){
             var temp=currentv-1;
                 $('#vids'+temp).click();
@@ -263,7 +267,7 @@
                 $('#vids'+currentv).click();
             }
         });
-        
+
 
         function viewpdf(url) {
         const pdfviewer = document.getElementById('pspdfkit');
@@ -312,11 +316,11 @@
             var APP_URL = {!! json_encode(url('/')) !!}
         var carol = document.getElementById('carol');
         document.querySelectorAll('.carol-it').forEach(e => e.remove());
-        for(let i=0; i<data.length;i++){ 
+        for(let i=0; i<data.length;i++){
             var lin=APP_URL+"/get-ppt/" +data[i].file_path.split("/").pop();
-            var imgcaro='<div class="carousel-item carol-it">' + 
+            var imgcaro='<div class="carousel-item h-350 m-4 carol-it">' +
         '<img src="' +lin+'" width="400"'+
-        ' id="mainvid" height="240" class="d-block w-100"'+
+        ' id="mainvid" height="240" class="object-cover h-100 w-100"'+
         ' alt="" +data.course_file_title+"">'+
         ' </div>';
 
