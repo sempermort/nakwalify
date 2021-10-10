@@ -28,7 +28,14 @@
 </a>
                         <div class="mt-0   d-none d-md-block d-lg-block">
                             <strong>
-                                <p class="m-0 tshs" id="demo">Tshs {{$selcoz->price}}</p>
+                                <p class="m-0 tshs" id="demo">
+                                @if($selcoz->price==0)
+                                Free
+                               @else 
+                                Tshs                             
+                               {!!$selcoz->price !!}
+                                @endif
+                                </p>
                             </strong>
                             <!-- <button class=" border-0 p-2 btn  btn-info col-md-12  mt-0 mb-1 text-white">Add
                                 to Cart</button> -->

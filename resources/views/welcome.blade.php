@@ -429,7 +429,7 @@
                                                             </div>
                                                         </div>
                                                         <div class=" mb-1 form-group">
-                                                            <input type="email" name="email" id="email" name="email"
+                                                            <input type="email" name="email" id="email" 
                                                                 value="{{ old('email') }}" required autocomplete="email"
                                                                 class=" form-control" placeholder="Email Address">
                                                             @error('email')
@@ -643,9 +643,6 @@
         </div>
     </div>
 </div>
-
-@endsection
-
 <script>
 <!-- Initialize the plugin
 -->
@@ -666,3 +663,5 @@ $(this).find($(".jss16")).css({
 });
 });
 </script>
+@endsection
+
