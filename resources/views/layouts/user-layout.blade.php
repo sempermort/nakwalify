@@ -374,10 +374,7 @@
         </nav>
     </div>
     <div class="loading-overlay"></div>
-<div class="loading-overlay-image-container">
-    <img src="{{asset('assets/images/loading.svg')}}" class="loading-overlay-img"/>
-<progress class="" value="0" id="progressob"></progress>
-</div>
+
     <div class="wrapper  p-0">
         <main class="" style="">
             @yield('content')
@@ -433,6 +430,7 @@
         <script src="{{ asset('assets/js/jquery-3.3.1.min.js') }}"></script>
 
         <script>
+                var objprogress = document.getElementById("progressob");
         var ia = 1;
 
         function addans(e) {
@@ -605,7 +603,7 @@
 
 
         function ajaxed3() {
-            var objprogress = document.getElementById("progressob");
+        
             var questiontype = document.getElementById("questiontype");
             var answer = document.getElementsByName('answer[]');
 
