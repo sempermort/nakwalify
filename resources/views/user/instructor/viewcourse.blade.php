@@ -1,7 +1,9 @@
 @extends('layouts.stu-layout')
 
 @section('content')
-
+ @php
+include('../resources/extensions/getid3.php');	
+@endphp 
 
 {{$id=1}}
 <div class="sa4d25 bg-darknavy p-5">

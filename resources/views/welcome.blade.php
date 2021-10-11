@@ -143,7 +143,7 @@
 
         <ul class="nav nav-tabs justify-content-center text-black  font-weight-bold">
             <li class="nav-item">
-                <a class="nav-link active" data-toggle="tab" href="#All">All Categories</a>
+                <a class="nav-link active" data-toggle="tab" href="#all">All Categories</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" data-toggle="tab" href="#Livestock">Livestock</a>
@@ -169,7 +169,7 @@
         </ul>
 
         <div class="tab-content">
-            <div id="#All" class="tab-pane  active">
+            <div id="all" class="tab-pane fade show  active">
 
                 <div id="carousel-example4" class="carousel slide m-4" data-interval="false" ride="false"
                     data-ride="carousel">
@@ -239,25 +239,25 @@
                 </div>
             </div>          
 
-            <div id="Livestock" class="tab-pane tabcontent h-350">
+            <div id="Livestock" class="tab-pane fade h-350">
             
             </div>
-        <div id="Agriculture" class="tab-pane fade ">
+        <div id="Agriculture" class="tab-pane fade h-350">
             
         </div>
-        <div id="Forestry" class="tab-pane  fade ">
+        <div id="Forestry" class="tab-pane  fade h-350">
             
         </div>
-        <div id="Arts" class="tab-pane fade ">
+        <div id="Arts" class="tab-pane fade h-350">
             
         </div>
-        <div id="Transportation" class="tab-pane fade">
+        <div id="Transportation" class="tab-pane fade h-350">
             
         </div>
-        <div id="Skills" class="tab-pane  fade">
+        <div id="Skills" class="tab-pane  fade h-350">
             
         </div>
-        <div id="Business" class="tab-pane  fade">
+        <div id="Business" class="tab-pane  fade h-350">
             
         </div>
 
@@ -669,22 +669,7 @@
 </div>
 <script>
 
-function openCity(evt, cityName) {
-        var i, tabcontent, tablinks;
-        tabcontent = document.getElementsByClassName("tabcontent");
-        for (i = 0; i < tabcontent.length; i++) {
-            tabcontent[i].style.display = "none";
-        }
-        tablinks = document.getElementsByClassName("tablinks");
-        for (i = 0; i < tablinks.length; i++) {
-            tablinks[i].className = tablinks[i].className.replace(" active", "");
-        }
-        document.getElementById(cityName).style.display = "block";
-        evt.currentTarget.className += " active";
-    };
 
-    // Get the element with id="defaultOpen" and click on it
-    document.getElementById("defaultOpen").click();
 <!-- Initialize the plugin
 -->
 $(".card-img-overlay").mouseover(function
