@@ -323,7 +323,7 @@
         ' id="mainvid" height="240" class="object-cover h-100 w-100"'+
         ' alt="" +data.course_file_title+"">'+
         ' </div>';
-        
+
 
     $('#carol').append($(imgcaro ));
     }
