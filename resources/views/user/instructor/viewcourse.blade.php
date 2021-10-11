@@ -325,7 +325,6 @@
         ' </div>';
 
     $('#carol').append($(imgcaro ));
-
     }
     };
 
