@@ -1,6 +1,8 @@
 @extends('layouts.stu-layout')
 
 @section('content')
+
+
 {{$id=1}}
 <div class="sa4d25 bg-darknavy p-5">
     <div class="">
@@ -70,21 +72,19 @@
                   overflow: auto;">
                     <ul class=" list-group border-0  v-itm  table-hover " role="group">
                         <p class="d-flex justify-content-between text-white ">
-                            1 Lessons (15 m) <a href="http://"><small class="underline secondary-content">View
+                            1 Lessons () <a href="http://"><small class="underline secondary-content">View
                                     My Notes</small></a></p>
 
-
-                        @foreach ($videos as $vids)
-
+                                    @foreach ($videos as $vids)
                         <li class="list-group-item btn transparent list-group-item-action bg-darknavy active
                                " style=""
                             onclick="vidliclicked('{{route('get-video',ltrim($vids->video_path,'tempvideos/'))}}',{{count($videos)}},{{$id}},{{$vids->id}})"
                             id="{{'vids'.$id}}">
                             <a class="text-white font-weight-bold   d-flex justify-content-between ">
-                                video {{$id}} <span class="secondary-content">6:56</span></a>
+                                video {{$id}} <span class="secondary-content vdurant"></span></a>
                         </li>
-
-                        {{$id++}}
+     <span class="hide"> {{$id++}}</span>
+                       
                         @endforeach
                     </ul>
 
@@ -328,7 +328,6 @@
 
     }
     };
-
 
 
 

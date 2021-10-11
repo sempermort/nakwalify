@@ -152,7 +152,7 @@
                         <div class="card cardc rounded ">
                         <div class="h-250">
                                         <img class="card-img-top  object-cover h-100 w-100"
-                                            src="{{route('get-copic',explode('/',$copic[$key]->file_path)[1])}}"
+                                            src="{{route('get-copic',explode('/',$cozy->mediaCover->file_path)[1])}}"
                                             alt="Card image cap">
                                         <div class="card-img-overlay">
                                             <span class=" jss16 m-25-auto ">

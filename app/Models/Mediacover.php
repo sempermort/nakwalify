@@ -17,8 +17,8 @@ class Mediacover extends Model
         'course_id',
     ];
 
-    public function Course()
+    public function course()
     {
-        return $this->belongsTo(Videos::class);
+        return $this->belongsTo(Course::class);
     }
 }

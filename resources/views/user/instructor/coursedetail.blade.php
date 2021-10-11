@@ -19,7 +19,7 @@
                     <a class=" "
                                     href="{{route('viewcourse',$selcoz->id)}}">
                                     <div class="">
-                                    <video width="400" height="220" poster="{{route('get-copic',explode('/',$copic->file_path)[1])}}" class="w-100 object-cover "
+                                    <video width="400" height="220" poster="{{route('get-copic',explode('/',$selcoz->mediaCover->file_path)[1])}}" class="w-100 object-cover "
                             controls>
 
                         </video>
@@ -163,7 +163,7 @@
         <div class="d-flex justify-content-between">
             <p>
 
-                <span>• {{count($vidz)}} Lessons </span>
+                <span>• {{count($selcoz->Videos)}} Lessons </span>
 
 
                 <span>• 30h 36m total length</span>
@@ -172,7 +172,7 @@
         </div>
     </div>
     <div class="col-md-8">
-    @foreach($vidz as $vida)
+    @foreach($selcoz->Videos as $vida)
 
 
     <div class="coursevida">

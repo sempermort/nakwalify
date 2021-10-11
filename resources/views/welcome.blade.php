@@ -146,22 +146,22 @@
                 <a class="nav-link active" data-toggle="tab" href="#tab-1">All Categories</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#tab-2">Animation</a>
+                <a class="nav-link" data-toggle="tab" href="#tab-2">Livestock</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#tab-3">Design </a>
+                <a class="nav-link" data-toggle="tab" href="#tab-3">Agriculture </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link " data-toggle="tab" href="#tab-4">Illustration</a>
+                <a class="nav-link " data-toggle="tab" href="#tab-4">Forestry</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link " data-toggle="tab" href="#tab-5">Lifestyle</a>
+                <a class="nav-link " data-toggle="tab" href="#tab-5">Arts & Crafts</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link " data-toggle="tab" href="#tab-6">Photo&Film</a>
+                <a class="nav-link " data-toggle="tab" href="#tab-6">Transportation</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link " data-toggle="tab" href="#tab-7">Agriculture</a>
+                <a class="nav-link " data-toggle="tab" href="#tab-7">Life Skills</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link " data-toggle="tab" href="#tab-8">Business</a>
@@ -181,7 +181,7 @@
                                 <div class="card cardc rounded ">
                                     <div class="h-250">
                                         <img class="card-img-top  object-cover h-100 w-100"
-                                            src="{{route('get-copic',explode('/',$copic[$key]->file_path)[1])}}"
+                src="{{route('get-copic',explode('/',$cozy->mediaCover->file_path)[1])}}"
                                             alt="Card image cap">
                                         <div class="card-img-overlay">
                                             <span class=" jss16 m-25-auto ">
@@ -429,7 +429,7 @@
                                                             </div>
                                                         </div>
                                                         <div class=" mb-1 form-group">
-                                                            <input type="email" name="email" id="email" 
+                                                            <input type="email" name="email" id="email"
                                                                 value="{{ old('email') }}" required autocomplete="email"
                                                                 class=" form-control" placeholder="Email Address">
                                                             @error('email')

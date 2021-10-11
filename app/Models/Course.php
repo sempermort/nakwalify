@@ -30,7 +30,7 @@ class Course extends Model
     {
         return $this->hasMany(Videos::class);
     }
-    public function mediacov()
+    public function mediaCover()
     {
         return $this->hasone(Mediacover::class);
     }

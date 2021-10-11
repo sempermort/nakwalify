@@ -22,14 +22,14 @@ use Illuminate\Support\Facades\Auth;
 Auth::routes();
 Route::get('/', function () {
     $coz=Course::all();
-    $copic=Mediacover::where('file_type','coverpic')->get();
-    return view('welcome')->with('coz',$coz)->with('copic',$copic);
+ 
+    return view('welcome')->with('coz',$coz);
 });
 
-Route::get('/welcome', function () {
-    $coz=Course::all();
-    $copic=Mediacover::where('file_type','coverpic')->get();
-    return view('welcome')->with('coz',$coz)->with('copic',$copic);
+Route::get('/welcome', function () {  
+      $coz=Course::all();    
+   
+    return view('welcome')->with('coz',$coz);
 })->middleware('guest');
 
 // Route::get('/admin', 'AdminController@index')->name('admin')->middleware('admin');

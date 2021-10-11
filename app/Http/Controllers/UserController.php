@@ -443,14 +443,9 @@ return redirect()->route('viewcourse',['id'=>$request->courseid]);
 
 public function courseDetail($id)
 {
-    $copic=Mediacover::where('course_id',$id)->where('file_type','coverpic')->first();
-        $selcoz=Course::find($id);
-        $vidz=Videos::where("course_id",$id)->get();
-       
-
-    return view('user.instructor.coursedetail')->with('selcoz',$selcoz)
-    ->with('copic',$copic)
-      ->with('vidz',$vidz);
+   
+    $selcoz=Course::find($id);
+    return view('user.instructor.coursedetail')->with('selcoz',$selcoz);
 }
 
 public function addcategory(Request $request)
@@ -516,9 +511,9 @@ public function createcert()
 }
 public function category()
 {
-    $copic=Mediacover::where('file_type','coverpic')->get();
+    
     $coz=Course::all();
-    return view('user.category')->with('coz',$coz)->with('copic',$copic);
+    return view('user.category')->with('coz',$coz);
 }
 public function accSetting()
 {
