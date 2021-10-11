@@ -143,33 +143,33 @@
 
         <ul class="nav nav-tabs justify-content-center text-black  font-weight-bold">
             <li class="nav-item">
-                <a class="nav-link active" data-toggle="tab" href="#tab-1">All Categories</a>
+                <a class="nav-link active" data-toggle="tab" href="#All">All Categories</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#tab-2">Livestock</a>
+                <a class="nav-link" data-toggle="tab" href="#Livestock">Livestock</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#tab-3">Agriculture </a>
+                <a class="nav-link" data-toggle="tab" href="#Agriculture">Agriculture </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link " data-toggle="tab" href="#tab-4">Forestry</a>
+                <a class="nav-link " data-toggle="tab" href="#Forestry">Forestry</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link " data-toggle="tab" href="#tab-5">Arts & Crafts</a>
+                <a class="nav-link " data-toggle="tab" href="#Arts">Arts & Crafts</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link " data-toggle="tab" href="#tab-6">Transportation</a>
+                <a class="nav-link " data-toggle="tab" href="#Transportation">Transportation</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link " data-toggle="tab" href="#tab-7">Life Skills</a>
+                <a class="nav-link " data-toggle="tab" href="#Skills">Life Skills</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link " data-toggle="tab" href="#tab-8">Business</a>
+                <a class="nav-link " data-toggle="tab" href="#Business">Business</a>
             </li>
         </ul>
 
         <div class="tab-content">
-            <div id="tab-1" class="tab-pane active">
+            <div id="#All" class="tab-pane  active">
 
                 <div id="carousel-example4" class="carousel slide m-4" data-interval="false" ride="false"
                     data-ride="carousel">
@@ -237,7 +237,31 @@
                     </div>
 
                 </div>
+            </div>          
+
+            <div id="Livestock" class="tab-pane tabcontent h-350">
+            
             </div>
+        <div id="Agriculture" class="tab-pane fade ">
+            
+        </div>
+        <div id="Forestry" class="tab-pane  fade ">
+            
+        </div>
+        <div id="Arts" class="tab-pane fade ">
+            
+        </div>
+        <div id="Transportation" class="tab-pane fade">
+            
+        </div>
+        <div id="Skills" class="tab-pane  fade">
+            
+        </div>
+        <div id="Business" class="tab-pane  fade">
+            
+        </div>
+
+
             <div class="mt-5 mb-5">
 
                 <div id="carouselExampleIndicators" class="carousel h-400 carousel-fade" data-ride="carousel" style="">
@@ -644,6 +668,23 @@
     </div>
 </div>
 <script>
+
+function openCity(evt, cityName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+    };
+
+    // Get the element with id="defaultOpen" and click on it
+    document.getElementById("defaultOpen").click();
 <!-- Initialize the plugin
 -->
 $(".card-img-overlay").mouseover(function

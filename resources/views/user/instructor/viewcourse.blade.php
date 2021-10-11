@@ -216,8 +216,7 @@
         if(totalv -currentv> 1) {
         contain.insertAdjacentHTML('beforeend',
             '<div id="modal" class="video-js w-100 h-100 card-img-overlay">' +
-            '<div id="message">Increase conversions by adding this'+ 
-            'modal window at the end of your videos!!</div>' +
+            '<div class="text-center" id="message">Welcome To nakwalify</div>' +           
             '<div class="d-flex justify-content-center">'+
             '<button class="btn btn-info mr-5" onclick="prevbtn()" type="button" id="button1">Previous Video'+
             '</button>' +
@@ -229,10 +228,25 @@
             '</div> </div>'
         );
 
+
+        }
+        
+        else if(totalv==1 )
+        {
+            contain.insertAdjacentHTML('beforeend',
+            '<div id="modal" class="video-js w-100 h-100 card-img-overlay">' +
+            '<div class="text-center" id="message">Welcome To nakwalify</div>' +
+            '<div class="text-center"><button id="replayvideo" onclick="replayvid()" class="btn btn-default">'+
+            '<i class="fas fa-redo text-white"></i></button>' +
+                '</div> </div>'
+        );
         }
         else{contain.insertAdjacentHTML('beforeend',
             '<div id="modal" class="video-js w-100 h-100 card-img-overlay">' +
-            '<div class="text-center" id="message">Welcome To naQualify</div>' +
+            '<div class="text-center" id="message">Welcome To nakwalify</div>' +
+            '<div class="d-flex justify-content-start">'+
+            '<button class="btn btn-info mr-5" onclick="prevbtn()" type="button" id="button1">Previous Video'+
+            '</button></div>' +
             '<div class="text-center"><button id="replayvideo" onclick="replayvid()" class="btn btn-default">'+
             '<i class="fas fa-redo text-white"></i></button>' +
                 '</div> </div>'
