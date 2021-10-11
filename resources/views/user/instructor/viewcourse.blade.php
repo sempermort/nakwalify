@@ -83,7 +83,7 @@
                             <a class="text-white font-weight-bold   d-flex justify-content-between ">
                                 video {{$id}} <span class="secondary-content vdurant"></span></a>
                         </li>
-     <span class="hide"> {{$id++}}</span>
+                        <span class="hide"> {{$id++}}</span>
                        
                         @endforeach
                     </ul>
@@ -219,13 +219,13 @@
             '<div id="message">Increase conversions by adding this'+ 
             'modal window at the end of your videos!!</div>' +
             '<div class="d-flex justify-content-center">'+
-            '<button class="btn btn-info mr-5" type="button" id="button1">Previous Video'+
-            '</button></button>' +
-            '<button type="button" class="btn btn-success ml-5" id="button2">Next Video'+
-            '</button></button></div>' +
+            '<button class="btn btn-info mr-5" onclick="prevbtn()" type="button" id="button1">Previous Video'+
+            '</button>' +
+            '<button type="button" class="btn btn-success ml-5" onclick="nextbtn()" id="button2">Next Video'+
+            '</button></div>' +
             '<div class="text-center m-3">'+
-            '<button type="button" id="replayvideo" class="btn btn-default text-white">'+
-            '<i class="fas fa-redo"></i></button>' +
+            '<button type="button" id="replayvideo" onclick="replayvid()" class="btn btn-default text-white">'+
+            '<i class="fas fa-redo text-white"></i></button>' +
             '</div> </div>'
         );
 
@@ -233,17 +233,19 @@
         else{contain.insertAdjacentHTML('beforeend',
             '<div id="modal" class="video-js w-100 h-100 card-img-overlay">' +
             '<div class="text-center" id="message">Welcome To naQualify</div>' +
-            '<div class="text-center"><button id="replayvideo" class="btn btn-default">'+
-            '<i class="fas fa-redo"></i></button>' +
+            '<div class="text-center"><button id="replayvideo" onclick="replayvid()" class="btn btn-default">'+
+            '<i class="fas fa-redo text-white"></i></button>' +
                 '</div> </div>'
         );
         }};
 
        
 
+        function replayvid() {
+    $('#vids'+currentv).click();
+      };
 
-
-        $('#button2').on('click',function() {
+        function nextbtn() {
 
         if(totalv-currentv>0){
             var temp=currentv+1;
@@ -254,10 +256,9 @@
             $('#vids'+currentvp).css('pointer-events','auto');
             $('#vids'+currentv).click();
             }
-        });
+        };
 
-
-        $('#button1').on('click',function() {
+            function prevbtn() {
             if(totalv-currentv>=0&&currentv!=1){
             var temp=currentv-1;
                 $('#vids'+temp).click();
@@ -266,7 +267,7 @@
 
                 $('#vids'+currentv).click();
             }
-        });
+        };
 
 
         function viewpdf(url) {
