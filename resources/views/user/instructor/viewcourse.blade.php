@@ -318,7 +318,7 @@
         document.querySelectorAll('.carol-it').forEach(e => e.remove());
         for(let i=0; i<data.length;i++){
             var lin=APP_URL+"/get-ppt/" +data[i].file_path.split("/").pop();
-            var imgcaro='<div class="carousel-item h-350 m-4 carol-it">' +
+        var imgcaro='<div class="carousel-item h-350 m-4 carol-it">' +
         '<img src="' +lin+'" width="400"'+
         ' id="mainvid" height="240" class="object-cover h-100 w-100"'+
         ' alt="" +data.course_file_title+"">'+
