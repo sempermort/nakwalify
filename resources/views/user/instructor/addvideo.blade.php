@@ -270,8 +270,8 @@ function made(url, name, id) {
     i++;
 
 };
-        
-        
+
+
         const filepdf = document.getElementById('pdf-btn');
 
         filepdf.addEventListener('change', function(e) {
@@ -319,7 +319,9 @@ function made(url, name, id) {
                 data: form_data,
                 processData: false,
                 contentType: false,
-                "_token": token,
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
                 success: function(data) {
                     if ((data.errors)) {
                         alert(data.errors);
