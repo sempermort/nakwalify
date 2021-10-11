@@ -312,7 +312,7 @@ function made(url, name, id) {
                 form_data.append(answer[i].name, answer[i].value);
             }
 
-            var token = $("meta[name='csrf-token']").attr("content");
+          
             $.ajax({
                 type: 'POST',
                 url: "{{route('addcontentpost') }}",

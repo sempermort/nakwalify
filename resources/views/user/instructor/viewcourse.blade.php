@@ -2,6 +2,7 @@
 
 
 
+@section('content')
 {{$id=1}}
 <div class="sa4d25 bg-darknavy p-5">
     <div class="">
@@ -34,7 +35,7 @@
                                 <source src="{{route('get-covid',explode('/',$covid->file_path)[1])}}">@endif
                             </video>
                         </div>
-                       
+
                         <div id="pptab" class="tab-pane tabcontent">
 
                             <div id="carouselExampleFade"  class="carousel slide carousel-fade" data-ride="carousel">
@@ -83,7 +84,7 @@
                                 video {{$id}} <span class="secondary-content vdurant"></span></a>
                         </li>
                         <span class="hide"> {{$id++}}</span>
-                       
+
                         @endforeach
                     </ul>
 
@@ -185,7 +186,7 @@
 
         function vidliclicked(url,counv,currev,id)
         {
-       
+
         ajaxed4(id);
         totalv=counv;
         currentv=currev;
@@ -211,11 +212,11 @@
         tv.addEventListener('ended', onplayerchange);
         function onplayerchange(evnt)
         {
-           
+
         if(totalv -currentv> 1) {
         contain.insertAdjacentHTML('beforeend',
             '<div id="modal" class="video-js w-100 h-100 card-img-overlay">' +
-            '<div class="text-center" id="message">Welcome To nakwalify</div>' +           
+            '<div class="text-center" id="message">Welcome To nakwalify</div>' +
             '<div class="d-flex justify-content-center">'+
             '<button class="btn btn-info mr-5" onclick="prevbtn()" type="button" id="button1">Previous Video'+
             '</button>' +
@@ -229,7 +230,7 @@
 
 
         }
-        
+
         else if(totalv==1 )
         {
             contain.insertAdjacentHTML('beforeend',
@@ -252,7 +253,7 @@
         );
         }};
 
-       
+
 
         function replayvid() {
     $('#vids'+currentv).click();
@@ -337,7 +338,7 @@
         ' id="mainvid" height="240" class="object-cover h-100 w-100"'+
         ' alt="" +data.course_file_title+"">'+
         ' </div>';
-        
+
 
     $('#carol').append($(imgcaro ));
     }
