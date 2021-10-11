@@ -74,7 +74,7 @@
                         <p class="d-flex justify-content-between text-white ">
                             1 Lessons () <a href="http://"><small class="underline secondary-content">View
                                     My Notes</small></a></p>
-
+@if(isset($videos))
                                     @foreach ($videos as $vids)
                         <li class="list-group-item btn transparent list-group-item-action bg-darknavy active
                                " style=""
@@ -86,6 +86,7 @@
      <span class="hide"> {{$id++}}</span>
                        
                         @endforeach
+                        endif
                     </ul>
 
                 </div>
