@@ -324,6 +324,7 @@
         ' alt="" +data.course_file_title+"">'+
         ' </div>';
 
+
     $('#carol').append($(imgcaro ));
     }
     };
