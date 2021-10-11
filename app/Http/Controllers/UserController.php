@@ -87,14 +87,13 @@ public function getcovid($vid)
 public function  viewCourse($id)
 {  $course=course::find($id);
 
-    $videos=Videos::where('course_id',$course->id)->get();
+    $videos=$course->Videos;
 
-    $covid=Mediacover::where('course_id',$id)->where('file_type','covervid')->first();
+    $covid=$course->mediaCover->where('file_type','covervid')->first();
     
-    $copic=Mediacover::where('course_id',$id)->where('file_type','coverpic')->first();
-     $pdfs=Course_files::where('file_type', 'pdfcourse')->where('videos_id',$videos->first()->id)->get();
-    return view('user.instructor.viewcourse')->with('videos', $videos)
-     ->with('pdfs', $pdfs)
+    $copic=$course->mediaCover->where('file_type','coverpic')->first();
+    
+    return view('user.instructor.viewcourse')->with('videos', $videos)   
     ->with('course', $course)
     ->with('covid', $covid)
     ->with('copic', $copic);

@@ -34,4 +34,8 @@ class Course extends Model
     {
         return $this->hasone(Mediacover::class);
     }
+    public function coursefilec()
+    {
+        return $this->hasManyThrough(Course_files::class, Videos::class);
+    }
 }

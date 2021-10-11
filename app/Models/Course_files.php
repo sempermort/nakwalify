@@ -22,4 +22,5 @@ class Course_files extends Model
     {
         return $this->belongsTo(Videos::class);
     }
+    
 }

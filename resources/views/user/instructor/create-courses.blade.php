@@ -112,13 +112,13 @@
                                                         </select>
                                                     </div>
                                                 </div>
-                                                <div class="d-flex  justify-content-between mt-30">
-                                                    <div class="col-11 p-0">
+                                                <div class="d-flex   mt-30">
+                                                    <div class="col-6  p-0">
                                                         <label>What you will learn*</label>
                                                         <div class="grid-container border gridwlearn">
                                                         </div>
                                                         <div class="">
-                                                            <input class="w-100" type="text"
+                                                            <input class="w-100 rounded" type="text"
                                                                 id="wywlearn" value="">
                                                             <input type="hidden" name="mainwlearn[]" id="mainwlearn"
                                                                 value="">
@@ -129,13 +129,13 @@
                                                             onclick="addwlearnin()"><i class="fa fa-plus"></i></button>
                                                     </div>
                                                 </div>
-                                                <div class="d-flex justify-content-between  mt-30">
-                                                    <div class="col-11 p-0">
+                                                <div class="d-flex   mt-30">
+                                                    <div class="col-6 p-0">
                                                         <label>Requirements*</label>
                                                         <div class="grid-container border gridrequire">
                                                         </div>
                                                         <div class="">
-                                                            <input class="w-100" type="text"  id="requirement"
+                                                            <input class="w-100 form-control" type="text"  id="requirement"
                                                                 value="">
                                                             <input type="hidden" name="mainrequire[]" id="mainrequire"
                                                                 value="">

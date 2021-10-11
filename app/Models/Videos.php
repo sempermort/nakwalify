@@ -22,7 +22,7 @@ class Videos extends Model
     {
         return $this->belongsTo(Course::class);
     }
-    public function Course_files()
+    public function coursefiles()
     {
         return $this->hasMany(Course_files::class);
     }
