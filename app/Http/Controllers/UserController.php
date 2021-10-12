@@ -14,6 +14,7 @@ use App\Models\Course_files;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Response;
+use Youtube;
 class UserController extends Controller
 {
 
@@ -90,10 +91,10 @@ public function  viewCourse($id)
     $videos=$course->Videos;
 
     $covid=$course->mediaCover->where('file_type','covervid')->first();
-    
+
     $copic=$course->mediaCover->where('file_type','coverpic')->first();
-    
-    return view('user.instructor.viewcourse')->with('videos', $videos)   
+
+    return view('user.instructor.viewcourse')->with('videos', $videos)
     ->with('course', $course)
     ->with('covid', $covid)
     ->with('copic', $copic);
@@ -109,7 +110,7 @@ public function pptpics(Request $request){
 
 // Add course page 1
 public function addCourse()
-{ 
+{
 
 $corses=Category::all();
 
@@ -124,9 +125,9 @@ public function postaddCourse(Request $request)
     $validatedData = $request->validate([
         'course_title' => 'required|unique:courses,course_title',
         'course_subt' => 'required',
-        'language' => 'required',  
-        'category_Id' => 'required',  
-        'subcategory_Id' => 'required',  
+        'language' => 'required',
+        'category_Id' => 'required',
+        'subcategory_Id' => 'required',
         'mainrequire' => 'required',
         'mainwlearn' => 'required',
         'price' => 'required',
@@ -163,22 +164,30 @@ public function  postaddVideos(Request $request)
     $cvideo = new Videos();
 
 //if request containd video files
-if($request->hasfile('videos'))
-{
-    $video = new Videos();
-    $filed=$request->file('videos');
-    $filename = $filed->getClientOriginalName();
-    //if video contains the require extension
-       $path=$filed->store('/tempvideos');
-        $video->video_title=$filename;
-        $video->video_type="videocourse";
-        $video->video_path=$path;
-        $video->course_id=$request->course_id;
-        $video->video_desc=$request->description;
-        $video->save();
-        $cvideo=$video;
+// if($request->hasfile('videos'))
+// {
+    $videos = new Videos();
+    // $filed=$request->file('videos');
+    // $filename = $filed->getClientOriginalName();
+    // //if video contains the require extension
+    // $video = Youtube::upload(
+    //     $filed->getPathName(), [
+    //     'title'       => $filename,
+    //     'description' => 'nakwalify videos',
+    //     'status'=>'unlisted',
+    // ]);
 
-}
+        // $path="https://www.youtube.com/watch?v={$video->getVideoId()}";
+        $path=$request->videos;
+        $videos->video_title=$path;
+        $videos->video_type="videocourse";
+        $videos->video_path=$path;
+        $videos->course_id=$request->course_id;
+        $videos->video_desc=$request->description;
+        $videos->save();
+        $cvideo=$videos;
+
+//}
 if($request->hasfile('pdfes')&&$cvideo!=null)
 {
     $coursef = new Course_files();
@@ -401,7 +410,7 @@ public function  postaddCover(Request $request)
 {
     $validatedData = $request->validate([
         'coverpic' => 'required|max:5048',
-        
+
 
     ]);
 
@@ -431,7 +440,7 @@ public function  postaddCover(Request $request)
                     $coursecovervid->title=$filename;
                     $coursecovervid->file_type="covervid";
                     $coursecovervid->file_path=$path;
-                 
+
                     $coursecovervid->save();
                 }
 
@@ -442,7 +451,7 @@ return redirect()->route('viewcourse',['id'=>$request->courseid]);
 
 public function courseDetail($id)
 {
-   
+
     $selcoz=Course::find($id);
     return view('user.instructor.coursedetail')->with('selcoz',$selcoz);
 }
@@ -452,14 +461,14 @@ public function addcategory(Request $request)
 
     $category = Category::create([
         'category_name' => $request->category_name,
-    
+
     ]);
-   
+
     return Response()->json($category);
    }
 public function addsubcategory(Request $request)
 {
-    
+
     $subcategory = SubCategory::create([
         'subcategory_name' => $request->subcategory_name,
         'category_id' => $request->category_Id,
@@ -510,7 +519,7 @@ public function createcert()
 }
 public function category()
 {
-    
+
     $coz=Course::all();
     return view('user.category')->with('coz',$coz);
 }

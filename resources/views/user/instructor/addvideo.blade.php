@@ -50,27 +50,27 @@
                                         href="#question">
                                         <span class="material-icons md-light   ">format_align_center</span>
                                     </a>
-
-
                                 </div>
 
-                                <div class=" mavideo w-auto float-right ">
-                                    <!-- name of file chosen -->
+                                <!-- <div class=" mavideo w-auto float-right">
                                     <span class="" id="file-chosen">No file chosen</span>
-                                    <!-- actual upload which is hidden -->
                                     <input type="file" name="videos" id="actual-btn" hidden />
-
-                                    <!-- our custom upload button -->
                                     <label class="malabel" for="actual-btn">Add Video</label>
-                                </div>
+                                </div> -->
+                                <div class="input-group mb-3">
+                            <input type="text" class="form-control" name="videou" placeholder="Enter Video URL" aria-label="Enter Video URL"aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                            <span class="input-group-text" id="basic-addon2">@Youtube URL</span>
+                            </div>
+                            </div>
                             </div>
                             <div class="tab-content" id="myTabContent">
-                                <div class="tab-pane fade show active" id="videos" role="tabpanel"
+                                <div class="tab-pane fade show active h-350" id="videos" role="tabpanel"
                                     aria-labelledby="videos-tab">
-                                    <video width="400" height="240" poster="{{asset('assets/images/course_4.jpg')}}"
-                                        class="w-100 h-100 " id="vidcanva" controls>
+                                    <iframe width="560" height="340" class="object-cover h-100 w-100"
+                                         id="vidcanva" allow="autoplay; encrypted-media" src="" frameborder="0" allowfullscreen>
 
-                                    </video>
+                                    </iframe>
                                 </div>
                                 <div class="tab-pane fade  " id="question" role="tabpanel"
                                     aria-labelledby="question-tab">
@@ -123,10 +123,8 @@
 
                                 <div class=" mafile w-auto " style="margin:auto 0;">
 
-                                    <!-- actual upload which is hidden -->
                                     <input type="file" name="pdfes" id="pdf-btn" hidden />
 
-                                    <!-- our custom upload button -->
                                     <label class="malabel" for="pdf-btn">Add PDF files</label>
                                 </div>
                                 <div class=" border rounded">
@@ -244,22 +242,22 @@
                 </div>
             </div>
             <script>
-   const actualBtn = document.getElementById('actual-btn');
-        const fileChosen = document.getElementById('file-chosen');
+//    const actualBtn = document.getElementById('actual-btn');
+//         const fileChosen = document.getElementById('file-chosen');
 
-        actualBtn.addEventListener('change', function() {
-            fileChosen.textContent = this.files[0].name;
-        });
+//         actualBtn.addEventListener('change', function() {
+//             fileChosen.textContent = this.files[0].name;
+//         });
             var i = 1;
 
 function made(url, name, id) {
   var  APP_URL ='{!!url('/')!!}';
-    var results = APP_URL+"/get-video/" + url.split("/").pop();
+
     var resultId = APP_URL+"/addquestion/" + id;
     var btnhtml =
         '<div class="d-flex justify-content-between  w-100" id="' + name.slice(0, 4) + '">' +
         '<div class=" w-90 btn btn-info mb-2 vditem">Video ' + i + ' <a class=""' +
-        'onclick="viditemclicked(\'' + results + '\')"><i class="pl-2 fa fa-play"></i></a>' +
+        'onclick="viditemclicked(\'' + url + '\')"><i class="pl-2 fa fa-play"></i></a>' +
         '<a class="ml-3" href="' + resultId + '">Q<i class="pl-2 fa fa-plus "></i></a>' +
         '</div>' +
         '<button type="button" id="byn' + i + '" class="btn btn-default delvid mb-2 w-10"' +
@@ -298,7 +296,8 @@ function made(url, name, id) {
             var form_data = new FormData();
 
             form_data.append('course_id', $('input[name=course_id]').val());
-            form_data.append('videos', $('#actual-btn').prop('files')[0]);
+            // form_data.append('videos', $('#actual-btn').prop('files')[0]);
+            form_data.append('videos', $('input[name=videou]').val());
             form_data.append('description', description.value);
             form_data.append('pdfes', $('#pdf-btn').prop('files')[0]);
 
@@ -312,7 +311,7 @@ function made(url, name, id) {
                 form_data.append(answer[i].name, answer[i].value);
             }
 
-          
+
             $.ajax({
                 type: 'POST',
                 url: "{{route('addcontentpost') }}",

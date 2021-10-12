@@ -564,10 +564,10 @@
         );
         </script>
         <script>
-     
+
         var form = document.getElementById("vidform");
 
-       
+
 
 
         function ajaxed2() {
@@ -603,7 +603,7 @@
 
 
         function ajaxed3() {
-        
+
             var questiontype = document.getElementById("questiontype");
             var answer = document.getElementsByName('answer[]');
 
@@ -696,16 +696,7 @@
 
 
             var video = document.getElementById('vidcanva');
-            var source = document.createElement('source');
-
-            source.setAttribute('src', url);
-
-            while (video.firstChild) {
-                video.removeChild(video.lastChild);
-            }
-            video.append(source);
-            video.load();
-            video.play();
+                video.setAttribute('src', url);
 
             var vidtab = document.getElementById("vidtab");
             vidtab.classList.remove("dnot");

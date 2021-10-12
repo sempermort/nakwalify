@@ -3,6 +3,8 @@
 
 
 @section('content')
+
+
 {{$id=1}}
 <div class="sa4d25 bg-darknavy p-5">
     <div class="">
@@ -15,25 +17,27 @@
             <div class=" col-md-8 border-radius-0  p-0  border-left-0 border-right-0" id="mediav">
                 <div class="sa">
                     <div class="btn-group mr-2 large linka " role="tablist" aria-label="First group" id="viewtab">
-                        <a type="button" class="btn  btn-info tablinks" id="defaultOpen"
+                       <a type="button" class="btn  btn-info tablinks" id="defaultOpen"
                             onclick="openCity(event, 'videotab')">
                             <span class="material-icons-outlined   ">play_arrow</span>
                         </a>
+                         <!-- 
                         <a type="button" class="btn btn-secondary tablinks" onclick="openCity(event, 'pptab')"
                             id="ppt-tab">
                             <span class="material-icons md-light   ">format_align_center</span>
-                        </a>
+                        </a> -->
 
 
                     </div>
                     <div class="tab-content">
 
-                        <div id="videotab" class="tab-pane  h-350 tabcontent">
+                        <div id="videotab" class="tab-pane  h-400 tabcontent">
                             <video width="400" id="mainvid" height="240"
                                 poster="{{route('get-copic',explode('/',$copic->file_path)[1])}}" class="w-100 h-100 object-cover " controls>
                                 @if(isset($covid->id))
                                 <source src="{{route('get-covid',explode('/',$covid->file_path)[1])}}">@endif
                             </video>
+                           
                         </div>
 
                         <div id="pptab" class="tab-pane tabcontent">
@@ -42,7 +46,7 @@
                                 <div class="carousel-inner " id="carol">
                                 <div class="carousel-item h-350 pl-4 pr-4 active">
                                         <img src="{{route('get-copic',explode('/',$copic->file_path)[1])}}" width="400"
-                                            id="mainvid" height="240" class=" object-cover h-100 w-100"
+                                            id="mainpic" height="240" class=" object-cover h-100 w-100"
                                             alt="">
                                     </div>
 
@@ -67,23 +71,26 @@
 
 
             </div>
+@php $sum=15;@endphp
             <div class=" p-0 col-md-4  ">
                 <div class=" p-0 pt-2 m-3 " style="height: 440px;
                   overflow: auto;">
                     <ul class=" list-group border-0  v-itm  table-hover " role="group">
                         <p class="d-flex justify-content-between text-white ">
-                            1 Lessons () <a href="http://"><small class="underline secondary-content">View
+                            {{$id}} Lessons ({{$sum}} min) <a href="http://"><small class="underline secondary-content">View
                                     My Notes</small></a></p>
 
+
+
+                                    @php $id=1; $suml=0;@endphp
                                     @foreach ($videos as $vids)
-                        <li class="list-group-item btn transparent list-group-item-action bg-darknavy active
-                               " style=""
-                            onclick="vidliclicked('{{route('get-video',ltrim($vids->video_path,'tempvideos/'))}}',{{count($videos)}},{{$id}},{{$vids->id}})"
+                        <li class="list-group-item btn transparent mb-3 list-group-item-action    bg-darknavy active" style=""
+                            onclick="vidliclicked('{{$vids->video_path}}',{{count($videos)}},{{$id}},{{$vids->id}})"
                             id="{{'vids'.$id}}">
                             <a class="text-white font-weight-bold   d-flex justify-content-between ">
                                 video {{$id}} <span class="secondary-content vdurant"></span></a>
                         </li>
-                        <span class="hide"> {{$id++}}</span>
+                        @php $id++; @endphp
 
                         @endforeach
                     </ul>
@@ -184,30 +191,18 @@
         var currenturl = 0;
         var modal =  0;
 
-        function vidliclicked(url,counv,currev,id)
+        function vidliclicked(urlu,counv,currev,id)
         {
 
         ajaxed4(id);
         totalv=counv;
         currentv=currev;
-        currenturl=url;
-        modal= document.getElementById('modal');
-        if(modal!= null)        {
-        modal.remove();
-        }
-        var   video  = document.getElementById('mainvid');
-        var   source  = document.createElement('source');
-        source.setAttribute('src',   url);
-        while(video.firstChild)
-        {
-        video.removeChild(video.lastChild);
-        }
-        video.append(source);
-        video.load();
-        video.play();
+        currenturl=urlu;
+    
+        madeu(urlu);
 
         };
-        var tv   = document.querySelector('video');
+        var tv = document.querySelector('vidcanva');
         var contain =  document.getElementById('mediav');
         tv.addEventListener('ended', onplayerchange);
         function onplayerchange(evnt)
@@ -344,7 +339,22 @@
     }
     };
 
+    var i = 1;
 
+function madeu(lim) {   
+   
+    var videotab= document.getElementById('videotab');
+    videotab.innerHTML="";
+    var btnhtml =
+    '<embed width="560" height="340" class="object-cover h-100 w-100"'+
+     'id="vidcanva" allow="autoplay;" sandbox src="' + lim + '" frameborder="0"'+
+      'allowfullscreen></embed>';
+       
+    $("#videotab").append($(btnhtml));
+    
+    i++;
+
+};
 
     </script>
     @endsection
