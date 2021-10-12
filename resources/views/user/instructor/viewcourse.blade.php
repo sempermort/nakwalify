@@ -14,7 +14,7 @@
         </p>
         <div class=" row  mt-2">
 
-            <div class=" col-md-8 border-radius-0  p-0  border-left-0 border-right-0" id="mediav">
+            <div class=" col-md-9 border-radius-0  p-0  border-left-0 border-right-0" id="mediav">
                 <div class="sa">
                     <div class="btn-group mr-2 large linka " role="tablist" aria-label="First group" id="viewtab">
                        <a type="button" class="btn  btn-info tablinks" id="defaultOpen"
@@ -31,7 +31,7 @@
                     </div>
                     <div class="tab-content">
 
-                        <div id="videotab" class="tab-pane  h-400 tabcontent">
+                        <div id="videotab" class="tab-pane  h-500 tabcontent">
                             <video width="400" id="mainvid" height="240"
                                 poster="{{route('get-copic',explode('/',$copic->file_path)[1])}}" class="w-100 h-100 object-cover " controls>
                                 @if(isset($covid->id))
@@ -72,7 +72,7 @@
 
             </div>
 @php $sum=15;@endphp
-            <div class=" p-0 col-md-4  ">
+            <div class=" p-0 col-md-3  ">
                 <div class=" p-0 pt-2 m-3 " style="height: 440px;
                   overflow: auto;">
                     <ul class=" list-group border-0  v-itm  table-hover " role="group">
