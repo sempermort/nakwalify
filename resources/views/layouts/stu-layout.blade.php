@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Nakwalify</title>
+    <title>Poutry Learning</title>
     <base href="/">
 
     <link rel="icon" type="image/png" href="./assets/images/fav.png">
@@ -34,7 +34,7 @@
         <nav class="navbar navbar-expand-lg" style="background-color: #3a9982;">
 
             <a href="{{url('/')}}" class="navbar-brand"
-                style="font-family:'Kaushan_Script'; font-weight: bolder;  font-size :35px!important; color:#fff !important;">nakwalify</a>
+                style="font-family:'Kaushan_Script'; font-weight: bolder;  font-size :35px!important; color:#fff !important;">Poutry Learning</a>
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
