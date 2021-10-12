@@ -871,5 +871,5 @@ p {
 }
 
 .h-500 {
-    height: 500px;
+    height: 500px!important;
 }
