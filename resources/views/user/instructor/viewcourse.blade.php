@@ -32,7 +32,7 @@
                     </div>
                     <div class="tab-content">
 
-                        <div id="videotab" class="tab-pane  h-500 tabcontent">
+                        <div id="videotab" class="tab-pane   tabcontent" style="height:500px!important;">
                             <video width="400" id="mainvid" height="240"
                                 poster="{{route('get-copic',explode('/',$copic->file_path)[1])}}" class="w-100 h-100 object-cover " controls>
                                 @if(isset($covid->id))
