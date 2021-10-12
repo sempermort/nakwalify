@@ -17,10 +17,11 @@
             <div class=" col-md-9 border-radius-0  p-0  border-left-0 border-right-0" id="mediav">
                 <div class="sa">
                     <div class="btn-group mr-2 large linka " role="tablist" aria-label="First group" id="viewtab">
-                       <!-- <a type="button" class="btn  btn-info tablinks" id="defaultOpen"
+                       <a type="button" class=" tablinks" id="defaultOpen"
                             onclick="openCity(event, 'videotab')">
-                            <span class="material-icons-outlined   ">play_arrow</span>
-                        </a> -->
+                          
+                        </a>
+                          <!-- <span class="material-icons-outlined   ">play_arrow</span> -->
                          <!-- 
                         <a type="button" class="btn btn-secondary tablinks" onclick="openCity(event, 'pptab')"
                             id="ppt-tab">
