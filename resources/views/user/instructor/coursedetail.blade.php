@@ -24,15 +24,15 @@
 
                         </video>
                                     </div>
-                      
+
 </a>
-                        <div class="mt-0   d-none d-md-block d-lg-block">
+                        <div class="mt-0 ">
                             <strong>
                                 <p class="m-0 tshs" id="demo">
                                 @if($selcoz->price==0)
                                 Free
-                               @else 
-                                Tshs                             
+                               @else
+                                Tshs
                                {!!$selcoz->price !!}
                                 @endif
                                 </p>
@@ -41,16 +41,16 @@
                                 to Cart</button> -->
                             <!-- <button class="btn btn-outline-dark  p-2   col-md-12 mt-1 mb-1 "><a
                                     href="{{route('viewcourse',$selcoz->id)}}">Go to corse</a> </button> -->
-                                   
+
                                     <a class="btn  btn-info text-white  p-2  col-md-12 mt-1 mb-1 "
-                                    href="{{route('viewcourse',$selcoz->id)}}">Go to course</a> 
-                            <small class="m-0 text-center">
+                                    href="{{route('viewcourse',$selcoz->id)}}">Go to course</a>
+                            <small class="m-0 d-none text-center">
                                 <p class="m-0  p-0">30-Day Money-Back Guarantee </p>
                             </small>
-                            <p class="m-0 p-0"> <strong class="m-0">This Course includes</strong></p>
+                            <p class="m-0 d-none p-0"> <strong class="m-0">This Course includes</strong></p>
                         </div>
 
-                        <ul class="collection ml-5	d-none d-md-block d-lg-block border-0">
+                        <ul class="collection ml-5	d-none  border-0">
                             <li class="collection-item border-0 d-flex justify-content-start"> <span
                                     class="material-icons-outlined">
                                     reset_tv
@@ -86,7 +86,7 @@
                                 completion
                             </li>
                         </ul>
-                        <div class="border-top  p-0 d-none d-md-block d-lg-block">
+                        <div class="border-top  p-0 d-none ">
 
                             <p class="m-0 p-0 font-weight-bold"> Training 5 or more people?</p>
 
