@@ -5,7 +5,7 @@
 <section>
     <div class="h-vid" style="margin-top: -25px; ">
         <video autoplay muted loop class="w-100 h-100 object-cover " id="myVideo">
-            <source src="{{asset('assets/vids/cover vid.mp4')}}" width="1200" heigth="600" type="video/mp4">
+            <source src="{{asset('assets/vids/cover vid.mp4')}}"  type="video/mp4">
         </video>
         <div class=" regform card col-md-4   ">
 
@@ -142,7 +142,7 @@
 </section>
 <br>
 <section style="position:relative;">
-    <div class="mt-5">
+    <div class="">
         <h2 class="font-weight-bolder text-center">Discover LifeLong Learning</h2>
 
         <ul class="nav nav-tabs justify-content-center text-black  font-weight-bold">
