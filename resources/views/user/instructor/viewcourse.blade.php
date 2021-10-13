@@ -6,7 +6,7 @@
 
 
 {{$id=1}}
-<div class="sa4d25 bg-darknavy p-3">
+<div class="sa4d25 bg-darknavy p-5">
     <div class="pt-3">
         <h2 class="text-white"></i> {{$course->course_title}} </h2>
         <p class=" text-white">
