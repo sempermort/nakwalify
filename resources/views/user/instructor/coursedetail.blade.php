@@ -42,7 +42,7 @@
                             <!-- <button class="btn btn-outline-dark  p-2   col-md-12 mt-1 mb-1 "><a
                                     href="{{route('viewcourse',$selcoz->id)}}">Go to corse</a> </button> -->
 
-                                    <a class="btn  btn-info text-white  p-2  col-md-12 mt-1 mb-1 "
+                                    <a class="btn  btn-info text-white  p-2  col-md-12 mt-1 mb-3 "
                                     href="{{route('viewcourse',$selcoz->id)}}">Go to course</a>
                             <small class="m-0 d-none text-center">
                                 <p class="m-0  p-0">30-Day Money-Back Guarantee </p>
