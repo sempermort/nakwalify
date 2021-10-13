@@ -7,7 +7,7 @@
 
 {{$id=1}}
 <div class="sa4d25 bg-darknavy p-4">
-    <div class="pt-3">
+    <div class="mt-3">
         <h2 class="text-white"></i> {{$course->course_title}} </h2>
         <p class=" text-white">
             {{substr($course->course_des, 0, 130)}}...
