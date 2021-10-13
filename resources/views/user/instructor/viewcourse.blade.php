@@ -19,10 +19,10 @@
                     <div class="btn-group mr-2 large linka " role="tablist" aria-label="First group" id="viewtab">
                        <a type="button" class=" tablinks" id="defaultOpen"
                             onclick="openCity(event, 'videotab')">
-                          
+
                         </a>
                           <!-- <span class="material-icons-outlined   ">play_arrow</span> -->
-                         <!-- 
+                         <!--
                         <a type="button" class="btn btn-secondary tablinks" onclick="openCity(event, 'pptab')"
                             id="ppt-tab">
                             <span class="material-icons md-light   ">format_align_center</span>
@@ -32,13 +32,13 @@
                     </div>
                     <div class="tab-content">
 
-                        <div id="videotab" class="tab-pane   tabcontent" style="height:500px!important;">
+                        <div id="videotab" class="tab-pane   tabcontent h-500" >
                             <video width="400" id="mainvid" height="240"
                                 poster="{{route('get-copic',explode('/',$copic->file_path)[1])}}" class="w-100 h-100 object-cover " controls>
                                 @if(isset($covid->id))
                                 <source src="{{route('get-covid',explode('/',$covid->file_path)[1])}}">@endif
                             </video>
-                           
+
                         </div>
 
                         <div id="pptab" class="tab-pane tabcontent">
@@ -199,7 +199,7 @@
         totalv=counv;
         currentv=currev;
         currenturl=urlu;
-    
+
         madeu(urlu);
 
         };
@@ -342,17 +342,17 @@
 
     var i = 1;
 
-function madeu(lim) {   
-   
+function madeu(lim) {
+
     var videotab= document.getElementById('videotab');
     videotab.innerHTML="";
     var btnhtml =
-    '<embed width="560" height="340" class="object-cover h-100 w-100"'+
-     'id="vidcanva" allow="autoplay;" sandbox src="' + lim + '" frameborder="0"'+
-      'allowfullscreen></embed>';
-       
+    '<iframe  width="560" height="315" class="object-cover h-100 w-100"'+
+     'id="vidcanva" allow="autoplay;"  src="' + lim + '" frameborder="0"'+
+      'allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"allowfullscreen></iframe>';
+
     $("#videotab").append($(btnhtml));
-    
+
     i++;
 
 };

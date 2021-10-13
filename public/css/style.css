@@ -95,6 +95,9 @@ html {
     .h-400 {
         height: 350px !important;
     }
+    .h-500 {
+        height: 315px!important;
+    }
     .banner-description {
         font-size: 14px !important;
         line-height: 15px !important;
@@ -871,5 +874,5 @@ p {
 }
 
 .h-500 {
-    height: 500px!important;
+    height: 540px;
 }
