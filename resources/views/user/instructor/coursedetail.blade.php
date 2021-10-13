@@ -19,8 +19,14 @@
 
                                     <div class="">
                                     <a class=" "   href="{{route('viewcourse',$selcoz->id)}}">
+                                    @if(isset($cozy->mediaCover->file_path))
                                     <video width="400" height="220" poster="{{route('get-copic',explode('/',$selcoz->mediaCover->file_path)[1])}}" class="w-100 object-cover "
                             controls>
+                                @else
+                                <video width="400" height="220" poster="" class="w-100 object-cover "
+                            controls>
+                                            @endif
+                                
 
                         </video></a>
                                     </div>
@@ -181,7 +187,7 @@
                 aria-expanded="false" aria-controls="collapseExample">
               {{explode('.', $vida->video_title)[0]}}
             </a>
-            <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample"
+            <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#collapseExample"
                 aria-expanded="false" aria-controls="collapseExample">
                 <i class="fa fa-angle-down" aria-hidden="true"></i>
 
