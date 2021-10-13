@@ -543,8 +543,8 @@ strong {
 }
 
 .regform {
-    top: 115px;
-    margin: 2.5em;
+    top: 130px;
+    margin: 0 2.5em;
     border-radius: 15px;
     background: #f4f4f4;
 }
@@ -875,4 +875,10 @@ p {
 
 .h-500 {
     height: 540px;
+}
+
+#myVideo {
+    position: absolute;
+    right: 0;
+    top: 0;
 }

@@ -30,7 +30,7 @@
 </head>
 
 <body>
-    <header class=" ">
+    <header class=" position-relative " style="z-index:9;">
         <nav class="navbar navbar-expand-lg" style="background-color: #3a9982;">
 
             <a href="{{url('/')}}" class="navbar-brand"
@@ -43,7 +43,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
                 <ul class="navbar-nav ml-auto">
-                  
+
                     @auth
                     <li class="dropdown ml-4">
                         <a href="create_new_course.html#" class="opts_account text-white" title="Account">
@@ -315,7 +315,7 @@
 
 
 
-   
+
 
         <script src="{{ asset('assets/bootstrap-4.3.1-dist/js/bootstrap.min.js') }}"></script>
         <script src="{{ asset('assets/js/night-mode.js') }}"></script>
@@ -395,7 +395,7 @@
         "none"
         });
         });
-      
+
         $('.navt').mouseover(function()
         {
         $(".dropnav").toggle();
@@ -420,7 +420,7 @@
         $('.nav3').removeClass('d-nonel').addClass('d-blockl');
         $('.nav1').addClass('d-blockl');
         });
-      
+
     </script>
 </body>
 

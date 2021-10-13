@@ -3,7 +3,10 @@
 @section('content')
 
 <section>
-    <div class="contan" style="margin-top: -25px;">
+    <div class="" style="margin-top: -25px; height: 690px;">
+        <video autoplay muted loop id="myVideo">
+            <source src="{{asset('assets/vids/Nakwalify videos.mp4')}}" type="video/mp4">
+        </video>
         <div class=" regform card col-md-4   ">
 
             <div class="m-2">
@@ -176,7 +179,7 @@
                     <div class="carousel-inneri  row  mx-auto" role="listbox">
 
                         @foreach($coz as $key=>$cozy)
-                        <div class="col-md-4    active">
+                        <div class="col-md-4 mb-3   active">
                             <a href="{{route('coursedetail',$cozy->id)}}">
                                 <div class="card cardc rounded ">
                                     <div class="h-250">
@@ -195,8 +198,8 @@
 
                                     <div class="m-2">
                                         <p class="card-text  d-flex justify-content-between">
-                                            <small class="card-text">23,162 trainees </small>
-                                            <small class="card-text">1h 50m</small>
+                                            <small class="card-text">22 trainees </small>
+                                            <small class="card-text"> 50m</small>
                                         </p>
 
 
@@ -240,7 +243,7 @@
             </div>
 
             <div id="Livestock" class="tab-pane fade h-350">
-            <div id="carousel-example4" class="carousel slide m-4" data-interval="false" ride="false"
+                <div id="carousel-example4" class="carousel slide m-4" data-interval="false" ride="false"
                     data-ride="carousel">
                     <div class="carousel-inneri  row  mx-auto" role="listbox">
 
@@ -309,7 +312,7 @@
                 </div>
             </div>
             <div id="Agriculture" class="tab-pane fade h-350">
-            <div id="carousel-example4" class="carousel slide m-4" data-interval="false" ride="false"
+                <div id="carousel-example4" class="carousel slide m-4" data-interval="false" ride="false"
                     data-ride="carousel">
                     <div class="carousel-inneri  row  mx-auto" role="listbox">
 
@@ -377,7 +380,7 @@
                 </div>
             </div>
             <div id="Forestry" class="tab-pane  fade h-350">
-            <div id="carousel-example4" class="carousel slide m-4" data-interval="false" ride="false"
+                <div id="carousel-example4" class="carousel slide m-4" data-interval="false" ride="false"
                     data-ride="carousel">
                     <div class="carousel-inneri  row  mx-auto" role="listbox">
 
@@ -445,7 +448,7 @@
                 </div>
             </div>
             <div id="Arts" class="tab-pane fade h-350">
-            <div id="carousel-example4" class="carousel slide m-4" data-interval="false" ride="false"
+                <div id="carousel-example4" class="carousel slide m-4" data-interval="false" ride="false"
                     data-ride="carousel">
                     <div class="carousel-inneri  row  mx-auto" role="listbox">
 
@@ -513,7 +516,7 @@
                 </div>
             </div>
             <div id="Transportation" class="tab-pane fade h-350">
-            <div id="carousel-example4" class="carousel slide m-4" data-interval="false" ride="false"
+                <div id="carousel-example4" class="carousel slide m-4" data-interval="false" ride="false"
                     data-ride="carousel">
                     <div class="carousel-inneri  row  mx-auto" role="listbox">
 
@@ -581,7 +584,7 @@
                 </div>
             </div>
             <div id="Skills" class="tab-pane  fade h-350">
-            <div id="carousel-example4" class="carousel slide m-4" data-interval="false" ride="false"
+                <div id="carousel-example4" class="carousel slide m-4" data-interval="false" ride="false"
                     data-ride="carousel">
                     <div class="carousel-inneri  row  mx-auto" role="listbox">
 
@@ -649,7 +652,7 @@
                 </div>
             </div>
             <div id="Business" class="tab-pane  fade h-350">
-            <div id="carousel-example4" class="carousel slide m-4" data-interval="false" ride="false"
+                <div id="carousel-example4" class="carousel slide m-4" data-interval="false" ride="false"
                     data-ride="carousel">
                     <div class="carousel-inneri  row  mx-auto" role="listbox">
 
@@ -721,16 +724,10 @@
             <div class="mt-5 mb-5">
 
                 <div id="carouselExampleIndicators" class="carousel h-400 carousel-fade" data-ride="carousel" style="">
-                    <ol class="carousel-indicators ">
-                        <li data-target="#carouselExampleIndicators1" data-slide-to="0" class="active">
-                        </li>
-                        <li data-target="#carouselExampleIndicators1" data-slide-to="1"></li>
-                        <li data-target="#carouselExampleIndicators1" data-slide-to="2"></li>
-                        <li data-target="#carouselExampleIndicators1" data-slide-to="3"></li>
-                    </ol>
+
                     <div class="carousel-inner">
                         <div class="carousel-item active h-400 ">
-                            <img src="{{asset('assets/images/photos/artem-sapegin-229391-500.jpg')}}"
+                            <img src="{{asset('assets/images/2.png')}}"
                                 class="img-fluid center " style="" alt="">
                             <div class="invisiblely">
                                 <div class="carousel-caption slide-top">
@@ -750,7 +747,27 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="carousel-item  h-400 ">
+                            <img src="{{asset('assets/images/2.png')}}"
+                                class="img-fluid center " style="" alt="">
+                            <div class="invisiblely">
+                                <div class="carousel-caption slide-top">
+                                    <div class=" itm">
+                                        <div class="banner-content">
 
+                                            <div class=""><span>Build Meaningful Self-Care Into
+                                                    Every Day</span></div>
+                                            <div class="banner-description">Join superstar Jonathan Van Ness and
+                                                best-selling author Chidera Eggerue for this powerful new
+                                                self-care workshop, kicking off July 12th.</div>
+                                            <div class="banner-actions"><a href=""
+                                                    class="btn btn-default bg-landing"><span>Join
+                                                        Now</span></a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
