@@ -108,7 +108,7 @@ public function pptpics(Request $request){
 }
 public function listpics($id){
 
-    $pptic=Mediacover::where('id', $id)->get();
+    $pptic=Mediacover::where('course_id', $id)->get();
 
     return view('user.instructor.listpic')->with('pptic', $pptic);
 }
