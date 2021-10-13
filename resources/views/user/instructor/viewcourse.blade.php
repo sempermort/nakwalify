@@ -6,8 +6,8 @@
 
 
 {{$id=1}}
-<div class="sa4d25 bg-darknavy p-5">
-    <div class="">
+<div class="sa4d25 bg-darknavy p-3">
+    <div class="pt-3">
         <h2 class="text-white"></i> {{$course->course_title}} </h2>
         <p class=" text-white">
             {{substr($course->course_des, 0, 130)}}...
@@ -78,7 +78,7 @@
                   overflow: auto;">
                     <ul class=" list-group border-0  v-itm  table-hover " role="group">
                         <p class="d-flex justify-content-between text-white ">
-                            {{$id}} Lessons ({{$sum}} min) <a href="http://"><small class="underline secondary-content">View
+                            {{$id}} Lessons ({{$sum}} min) <a href="http://"><small class=" d-none underline secondary-content">View
                                     My Notes</small></a></p>
 
 

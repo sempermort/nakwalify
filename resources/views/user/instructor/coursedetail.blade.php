@@ -16,19 +16,19 @@
                 </div> -->
                 <div class="row">
                     <div class="col-md-4 col-lg-3 white p-0 vid-coz " id="vid">
-                    <a class=" "
-                                    href="{{route('viewcourse',$selcoz->id)}}">
+
                                     <div class="">
+                                    <a class=" "   href="{{route('viewcourse',$selcoz->id)}}">
                                     <video width="400" height="220" poster="{{route('get-copic',explode('/',$selcoz->mediaCover->file_path)[1])}}" class="w-100 object-cover "
                             controls>
 
-                        </video>
+                        </video></a>
                                     </div>
 
-</a>
+
                         <div class="mt-0 ">
                             <strong>
-                                <p class="m-0 tshs" id="demo">
+                                <p class="m-0 text-white" id="demo">
                                 @if($selcoz->price==0)
                                 Free
                                @else
