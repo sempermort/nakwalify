@@ -6,7 +6,7 @@
 <img class="card-img-top  object-contain w-100" src="{{route('get-copic',explode('/',$cozy->file_path)[1])}}"
         alt="Card image cap">
 
-</div>
+</div>{{$cozy->id}}
 
 
 
