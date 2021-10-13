@@ -3,7 +3,7 @@
 @section('content')
 
 <section>
-    <div class="" style="margin-top: -25px; ">
+    <div class="h-vid" style="margin-top: -25px; ">
         <video autoplay muted loop class="w-100 h-100 object-cover " id="myVideo">
             <source src="{{asset('assets/vids/cover vid.mp4')}}" width="1200" heigth="600"  type="video/mp4">
         </video>
