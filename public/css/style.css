@@ -87,7 +87,10 @@ body {
         font-size: 5vh !important;
     }
     .h-vid {
-        height: 900px!important;
+        height: 910px!important;
+    }
+    .regform {
+        top: 300px!important;
     }
 }
 
@@ -555,7 +558,7 @@ strong {
 }
 
 .regform {
-    top: 70px;
+    top: 130px;
     margin: 0 2.5em;
     border-radius: 15px;
     background: #f4f4f4;
