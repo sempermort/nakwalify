@@ -72,13 +72,13 @@
 
 
             </div>
-@php $sum=15;@endphp
+        @php $sum=15;@endphp
             <div class=" p-0 col-md-3  ">
                 <div class=" p-0 pt-2 m-3 " style="height: 440px;
                   overflow: auto;">
                     <ul class=" list-group border-0  v-itm  table-hover " role="group">
                         <p class="d-flex justify-content-between text-white ">
-                            {{$id}} Lessons ({{$sum}} min) <a href="http://"><small class=" d-none underline secondary-content">View
+                            {{$id}} Lessons  <a href="http://"><small class=" d-none underline secondary-content">View
                                     My Notes</small></a></p>
 
 

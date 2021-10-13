@@ -22,13 +22,13 @@ use Illuminate\Support\Facades\Auth;
 Auth::routes();
 Route::get('/', function () {
     $coz=Course::all();
- 
+    
     return view('welcome')->with('coz',$coz);
 });
 
-Route::get('/welcome', function () {  
-      $coz=Course::all();    
-   
+Route::get('/welcome', function () {
+      $coz=Course::all();
+
     return view('welcome')->with('coz',$coz);
 })->middleware('guest');
 

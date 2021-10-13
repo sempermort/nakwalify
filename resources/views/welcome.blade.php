@@ -181,7 +181,7 @@
                                 <div class="card cardc rounded ">
                                     <div class="h-250">
                                         <img class="card-img-top  object-cover h-100 w-100"
-                src="{{route('get-copic',explode('/',$cozy->mediaCover->file_path)[1])}}"
+                                            src="{{route('get-copic',explode('/',$cozy->mediaCover->file_path)[1])}}"
                                             alt="Card image cap">
                                         <div class="card-img-overlay">
                                             <span class=" jss16 m-25-auto ">
@@ -237,29 +237,485 @@
                     </div>
 
                 </div>
-            </div>          
+            </div>
 
             <div id="Livestock" class="tab-pane fade h-350">
-            
+            <div id="carousel-example4" class="carousel slide m-4" data-interval="false" ride="false"
+                    data-ride="carousel">
+                    <div class="carousel-inneri  row  mx-auto" role="listbox">
+
+                        @foreach($coz as $key=>$cozy)
+
+                        <div class="col-md-4    active">
+                            <a href="{{route('coursedetail',$cozy->id)}}">
+                                <div class="card cardc rounded ">
+                                    <div class="h-250">
+                                        <img class="card-img-top  object-cover h-100 w-100"
+                                            src="{{route('get-copic',explode('/',$cozy->mediaCover->file_path)[1])}}"
+                                            alt="Card image cap">
+                                        <div class="card-img-overlay">
+                                            <span class=" jss16 m-25-auto ">
+                                                <span class="material-icons-round ">
+                                                    play_arrow
+                                                </span>
+                                            </span>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="m-2">
+                                        <p class="card-text  d-flex justify-content-between">
+                                            <small class="card-text">23,162 trainees </small>
+                                            <small class="card-text">1h 50m</small>
+                                        </p>
+
+
+                                        <p class="card-text bold"><a href="http://" target="_blank"
+                                                rel="noopener noreferrer">{{$cozy->course_subt}}</a> </p>
+                                        <p class="card-text d-flex justify-content-between">
+
+                                            <small class="card-text"><span class="material-icons-outlined">
+                                                    bookmark_border
+                                                </span></small>
+                                        </p>
+                                    </div>
+
+                                </div>
+                            </a>
+
+                        </div>
+
+                        @endforeach
+                        <a class="carousel-control-prev " style="margin-left: -24px;" href="#carousel-example4"
+                            role="button" data-slide="prev"><small class=" jss15 bg-white">
+                                <span class="material-icons dark  ">
+                                    chevron_left
+                                </span>
+                            </small>
+
+                        </a>
+                        <a class="carousel-control-next" style="margin-right: -24px;" href="#carousel-example4"
+                            role="button" data-slide="next">
+                            <i class=" jss15  ">
+                                <span class="material-icons dark font-weight-light">
+                                    chevron_right
+                                </span>
+                            </i>
+
+                            </button>
+                        </a>
+                    </div>
+
+                </div>
             </div>
-        <div id="Agriculture" class="tab-pane fade h-350">
-            
-        </div>
-        <div id="Forestry" class="tab-pane  fade h-350">
-            
-        </div>
-        <div id="Arts" class="tab-pane fade h-350">
-            
-        </div>
-        <div id="Transportation" class="tab-pane fade h-350">
-            
-        </div>
-        <div id="Skills" class="tab-pane  fade h-350">
-            
-        </div>
-        <div id="Business" class="tab-pane  fade h-350">
-            
-        </div>
+            <div id="Agriculture" class="tab-pane fade h-350">
+            <div id="carousel-example4" class="carousel slide m-4" data-interval="false" ride="false"
+                    data-ride="carousel">
+                    <div class="carousel-inneri  row  mx-auto" role="listbox">
+
+                        @foreach($coz as $key=>$cozy)
+                        <div class="col-md-4    active">
+                            <a href="{{route('coursedetail',$cozy->id)}}">
+                                <div class="card cardc rounded ">
+                                    <div class="h-250">
+                                        <img class="card-img-top  object-cover h-100 w-100"
+                                            src="{{route('get-copic',explode('/',$cozy->mediaCover->file_path)[1])}}"
+                                            alt="Card image cap">
+                                        <div class="card-img-overlay">
+                                            <span class=" jss16 m-25-auto ">
+                                                <span class="material-icons-round ">
+                                                    play_arrow
+                                                </span>
+                                            </span>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="m-2">
+                                        <p class="card-text  d-flex justify-content-between">
+                                            <small class="card-text">23,162 trainees </small>
+                                            <small class="card-text">1h 50m</small>
+                                        </p>
+
+
+                                        <p class="card-text bold"><a href="http://" target="_blank"
+                                                rel="noopener noreferrer">{{$cozy->course_subt}}</a> </p>
+                                        <p class="card-text d-flex justify-content-between">
+
+                                            <small class="card-text"><span class="material-icons-outlined">
+                                                    bookmark_border
+                                                </span></small>
+                                        </p>
+                                    </div>
+
+                                </div>
+                            </a>
+
+                        </div>
+
+                        @endforeach
+                        <a class="carousel-control-prev " style="margin-left: -24px;" href="#carousel-example4"
+                            role="button" data-slide="prev"><small class=" jss15 bg-white">
+                                <span class="material-icons dark  ">
+                                    chevron_left
+                                </span>
+                            </small>
+
+                        </a>
+                        <a class="carousel-control-next" style="margin-right: -24px;" href="#carousel-example4"
+                            role="button" data-slide="next">
+                            <i class=" jss15  ">
+                                <span class="material-icons dark font-weight-light">
+                                    chevron_right
+                                </span>
+                            </i>
+
+                            </button>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+            <div id="Forestry" class="tab-pane  fade h-350">
+            <div id="carousel-example4" class="carousel slide m-4" data-interval="false" ride="false"
+                    data-ride="carousel">
+                    <div class="carousel-inneri  row  mx-auto" role="listbox">
+
+                        @foreach($coz as $key=>$cozy)
+                        <div class="col-md-4    active">
+                            <a href="{{route('coursedetail',$cozy->id)}}">
+                                <div class="card cardc rounded ">
+                                    <div class="h-250">
+                                        <img class="card-img-top  object-cover h-100 w-100"
+                                            src="{{route('get-copic',explode('/',$cozy->mediaCover->file_path)[1])}}"
+                                            alt="Card image cap">
+                                        <div class="card-img-overlay">
+                                            <span class=" jss16 m-25-auto ">
+                                                <span class="material-icons-round ">
+                                                    play_arrow
+                                                </span>
+                                            </span>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="m-2">
+                                        <p class="card-text  d-flex justify-content-between">
+                                            <small class="card-text">23,162 trainees </small>
+                                            <small class="card-text">1h 50m</small>
+                                        </p>
+
+
+                                        <p class="card-text bold"><a href="http://" target="_blank"
+                                                rel="noopener noreferrer">{{$cozy->course_subt}}</a> </p>
+                                        <p class="card-text d-flex justify-content-between">
+
+                                            <small class="card-text"><span class="material-icons-outlined">
+                                                    bookmark_border
+                                                </span></small>
+                                        </p>
+                                    </div>
+
+                                </div>
+                            </a>
+
+                        </div>
+
+                        @endforeach
+                        <a class="carousel-control-prev " style="margin-left: -24px;" href="#carousel-example4"
+                            role="button" data-slide="prev"><small class=" jss15 bg-white">
+                                <span class="material-icons dark  ">
+                                    chevron_left
+                                </span>
+                            </small>
+
+                        </a>
+                        <a class="carousel-control-next" style="margin-right: -24px;" href="#carousel-example4"
+                            role="button" data-slide="next">
+                            <i class=" jss15  ">
+                                <span class="material-icons dark font-weight-light">
+                                    chevron_right
+                                </span>
+                            </i>
+
+                            </button>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+            <div id="Arts" class="tab-pane fade h-350">
+            <div id="carousel-example4" class="carousel slide m-4" data-interval="false" ride="false"
+                    data-ride="carousel">
+                    <div class="carousel-inneri  row  mx-auto" role="listbox">
+
+                        @foreach($coz as $key=>$cozy)
+                        <div class="col-md-4    active">
+                            <a href="{{route('coursedetail',$cozy->id)}}">
+                                <div class="card cardc rounded ">
+                                    <div class="h-250">
+                                        <img class="card-img-top  object-cover h-100 w-100"
+                                            src="{{route('get-copic',explode('/',$cozy->mediaCover->file_path)[1])}}"
+                                            alt="Card image cap">
+                                        <div class="card-img-overlay">
+                                            <span class=" jss16 m-25-auto ">
+                                                <span class="material-icons-round ">
+                                                    play_arrow
+                                                </span>
+                                            </span>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="m-2">
+                                        <p class="card-text  d-flex justify-content-between">
+                                            <small class="card-text">23,162 trainees </small>
+                                            <small class="card-text">1h 50m</small>
+                                        </p>
+
+
+                                        <p class="card-text bold"><a href="http://" target="_blank"
+                                                rel="noopener noreferrer">{{$cozy->course_subt}}</a> </p>
+                                        <p class="card-text d-flex justify-content-between">
+
+                                            <small class="card-text"><span class="material-icons-outlined">
+                                                    bookmark_border
+                                                </span></small>
+                                        </p>
+                                    </div>
+
+                                </div>
+                            </a>
+
+                        </div>
+
+                        @endforeach
+                        <a class="carousel-control-prev " style="margin-left: -24px;" href="#carousel-example4"
+                            role="button" data-slide="prev"><small class=" jss15 bg-white">
+                                <span class="material-icons dark  ">
+                                    chevron_left
+                                </span>
+                            </small>
+
+                        </a>
+                        <a class="carousel-control-next" style="margin-right: -24px;" href="#carousel-example4"
+                            role="button" data-slide="next">
+                            <i class=" jss15  ">
+                                <span class="material-icons dark font-weight-light">
+                                    chevron_right
+                                </span>
+                            </i>
+
+                            </button>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+            <div id="Transportation" class="tab-pane fade h-350">
+            <div id="carousel-example4" class="carousel slide m-4" data-interval="false" ride="false"
+                    data-ride="carousel">
+                    <div class="carousel-inneri  row  mx-auto" role="listbox">
+
+                        @foreach($coz as $key=>$cozy)
+                        <div class="col-md-4    active">
+                            <a href="{{route('coursedetail',$cozy->id)}}">
+                                <div class="card cardc rounded ">
+                                    <div class="h-250">
+                                        <img class="card-img-top  object-cover h-100 w-100"
+                                            src="{{route('get-copic',explode('/',$cozy->mediaCover->file_path)[1])}}"
+                                            alt="Card image cap">
+                                        <div class="card-img-overlay">
+                                            <span class=" jss16 m-25-auto ">
+                                                <span class="material-icons-round ">
+                                                    play_arrow
+                                                </span>
+                                            </span>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="m-2">
+                                        <p class="card-text  d-flex justify-content-between">
+                                            <small class="card-text">23,162 trainees </small>
+                                            <small class="card-text">1h 50m</small>
+                                        </p>
+
+
+                                        <p class="card-text bold"><a href="http://" target="_blank"
+                                                rel="noopener noreferrer">{{$cozy->course_subt}}</a> </p>
+                                        <p class="card-text d-flex justify-content-between">
+
+                                            <small class="card-text"><span class="material-icons-outlined">
+                                                    bookmark_border
+                                                </span></small>
+                                        </p>
+                                    </div>
+
+                                </div>
+                            </a>
+
+                        </div>
+
+                        @endforeach
+                        <a class="carousel-control-prev " style="margin-left: -24px;" href="#carousel-example4"
+                            role="button" data-slide="prev"><small class=" jss15 bg-white">
+                                <span class="material-icons dark  ">
+                                    chevron_left
+                                </span>
+                            </small>
+
+                        </a>
+                        <a class="carousel-control-next" style="margin-right: -24px;" href="#carousel-example4"
+                            role="button" data-slide="next">
+                            <i class=" jss15  ">
+                                <span class="material-icons dark font-weight-light">
+                                    chevron_right
+                                </span>
+                            </i>
+
+                            </button>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+            <div id="Skills" class="tab-pane  fade h-350">
+            <div id="carousel-example4" class="carousel slide m-4" data-interval="false" ride="false"
+                    data-ride="carousel">
+                    <div class="carousel-inneri  row  mx-auto" role="listbox">
+
+                        @foreach($coz as $key=>$cozy)
+                        <div class="col-md-4    active">
+                            <a href="{{route('coursedetail',$cozy->id)}}">
+                                <div class="card cardc rounded ">
+                                    <div class="h-250">
+                                        <img class="card-img-top  object-cover h-100 w-100"
+                                            src="{{route('get-copic',explode('/',$cozy->mediaCover->file_path)[1])}}"
+                                            alt="Card image cap">
+                                        <div class="card-img-overlay">
+                                            <span class=" jss16 m-25-auto ">
+                                                <span class="material-icons-round ">
+                                                    play_arrow
+                                                </span>
+                                            </span>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="m-2">
+                                        <p class="card-text  d-flex justify-content-between">
+                                            <small class="card-text">23,162 trainees </small>
+                                            <small class="card-text">1h 50m</small>
+                                        </p>
+
+
+                                        <p class="card-text bold"><a href="http://" target="_blank"
+                                                rel="noopener noreferrer">{{$cozy->course_subt}}</a> </p>
+                                        <p class="card-text d-flex justify-content-between">
+
+                                            <small class="card-text"><span class="material-icons-outlined">
+                                                    bookmark_border
+                                                </span></small>
+                                        </p>
+                                    </div>
+
+                                </div>
+                            </a>
+
+                        </div>
+
+                        @endforeach
+                        <a class="carousel-control-prev " style="margin-left: -24px;" href="#carousel-example4"
+                            role="button" data-slide="prev"><small class=" jss15 bg-white">
+                                <span class="material-icons dark  ">
+                                    chevron_left
+                                </span>
+                            </small>
+
+                        </a>
+                        <a class="carousel-control-next" style="margin-right: -24px;" href="#carousel-example4"
+                            role="button" data-slide="next">
+                            <i class=" jss15  ">
+                                <span class="material-icons dark font-weight-light">
+                                    chevron_right
+                                </span>
+                            </i>
+
+                            </button>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+            <div id="Business" class="tab-pane  fade h-350">
+            <div id="carousel-example4" class="carousel slide m-4" data-interval="false" ride="false"
+                    data-ride="carousel">
+                    <div class="carousel-inneri  row  mx-auto" role="listbox">
+
+                        @foreach($coz as $key=>$cozy)
+                        <div class="col-md-4    active">
+                            <a href="{{route('coursedetail',$cozy->id)}}">
+                                <div class="card cardc rounded ">
+                                    <div class="h-250">
+                                        <img class="card-img-top  object-cover h-100 w-100"
+                                            src="{{route('get-copic',explode('/',$cozy->mediaCover->file_path)[1])}}"
+                                            alt="Card image cap">
+                                        <div class="card-img-overlay">
+                                            <span class=" jss16 m-25-auto ">
+                                                <span class="material-icons-round ">
+                                                    play_arrow
+                                                </span>
+                                            </span>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="m-2">
+                                        <p class="card-text  d-flex justify-content-between">
+                                            <small class="card-text">23,162 trainees </small>
+                                            <small class="card-text">1h 50m</small>
+                                        </p>
+
+
+                                        <p class="card-text bold"><a href="http://" target="_blank"
+                                                rel="noopener noreferrer">{{$cozy->course_subt}}</a> </p>
+                                        <p class="card-text d-flex justify-content-between">
+
+                                            <small class="card-text"><span class="material-icons-outlined">
+                                                    bookmark_border
+                                                </span></small>
+                                        </p>
+                                    </div>
+
+                                </div>
+                            </a>
+
+                        </div>
+
+                        @endforeach
+                        <a class="carousel-control-prev " style="margin-left: -24px;" href="#carousel-example4"
+                            role="button" data-slide="prev"><small class=" jss15 bg-white">
+                                <span class="material-icons dark  ">
+                                    chevron_left
+                                </span>
+                            </small>
+
+                        </a>
+                        <a class="carousel-control-next" style="margin-right: -24px;" href="#carousel-example4"
+                            role="button" data-slide="next">
+                            <i class=" jss15  ">
+                                <span class="material-icons dark font-weight-light">
+                                    chevron_right
+                                </span>
+                            </i>
+
+                            </button>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
 
 
             <div class="mt-5 mb-5">
@@ -306,62 +762,6 @@
                     </a>
                 </div>
             </div>
-            <div class="m-5">
-                <div class="row mt-5">
-                    <div class="col-md-4">
-                        <h1 class="font-weight-bolder">What Will You Discover?
-                            <hr>
-                        </h1>
-                        <p class="font-weight-bolder">
-                            Explore new skills, deepen existing passions, and get lost in creativity. What you find
-                            just might surprise and inspire you.
-                        </p>
-                        <button class="btn-outline-dark p-2">Browse Classes</button>
-                    </div>
-                    <div class="col-md-8">
-                        <img src="{{asset('assets/images/ezgif.com-gif-maker.jpg')}}" class="rounded  img-fluid"
-                            width="1048" height="576" alt="">
-                    </div>
-                </div>
-            </div>
-            <div class="m-150-20">
-                <div class="row ">
-                    <div class="col-md-8">
-                        <img src="{{asset('assets/images/ezgif.com-gif-maker2.jpg')}}" class="rounded img-fluid"
-                            width="1048" height="576" alt="">
-                    </div>
-                    <div class="col-md-4">
-                        <h1 class="font-weight-bolder">Membership With Meaning
-                            <hr>
-                        </h1>
-                        <p class="font-weight-bolder">
-                            With so much to explore, real projects to create, and the support of fellow-creatives,
-                            Skillshare’s online learning platform empowers you to learn new skills and accomplish
-                            real growth.
-                        </p>
-                        <button class="btn-outline-dark p-2">Browse Projects</button>
-                    </div>
-                </div>
-            </div>
-            <div class="m-150-20">
-                <div class="row mt-5">
-                    <div class="col-md-4">
-                        <h1 class="font-weight-bolder">Online Learning Designed For Real Life
-                            <hr>
-                        </h1>
-                        <p class="font-weight-bolder">
-                            Move your creative journey forward without putting life on hold. Skillshare’s short
-                            online classes help you find inspiration that fits your routine.
-                        </p>
-                        <button class="btn-outline-dark p-2">Try Premimum</button>
-                    </div>
-                    <div class="col-md-8">
-                        <img src="{{asset('assets/images/ezgif.com-gif-maker3.jpg')}}" class="rounded img-fluid"
-                            width="1048" height="576" alt="">
-                    </div>
-                </div>
-            </div>
-
         </div>
 </section>
 
@@ -668,8 +1068,6 @@
     </div>
 </div>
 <script>
-
-
 <!-- Initialize the plugin
 -->
 $(".card-img-overlay").mouseover(function
@@ -690,4 +1088,3 @@ $(this).find($(".jss16")).css({
 });
 </script>
 @endsection
-

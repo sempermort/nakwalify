@@ -115,10 +115,10 @@
                                                 <div class="d-flex   mt-30">
                                                     <div class="col-6  p-0">
                                                         <label>What you will learn*</label>
-                                                        <div class="grid-container border gridwlearn">
+                                                        <div class="grid-container border " id="gridwlearn">
                                                         </div>
                                                         <div class="">
-                                                            <input class="w-100 rounded" type="text"
+                                                            <input class="w-100 form-control form-rounded" type="text"
                                                                 id="wywlearn" value="">
                                                             <input type="hidden" name="mainwlearn[]" id="mainwlearn"
                                                                 value="">
@@ -135,7 +135,7 @@
                                                         <div class="grid-container border gridrequire">
                                                         </div>
                                                         <div class="">
-                                                            <input class="w-100 form-control" type="text"  id="requirement"
+                                                            <input class="w-100 form-rounded form-control" type="text"  id="requirement"
                                                                 value="">
                                                             <input type="hidden" name="mainrequire[]" id="mainrequire"
                                                                 value="">
@@ -151,7 +151,7 @@
 
                                                     <div class="ui form swdh339">
                                                         <label class="control-label">Course Description</label>
-                                                        <div class="field border border-dark">
+                                                        <div class="field ">
                                                             <textarea rows="5" name="course_des"
                                                                 id="course_des"
                                                                 placeholder="Insert your course description"></textarea>
@@ -269,32 +269,31 @@
             if(wywlearn.value!=null){
             var htmlearn =
             '<div class="collection-item border-0">'+
-            '<div  class="m-2 primary-content"><i class="material-icons">done  </i>'+
-            wywlearn.value+'</div>'+
-            '</div>';
-                    $(".gridwlearn").append($(htmlearn));
+            '<div  class="m-2 primary-content"><i class="material-icons">done</i>'+
+            wywlearn.value+'</div></div>';
+                    $("#gridwlearn").append(htmlearn);
 
                    learnarry.push(wywlearn.value);
 
                    mainwlearn.value=learnarry.slice();
+                   alert(mainwlearn.value);
                    wywlearn.value='';
             }
         };
 
-        const main  =[];
+        var main  =[];
         function addrequirement(){
             if(mainrequire.value!=null){
            const requires = document.getElementById('requirement');
            const mainrequire = document.getElementById('mainrequire');
-           var html =
+           var req =
            '<div class="collection-item border-0">'+
            '<div  class="m-2 primary-content">'+
            requires.value+'</div>'+
            '</div>';
-                   $(".gridrequire").append($(html));
+                   $(".gridrequire").append(req);
 
                   main.push(requires.value);
-
 
                   mainrequire.value=main.slice();
                   requires.value='';
@@ -317,13 +316,13 @@
                 success: function(data) {
                     if ((data.errors)) {
                         alert(data.errors);
-                    } else {                    
+                    } else {
                         var tgb='<option value="'+data.category_id+'">'+data.category_name+'</option>';
                         $("#category_id").append($(tgb));
                         $('#categorymodal').modal('hide')
-                   
+
             }
-                        
+
 
                 },
                 xhr: function() {
@@ -429,7 +428,7 @@
         };
 
         const chosencat = document.getElementById('file-chosen');
-   
+
 
 // actualBtn.addEventListener('change', function() {
 //     fileChosen.textContent = this.files[0].name;

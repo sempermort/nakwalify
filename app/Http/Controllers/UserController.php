@@ -92,7 +92,8 @@ public function  viewCourse($id)
 
     $covid=$course->mediaCover->where('file_type','covervid')->first();
 
-    $copic=$course->mediaCover->where('file_type','coverpic')->first();
+    $copic=MediaCover::Where('course_id',$id)->where('file_type','coverpic')->first();
+ 
 
     return view('user.instructor.viewcourse')->with('videos', $videos)
     ->with('course', $course)
