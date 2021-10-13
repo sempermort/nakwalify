@@ -276,7 +276,7 @@
                    learnarry.push(wywlearn.value);
 
                    mainwlearn.value=learnarry.slice();
-                   alert(mainwlearn.value);
+
                    wywlearn.value='';
             }
         };

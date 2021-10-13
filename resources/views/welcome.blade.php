@@ -180,17 +180,19 @@
                     <div class="carousel-inneri  row  mx-auto" role="listbox">
 
                         @foreach($coz as $key=>$cozy)
-                        <div class="col-md-4 mb-3   active">
+                        <div class="col-md-3 mb-3   active">
                             <a href="{{route('coursedetail',$cozy->id)}}">
                                 <div class="card cardc rounded ">
                                     <div class="h-250">
                                     @if(isset($cozy->mediaCover->file_path))
+
+                                    @php $src=$cozy->mediaCover->file_path@endphp
                                         <img class="card-img-top  object-cover h-100 w-100"
-                                            src="{{route('get-copic',explode('/',$cozy->mediaCover->file_path)[1])}}"
+                                            src="{{route('get-copic',explode('/',$src)[1])}}"
                                             alt="Card image cap">
                                             @endif
-                                   
-                                           
+
+
                                         <div class="card-img-overlay">
                                             <span class=" jss16 m-25-auto ">
                                                 <span class="material-icons-round ">
@@ -258,13 +260,13 @@
                             <a href="{{route('coursedetail',$cozy->id)}}">
                                 <div class="card cardc rounded ">
                                     <div class="h-250">
-                                    
+
                                      @if(isset($cozy->mediaCover->file_path))
                                         <img class="card-img-top  object-cover h-100 w-100"
                                             src="{{route('get-copic',explode('/',$cozy->mediaCover->file_path)[1])}}"
                                             alt="Card image cap">
                                             @endif
-                                           
+
                                         <div class="card-img-overlay">
                                             <span class=" jss16 m-25-auto ">
                                                 <span class="material-icons-round ">
@@ -330,13 +332,13 @@
                             <a href="{{route('coursedetail',$cozy->id)}}">
                                 <div class="card cardc rounded ">
                                     <div class="h-250">
-                            
+
                                     @if(isset($cozy->mediaCover->file_path))
                                         <img class="card-img-top  object-cover h-100 w-100"
                                             src="{{route('get-copic',explode('/',$cozy->mediaCover->file_path)[1])}}"
                                             alt="Card image cap">
                                             @endif
-                                            
+
                                         <div class="card-img-overlay">
                                             <span class=" jss16 m-25-auto ">
                                                 <span class="material-icons-round ">
