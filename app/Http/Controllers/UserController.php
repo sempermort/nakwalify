@@ -93,7 +93,7 @@ public function  viewCourse($id)
     $covid=$course->mediaCover->where('file_type','covervid')->first();
 
     $copic=MediaCover::Where('course_id',$id)->where('file_type','coverpic')->first();
- 
+
 
     return view('user.instructor.viewcourse')->with('videos', $videos)
     ->with('course', $course)
@@ -260,6 +260,17 @@ if($request->answer!=null){
 
 return Response()->json($question);
 }
+public function takequiz($id)
+{
+    $qstns=Questions::where('id',$id)->get();
+
+    return view('user.instructor.questin')->with("qstn",$qstn);
+}
+public function  quizpost(Request $request)
+{
+    return view('user.instructor.addquestions')->with("video_id",$id);
+}
+
 
 public function  addVideosajax(Request $request)
 {

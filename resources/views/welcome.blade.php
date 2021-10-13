@@ -3,7 +3,7 @@
 @section('content')
 
 <section>
-    <div class="" style="margin-top: -25px; height: 690px;">
+    <div class="" style="margin-top: -25px; height: 730px;">
         <video autoplay muted loop class="w-100 object-cover" id="myVideo">
             <source src="{{asset('assets/vids/cover vid.mp4')}}"  type="video/mp4">
         </video>
@@ -80,12 +80,13 @@
 
                                         <div class=" form-group mb-1">
                                             <div class="d-flex justify-content-between">
-                                                <input type="text" name="Ccode" id="Ccode" class="form-control"
-                                                    style="width: 28%;" value="+255">
-                                                <div>
+                                                <input type="text" name="Ccode" id="Ccode" class="form-control mr-2"
+                                                    style="width: 28%;"readonly value="+255">
                                                     <input type="text" name="phonenumber" id="phonenumber"
                                                         class="form-control" value="{{ old('phonenumber') }}" required
-                                                        autocomplete="phonenumber" style="width: 68%;">
+                                                        autocomplete="phonenumber" style="width: 72%;">
+                                                <div>
+
                                                     @error('phonenumber') <span class="invalid-feedback" role="alert">
                                                         <strong>{{ $message }}</strong>
                                                     </span>
@@ -183,9 +184,13 @@
                             <a href="{{route('coursedetail',$cozy->id)}}">
                                 <div class="card cardc rounded ">
                                     <div class="h-250">
+                                    @if(isset($cozy->mediaCover->file_path))
                                         <img class="card-img-top  object-cover h-100 w-100"
                                             src="{{route('get-copic',explode('/',$cozy->mediaCover->file_path)[1])}}"
                                             alt="Card image cap">
+                                            @endif
+                                   
+                                           
                                         <div class="card-img-overlay">
                                             <span class=" jss16 m-25-auto ">
                                                 <span class="material-icons-round ">
@@ -253,9 +258,13 @@
                             <a href="{{route('coursedetail',$cozy->id)}}">
                                 <div class="card cardc rounded ">
                                     <div class="h-250">
+                                    
+                                     @if(isset($cozy->mediaCover->file_path))
                                         <img class="card-img-top  object-cover h-100 w-100"
                                             src="{{route('get-copic',explode('/',$cozy->mediaCover->file_path)[1])}}"
                                             alt="Card image cap">
+                                            @endif
+                                           
                                         <div class="card-img-overlay">
                                             <span class=" jss16 m-25-auto ">
                                                 <span class="material-icons-round ">
@@ -321,9 +330,13 @@
                             <a href="{{route('coursedetail',$cozy->id)}}">
                                 <div class="card cardc rounded ">
                                     <div class="h-250">
+                            
+                                    @if(isset($cozy->mediaCover->file_path))
                                         <img class="card-img-top  object-cover h-100 w-100"
                                             src="{{route('get-copic',explode('/',$cozy->mediaCover->file_path)[1])}}"
                                             alt="Card image cap">
+                                            @endif
+                                            
                                         <div class="card-img-overlay">
                                             <span class=" jss16 m-25-auto ">
                                                 <span class="material-icons-round ">
@@ -389,9 +402,11 @@
                             <a href="{{route('coursedetail',$cozy->id)}}">
                                 <div class="card cardc rounded ">
                                     <div class="h-250">
+                                    @if(isset($cozy->mediaCover->file_path))
                                         <img class="card-img-top  object-cover h-100 w-100"
                                             src="{{route('get-copic',explode('/',$cozy->mediaCover->file_path)[1])}}"
                                             alt="Card image cap">
+                                            @endif
                                         <div class="card-img-overlay">
                                             <span class=" jss16 m-25-auto ">
                                                 <span class="material-icons-round ">
@@ -457,9 +472,11 @@
                             <a href="{{route('coursedetail',$cozy->id)}}">
                                 <div class="card cardc rounded ">
                                     <div class="h-250">
+                                    @if(isset($cozy->mediaCover->file_path))
                                         <img class="card-img-top  object-cover h-100 w-100"
                                             src="{{route('get-copic',explode('/',$cozy->mediaCover->file_path)[1])}}"
                                             alt="Card image cap">
+                                            @endif
                                         <div class="card-img-overlay">
                                             <span class=" jss16 m-25-auto ">
                                                 <span class="material-icons-round ">
@@ -525,9 +542,11 @@
                             <a href="{{route('coursedetail',$cozy->id)}}">
                                 <div class="card cardc rounded ">
                                     <div class="h-250">
+                                    @if(isset($cozy->mediaCover->file_path))
                                         <img class="card-img-top  object-cover h-100 w-100"
                                             src="{{route('get-copic',explode('/',$cozy->mediaCover->file_path)[1])}}"
                                             alt="Card image cap">
+                                            @endif
                                         <div class="card-img-overlay">
                                             <span class=" jss16 m-25-auto ">
                                                 <span class="material-icons-round ">
@@ -593,9 +612,11 @@
                             <a href="{{route('coursedetail',$cozy->id)}}">
                                 <div class="card cardc rounded ">
                                     <div class="h-250">
+                                    @if(isset($cozy->mediaCover->file_path))
                                         <img class="card-img-top  object-cover h-100 w-100"
                                             src="{{route('get-copic',explode('/',$cozy->mediaCover->file_path)[1])}}"
                                             alt="Card image cap">
+                                            @endif
                                         <div class="card-img-overlay">
                                             <span class=" jss16 m-25-auto ">
                                                 <span class="material-icons-round ">
@@ -661,9 +682,11 @@
                             <a href="{{route('coursedetail',$cozy->id)}}">
                                 <div class="card cardc rounded ">
                                     <div class="h-250">
+                                    @if(isset($cozy->mediaCover->file_path))
                                         <img class="card-img-top  object-cover h-100 w-100"
                                             src="{{route('get-copic',explode('/',$cozy->mediaCover->file_path)[1])}}"
                                             alt="Card image cap">
+                                            @endif
                                         <div class="card-img-overlay">
                                             <span class=" jss16 m-25-auto ">
                                                 <span class="material-icons-round ">
@@ -721,7 +744,7 @@
             </div>
 
 
-            <div class="mt-5 mb-5">
+            <div class="mt-5 ">
 
                 <div id="carouselExampleIndicators" class="carousel h-400 carousel-fade" data-ride="carousel" style="">
 

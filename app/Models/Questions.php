@@ -20,4 +20,10 @@ class Questions extends Model
         'question', 'questiontype','video_id',
     ];
 
+
+    public function answers()
+    {
+        return $this->hasMany(Answers::class,'question_id');
+    }
+
 }

@@ -22,7 +22,7 @@ use Illuminate\Support\Facades\Auth;
 Auth::routes();
 Route::get('/', function () {
     $coz=Course::all();
-    
+
     return view('welcome')->with('coz',$coz);
 });
 
@@ -38,6 +38,8 @@ Route::get('/user', 'App\Http\Controllers\UserController@index')->name('user');
 Route::get('/business','App\Http\Controllers\BusinessController@index')->name('business');
 Route::get('/addcourse', 'App\Http\Controllers\UserController@addCourse')->name('addcourse');
 Route::post('/addcoursepost', 'App\Http\Controllers\UserController@postaddCourse')->name('addcoursepost');
+Route::get('/takequiz/{id}', 'App\Http\Controllers\UserController@takequiz')->name('takequiz');
+Route::post('/quizpost', 'App\Http\Controllers\UserController@quizpost')->name('quizpost');
 Route::get('/instructorcourses', 'App\Http\Controllers\UserController@instructorCourses')->name('instructorcourses');
 Route::get('/instructordashboard', 'App\Http\Controllers\UserController@instructorDashboard')->middleware(['verified','auth'])->name('instructordashboard');
 Route::get('/analytics', 'App\Http\Controllers\UserController@analytics')->name('analytics');
