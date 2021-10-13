@@ -5,7 +5,7 @@
 <section>
     <div class="h-vid" style="margin-top: -25px; ">
         <video autoplay muted loop class="w-100 " id="myVideo">
-            <source src="{{asset('assets/vids/cover vid.mp4')}}"  type="video/mp4">
+            <source src="{{asset('assets/vids/cover vid.mp4')}}" width="1200" heigth="600"  type="video/mp4">
         </video>
         <div class=" regform card col-md-4   ">
 
@@ -57,7 +57,7 @@
                                                 <div style="width: 48%;"> <input type="text" name="lname"
                                                         value="{{ old('lname') }}" required autocomplete="name"
                                                         autofocus id="lastName" class="form-control"
-                                                        placeholder="larst Name">
+                                                        placeholder="last Name">
                                                     @error('lname')
                                                     <span class="invalid-feedback" role="alert">
                                                         <strong>{{ $message }}</strong>
