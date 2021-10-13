@@ -33,11 +33,9 @@
                     <div class="tab-content">
 
                         <div id="videotab" class="tab-pane   tabcontent h-500" >
-                            <video width="400" id="mainvid" height="240"
-                                poster="{{route('get-copic',explode('/',$copic->file_path)[1])}}" class="w-100 h-100    object-fill " controls>
-                                @if(isset($covid->id))
-                                <source src="{{route('get-covid',explode('/',$covid->file_path)[1])}}">@endif
-                            </video>
+                        <iframe  width="560" height="315" class=" object-contain h-100 w-100"
+                            id="vidcanva"   src="{{$videos[0]->video_path}}" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"allowfullscreen></iframe>
 
                         </div>
 
