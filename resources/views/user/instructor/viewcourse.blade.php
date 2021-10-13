@@ -6,7 +6,7 @@
 
 
 {{$id=1}}
-<div class="sa4d25 bg-darknavy p-5">
+<div class="sa4d25 bg-darknavy p-3">
     <div class="pt-3">
         <h2 class="text-white"></i> {{$course->course_title}} </h2>
         <p class=" text-white">
@@ -347,7 +347,7 @@ function madeu(lim) {
     var videotab= document.getElementById('videotab');
     videotab.innerHTML="";
     var btnhtml =
-    '<iframe  width="560" height="315" class="object-cover h-100 w-100"'+
+    '<iframe  width="560" height="315" class="object-fill h-100 w-100"'+
      'id="vidcanva" allow="autoplay;"  src="' + lim + '" frameborder="0"'+
       'allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"allowfullscreen></iframe>';
 
