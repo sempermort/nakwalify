@@ -89,6 +89,9 @@ body {
     .h-vid {
         height: 1090px!important;
     }
+    .regform {
+        top: 200px!important;
+    }
 }
 
 @media (max-width: 575.98px) {
