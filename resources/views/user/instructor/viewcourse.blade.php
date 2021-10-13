@@ -6,7 +6,7 @@
 
 
 {{$id=1}}
-<div class="sa4d25 bg-darknavy p-3">
+<div class="sa4d25 bg-darknavy p-4">
     <div class="pt-3">
         <h2 class="text-white"></i> {{$course->course_title}} </h2>
         <p class=" text-white">
@@ -117,7 +117,7 @@
         </ul>
         <div class="tab-content">
             <div id="tab-1" class="tab-pane active">
-                <div class="panel-body m-5">
+                <div class="panel-body pt-2">
                     <h4>Project Description</h4>
                     <p>
                         {{$course->course_des}}
@@ -126,7 +126,7 @@
                 </div>
             </div>
               <div id="tab-2" class="tab-pane">
-                <div class="panel-body m-5">
+                <div class="panel-body pt-2">
                     <h4> First up, review the Teacher Handbook,</h4>
                     <div class=" border rounded">
                         <table class="table  w-100 text-center" id="pdfb">
@@ -348,7 +348,7 @@ function madeu(lim) {
     videotab.innerHTML="";
     var btnhtml =
     '<iframe  width="560" height="315" class="object-fill h-100 w-100"'+
-     'id="vidcanva" allow="autoplay;"  src="' + lim + '" frameborder="0"'+
+     'id="vidcanva"   src="' + lim + '" frameborder="0"'+
       'allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"allowfullscreen></iframe>';
 
     $("#videotab").append($(btnhtml));
