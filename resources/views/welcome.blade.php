@@ -4,8 +4,8 @@
 
 <section>
     <div class="" style="margin-top: -25px; height: 690px;">
-        <video autoplay muted loop id="myVideo">
-            <source src="{{asset('assets/vids/Nakwalify videos.mp4')}}" type="video/mp4">
+        <video autoplay muted loop class="w-100 object-cover" id="myVideo">
+            <source src="{{asset('assets/vids/cover vid.mp4')}}"  type="video/mp4">
         </video>
         <div class=" regform card col-md-4   ">
 
