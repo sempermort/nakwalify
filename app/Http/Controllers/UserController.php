@@ -90,15 +90,13 @@ public function  viewCourse($id)
 
     $videos=$course->Videos;
 
-    $covid=$course->mediaCover->where('file_type','covervid')->first();
-
-    $copic=MediaCover::Where('course_id',$id)->where('file_type','coverpic')->first();
+    // $covid=$course->mediaCover->where('file_type','covervid')->first();
+    // $copic=MediaCover::Where('course_id',$id)->where('file_type','coverpic')->first();
 
 
     return view('user.instructor.viewcourse')->with('videos', $videos)
-    ->with('course', $course)
-    ->with('covid', $covid)
-    ->with('copic', $copic);
+    ->with('course', $course);
+
 
 }
 

@@ -26,7 +26,7 @@
                                 <video width="400" height="220" poster="" class="w-100 object-cover "
                             controls>
                                             @endif
-                                
+
 
                         </video></a>
                                     </div>
@@ -170,9 +170,6 @@
             <p>
 
                 <span>• {{count($selcoz->Videos)}} Lessons </span>
-
-
-                <span>• 30h 36m total length</span>
             </P>
 
         </div>

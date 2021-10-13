@@ -44,9 +44,12 @@
                             <div id="carouselExampleFade"  class="carousel slide carousel-fade" data-ride="carousel">
                                 <div class="carousel-inner " id="carol">
                                 <div class="carousel-item h-350 pl-4 pr-4 active">
-                                        <img src="{{route('get-copic',explode('/',$copic->file_path)[1])}}" width="400"
-                                            id="mainpic" height="240" class=" object-cover h-100 w-100"
-                                            alt="">
+                                @if(isset($cozy->mediaCover->file_path))
+                                        <img class="card-img-top  object-cover h-100 w-100"
+                                            src="{{route('get-copic',explode('/',$cozy->mediaCover->file_path)[1])}}"class=" object-cover h-100 w-100"
+                                            alt="Card image cap">
+                                            @endif
+                                     
                                     </div>
 
                                 </div>
