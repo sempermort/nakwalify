@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Poutry Learning</title>
+    <title>Poultry Learning</title>
     <base href="/">
 
     <link rel="icon" type="image/png" href="./assets/images/fav.png">

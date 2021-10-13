@@ -214,12 +214,7 @@
 
                                         <p class="card-text bold"><a href="http://" target="_blank"
                                                 rel="noopener noreferrer">{{$cozy->course_subt}}</a> </p>
-                                        <p class="card-text d-flex justify-content-between">
-
-                                            <small class="card-text"><span class="material-icons-outlined">
-                                                    bookmark_border
-                                                </span></small>
-                                        </p>
+                                    
                                     </div>
 
                                 </div>
