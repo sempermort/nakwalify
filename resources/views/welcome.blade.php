@@ -181,9 +181,9 @@
 
                         @foreach($coz as $key=>$cozy)
 
-                        <div class="col-md-3 mb-3 h-400 mb-4  active">
+                        <div class="col-md-3 mb-3  mb-4  active">
                             <a href="{{route('coursedetail',$cozy->id)}}">
-                                <div class="card cardc rounded ">
+                                <div class="card h-400 cardc rounded ">
                                     <div class="h-250">
                                         @if(isset($cozy->mediaCover->file_path))
 
@@ -748,65 +748,65 @@
 
                 </div>
             </div>
+        </div>
 
+        <div class="mt-5 ">
 
-            <div class="mt-5 ">
+            <div id="carouselExampleIndicators" class="carousel h-400 carousel-fade" data-ride="carousel" style="">
 
-                <div id="carouselExampleIndicators" class="carousel h-400 carousel-fade" data-ride="carousel" style="">
+                <div class="carousel-inner">
+                    <div class="carousel-item active h-400 ">
+                        <img src="{{asset('assets/images/2.png')}}" class="img-fluid center " style="" alt="">
+                        <div class="invisiblely">
+                            <div class="carousel-caption slide-top">
+                                <div class=" itm">
+                                    <div class="banner-content">
 
-                    <div class="carousel-inner">
-                        <div class="carousel-item active h-400 ">
-                            <img src="{{asset('assets/images/2.png')}}" class="img-fluid center " style="" alt="">
-                            <div class="invisiblely">
-                                <div class="carousel-caption slide-top">
-                                    <div class=" itm">
-                                        <div class="banner-content">
-
-                                            <div class=""><span>Build Meaningful Self-Care Into
-                                                    Every Day</span></div>
-                                            <div class="banner-description">Join superstar Jonathan Van Ness and
-                                                best-selling author Chidera Eggerue for this powerful new
-                                                self-care workshop, kicking off July 12th.</div>
-                                            <div class="banner-actions"><a href=""
-                                                    class="btn btn-default bg-landing"><span>Join
-                                                        Now</span></a></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="carousel-item  h-400 ">
-                            <img src="{{asset('assets/images/2.png')}}" class="img-fluid center " style="" alt="">
-                            <div class="invisiblely">
-                                <div class="carousel-caption slide-top">
-                                    <div class=" itm">
-                                        <div class="banner-content">
-
-                                            <div class=""><span>Build Meaningful Self-Care Into
-                                                    Every Day</span></div>
-                                            <div class="banner-description">Join superstar Jonathan Van Ness and
-                                                best-selling author Chidera Eggerue for this powerful new
-                                                self-care workshop, kicking off July 12th.</div>
-                                            <div class="banner-actions"><a href=""
-                                                    class="btn btn-default bg-landing"><span>Join
-                                                        Now</span></a></div>
-                                        </div>
+                                        <div class=""><span>Build Meaningful Self-Care Into
+                                                Every Day</span></div>
+                                        <div class="banner-description">Join superstar Jonathan Van Ness and
+                                            best-selling author Chidera Eggerue for this powerful new
+                                            self-care workshop, kicking off July 12th.</div>
+                                        <div class="banner-actions"><a href=""
+                                                class="btn btn-default bg-landing"><span>Join
+                                                    Now</span></a></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
+                    <div class="carousel-item  h-400 ">
+                        <img src="{{asset('assets/images/2.png')}}" class="img-fluid center " style="" alt="">
+                        <div class="invisiblely">
+                            <div class="carousel-caption slide-top">
+                                <div class=" itm">
+                                    <div class="banner-content">
+
+                                        <div class=""><span>Build Meaningful Self-Care Into
+                                                Every Day</span></div>
+                                        <div class="banner-description">Join superstar Jonathan Van Ness and
+                                            best-selling author Chidera Eggerue for this powerful new
+                                            self-care workshop, kicking off July 12th.</div>
+                                        <div class="banner-actions"><a href=""
+                                                class="btn btn-default bg-landing"><span>Join
+                                                    Now</span></a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
             </div>
         </div>
+    </div>
 </section>
 
 <div class="modal fade  " id="register" tabindex="-1" role="dialog">
