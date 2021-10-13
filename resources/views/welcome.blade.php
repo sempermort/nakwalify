@@ -3,7 +3,7 @@
 @section('content')
 
 <section>
-    <div class="" style="margin-top: -25px; height: 730px;">
+    <div class="h-vid" style="margin-top: -25px; height: 730px;">
         <video autoplay muted loop class="w-100 object-cover" id="myVideo">
             <source src="{{asset('assets/vids/cover vid.mp4')}}"  type="video/mp4">
         </video>
@@ -178,7 +178,7 @@
                 <div id="carousel-example4" class="carousel slide m-4" data-interval="false" ride="false"
                     data-ride="carousel">
                     <div class="carousel-inneri  row  mx-auto" role="listbox">
-         
+
                         @foreach($coz as $key=>$cozy)
                         <div class="col-md-3 mb-3   active">
                             <a href="{{route('coursedetail',$cozy->id)}}">

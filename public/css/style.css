@@ -80,6 +80,9 @@ body {
     .font-xxl {
         font-size: 5vh !important;
     }
+    .h-vid {
+        height: 1290px;
+    }
 }
 
 @media (max-width: 575.98px) {
@@ -884,4 +887,8 @@ p {
     position: absolute;
     right: 0;
     top: 0;
+}
+
+.h-vid {
+    height: 730px;
 }
