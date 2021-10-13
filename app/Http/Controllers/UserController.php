@@ -106,7 +106,18 @@ public function pptpics(Request $request){
 
     return Response()->json($ppts);
 }
+public function listpics($id){
 
+    $pptic=Mediacover::where('id', $id)->get();
+
+    return view('user.instructor.listpic')->with('pptic', $pptic);
+}
+public function deletepics($id){
+$pic = Mediacover::find(1);
+$pic->delete();
+
+    return Response()->json($pic);
+}
 // Add course page 1
 public function addCourse()
 {

@@ -178,7 +178,7 @@
                 <div id="carousel-example4" class="carousel slide m-4" data-interval="false" ride="false"
                     data-ride="carousel">
                     <div class="carousel-inneri  row  mx-auto" role="listbox">
-
+         
                         @foreach($coz as $key=>$cozy)
                         <div class="col-md-3 mb-3   active">
                             <a href="{{route('coursedetail',$cozy->id)}}">
@@ -186,7 +186,9 @@
                                     <div class="h-250">
                                     @if(isset($cozy->mediaCover->file_path))
 
-                                    @php $src=$cozy->mediaCover->file_path@endphp
+                                    @php $src=$cozy->mediaCover->file_path;
+
+                                    @endphp
                                         <img class="card-img-top  object-cover h-100 w-100"
                                             src="{{route('get-copic',explode('/',$src)[1])}}"
                                             alt="Card image cap">
@@ -885,7 +887,7 @@
                                                                 <div style="width: 48%;"> <input type="text"
                                                                         name="lname" value="{{ old('lname') }}" required
                                                                         autocomplete="name" autofocus id="lastName"
-                                                                        class="form-control" placeholder="larst Name">
+                                                                        class="form-control" placeholder="Last Name">
                                                                     @error('lname')
                                                                     <span class="invalid-feedback" role="alert">
                                                                         <strong>{{ $message }}</strong>

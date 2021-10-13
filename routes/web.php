@@ -44,6 +44,8 @@ Route::get('/instructorcourses', 'App\Http\Controllers\UserController@instructor
 Route::get('/instructordashboard', 'App\Http\Controllers\UserController@instructorDashboard')->middleware(['verified','auth'])->name('instructordashboard');
 Route::get('/analytics', 'App\Http\Controllers\UserController@analytics')->name('analytics');
 
+Route::get('/listpics/{id}', 'App\Http\Controllers\UserController@listpics')->name('listpics');
+Route::delete('/deletepics/{id}', 'App\Http\Controllers\UserController@deletepics')->name('deletepics');
 Route::get('/addcontent/{id}', 'App\Http\Controllers\UserController@addVideos')->name('addcontent');
 Route::post('/addcontentpost', 'App\Http\Controllers\UserController@postaddVideos')->name('addcontentpost');
 Route::post('/addvideosajax', 'App\Http\Controllers\UserController@addvideosajax')->name('addvideosajax');
