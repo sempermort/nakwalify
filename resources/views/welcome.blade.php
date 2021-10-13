@@ -181,7 +181,7 @@
 
                         @foreach($coz as $key=>$cozy)
 
-                        <div class="col-md-3 mb-3 h-400  active">
+                        <div class="col-md-3 mb-3 h-400 mb-4  active">
                             <a href="{{route('coursedetail',$cozy->id)}}">
                                 <div class="card cardc rounded ">
                                     <div class="h-250">
