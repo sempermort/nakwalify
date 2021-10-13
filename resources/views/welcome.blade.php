@@ -258,7 +258,7 @@
 
                         @foreach($coz as $key=>$cozy)
 
-                        <div class="col-md-4    active">
+                        <div class="col-md-3    active">
                             <a href="{{route('coursedetail',$cozy->id)}}">
                                 <div class="card cardc rounded ">
                                     <div class="h-250">
@@ -330,7 +330,7 @@
                     <div class="carousel-inneri  row  mx-auto" role="listbox">
 
                         @foreach($coz as $key=>$cozy)
-                        <div class="col-md-4    active">
+                        <div class="col-md-3    active">
                             <a href="{{route('coursedetail',$cozy->id)}}">
                                 <div class="card cardc rounded ">
                                     <div class="h-250">
@@ -402,7 +402,7 @@
                     <div class="carousel-inneri  row  mx-auto" role="listbox">
 
                         @foreach($coz as $key=>$cozy)
-                        <div class="col-md-4    active">
+                        <div class="col-md-3    active">
                             <a href="{{route('coursedetail',$cozy->id)}}">
                                 <div class="card cardc rounded ">
                                     <div class="h-250">
@@ -472,7 +472,7 @@
                     <div class="carousel-inneri  row  mx-auto" role="listbox">
 
                         @foreach($coz as $key=>$cozy)
-                        <div class="col-md-4    active">
+                        <div class="col-md-3    active">
                             <a href="{{route('coursedetail',$cozy->id)}}">
                                 <div class="card cardc rounded ">
                                     <div class="h-250">
@@ -542,7 +542,7 @@
                     <div class="carousel-inneri  row  mx-auto" role="listbox">
 
                         @foreach($coz as $key=>$cozy)
-                        <div class="col-md-4    active">
+                        <div class="col-md-3    active">
                             <a href="{{route('coursedetail',$cozy->id)}}">
                                 <div class="card cardc rounded ">
                                     <div class="h-250">
@@ -612,7 +612,7 @@
                     <div class="carousel-inneri  row  mx-auto" role="listbox">
 
                         @foreach($coz as $key=>$cozy)
-                        <div class="col-md-4    active">
+                        <div class="col-md-3    active">
                             <a href="{{route('coursedetail',$cozy->id)}}">
                                 <div class="card cardc rounded ">
                                     <div class="h-250">
@@ -682,7 +682,7 @@
                     <div class="carousel-inneri  row  mx-auto" role="listbox">
 
                         @foreach($coz as $key=>$cozy)
-                        <div class="col-md-4    active">
+                        <div class="col-md-3    active">
                             <a href="{{route('coursedetail',$cozy->id)}}">
                                 <div class="card cardc rounded ">
                                     <div class="h-250">
