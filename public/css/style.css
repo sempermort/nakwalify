@@ -558,7 +558,7 @@ strong {
 }
 
 .regform {
-    top: 80px;
+    top: 50px;
     margin: 0 2.5em;
     border-radius: 15px;
     background: #f4f4f4;
@@ -899,5 +899,5 @@ p {
 }
 
 .h-vid {
-    height: 650px;
+    height: 550px;
 }
