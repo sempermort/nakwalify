@@ -113,7 +113,7 @@ public function listpics($id){
     return view('user.instructor.listpic')->with('pptic', $pptic);
 }
 public function deletepics($id){
-$pic = Mediacover::find(1);
+$pic = Mediacover::find($id);
 $pic->delete();
 
     return Response()->json($pic);
