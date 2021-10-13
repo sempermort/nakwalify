@@ -154,8 +154,8 @@
     <div class="grid-container border  col-md-8">
     @foreach( $selcoz->mainwlearn as  $arriy)
         @foreach( explode(',', $arriy)  as  $learn)
-        <div class="collection-item border-0">
-            <div><a href="#!" class="mr-2 primary-content"><i class="material-icons">done</i></a>
+        <div class=" border-0 mr-2">
+            <div><a href="#!" class=" "><i class="material-icons">done</i></a>
                 {{$learn}} </div>
         </div>
         @endforeach
@@ -165,42 +165,12 @@
 
 <div class="container pl-2">
     <div class=" mt-3 mb-3 col-md-8 border p-2">
-        <h4> <strong>Course Content </strong></h4>
-        <div class="d-flex justify-content-between">
-            <p>
-
-                <span>• {{count($selcoz->Videos)}} Lessons </span>
-            </P>
-
-        </div>
-    </div>
-    <div class="col-md-8">
-    @foreach($selcoz->Videos as $vida)
 
 
-    <div class="coursevida">
-        <p class="text-black bg-white d-flex justify-content-between">
-            <a class="" data-toggle="collapse" href="#collapseExample" role="button"
-                aria-expanded="false" aria-controls="collapseExample">
-              {{explode('.', $vida->video_title)[0]}}
-            </a>
-            <button class="btn btn-default" type="button" data-toggle="collapse" data-target="#collapseExample"
-                aria-expanded="false" aria-controls="collapseExample">
-                <i class="fa fa-angle-down" aria-hidden="true"></i>
 
-            </button>
-        </p>
-        <div class="collapse" id="collapseExample">
-            <div class="card card-body">
-            {{$vida->video_desc}}
-            </div>
-        </div>
-    </div>
-    @endforeach
-
-    <div class="panel-body mt-5 col-md-8 p-0">
-        <h6 class="font-weight-bolder p-0">Project Description</h4>
-            <p class="p-0">
+    <div class="panel-body  p-0">
+        <h6 class="font-weight-bolder p-0">Course Description</h4>
+            <p class="p-0 ">
                 {{$selcoz->course_des}}</p>
 
     </div>
