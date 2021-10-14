@@ -14,13 +14,13 @@ class SocialFacebookController extends Controller
 
 public function redirect()
 {
-    return Socialite::driver('facebook')->redirect();
+    return Socialite::driver('facebook')->stateless()->redirect();
 }
 
 public function callback()
 {
     try {
-            $user = Socialite::driver('facebook')->user();
+            $user = Socialite::driver('facebook')->stateless()->user();
             $user = User::where('facebook_id', $user->id)->first();
 
             if($user){
