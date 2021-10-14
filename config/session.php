@@ -155,7 +155,7 @@ return [
     |
     */
 
-    'domain' => env('SESSION_DOMAIN', nakwalify.co.tz),
+    'domain' => env('SESSION_DOMAIN', 'nakwalify.co.tz'),
 
     /*
     |--------------------------------------------------------------------------

@@ -26,14 +26,11 @@
                                             Continue With
                                             Google</a>
 
-                                    <a class="col-12 btn btn-outline-dark">
+                                    <a href="{{ url('/redirectfb') }}" class="col-12 btn btn-outline-dark">
                                         <i class="fab fa-facebook float-left"></i>
                                         <span class="text-left">Continue With
                                             Facebook</span> </a>
-                                    <a class="col-12 btn btn-outline-dark">
-                                        <i class="fab fa-twitter float-left"></i> <span class="text-left">Continue
-                                            With
-                                            Twitter </span></a>
+                                  
                                     <div class="d-flex    text-center w-90">
                                         <hr class=" col-md-5">
                                         <p class="col-md-2">or</p>
