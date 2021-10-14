@@ -249,6 +249,7 @@ $question->save();
 if($request->answer!=null){
     $ans=$request->answer;
     $anstype=$request->correct;
+  
 
     for( $i=0; $i<sizeof($ans); $i++){
         $answerz=new Answers();
@@ -261,6 +262,7 @@ if($request->answer!=null){
         {
             $answerz->answertype="false";
         }
+
         $answerz->question_id=$question->id;
         $answerz->save();
     }
@@ -271,13 +273,35 @@ return Response()->json($question);
 }
 public function takequiz($id)
 {
-    $qstns=Questions::where('id',$id)->get();
-
-    return view('user.instructor.questin')->with("qstn",$qstn);
+    $vido=Videos::find($id);
+    $qstn=Questions::where('video_id',$id)->get();
+    if(isset($qstn)){
+    return view('user.instructor.questin')->with("qstn",$qstn)->with("vido",$vido);
+    }
+    return redirect()->route('viewcourse',['id'=>$id]);
 }
 public function  quizpost(Request $request)
 {
-    return view('user.instructor.addquestions')->with("video_id",$id);
+    $qstn=Questions::where('video_id',$request->videoid)->get();
+    $videos=Videos::find($request->videoid);
+
+    $count=0;
+
+    foreach($qstn as $qnt){
+        $f=$qnt->id;
+  $c=$request->$f;
+  if(isset($c)){
+    $art=Answers::where('id',$c)->first()->answertype;
+    if($art=="true")
+    {
+        $count++;
+    }
+
+    }}
+
+    return view('user.instructor.results')->with('marks',$count)
+    ->with('total',count($qstn))
+    ->with('videos',$videos);
 }
 
 
@@ -420,7 +444,7 @@ public function  addCover($id)
 {
 
    if( $id!=null){
-    return view('user.instructor.addcover')->with('courseid',$id);
+    return redirect()->route('viewcourse',['id'=>$request->courseid]);
    }
    else{
     return redirect()->route('addcontent',['id'=>$id]);

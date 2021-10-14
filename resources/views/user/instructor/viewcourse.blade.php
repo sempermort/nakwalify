@@ -33,14 +33,10 @@
                     <div class="tab-content">
 
                         <div id="videotab" class="tab-pane   tabcontent h-500" >
-                        <iframe  width="560" height="315" class=" object-contain h-100 w-100"
-                            id="vidcanva"   src="{{$videos[0]->video_path}}" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"allowfullscreen></iframe>
-
                         </div>
 
-                        <div id="pptab" class="tab-pane tabcontent">
 
+                        <div id="pptab" class="tab-pane tabcontent">
                             <div id="carouselExampleFade"  class="carousel slide carousel-fade" data-ride="carousel">
                                 <div class="carousel-inner " id="carol">
                                 <div class="carousel-item h-350 pl-4 pr-4 active">
@@ -49,7 +45,7 @@
                                             src="{{route('get-copic',explode('/',$cozy->mediaCover->file_path)[1])}}"class=" object-cover h-100 w-100"
                                             alt="Card image cap">
                                             @endif
-                                     
+
                                     </div>
 
                                 </div>
@@ -166,6 +162,15 @@
     </div>
 
     <script>
+ // 2. This code loads the IFrame Player API code asynchronously.
+ var tag = document.createElement('script');
+
+tag.src = "https://www.youtube.com/iframe_api";
+var firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+document.cookie = "witcher=Geralt; SameSite=None; Secure"
+
     function openCity(evt, cityName) {
         var i, tabcontent, tablinks;
         tabcontent = document.getElementsByClassName("tabcontent");
@@ -192,6 +197,7 @@
         var currentv = 0;
         var currenturl = 0;
         var modal =  0;
+        var curid=0;
 
         function vidliclicked(urlu,counv,currev,id)
         {
@@ -200,60 +206,16 @@
         totalv=counv;
         currentv=currev;
         currenturl=urlu;
-
+        curid=id;
         madeu(urlu);
 
         };
-        var tv = document.querySelector('vidcanva');
-        var contain =  document.getElementById('mediav');
-        tv.addEventListener('ended', onplayerchange);
-        function onplayerchange(evnt)
-        {
-
-        if(totalv -currentv> 1) {
-        contain.insertAdjacentHTML('beforeend',
-            '<div id="modal" class="video-js w-100 h-100 card-img-overlay">' +
-            '<div class="text-center" id="message">Welcome To nakwalify</div>' +
-            '<div class="d-flex justify-content-center">'+
-            '<button class="btn btn-info mr-5" onclick="prevbtn()" type="button" id="button1">Previous Video'+
-            '</button>' +
-            '<button type="button" class="btn btn-success ml-5" onclick="nextbtn()" id="button2">Next Video'+
-            '</button></div>' +
-            '<div class="text-center m-3">'+
-            '<button type="button" id="replayvideo" onclick="replayvid()" class="btn btn-default text-white">'+
-            '<i class="fas fa-redo text-white"></i></button>' +
-            '</div> </div>'
-        );
 
 
-        }
-
-        else if(totalv==1 )
-        {
-            contain.insertAdjacentHTML('beforeend',
-            '<div id="modal" class="video-js w-100 h-100 card-img-overlay">' +
-            '<div class="text-center" id="message">Welcome To nakwalify</div>' +
-            '<div class="text-center"><button id="replayvideo" onclick="replayvid()" class="btn btn-default">'+
-            '<i class="fas fa-redo text-white"></i></button>' +
-                '</div> </div>'
-        );
-        }
-        else{contain.insertAdjacentHTML('beforeend',
-            '<div id="modal" class="video-js w-100 h-100 card-img-overlay">' +
-            '<div class="text-center" id="message">Welcome To nakwalify</div>' +
-            '<div class="d-flex justify-content-start">'+
-            '<button class="btn btn-info mr-5" onclick="prevbtn()" type="button" id="button1">Previous Video'+
-            '</button></div>' +
-            '<div class="text-center"><button id="replayvideo" onclick="replayvid()" class="btn btn-default">'+
-            '<i class="fas fa-redo text-white"></i></button>' +
-                '</div> </div>'
-        );
-        }};
-
-
+$('#vids'+1).click();
 
         function replayvid() {
-    $('#vids'+currentv).click();
+            player.playVideo()
       };
 
         function nextbtn() {
@@ -341,22 +303,56 @@
     }
     };
 
-    var i = 1;
 
 function madeu(lim) {
-
     var videotab= document.getElementById('videotab');
     videotab.innerHTML="";
     var btnhtml =
-    '<iframe  width="560" height="315" class=" object-contain h-100 w-100"'+
-     'id="vidcanva"   src="' + lim + '" frameborder="0"'+
+    '<iframe  width="650" height="360" class=" object-contain h-100 w-100"'+
+     'id="playercanva"   src="' + lim + '?enablejsapi=1" frameborder="0"'+
       'allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"allowfullscreen></iframe>';
 
     $("#videotab").append($(btnhtml));
 
-    i++;
+   };
 
-};
 
+
+
+var player;
+        function onYouTubePlayerAPIReady() {
+            player = new YT.Player('playercanva', {
+              events: {
+                'onReady': onPlayerReady,
+          'onStateChange': onPlayerStateChange
+              }
+            });
+        }
+         // autoplay video
+         function onPlayerReady(event) {
+
+            event.target.playVideo();
+        }
+
+        // when video ends
+        function onPlayerStateChange(event) {
+            var videotabi= document.getElementById('videotab');
+
+            if(event.data ===0) {
+
+                    videotabi.insertAdjacentHTML('beforeend',
+            '<div id="modal" class="video-js w-100 h-100 card-img-overlay">' +
+            '<div class="text-center" id="message">Take Quiz To continue to the Next lesson</div>' +
+            '<div class="d-flex justify-content-center">'+
+            '<button class="btn btn-info mr-5" onclick="replayvid()" type="button" id="button1">' +   '<i class="fas fa-redo text-white"></i>  Replay Video'+
+            '</button>' +
+            '<a href="/takequiz/'+curid+'" class="btn btn-success ml-5" onclick="nextbtn()" id="button2">Take Quiz'+
+            '</a></div>'
+        );
+
+
+
+            }
+        }
     </script>
     @endsection

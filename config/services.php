@@ -32,13 +32,13 @@ return [
 
 
     'google' => [
-        'client_id'     => '278127319522-s6bpvo9ndm85gvncudg1sqvpiuv6b832.apps.googleusercontent.com',
-        'client_secret' => 'qhXR1YWeYz5GoFMXyfv7DSPV',
-        'redirect'      => 'http://127.0.0.1:8000/callback/google'
+        'client_id'     => '359124088061-om60ttf86890sinrupetp9e3o8igngq8.apps.googleusercontent.com',
+        'client_secret' => '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',
+        'redirect'      => 'https://www.nakwalify.co.tz/callback/google'
     ],
     'facebook' => [
-        'client_id'     => '278127319522-s6bpvo9ndm85gvncudg1sqvpiuv6b832.apps.googleusercontent.com',
-        'client_secret' => 'qhXR1YWeYz5GoFMXyfv7DSPV',
-        'redirect'      => 'http://127.0.0.1:8000/callback/facebook'
+        'client_id'     => '557491708851560',
+        'client_secret' => '6edab83ad3f4035d6d29e7be5e58e817',
+        'redirect'      => 'https://www.nakwalify.co.tz/callback/facebook'
     ],
 ];

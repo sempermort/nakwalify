@@ -53,8 +53,9 @@ Route::post('/addpdfsajax', 'App\Http\Controllers\UserController@addpdfsajax')->
 Route::get('/addcover/{id}', 'App\Http\Controllers\UserController@addCover')->name('addcover');
 Route::post('/addcoverpost', 'App\Http\Controllers\UserController@postaddCover')->name('addcoverpost');
 Route::get('/addquestion/{id}', 'App\Http\Controllers\UserController@addQuestion')->name('addquestion');
+
 Route::post('/savquestion', 'App\Http\Controllers\UserController@addQuestionpost')->name('savquestion');
-Route::get('/viewcourse/{id}', 'App\Http\Controllers\UserController@viewCourse')->name('viewcourse');
+Route::get('/viewcourse/{id}/{name?}', 'App\Http\Controllers\UserController@viewCourse')->name('viewcourse');
 Route::get('/coursedetail/{id}', 'App\Http\Controllers\UserController@courseDetail')->name('coursedetail');
 Route::post('/subcatg', 'App\Http\Controllers\UserController@addsubcategory')->name('subcatg');
 Route::post('/catg', 'App\Http\Controllers\UserController@addcategory')->name('catg');
