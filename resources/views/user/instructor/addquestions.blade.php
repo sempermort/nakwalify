@@ -48,7 +48,7 @@
                                         <div class="form-group  d-flex justify-content-between ">
                                             <label for="questiontype">Question Type</label>
                                             <select class="form-rounded form-control  dropdown " id="questiontype"
-                                                name="questiontype">                                          
+                                                name="questiontype">
                                                 <option value="true">True & False</option>
                                                 <option value="select">Multiple choice</option>
                                             </select>
@@ -106,7 +106,7 @@
                             <a class="btn btn-info btn-pill  m-1 col-2 " href="{{route('addcourse')}}">
                                 Previous
                             </a>
-                            <a class="btn btn-info btn-pill  m-1 col-2 " href="{{route('takequiz',$video_id)}">
+                            <a class="btn btn-info btn-pill  m-1 col-2 " href="{{route('takequiz',['id'=>$video_id])}}">
                                 Next
 </a>
                         </div>

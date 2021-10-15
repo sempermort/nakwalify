@@ -24,7 +24,7 @@ Route::get('/', function () {
     $coz=Course::all();
 
     return view('welcome')->with('coz',$coz);
-});
+})->middleware('guest');
 
 Route::get('/welcome', function () {
       $coz=Course::all();
