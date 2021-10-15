@@ -144,7 +144,7 @@
                     </li>
                     <li class="dropdown ml-4">
                         <a href="" class="option_links  " id="dropdownMenuButton" title="Notifications"><i
-                                class='fa fa-bell'></i><span class="noti_count"></span></a>
+                                class='fa fa-bell' style="margin-top: 22px; color:#fff;"></i><span class="noti_count"></span></a>
                         <div class="dropdown-content overflow-auto" aria-labelledby="dropdownMenuButton">
                             <a href="create_new_course.html#" class="channel_my item dropdown-item">
                                 <div class="profile_link">

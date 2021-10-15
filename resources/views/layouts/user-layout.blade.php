@@ -152,7 +152,7 @@
                     </li>
                     <li class="dropdown ml-4">
                         <a href="" class=" text-white " id="dropdownMenuButton" title="Notifications"><i
-                                class='fa fa-bell text-white'></i><span class="noti_count"></span></a>
+                                class='fa fa-bell text-white' style="margin-top: 22px; color:#fff;"></i><span class="noti_count"></span></a>
                         <div class="dropdown-content overflow-auto" aria-labelledby="dropdownMenuButton">
                             <a href="" class="channel_my item dropdown-item">
                                 <div class="profile_link">
