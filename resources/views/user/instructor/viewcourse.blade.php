@@ -216,6 +216,9 @@ $('#vids'+1).click();
 
         function replayvid() {
             player.playVideo()
+
+            var element = document.getElementById("modaly");
+	element.parentNode.removeChild(element);
       };
 
         function nextbtn() {
@@ -341,7 +344,7 @@ var player;
             if(event.data ===0) {
 
                     videotabi.insertAdjacentHTML('beforeend',
-            '<div id="modal" class="video-js w-100 h-100 card-img-overlay">' +
+            '<div id="modaly" class="video-js w-100 h-100 card-img-overlay">' +
             '<div class="text-center" id="message">Take Quiz To continue to the Next lesson</div>' +
             '<div class="d-flex justify-content-center">'+
             '<button class="btn btn-info mr-5" onclick="replayvid()" type="button" id="button1">' +   '<i class="fas fa-redo text-white"></i>  Replay Video'+

@@ -813,8 +813,8 @@ p {
     font-family: sans-serif;
 }
 
-#modal {
-    background: #424242b2;
+#modaly {
+    background: #424242;
     width: 640px;
     height: 264px;
     font-family: open sans-serif;
