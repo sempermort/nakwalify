@@ -813,7 +813,7 @@ p {
     font-family: sans-serif;
 }
 
-#modaly {
+.video-js {
     background: #424242;
     width: 640px;
     height: 264px;
