@@ -20,7 +20,7 @@ public function redirect()
 public function callback()
 {
     try {
-            $user = Socialite::driver('google')->stateless()->user();
+            $user = Socialite::driver('google')->user();
             $finduser = User::where('google_id', $user->id)->first();
 
             if($finduser){
