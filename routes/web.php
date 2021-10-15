@@ -22,7 +22,6 @@ use Illuminate\Support\Facades\Auth;
 Auth::routes();
 Route::get('/', function () {
     $coz=Course::all();
-
     return view('welcome')->with('coz',$coz);
 })->middleware('guest');
 
@@ -30,7 +29,7 @@ Route::get('/welcome', function () {
       $coz=Course::all();
 
     return view('welcome')->with('coz',$coz);
-})->middleware('guest');
+})->middleware('guest')->name('welcome');
 
 // Route::get('/admin', 'AdminController@index')->name('admin')->middleware('admin');
 Route::get('/admin', 'App\Http\Controllers\AdminController@index')->name('admin');

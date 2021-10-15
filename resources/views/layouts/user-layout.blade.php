@@ -42,8 +42,14 @@
 
         <nav class="navbar navbar-expand-lg" style="background-color: #3a9982;">
 
-            <a href="{{url('/')}}" class="navbar-brand"
+
+        @auth
+        <a href="{{url('/category')}}" class="navbar-brand"
                 style="font-family:'Kaushan_Script'; font-weight: bolder;  font-size :35px!important; color:#fff !important;">Poultry Learning</a>
+  @else
+  <a href="{{url('/')}}" class="navbar-brand"
+                style="font-family:'Kaushan_Script'; font-weight: bolder;  font-size :35px!important; color:#fff !important;">Poultry Learning</a>
+@endauth
 
             <button class="navbar-toggler toggle_menu" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

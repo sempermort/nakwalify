@@ -27,8 +27,7 @@ class UserController extends Controller
     {
         return view('user.user-dashboard');
     }
-
-
+  
     public function instructorCourses()
     {
         $cozes=Courses::All();
@@ -249,7 +248,7 @@ $question->save();
 if($request->answer!=null){
     $ans=$request->answer;
     $anstype=$request->correct;
-  
+
 
     for( $i=0; $i<sizeof($ans); $i++){
         $answerz=new Answers();
@@ -576,4 +575,6 @@ public function lcontent()
 {
     return view('layouts.learncontent');
 }
+
+
 }
