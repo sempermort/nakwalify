@@ -71,7 +71,7 @@
                         </div>
                     </li>
                     <li class="dropdown ml-4">
-                        <a href="create_new_course.html#" class="opts_account text-white" title="Account">
+                        <a href="" class="opts_account text-white" title="Account">
                             My Learning
                         </a>
                         <div class=" dropdown-content">
@@ -104,7 +104,7 @@
                         </div>
                     </li>
                     <li class="dropdown ml-4">
-                        <a href="create_new_course.html#" class="opts_account" title="Account">
+                        <a href="" class="opts_account" title="Account">
                             <span class="material-icons-outlined text-white " style="font-size:20px">
                                 favorite_border
                             </span>
@@ -145,10 +145,10 @@
                         </div>
                     </li>
                     <li class="dropdown ml-4">
-                        <a href="" class="option_links text-white " id="dropdownMenuButton" title="Notifications"><i
-                                class='fa fa-bell'></i><span class="noti_count"></span></a>
+                        <a href="" class=" text-white " id="dropdownMenuButton" title="Notifications"><i
+                                class='fa fa-bell text-white'></i><span class="noti_count"></span></a>
                         <div class="dropdown-content overflow-auto" aria-labelledby="dropdownMenuButton">
-                            <a href="create_new_course.html#" class="channel_my item dropdown-item">
+                            <a href="" class="channel_my item dropdown-item">
                                 <div class="profile_link">
                                     <img src="./assets/images/left-imgs/img-1.jpg" alt="">
                                     <div class="pd_content p-0 m-0">
@@ -160,7 +160,7 @@
                                     </div>
                                 </div>
                             </a>
-                            <a href="create_new_course.html#" class="channel_my item dropdown-item">
+                            <a href="" class="channel_my item dropdown-item">
                                 <div class=" profile_link">
                                     <img src="./assets/images/left-imgs/img-2.jpg" alt="">
                                     <div class="pd_content">
@@ -172,7 +172,7 @@
                                     </div>
                                 </div>
                             </a>
-                            <a href="create_new_course.html#" class="channel_my item dropdown-item">
+                            <a href="" class="channel_my item dropdown-item">
                                 <div class="profile_link">
                                     <img src="./assets/images/left-imgs/img-9.jpg" alt="">
                                     <div class="pd_content p-0 m-0">
@@ -181,12 +181,12 @@
                                     </div>
                                 </div>
                             </a>
-                            <a class="vbm_btn" href="instructor_notifications.html">View All <i
+                            <a class="vbm_btn" href="">View All <i
                                     class='uil uil-arrow-right dropdown-item"'></i></a>
                         </div>
                     </li>
                     <li class=" dropdown">
-                        <a href="create_new_course.html#" class="opts_account" title="Account">
+                        <a href="" class="opts_account" title="Account">
                             <img src="./assets/images/hd_dp.jpg" alt="">
                         </a>
                         <div class=" dropdown-content">
@@ -219,7 +219,7 @@
 
                             </div>
                             <div class="night_mode_switch__btn">
-                                <a href="create_new_course.html#" id="night-mode" class="btn-night-mode">
+                                <a href="" id="night-mode" class="btn-night-mode">
                                     <i class="uil uil-moon"></i> Night mode
                                     <span class="btn-night-mode-switch">
                                         <span class="uk-switch-button"></span>
@@ -238,7 +238,7 @@
                             <div class="">
                                 <a href="{{url('/accsetting')}}" class="item channel_item">Setting</a>
                                 <a href="{{route('logout')}}" class="item channel_item">Sign Out</a>
-                                <a href="instructor_dashboard.html" class="item channel_item">Language English
+                                <a href="" class="item channel_item">Language English
                                     <i class="fa fa-globe "></i></a>
                             </div>
 
