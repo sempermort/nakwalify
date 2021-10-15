@@ -39,6 +39,6 @@ return [
     'facebook' => [
         'client_id'     => '557491708851560',
         'client_secret' => '6edab83ad3f4035d6d29e7be5e58e817',
-        'redirect'      => 'https://www.nakwalify.co.tz/callback/facebook'
+        'redirect'      => 'https://www.nakwalify.co.tz/callback/facebook/'
     ],
 ];
