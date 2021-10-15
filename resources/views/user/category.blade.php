@@ -5,7 +5,7 @@
 
 <div class="sa4d25 p-5">
     <div class="d-flex">
-        <div class=" hide-on-med-and-down  col-3">
+        <div class=" hide-on-med-and-down d-none d-md-block d-lg-block mt-5 col-3">
             <div class=" nastay">
                 <a href="#" class="waves-effect waves-light">All Classes</a>
                 <p class=" border-bottom  "> CREATE</p>
@@ -23,8 +23,8 @@
 
             <div class="jss11 jss13 jss7 mt-5" role="img" aria-label="Online Animation Classes">
                 <div class="jss12 jss14">
-                    <div class="p-5 text-white text-left">
-                        <h1 class="font-weight-bolder  text-left ">Online Animation Classes</h1>
+                    <div class="p-md-5 text-white text-left">
+                        <h3 class="font-weight-bolder  text-left ">Online Animation Classes</h3>
                         <p class=" font-weight-bold text-white p-2">Find what fascinates you as you explore
                             these animation classes.</p>
                         <div>
@@ -63,8 +63,8 @@
                 </div>
             </div>
 
-            <div class="mt-3 border-top">
-                <div class="d-flex justify-content-end mt-5">
+            <div class="mt-3 border-top d-none d-lg-block d-md-block">
+                <div class="d-flex justify-content-end  mt-5">
 
 
                     <p class=""><strong class="col-lg-1 col-md-2 col-sm-1 mr-2 ">SORT BY</strong></p>
@@ -146,7 +146,7 @@
 
                 <div class="row mt-5">
                     @foreach($coz as $key=>$cozy)
-                
+
                     <div class="col-md-4">
                         <a href="{{route('coursedetail',$cozy->id)}}">
                         <div class="card cardc rounded ">
@@ -163,7 +163,7 @@
 
                                         </div>
                                     </div>
-                           
+
                             <div class="m-2">
                                 <p class="card-text  d-flex justify-content-between">
                                     <small class="card-text">23,162 trainees </small>
