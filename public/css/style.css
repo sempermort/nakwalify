@@ -61,6 +61,12 @@ body {
         font-size: 23px;
         line-height: 20px;
     }
+    .h-vid {
+        height: 775px!important;
+    }
+    .regform {
+        top: 100px!important;
+    }
 }
 
 @media (min-width: 992px) {
@@ -558,6 +564,7 @@ strong {
 }
 
 .regform {
+    position: absolute;
     top: 70px;
     margin: 0 2.5em;
     border-radius: 15px;
@@ -893,7 +900,6 @@ p {
 }
 
 #myVideo {
-    position: absolute;
     right: 0;
     top: 0;
 }

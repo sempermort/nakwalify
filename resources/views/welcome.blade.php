@@ -7,7 +7,7 @@
         <video autoplay muted loop class="w-100 h-100 object-cover " id="myVideo">
             <source src="{{asset('assets/vids/cover vid.mp4')}}"  type="video/mp4">
         </video>
-        <div class=" regform card col-md-4   ">
+        <div class=" regform card col-md-4  col-lg-3 col-sm-6 ">
 
             <div class="m-2">
                 <div class=" text-center">
@@ -30,7 +30,7 @@
                                         <i class="fab fa-facebook float-left"></i>
                                         <span class="text-left">Continue With
                                             Facebook</span> </a>
-                                  
+
                                     <div class="d-flex    text-center w-90">
                                         <hr class=" col-md-5">
                                         <p class="col-md-2">or</p>
@@ -211,7 +211,7 @@
 
                                         <p class="card-text bold"><a href="http://" target="_blank"
                                                 rel="noopener noreferrer">{{$cozy->course_subt}}</a> </p>
-                                    
+
                                     </div>
 
                                 </div>

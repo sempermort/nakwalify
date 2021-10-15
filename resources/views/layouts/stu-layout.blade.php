@@ -34,7 +34,7 @@
         <nav class="navbar navbar-expand-lg" style="background-color: #3a9982;">
 
             <a href="{{url('/')}}" class="navbar-brand"
-                style="font-family:'Kaushan_Script'; font-weight: bolder;  font-size :35px!important; color:#fff !important;">Poutry Learning</a>
+                style="font-family:'Kaushan_Script'; font-weight: bolder;  font-size :35px!important; color:#fff !important;">Poultry Learning</a>
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
