@@ -21,6 +21,7 @@ public function callback()
 {
     try {
             $user = Socialite::driver('facebook')->stateless()->user();
+            dd($user);
             $user = User::where('facebook_id', $user->id)->first();
 
             if($user){

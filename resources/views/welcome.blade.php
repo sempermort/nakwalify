@@ -23,8 +23,8 @@
                                 <div class="form-horizontal col-md-12  m-auto">
                                     <a href="{{ url('/redirectgoogle') }}" class="col-12 btn btn-outline-dark">
                                         <i class="fab fa-google float-left"></i> <span class="text-left">
-                                            Continue With
-                                            Google</a>
+                                            Continue With Google
+                                    </a>
 
                                     <a href="{{ url('/redirectfb') }}" class="col-12 btn btn-outline-dark">
                                         <i class="fab fa-facebook float-left"></i>
@@ -184,9 +184,7 @@
                                     <div class="h-250">
                                         @if(isset($cozy->mediaCover->file_path))
 
-                                        @php $src=$cozy->mediaCover->file_path;
-
-                                        @endphp
+                                        @php $src=$cozy->mediaCover->file_path; @endphp
                                         <img class="card-img-top  object-cover h-100 w-100"
                                             src="{{route('get-copic',explode('/',$src)[1])}}" alt="Card image cap">
                                         @endif

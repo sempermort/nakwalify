@@ -27,371 +27,381 @@ class UserController extends Controller
     {
         return view('user.user-dashboard');
     }
-  
+
     public function instructorCourses()
     {
-        $cozes=Courses::All();
-        return view('user.instructor.instructor-courses')->with('cozes',$cozes);
+        $cozes = Courses::All();
+        return view('user.instructor.instructor-courses')->with('cozes', $cozes);
     }
 
-    public function  analytics()
+    public function analytics()
     {
         return view('user.instructor.analytics');
     }
 
-public function   instructorDashboard()
-{
-    return view('user.instructor.instructor-dashboard');
-}
+    public function instructorDashboard()
+    {
+        return view('user.instructor.instructor-dashboard');
+    }
 
-public function getVideo($video)
-{
-    $fileContents = Storage::disk('local')->get("tempvideos/{$video}");
-    $response = Response($fileContents, 200);
-    $response->header('Content-Type', "video/mp4");
-    return $response;
-}
-public function getPdf($pdf)
-{
-    $fileContents = Storage::disk('local')->get("temppdfs/{$pdf}");
-    $response = Response($fileContents, 200);
-    $response->header('Content-Type', "pdf");
+    public function getVideo($video)
+    {
+        $fileContents = Storage::disk('local')->get("tempvideos/{$video}");
+        $response = Response($fileContents, 200);
+        $response->header('Content-Type', "video/mp4");
+        return $response;
+    }
 
-    return $response;
-}
-public function getPpt($ppt)
-{
-    $fileContents = Storage::disk('local')->get("tempppt/{$ppt}");
-    $response = Response($fileContents, 200);
-    $response->header('Content-Type','image/{explode(".",$ppt)[1]}');
+    public function getPdf($pdf)
+    {
+        $fileContents = Storage::disk('local')->get("temppdfs/{$pdf}");
+        $response = Response($fileContents, 200);
+        $response->header('Content-Type', "pdf");
 
-    return $response;
-}
+        return $response;
+    }
 
-public function getcopic($pic)
-{
-    $fileContents = Storage::disk('local')->get("coverpic/{$pic}");
-    $response = Response($fileContents, 200);
-    $response->header('Content-Type','image/{explode(".",$pic)[1]}');
+    public function getPpt($ppt)
+    {
+        $fileContents = Storage::disk('local')->get("tempppt/{$ppt}");
+        $response = Response($fileContents, 200);
+        $response->header('Content-Type', 'image/{explode(".",$ppt)[1]}');
 
-    return $response;
-}
-public function getcovid($vid)
-{
-    $fileContents = Storage::disk('local')->get("covervid/{$vid}");
-    $response = Response($fileContents, 200);
-    $response->header('Content-Type','image/{explode(".",$vid)[1]}');
+        return $response;
+    }
 
-    return $response;
-}
-public function  viewCourse($id)
-{  $course=course::find($id);
+    public function getcopic($pic)
+    {
+        $fileContents = Storage::disk('local')->get("coverpic/{$pic}");
+        $response = Response($fileContents, 200);
+        $response->header('Content-Type', 'image/{explode(".",$pic)[1]}');
 
-    $videos=$course->Videos;
+        return $response;
+    }
 
-    // $covid=$course->mediaCover->where('file_type','covervid')->first();
-    // $copic=MediaCover::Where('course_id',$id)->where('file_type','coverpic')->first();
+    public function getcovid($vid)
+    {
+        $fileContents = Storage::disk('local')->get("covervid/{$vid}");
+        $response = Response($fileContents, 200);
+        $response->header('Content-Type', 'image/{explode(".",$vid)[1]}');
+
+        return $response;
+    }
+
+    public function viewCourse($id)
+    {
+        $course = course::find($id);
+
+        $videos = $course->Videos;
+
+        // $covid=$course->mediaCover->where('file_type','covervid')->first();
+        // $copic=MediaCover::Where('course_id',$id)->where('file_type','coverpic')->first();
 
 
-    return view('user.instructor.viewcourse')->with('videos', $videos)
-    ->with('course', $course);
+        return view('user.instructor.viewcourse')->with('videos', $videos)
+            ->with('course', $course);
 
 
-}
+    }
 
-public function pptpics(Request $request){
+    public function pptpics(Request $request)
+    {
 
-    $ppts=Course_files::where('file_type', 'pptcourse')->where('videos_id',$request->id)->get();
+        $ppts = Course_files::where('file_type', 'pptcourse')->where('videos_id', $request->id)->get();
 
-    return Response()->json($ppts);
-}
-public function listpics($id){
+        return Response()->json($ppts);
+    }
 
-    $pptic=Mediacover::where('course_id', $id)->get();
+    public function listpics($id)
+    {
 
-    return view('user.instructor.listpic')->with('pptic', $pptic);
-}
-public function deletepics($id){
-$pic = Mediacover::find($id);
-$pic->delete();
+        $pptic = Mediacover::where('course_id', $id)->get();
 
-    return Response()->json($pic);
-}
+        return view('user.instructor.listpic')->with('pptic', $pptic);
+    }
+
+    public function deletepics($id)
+    {
+        $pic = Mediacover::find($id);
+        $pic->delete();
+
+        return Response()->json($pic);
+    }
+
 // Add course page 1
-public function addCourse()
-{
+    public function addCourse()
+    {
 
-$corses=Category::all();
+        $corses = Category::all();
 
-$subcorses=Subcategory::all();
-
-
-
-     return view('user.instructor.create-courses')->with('corses',$corses)->with('subcorses',$subcorses);
-}
-public function postaddCourse(Request $request)
-{
-    $validatedData = $request->validate([
-        'course_title' => 'required|unique:courses,course_title',
-        'course_subt' => 'required',
-        'language' => 'required',
-        'category_Id' => 'required',
-        'subcategory_Id' => 'required',
-        'mainrequire' => 'required',
-        'mainwlearn' => 'required',
-        'price' => 'required',
-        'course_des'=>'required',
-
-    ]);
-    $course = new Course();
-try{
-     $course_ided =  $course->create($validatedData);
+        $subcorses = Subcategory::all();
 
 
-}
-catch(\Illuminate\Database\QueryException $ex)
-{
-    dd($ex->getMessage());
-}
-    return redirect()->route('addcontent',['id'=>$course_ided->id]);
-}
+        return view('user.instructor.create-courses')->with('corses', $corses)->with('subcorses', $subcorses);
+    }
+
+    public function postaddCourse(Request $request)
+    {
+        $validatedData = $request->validate([
+            'course_title' => 'required|unique:courses,course_title',
+            'course_subt' => 'required',
+            'language' => 'required',
+            'category_Id' => 'required',
+            'subcategory_Id' => 'required',
+            'mainrequire' => 'required',
+            'mainwlearn' => 'required',
+            'price' => 'required',
+            'course_des' => 'required',
+
+        ]);
+        $course = new Course();
+        try {
+            $course_ided = $course->create($validatedData);
+
+
+        } catch (\Illuminate\Database\QueryException $ex) {
+            dd($ex->getMessage());
+        }
+        return redirect()->route('addcontent', ['id' => $course_ided->id]);
+    }
 
 //Add course page 2
-public function  addVideos($idcourse)
-{
-    return view('user.instructor.addvideo')->with('course_id',$idcourse);
-}
-public function  postaddVideos(Request $request)
-{
+    public function addVideos($idcourse)
+    {
+        return view('user.instructor.addvideo')->with('course_id', $idcourse);
+    }
 
-    //  $validatedData = $request->validate([
-    // 'description' => 'required',
-    // 'videos'=>'required|mimes:mp4',
-    // 'pdfes'=>'required|mimes:pdf',
-    // 'pptxes'=>'required|mimes:pptx',
-    // ]);
-    $cvideo = new Videos();
+    public function postaddVideos(Request $request)
+    {
+
+        //  $validatedData = $request->validate([
+        // 'description' => 'required',
+        // 'videos'=>'required|mimes:mp4',
+        // 'pdfes'=>'required|mimes:pdf',
+        // 'pptxes'=>'required|mimes:pptx',
+        // ]);
+        $cvideo = new Videos();
 
 //if request containd video files
 // if($request->hasfile('videos'))
 // {
-    $videos = new Videos();
-    // $filed=$request->file('videos');
-    // $filename = $filed->getClientOriginalName();
-    // //if video contains the require extension
-    // $video = Youtube::upload(
-    //     $filed->getPathName(), [
-    //     'title'       => $filename,
-    //     'description' => 'nakwalify videos',
-    //     'status'=>'unlisted',
-    // ]);
+        $videos = new Videos();
+        // $filed=$request->file('videos');
+        // $filename = $filed->getClientOriginalName();
+        // //if video contains the require extension
+        // $video = Youtube::upload(
+        //     $filed->getPathName(), [
+        //     'title'       => $filename,
+        //     'description' => 'nakwalify videos',
+        //     'status'=>'unlisted',
+        // ]);
 
         // $path="https://www.youtube.com/watch?v={$video->getVideoId()}";
-        $path=$request->videos;
-        $videos->video_title=$path;
-        $videos->video_type="videocourse";
-        $videos->video_path=$path;
-        $videos->course_id=$request->course_id;
-        $videos->video_desc=$request->description;
+        $path = $request->videos;
+        $videos->video_title = $path;
+        $videos->video_type = "videocourse";
+        $videos->video_path = $path;
+        $videos->course_id = $request->course_id;
+        $videos->video_desc = $request->description;
         $videos->save();
-        $cvideo=$videos;
+        $cvideo = $videos;
 
 //}
-if($request->hasfile('pdfes')&&$cvideo!=null)
-{
-    $coursef = new Course_files();
-    $filed=$request->file('pdfes');
-    $filename = $filed->getClientOriginalName();
+        if ($request->hasfile('pdfes') && $cvideo != null) {
+            $coursef = new Course_files();
+            $filed = $request->file('pdfes');
+            $filename = $filed->getClientOriginalName();
 
-       $path=$filed->store('/temppdf');
-        $coursef->course_file_title=$filename;
-        $coursef->file_type="pdfcourse";
-        $coursef->file_path=$path;
-        $coursef->videos_id=$cvideo->id;
-        $coursef->save();
+            $path = $filed->store('/temppdf');
+            $coursef->course_file_title = $filename;
+            $coursef->file_type = "pdfcourse";
+            $coursef->file_path = $path;
+            $coursef->videos_id = $cvideo->id;
+            $coursef->save();
 
-}
- if(isset($request->pptxes)&&$cvideo!=null)
-{
-      foreach($request->file('pptxes') as $pptes){
-    $course = new Course_files();
-
-    $filename = $pptes->getClientOriginalName();
-
-       $path=$pptes->store('/tempppt');
-        $course->course_file_title=$filename;
-        $course->file_type="pptcourse";
-        $course->file_path=$path;
-        $course->videos_id=$cvideo->id;
-        $course->save();
-    }
-    }
-
-return Response()->json($cvideo);
-
-}
-public function  addQuestion($id)
-{
-    return view('user.instructor.addquestions')->with("video_id",$id);
-}
-public function  addQuestionpost(Request $request)
-{
-
-$question=new Questions();
-if($request->question!=null){
-$question->question=$request->question;
-$question->questiontype=$request->questiontype;
-$question->video_id=$request->video_id;
-$question->save();
-
-
-if($request->answer!=null){
-    $ans=$request->answer;
-    $anstype=$request->correct;
-
-
-    for( $i=0; $i<sizeof($ans); $i++){
-        $answerz=new Answers();
-        $answerz->answer=$ans[$i];
-        if(isset($anstype[$i])){
-
-            $answerz->answertype="true";
         }
-        else
-        {
-            $answerz->answertype="false";
+        if (isset($request->pptxes) && $cvideo != null) {
+            foreach ($request->file('pptxes') as $pptes) {
+                $course = new Course_files();
+
+                $filename = $pptes->getClientOriginalName();
+
+                $path = $pptes->store('/tempppt');
+                $course->course_file_title = $filename;
+                $course->file_type = "pptcourse";
+                $course->file_path = $path;
+                $course->videos_id = $cvideo->id;
+                $course->save();
+            }
         }
 
-        $answerz->question_id=$question->id;
-        $answerz->save();
+        return Response()->json($cvideo);
+
     }
-}
-}
 
-return Response()->json($question);
-}
-public function takequiz($id)
-{
-    $vido=Videos::find($id);
-    $qstn=Questions::where('video_id',$id)->get();
-    if(isset($qstn)){
-    return view('user.instructor.questin')->with("qstn",$qstn)->with("vido",$vido);
-    }
-    return redirect()->route('viewcourse',['id'=>$id]);
-}
-public function  quizpost(Request $request)
-{
-    $qstn=Questions::where('video_id',$request->videoid)->get();
-    $videos=Videos::find($request->videoid);
-
-    $count=0;
-
-    foreach($qstn as $qnt){
-        $f=$qnt->id;
-  $c=$request->$f;
-  if(isset($c)){
-    $art=Answers::where('id',$c)->first()->answertype;
-    if($art=="true")
+    public function addQuestion($id)
     {
-        $count++;
+        return view('user.instructor.addquestions')->with("video_id", $id);
     }
 
-    }}
-
-    return view('user.instructor.results')->with('marks',$count)
-    ->with('total',count($qstn))
-    ->with('videos',$videos);
-}
-
-
-public function  addVideosajax(Request $request)
-{
-    //      $validatedData = $request->validate([
-    //     'videos' => 'required|mimes:mp4|max:2048',
-
-    // ]);
-
-
-    $coursef = new Course_files();
-
-
-    //if request containd video files
-    if($request->hasfile('videos'))
+    public function addQuestionpost(Request $request)
     {
-        $filed=$request->file('videos');
-        $filename = $filed->getClientOriginalName();
+
+        $question = new Questions();
+        if ($request->question != null) {
+            $question->question = $request->question;
+            $question->questiontype = $request->questiontype;
+            $question->video_id = $request->video_id;
+            $question->save();
 
 
-        //if video contains the require extension
-           $path=$filed->store('/tempvideos');
+            if ($request->answer != null) {
+                $ans = $request->answer;
+                $anstype = $request->correct;
 
-            $coursef->course_file_title=$filename;
-            $coursef->file_type="videocourse";
-            $coursef->file_path=$path;
-            session()->push('videos',$coursef);
+
+                for ($i = 0; $i < sizeof($ans); $i++) {
+                    $answerz = new Answers();
+                    $answerz->answer = $ans[$i];
+                    if (isset($anstype[$i])) {
+
+                        $answerz->answertype = "true";
+                    } else {
+                        $answerz->answertype = "false";
+                    }
+
+                    $answerz->question_id = $question->id;
+                    $answerz->save();
+                }
+            }
+        }
+
+        return Response()->json($question);
+    }
+
+    public function takequiz($id)
+    {
+        $vido = Videos::find($id);
+        $qstn = Questions::where('video_id', $id)->get();
+        if (isset($qstn)) {
+            return view('user.instructor.questin')->with("qstn", $qstn)->with("vido", $vido);
+        }
+        return redirect()->route('viewcourse', ['id' => $id]);
+    }
+
+    public function quizpost(Request $request)
+    {
+        $qstn = Questions::where('video_id', $request->videoid)->get();
+        $videos = Videos::find($request->videoid);
+
+        $count = 0;
+
+        foreach ($qstn as $qnt) {
+            $f = $qnt->id;
+            $c = $request->$f;
+            if (isset($c)) {
+                $art = Answers::where('id', $c)->first()->answertype;
+                if ($art == "true") {
+                    $count++;
+                }
+
+            }
+        }
+
+        return view('user.instructor.results')->with('marks', $count)
+            ->with('total', count($qstn))
+            ->with('videos', $videos);
+    }
+
+
+    public function addVideosajax(Request $request)
+    {
+        //      $validatedData = $request->validate([
+        //     'videos' => 'required|mimes:mp4|max:2048',
+
+        // ]);
+
+
+        $coursef = new Course_files();
+
+
+        //if request containd video files
+        if ($request->hasfile('videos')) {
+            $filed = $request->file('videos');
+            $filename = $filed->getClientOriginalName();
+
+
+            //if video contains the require extension
+            $path = $filed->store('/tempvideos');
+
+            $coursef->course_file_title = $filename;
+            $coursef->file_type = "videocourse";
+            $coursef->file_path = $path;
+            session()->push('videos', $coursef);
 
             return Response()->json([
                 "success" => true,
                 "file" => '/videos'
             ]);
 
+        }
+
+        return Response()->json([
+            "success" => false,
+            "file" => ''
+        ]);
+
     }
 
-   return Response()->json([
-    "success" => false,
-    "file" => ''
-    ]);
-
-}
-
-public function  addpdfsajax(Request $request)
-{
-    //      $validatedData = $request->validate([
-    //     'videos' => 'required|mimes:mp4|max:2048',
-
-    // ]);
-
-    $request->session()->get('coursepdffile');
-    $coursef = new Course_files();
-
-
-    //if request containd video files
-    if($request->hasfile('pdfs'))
+    public function addpdfsajax(Request $request)
     {
-        $filed=$request->file('pdfs');
-        $filename = $filed->getClientOriginalName();
-        // $extension = $files->getClientOriginalExtension();
-        // $check=in_array($extension,$allowedfileExtension);
+        //      $validatedData = $request->validate([
+        //     'videos' => 'required|mimes:mp4|max:2048',
 
-        //if video contains the require extension
-           $path=$filed->store('/temppdfs');
+        // ]);
 
-            $coursef->course_file_title=$filename;
-            $coursef->file_type="videopdf";
-            $coursef->file_path=$path;
-            session()->push('pdfs',$coursef);
+        $request->session()->get('coursepdffile');
+        $coursef = new Course_files();
+
+
+        //if request containd video files
+        if ($request->hasfile('pdfs')) {
+            $filed = $request->file('pdfs');
+            $filename = $filed->getClientOriginalName();
+            // $extension = $files->getClientOriginalExtension();
+            // $check=in_array($extension,$allowedfileExtension);
+
+            //if video contains the require extension
+            $path = $filed->store('/temppdfs');
+
+            $coursef->course_file_title = $filename;
+            $coursef->file_type = "videopdf";
+            $coursef->file_path = $path;
+            session()->push('pdfs', $coursef);
 
             return Response()->json([
                 "success" => true,
                 "file" => '/pdfs'
             ]);
 
+        }
+
+        return Response()->json([
+            "success" => false,
+            "file" => ''
+        ]);
+
     }
 
-   return Response()->json([
-    "success" => false,
-    "file" => ''
-   ]);
-
-}
 //delete video
-public function destroyvid($id,Request $request){
+    public function destroyvid($id, Request $request)
+    {
 
-    $value = $request->session()->pull('coursefile', 'default');
+        $value = $request->session()->pull('coursefile', 'default');
 
-    foreach($value as $vids){
+        foreach ($value as $vids) {
 
-        if(trim($vids->course_file_title,"")==trim($id,"")){
+            if (trim($vids->course_file_title, "") == trim($id, "")) {
                 if (($key = array_search($vids, $value)) !== false) {
                     unset($value[$key]);
                     $image_path = app_path("videos/{$vids->course_file_title}");
@@ -402,22 +412,24 @@ public function destroyvid($id,Request $request){
                     }
                 }
             }
+        }
+        session()->put('coursefile', $value);
+        return response()->json([
+
+            'success' => 'Record deleted successfully!'
+
+        ]);
+
     }
-    session()->put('coursefile',$value);
-    return response()->json([
 
-        'success' => 'Record deleted successfully!'
+    public function destroypdf($id, Request $request)
+    {
 
-    ]);
+        $value = $request->session()->pull('coursepdffile', 'default');
 
-}
-public function destroypdf($id,Request $request){
+        foreach ($value as $vids) {
 
-    $value = $request->session()->pull('coursepdffile', 'default');
-
-    foreach($value as $vids){
-
-        if(trim($vids->course_file_title,"")==trim($id,"")){
+            if (trim($vids->course_file_title, "") == trim($id, "")) {
                 if (($key = array_search($vids, $value)) !== false) {
                     unset($value[$key]);
                     $image_path = app_path("pdfs/{$vids->course_file_title}");
@@ -428,153 +440,163 @@ public function destroypdf($id,Request $request){
                     }
                 }
             }
+        }
+        session()->put('coursepdffile', $value);
+        return response()->json([
+
+            'success' => 'Pdf deleted successfully!'
+
+        ]);
+
     }
-    session()->put('coursepdffile',$value);
-    return response()->json([
-
-        'success' => 'Pdf deleted successfully!'
-
-    ]);
-
-}
 
 //Add cover page 3 save all
-public function  addCover($id)
-{
+    public function addCover($id)
+    {
 
-   if( $id!=null){
-    return redirect()->route('viewcourse',['id'=>$request->courseid]);
-   }
-   else{
-    return redirect()->route('addcontent',['id'=>$id]);
-   }
-}
+        if ($id != null) {
+            return redirect()->route('viewcourse', ['id' => $request->courseid]);
+        } else {
+            return redirect()->route('addcontent', ['id' => $id]);
+        }
+    }
 
-public function  postaddCover(Request $request)
-{
-    $validatedData = $request->validate([
-        'coverpic' => 'required|max:5048',
-
-
-    ]);
+    public function postaddCover(Request $request)
+    {
+        $validatedData = $request->validate([
+            'coverpic' => 'required|max:5048',
 
 
-                if($request->hasfile('coverpic'))
-                {
-                      $coursecoverpic=new Mediacover();
-                      $filed=$request->file('coverpic');
-                      $filename = $filed->getClientOriginalName();
-
-                     $path=$filed->store('/coverpic');
-                     $coursecoverpic->course_id=$request->courseid;
-                     $coursecoverpic->title=$filename;
-                     $coursecoverpic->file_type="coverpic";
-                     $coursecoverpic->file_path=$path;
-                     $coursecoverpic->save();
-                }
-                if($request->hasfile('covervid'))
-                {
-
-                    $coursecovervid=new Mediacover();
-                    $filevid=$request->file('covervid');
-                    $filename = $filevid->getClientOriginalName();
-
-                    $path=$filevid->store('/covervid');
-                    $coursecovervid->course_id=$request->courseid;;
-                    $coursecovervid->title=$filename;
-                    $coursecovervid->file_type="covervid";
-                    $coursecovervid->file_path=$path;
-
-                    $coursecovervid->save();
-                }
+        ]);
 
 
-return redirect()->route('viewcourse',['id'=>$request->courseid]);
-}
+        if ($request->hasfile('coverpic')) {
+            $coursecoverpic = new Mediacover();
+            $filed = $request->file('coverpic');
+            $filename = $filed->getClientOriginalName();
+
+            $path = $filed->store('/coverpic');
+            $coursecoverpic->course_id = $request->courseid;
+            $coursecoverpic->title = $filename;
+            $coursecoverpic->file_type = "coverpic";
+            $coursecoverpic->file_path = $path;
+            $coursecoverpic->save();
+        }
+        if ($request->hasfile('covervid')) {
+
+            $coursecovervid = new Mediacover();
+            $filevid = $request->file('covervid');
+            $filename = $filevid->getClientOriginalName();
+
+            $path = $filevid->store('/covervid');
+            $coursecovervid->course_id = $request->courseid;;
+            $coursecovervid->title = $filename;
+            $coursecovervid->file_type = "covervid";
+            $coursecovervid->file_path = $path;
+
+            $coursecovervid->save();
+        }
 
 
-public function courseDetail($id)
-{
+        return redirect()->route('viewcourse', ['id' => $request->courseid]);
+    }
 
-    $selcoz=Course::find($id);
-    return view('user.instructor.coursedetail')->with('selcoz',$selcoz);
-}
 
-public function addcategory(Request $request)
-{
+    public function courseDetail($id)
+    {
 
-    $category = Category::create([
-        'category_name' => $request->category_name,
+        $selcoz = Course::find($id);
+        return view('user.instructor.coursedetail')->with('selcoz', $selcoz);
+    }
 
-    ]);
+    public function addcategory(Request $request)
+    {
 
-    return Response()->json($category);
-   }
-public function addsubcategory(Request $request)
-{
+        $category = Category::create([
+            'category_name' => $request->category_name,
 
-    $subcategory = SubCategory::create([
-        'subcategory_name' => $request->subcategory_name,
-        'category_id' => $request->category_Id,
-    ]);
+        ]);
 
-    return Response()->json($subcategory);
-}
+        return Response()->json($category);
+    }
 
-public function deleteacc()
-{
-    return view('user.account.deleteacc');
-}
-public function review()
-{
-    return view('user.instructor.review');
-}
-public function coursepurch()
-{
-    return view('user.instructor.coursepurch');
-}
-public function notification()
-{
-    return view('user.account.notification');
-}
-public function myaccount()
-{
-    return view('user.account.myaccount');
-}
-public function earnings()
-{
-    return view('user.instructor.earnings');
-}
-public function skills()
-{
-    return view('user.student.skills');
-}
-public function badges()
-{
-    return view('user.student.badges');
-}
-public function cert()
-{
-    return view('user.student.certificate');
-}
-public function createcert()
-{
-    return view('user.instructor.createcert');
-}
-public function category()
-{
+    public function addsubcategory(Request $request)
+    {
 
-    $coz=Course::all();
-    return view('user.category')->with('coz',$coz);
-}
-public function accSetting()
-{
-    return view('user.account.accsetting');
-}
-public function lcontent()
-{
-    return view('layouts.learncontent');
-}
+        $subcategory = SubCategory::create([
+            'subcategory_name' => $request->subcategory_name,
+            'category_id' => $request->category_Id,
+        ]);
+
+        return Response()->json($subcategory);
+    }
+
+    public function deleteacc()
+    {
+        return view('user.account.deleteacc');
+    }
+
+    public function review()
+    {
+        return view('user.instructor.review');
+    }
+
+    public function coursepurch()
+    {
+        return view('user.instructor.coursepurch');
+    }
+
+    public function notification()
+    {
+        return view('user.account.notification');
+    }
+
+    public function myaccount()
+    {
+        return view('user.account.myaccount');
+    }
+
+    public function earnings()
+    {
+        return view('user.instructor.earnings');
+    }
+
+    public function skills()
+    {
+        return view('user.student.skills');
+    }
+
+    public function badges()
+    {
+        return view('user.student.badges');
+    }
+
+    public function cert()
+    {
+        return view('user.student.certificate');
+    }
+
+    public function createcert()
+    {
+        return view('user.instructor.createcert');
+    }
+
+    public function category()
+    {
+
+        $coz = Course::all();
+        return view('user.category')->with('coz', $coz);
+    }
+
+    public function accSetting()
+    {
+        return view('user.account.accsetting');
+    }
+
+    public function lcontent()
+    {
+        return view('layouts.learncontent');
+    }
 
 
 }
