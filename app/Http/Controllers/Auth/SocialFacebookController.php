@@ -23,11 +23,16 @@ public function callback()
             $user = Socialite::driver('facebook')->stateless()->user();
 
             $userr = User::where('facebook_id', $user->id)->first();
-         
+            $userr2 = User::where('email', $user->email)->first();
             if($userr){
                 Auth::login($userr);
                 return redirect('/category');
-            }else{
+            }
+           else if($userr2){
+                Auth::login($userr2);
+                return redirect('/category');
+            }
+            else{
                 $namearray=explode(" ",$user->name);
                 $newUser = User::create([
                     'fname' => $namearray[0],

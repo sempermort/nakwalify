@@ -22,11 +22,16 @@ public function callback()
     try {
             $user = Socialite::driver('google')->stateless()->user();
             $finduser = User::where('google_id', $user->id)->first();
-
+            $userr2 = User::where('email', $user->email)->first();
             if($finduser){
                 Auth::login($finduser);
                 return redirect('/category');
-            }else{
+            }
+            else if($userr2){
+                Auth::login($userr2);
+                return redirect('/category');
+            }
+            else{
                 $namearray=explode(" ",$user->name);
 
                 $newUser = User::create([
