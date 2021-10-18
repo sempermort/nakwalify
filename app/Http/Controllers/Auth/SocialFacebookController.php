@@ -21,11 +21,11 @@ public function callback()
 {
     try {
             $user = Socialite::driver('facebook')->stateless()->user();
-        
-            $user = User::where('facebook_id', $user->id)->first();
 
-            if($user){
-                Auth::login($user);
+            $userr = User::where('facebook_id', $user->id)->first();
+
+            if($userr){
+                Auth::login($userr);
                 return redirect('/category');
             }else{
                 $newUser = User::create([
