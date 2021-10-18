@@ -39,14 +39,14 @@ return [
             'host' => 'smtp.gmail.com',
             'port' =>  587,
             'username' => 'nakwalify@gmail.com',
-            'password' => 'beyxhkqwxwpyqxuz',
+            'password' => 'tnqydtshwbwuvvfl',
             'encryption' => 'tls',
         ],
 
             'gmail' => [
                 'transport' => 'gmail',
                 'username' => 'nakwalify@gmail.com',
-                'password' => 'beyxhkqwxwpyqxuz',
+                'password' => 'tnqydtshwbwuvvfl',
             ],
 
         'ses' => [
