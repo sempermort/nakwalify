@@ -38,15 +38,15 @@ return [
             'transport' => 'smtp',
             'host' => 'smtp.gmail.com',
             'port' =>  587,
-            'username' => 'jacksonmorton5@gmail.com',
-            'password' => 'ohywjafvxvqhlzoo',
+            'username' => 'nakwalify@gmail.com',
+            'password' => 'beyxhkqwxwpyqxuz',
             'encryption' => 'tls',
         ],
 
             'gmail' => [
                 'transport' => 'gmail',
-                'username' => 'jacksonmorton5@gmail.com',
-                'password' => 'ohywjafvxvqhlzoo',
+                'username' => 'nakwalify@gmail.com',
+                'password' => 'beyxhkqwxwpyqxuz',
             ],
 
         'ses' => [
@@ -88,7 +88,7 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'jacksonmorton5@gmail.com'),
+        'address' => env('MAIL_FROM_ADDRESS', 'nakwalify@gmail.com'),
         'name' => env('MAIL_FROM_NAME', 'Nakwalify'),
     ],
 
