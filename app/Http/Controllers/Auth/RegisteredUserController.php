@@ -33,8 +33,7 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request)
     {
-
-        $request->validate([
+      $validator=  $request->validate([
             'fname' => ['required', 'string', 'max:255'],
             'lname' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
@@ -51,10 +50,19 @@ class RegisteredUserController extends Controller
             'role_id'=> 1,
         ]);
 
+        try{
         event(new Registered($user));
 
         Auth::login($user);
-        return redirect(RouteServiceProvider::HOME);
+        if (Auth::check()) {
+            return redirect(RouteServiceProvider::HOME);
+        }
+    }
+    catch(Exception $ex)
+    {
+        dd($ex);
+    }
+
     }
 
 }
