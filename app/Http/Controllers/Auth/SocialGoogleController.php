@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Validator,Redirect,Response,File;
+use Illuminate\Auth\Events\Registered;
 use Socialite;
 use Auth;
 use App\Models\User;
@@ -42,6 +43,7 @@ public function callback()
                     'google_id'=> $user->id,
                     'password' => encrypt('')
                 ]);
+                event(new Registered($user));
                 Auth::login($newUser);
                 return redirect('/category');
             }
