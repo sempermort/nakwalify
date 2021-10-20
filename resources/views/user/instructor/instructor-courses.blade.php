@@ -103,11 +103,13 @@
                     @endif</a></td>
                                             <td class="text-center"><b class="course_active">Active</b></td>
                                             <td class="text-center">
-                                                <a href="" title="Edit" class=" btn btn-success m-1">Edit  <i
+                         <small class="d-flex">
+                         <a href="" title="Edit" class=" btn btn-success m-1">Edit  <i
                                                         class="fa fa-edit"></i></a>
                                                 <a href="" title="Delete" class=" btn btn-danger m-1">Delete  <i
                                                         class="fa fa-trash"></i></a>
-                                            </td>
+
+                         </small>                                                              </td>
                                         </tr>
                                         @endforeach
                                     </tbody>
