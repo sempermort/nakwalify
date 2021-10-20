@@ -103,10 +103,10 @@
                     @endif</a></td>
                                             <td class="text-center"><b class="course_active">Active</b></td>
                                             <td class="text-center">
-                                                <a href="" title="Edit" class="gray-s btn btn-blue"><i
-                                                        class="uil uil-edit-alt"></i></a>
-                                                <a href="" title="Delete" class="gray-s btn btn-orange"><i
-                                                        class="uil uil-trash-alt"></i></a>
+                                                <a href="" title="Edit" class="gray-s btn btn-blue">Edit<i
+                                                        class="fa fa-edit"></i></a>
+                                                <a href="" title="Delete" class="gray-s btn btn-orange">Delete<i
+                                                        class="fa fa-trash"></i></a>
                                             </td>
                                         </tr>
                                         @endforeach
