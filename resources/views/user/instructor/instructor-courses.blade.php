@@ -104,9 +104,9 @@
                                             <td class="text-center"><b class="course_active">Active</b></td>
                                             <td class="text-center">
                          <small class="d-flex">
-                         <a href="" title="Edit" class=" btn btn-success m-1">Edit  <i
+                         <a href="" title="Edit" class=" btn btn-success p-1">Edit  <i
                                                         class="fa fa-edit"></i></a>
-                                                <a href="" title="Delete" class=" btn btn-danger m-1">Delete  <i
+                                                <a href="" title="Delete" class=" btn btn-danger p-1">Delete  <i
                                                         class="fa fa-trash"></i></a>
 
                          </small>                                                              </td>
