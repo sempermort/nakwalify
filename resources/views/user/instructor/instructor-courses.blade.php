@@ -62,19 +62,19 @@
                                     <thead class="thead-s">
                                         <tr>
 
-                                           
+
                                             <th scope="col"><input type="text" value="Courses 73" class="form-control"></th>
-                                            
-                                            
+
+
                                             <th scope="col"><input type="text" value="Courses 73" class="form-control"></th>
-                                         
-                                           
+
+
                                             <th scope="col"><input type="text" value="Categories 10" class="form-control"></th>
-                                          
-                                           
+
+
                                             <th scope="col"><input type="text" value="Inactive 12" class="form-control"></th>
-                                        
-                                            
+
+
                                             <th scope="col"><input type="text" value="Active 66" class="form-control"></th>
                                             <th></th>
                                             <th scope="col"> <span>Filter </span><input type="text" value="" class="form-control"></th>
@@ -91,86 +91,25 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                        @foreach($cozes as $coz)
                                         <tr>
 
-                                            <td>Course Title Here</td>
-                                            <td class="text-center">06 April 2020 | 08:31</td>
+                                            <td>{{$coz->course_title}}</td>
+                                            <td class="text-center">{{$coz->created_at}}</td>
                                             <td class="text-center">15</td>
                                             <td class="text-center">5</td>
-                                            <td class="text-center"><a href="instructor_courses.html#">Web
-                                                    Development</a></td>
+                                            <td class="text-center"><a href="instructor_courses.html#">
+                        @if(isset($coz->category->category_name))                        {{$coz->category->category_name}}
+                    @endif</a></td>
                                             <td class="text-center"><b class="course_active">Active</b></td>
                                             <td class="text-center">
-                                                <a href="instructor_courses.html#" title="Edit" class="gray-s"><i
+                                                <a href="" title="Edit" class="gray-s btn btn-blue"><i
                                                         class="uil uil-edit-alt"></i></a>
-                                                <a href="instructor_courses.html#" title="Delete" class="gray-s"><i
+                                                <a href="" title="Delete" class="gray-s btn btn-orange"><i
                                                         class="uil uil-trash-alt"></i></a>
                                             </td>
                                         </tr>
-                                        <tr>
-
-                                            <td>Course Title Here</td>
-                                            <td class="text-center">05 April 2020 | 05:15</td>
-                                            <td class="text-center">30</td>
-                                            <td class="text-center">3</td>
-                                            <td class="text-center"><a href="instructor_courses.html#">Graphic
-                                                    Design</a></td>
-                                            <td class="text-center"><b class="course_active">Active</b></td>
-                                            <td class="text-center">
-                                                <a href="instructor_courses.html#" title="Edit" class="gray-s"><i
-                                                        class="uil uil-edit-alt"></i></a>
-                                                <a href="instructor_courses.html#" title="Delete" class="gray-s"><i
-                                                        class="uil uil-trash-alt"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-
-                                            <td>Course Title</td>
-                                            <td class="text-center">03 April 2020 | 01:30</td>
-                                            <td class="text-center">14</td>
-                                            <td class="text-center">5</td>
-                                            <td class="text-center"><a href="instructor_courses.html#">Bootstrap</a>
-                                            </td>
-                                            <td class="text-center"><b class="course_active">Active</b></td>
-                                            <td class="text-center">
-                                                <a href="instructor_courses.html#" title="Edit" class="gray-s"><i
-                                                        class="uil uil-edit-alt"></i></a>
-                                                <a href="instructor_courses.html#" title="Delete" class="gray-s"><i
-                                                        class="uil uil-trash-alt"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-
-                                            <td>Course Title Here</td>
-                                            <td class="text-center">02 April 2020 | 05:15</td>
-                                            <td class="text-center">110</td>
-                                            <td class="text-center">9</td>
-                                            <td class="text-center"><a href="instructor_courses.html#">Game
-                                                    Development</a></td>
-                                            <td class="text-center"><b class="course_active">Active</b></td>
-                                            <td class="text-center">
-                                                <a href="instructor_courses.html#" title="Edit" class="gray-s"><i
-                                                        class="uil uil-edit-alt"></i></a>
-                                                <a href="instructor_courses.html#" title="Delete" class="gray-s"><i
-                                                        class="uil uil-trash-alt"></i></a>
-                                            </td>
-                                        </tr>
-                                        <tr>
-
-                                            <td>Course Title Here</td>
-                                            <td class="text-center">28 March 2020 | 05:15</td>
-                                            <td class="text-center">185</td>
-                                            <td class="text-center">10</td>
-                                            <td class="text-center"><a href="instructor_courses.html#">C++</a>
-                                            </td>
-                                            <td class="text-center"><b class="course_active">Active</b></td>
-                                            <td class="text-center">
-                                                <a href="instructor_courses.html#" title="Edit" class="gray-s"><i
-                                                        class="uil uil-edit-alt"></i></a>
-                                                <a href="instructor_courses.html#" title="Delete" class="gray-s"><i
-                                                        class="uil uil-trash-alt"></i></a>
-                                            </td>
-                                        </tr>
+                                        @endforeach
                                     </tbody>
                                 </table>
                             </div>
