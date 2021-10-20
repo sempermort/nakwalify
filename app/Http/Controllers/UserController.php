@@ -30,7 +30,7 @@ class UserController extends Controller
 
     public function instructorCourses()
     {
-        $cozes = Courses::All();
+        $cozes = Course::All();
         return view('user.instructor.instructor-courses')->with('cozes', $cozes);
     }
 
