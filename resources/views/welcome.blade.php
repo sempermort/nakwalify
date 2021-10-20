@@ -103,6 +103,7 @@
                                                 <strong>{{ $message }}</strong>
                                             </span>
                                             @enderror
+                                       
                                         </div>
                                         <div class=" mb-1">
                                             <input type="password" id="cpassword" class=" form-control"

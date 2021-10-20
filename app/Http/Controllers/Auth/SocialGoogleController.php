@@ -39,7 +39,7 @@ public function callback()
                     'fname' => $namearray[0],
                     'lname' => $namearray[1],
                     'email' => $user->email,
-                    'role_id'=>'2',
+                    'role_id'=>'1',
                     'google_id'=> $user->id,
                     'password' => encrypt('')
                 ]);
