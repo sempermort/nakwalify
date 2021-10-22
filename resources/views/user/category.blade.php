@@ -147,9 +147,9 @@
                 <div class="row mt-5">
                     @foreach($coz as $key=>$cozy)
 
-                    <div class="col-md-4">
+                    <div class="col-md-4 mb-3">
                         <a href="{{route('coursedetail',$cozy->id)}}">
-                        <div class="card cardc rounded ">
+                        <div class="card cardc h-400 rounded ">
                         <div class="h-250">
                                         <img class="card-img-top  object-cover h-100 w-100"
                                             src="{{route('get-copic',explode('/',$cozy->mediaCover->file_path)[1])}}"

@@ -253,7 +253,7 @@
                         @if(strtolower($cozy->category->category_name)=="livestock")
                         <div class="col-md-3     mb-4  ">
                             <a href="{{route('coursedetail',$cozy->id)}}">
-                                <div class="card cardc rounded ">
+                                <div class="card h-400 cardc rounded ">
                                     <div class="h-250">
 
                                         @if(isset($cozy->mediaCover->file_path))
@@ -327,7 +327,7 @@
                         @if(strtolower($cozy->category->category_name)=="agriculture")
                         <div class="col-md-3    mb-4">
                             <a href="{{route('coursedetail',$cozy->id)}}">
-                                <div class="card cardc rounded ">
+                                <div class="card h-400 cardc rounded ">
                                     <div class="h-250">
 
                                         @if(isset($cozy->mediaCover->file_path))
@@ -401,7 +401,7 @@
                         @if(strtolower($cozy->category->category_name)=="forestry")
                         <div class="col-md-3    active">
                             <a href="{{route('coursedetail',$cozy->id)}}">
-                                <div class="card cardc rounded ">
+                                <div class="card h-400 cardc rounded ">
                                     <div class="h-250">
                                         @if(isset($cozy->mediaCover->file_path))
                                         <img class="card-img-top  object-cover h-100 w-100"
@@ -472,7 +472,7 @@
                         @if(strtolower($cozy->category->category_name)=="arts")
                         <div class="col-md-3    active">
                             <a href="{{route('coursedetail',$cozy->id)}}">
-                                <div class="card cardc rounded ">
+                                <div class="card h-400 cardc rounded ">
                                     <div class="h-250">
                                         @if(isset($cozy->mediaCover->file_path))
                                         <img class="card-img-top  object-cover h-100 w-100"
@@ -543,7 +543,7 @@
                         @if(strtolower($cozy->category->category_name)=="transportation")
                         <div class="col-md-3    active">
                             <a href="{{route('coursedetail',$cozy->id)}}">
-                                <div class="card cardc rounded ">
+                                <div class="card h-400 cardc rounded ">
                                     <div class="h-250">
                                         @if(isset($cozy->mediaCover->file_path))
                                         <img class="card-img-top  object-cover h-100 w-100"
@@ -614,7 +614,7 @@
                         @if(strtolower($cozy->category->category_name)=="skills")
                         <div class="col-md-3    active">
                             <a href="{{route('coursedetail',$cozy->id)}}">
-                                <div class="card cardc rounded ">
+                                <div class="card h-400 cardc rounded ">
                                     <div class="h-250">
                                         @if(isset($cozy->mediaCover->file_path))
                                         <img class="card-img-top  object-cover h-100 w-100"
@@ -685,7 +685,7 @@
                         @if(strtolower($cozy->category->category_name)=="business")
                         <div class="col-md-3    active">
                             <a href="{{route('coursedetail',$cozy->id)}}">
-                                <div class="card cardc rounded ">
+                                <div class="card h-400 cardc rounded ">
                                     <div class="h-250">
                                         @if(isset($cozy->mediaCover->file_path))
                                         <img class="card-img-top  object-cover h-100 w-100"
