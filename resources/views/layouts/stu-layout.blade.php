@@ -30,9 +30,9 @@
 </head>
 
 <body>
-    <header class="" style="z-index:9;">
+    <header class="position-absolute w-100" style="z-index:9;">
   
-        <nav class="navbar navbar-expand-lg navbar-fixed-top" style="">
+        <nav class="navbar navbar-expand-lg " style="">
 
 
             @auth
@@ -46,7 +46,7 @@
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="material-icons-outlined bg-transparent">menu</i>
+                <i class="material-icons-outlined text-white bg-transparent">menu</i>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
