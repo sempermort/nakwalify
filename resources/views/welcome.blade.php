@@ -179,7 +179,7 @@
 
                         @foreach($coz as $key=>$cozy)
 
-                        <div class="col-md-3 mb-3  mb-4  active">
+                        <div class="col-md-3  mb-4  ">
                             <a href="{{route('coursedetail',$cozy->id)}}">
                                 <div class="card h-400 cardc rounded ">
                                     <div class="h-250">
@@ -244,14 +244,14 @@
                 </div>
             </div>
 
-            <div id="Livestock" class="tab-pane fade h-350">
-                <div id="carousel-example4" class="carousel slide m-4" data-interval="false" ride="false"
+            <div id="Livestock" class="tab-pane fade ">
+                <div id="carousel-example42" class="carousel slide m-4" data-interval="false" ride="false"
                     data-ride="carousel">
                     <div class="carousel-inneri  row  mx-auto" role="listbox">
 
                         @foreach($coz as $key=>$cozy)
                         @if(strtolower($cozy->category->category_name)=="livestock")
-                        <div class="col-md-3    active">
+                        <div class="col-md-3     mb-4  ">
                             <a href="{{route('coursedetail',$cozy->id)}}">
                                 <div class="card cardc rounded ">
                                     <div class="h-250">
@@ -293,6 +293,7 @@
                             </a>
 
                         </div>
+             
                         @endif
                         @endforeach
                         <a class="carousel-control-prev " style="margin-left: -24px;" href="#carousel-example4"
@@ -317,14 +318,14 @@
 
                 </div>
             </div>
-            <div id="Agriculture" class="tab-pane fade h-350">
+            <div id="Agriculture" class="tab-pane fade ">
                 <div id="carousel-example4" class="carousel slide m-4" data-interval="false" ride="false"
                     data-ride="carousel">
                     <div class="carousel-inneri  row  mx-auto" role="listbox">
 
                         @foreach($coz as $key=>$cozy)
                         @if(strtolower($cozy->category->category_name)=="agriculture")
-                        <div class="col-md-3    active">
+                        <div class="col-md-3    mb-4">
                             <a href="{{route('coursedetail',$cozy->id)}}">
                                 <div class="card cardc rounded ">
                                     <div class="h-250">
@@ -391,8 +392,8 @@
 
                 </div>
             </div>
-            <div id="Forestry" class="tab-pane  fade h-350">
-                <div id="carousel-example4" class="carousel slide m-4" data-interval="false" ride="false"
+            <div id="Forestry" class="tab-pane  fade ">
+                <div id="carousel-example43" class="carousel slide m-4" data-interval="false" ride="false"
                     data-ride="carousel">
                     <div class="carousel-inneri  row  mx-auto" role="listbox">
 
@@ -462,8 +463,8 @@
 
                 </div>
             </div>
-            <div id="Arts" class="tab-pane fade h-350">
-                <div id="carousel-example4" class="carousel slide m-4" data-interval="false" ride="false"
+            <div id="Arts" class="tab-pane fade ">
+                <div id="carousel-example44" class="carousel slide m-4" data-interval="false" ride="false"
                     data-ride="carousel">
                     <div class="carousel-inneri  row  mx-auto" role="listbox">
 
@@ -533,8 +534,8 @@
 
                 </div>
             </div>
-            <div id="Transportation" class="tab-pane fade h-350">
-                <div id="carousel-example4" class="carousel slide m-4" data-interval="false" ride="false"
+            <div id="Transportation" class="tab-pane fade ">
+                <div id="carousel-example45" class="carousel slide m-4" data-interval="false" ride="false"
                     data-ride="carousel">
                     <div class="carousel-inneri  row  mx-auto" role="listbox">
 
@@ -604,8 +605,8 @@
 
                 </div>
             </div>
-            <div id="Skills" class="tab-pane  fade h-350">
-                <div id="carousel-example4" class="carousel slide m-4" data-interval="false" ride="false"
+            <div id="Skills" class="tab-pane  fade ">
+                <div id="carousel-example46" class="carousel slide m-4" data-interval="false" ride="false"
                     data-ride="carousel">
                     <div class="carousel-inneri  row  mx-auto" role="listbox">
 
@@ -675,8 +676,8 @@
 
                 </div>
             </div>
-            <div id="Business" class="tab-pane  fade h-350">
-                <div id="carousel-example4" class="carousel slide m-4" data-interval="false" ride="false"
+            <div id="Business" class="tab-pane  fade">
+                <div id="carousel-example47" class="carousel slide m-4" data-interval="false" ride="false"
                     data-ride="carousel">
                     <div class="carousel-inneri  row  mx-auto" role="listbox">
 
