@@ -61,6 +61,13 @@
             <ul class="navbar-nav ml-auto">
 
                 @auth
+                <li class="dropdown ml-4">
+                <select class="selectpicker" data-live-search="true">
+  <option data-tokens="ketchup mustard">Development</option>
+  <option data-tokens="mustard">Education</option>
+  <option data-tokens="frosting">Agriculture</option>
+</select>
+</li>
                     <li class="dropdown ml-4">
                         <a href="create_new_course.html#" class="opts_account text-white" title="Account">
                             Naqualify Business
