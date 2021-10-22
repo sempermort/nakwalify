@@ -35,8 +35,14 @@ Route::get('/welcome', function () {
 Route::get('/admin', 'App\Http\Controllers\AdminController@index')->name('admin');
 Route::get('/user', 'App\Http\Controllers\UserController@index')->name('user');
 Route::get('/business','App\Http\Controllers\BusinessController@index')->name('business');
+
+//=================add course======
 Route::get('/addcourse', 'App\Http\Controllers\UserController@addCourse')->name('addcourse');
+Route::get('/editcourse/{id}', 'App\Http\Controllers\UserController@editCourse')->name('editcourse');
 Route::post('/addcoursepost', 'App\Http\Controllers\UserController@postaddCourse')->name('addcoursepost');
+Route::post('/editcoursepost', 'App\Http\Controllers\UserController@posteditCourse')->name('editcoursepost');
+//=================end course======
+
 Route::get('/takequiz/{id}', 'App\Http\Controllers\UserController@takequiz')->name('takequiz');
 Route::post('/quizpost', 'App\Http\Controllers\UserController@quizpost')->name('quizpost');
 Route::get('/instructorcourses', 'App\Http\Controllers\UserController@instructorCourses')->name('instructorcourses');
@@ -45,15 +51,23 @@ Route::get('/analytics', 'App\Http\Controllers\UserController@analytics')->name(
 
 Route::get('/listpics/{id}', 'App\Http\Controllers\UserController@listpics')->name('listpics');
 Route::delete('/deletepics/{id}', 'App\Http\Controllers\UserController@deletepics')->name('deletepics');
+
+//=================add content add video======
 Route::get('/addcontent/{id}', 'App\Http\Controllers\UserController@addVideos')->name('addcontent');
 Route::post('/addcontentpost', 'App\Http\Controllers\UserController@postaddVideos')->name('addcontentpost');
+Route::get('/editcontent/{id}', 'App\Http\Controllers\UserController@addVideos_edit')->name('editcontent');
+Route::post('/addcontenteditpost', 'App\Http\Controllers\UserController@postaddVideos_edit')->name('addcontenteditpost');
 Route::post('/addvideosajax', 'App\Http\Controllers\UserController@addvideosajax')->name('addvideosajax');
 Route::post('/addpdfsajax', 'App\Http\Controllers\UserController@addpdfsajax')->name('addpdfsajax');
+//=================add content add video======
+
 Route::get('/addcover/{id}', 'App\Http\Controllers\UserController@addCover')->name('addcover');
 Route::post('/addcoverpost', 'App\Http\Controllers\UserController@postaddCover')->name('addcoverpost');
+//=================questions======
 Route::get('/addquestion/{id}', 'App\Http\Controllers\UserController@addQuestion')->name('addquestion');
-
+Route::delete('destqstn/{id}', 'App\Http\Controllers\UserController@deleteqstn')->name('destqstn');
 Route::post('/savquestion', 'App\Http\Controllers\UserController@addQuestionpost')->name('savquestion');
+//=================end question======
 Route::get('/viewcourse/{id}/{name?}', 'App\Http\Controllers\UserController@viewCourse')->name('viewcourse');
 Route::get('/coursedetail/{id}', 'App\Http\Controllers\UserController@courseDetail')->name('coursedetail');
 Route::post('/subcatg', 'App\Http\Controllers\UserController@addsubcategory')->name('subcatg');
@@ -83,7 +97,7 @@ Route::get('redirectfb', 'App\Http\Controllers\Auth\SocialFacebookController@red
 Route::get('callback/facebook', 'App\Http\Controllers\Auth\SocialFacebookController@callback');
 
 
-Route::delete('destroyvid/{name}', 'App\Http\Controllers\UserController@destroyvid')->name('destroyvid');
+Route::delete('destroyvid/{name}', 'App\Http\Controllers\UserController@deletevid')->name('destroyvid');
 Route::delete('destroypdf/{name}', 'App\Http\Controllers\UserController@destroypdf')->name('destroypdf');
 Route::get('get-video/{name}', 'App\Http\Controllers\UserController@getVideo')->name('get-video');
 Route::get('get-pdf/{name}', 'App\Http\Controllers\UserController@getPdf')->name('get-pdf');

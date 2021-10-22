@@ -192,9 +192,7 @@
                             <a class="btn btn-info btn-pill  m-1 col-2 " href="{{route('addcourse')}}">
                                 Previous
                             </a>
-                            <a class="btn btn-info btn-pill  m-1 col-2 " href="{{route('addcover',['id' => $course_id])}}">
-                                Next
-                            </a>
+
                         </div>
 
                     </div>

@@ -3,7 +3,7 @@
 @section('content')
 
 <section>
-    <div class="h-vid" style="margin-top: -25px; ">
+    <div class="h-vid" style="">
         <video autoplay muted loop class="w-100 h-100 object-cover " id="myVideo">
             <source src="{{asset('assets/vids/cover vid.mp4')}}"  type="video/mp4">
         </video>
@@ -32,9 +32,9 @@
                                             Facebook</span> </a>
 
                                     <div class="d-flex    text-center w-90">
-                                        <hr class=" col-md-5">
-                                        <p class="col-md-2">or</p>
-                                        <hr class=" col-md-5">
+                                        <hr class=" col-md-4">
+                                        <p class="col-md-3">or</p>
+                                        <hr class=" col-md-4">
                                     </div>
                                     <form method="POST" action="{{ route('register') }}">
                                         @csrf
@@ -103,7 +103,7 @@
                                                 <strong>{{ $message }}</strong>
                                             </span>
                                             @enderror
-                                       
+
                                         </div>
                                         <div class=" mb-1">
                                             <input type="password" id="cpassword" class=" form-control"
@@ -250,7 +250,7 @@
                     <div class="carousel-inneri  row  mx-auto" role="listbox">
 
                         @foreach($coz as $key=>$cozy)
-
+                        @if(strtolower($cozy->category->category_name)=="livestock")
                         <div class="col-md-3    active">
                             <a href="{{route('coursedetail',$cozy->id)}}">
                                 <div class="card cardc rounded ">
@@ -293,7 +293,7 @@
                             </a>
 
                         </div>
-
+                        @endif
                         @endforeach
                         <a class="carousel-control-prev " style="margin-left: -24px;" href="#carousel-example4"
                             role="button" data-slide="prev"><small class=" jss15 bg-white">
@@ -323,6 +323,7 @@
                     <div class="carousel-inneri  row  mx-auto" role="listbox">
 
                         @foreach($coz as $key=>$cozy)
+                        @if(strtolower($cozy->category->category_name)=="agriculture")
                         <div class="col-md-3    active">
                             <a href="{{route('coursedetail',$cozy->id)}}">
                                 <div class="card cardc rounded ">
@@ -365,8 +366,9 @@
                             </a>
 
                         </div>
-
+                        @endif
                         @endforeach
+
                         <a class="carousel-control-prev " style="margin-left: -24px;" href="#carousel-example4"
                             role="button" data-slide="prev"><small class=" jss15 bg-white">
                                 <span class="material-icons dark  ">
@@ -395,6 +397,7 @@
                     <div class="carousel-inneri  row  mx-auto" role="listbox">
 
                         @foreach($coz as $key=>$cozy)
+                        @if(strtolower($cozy->category->category_name)=="forestry")
                         <div class="col-md-3    active">
                             <a href="{{route('coursedetail',$cozy->id)}}">
                                 <div class="card cardc rounded ">
@@ -434,8 +437,8 @@
                                 </div>
                             </a>
 
-                        </div>
-
+                        </div>                       
+                        @endif
                         @endforeach
                         <a class="carousel-control-prev " style="margin-left: -24px;" href="#carousel-example4"
                             role="button" data-slide="prev"><small class=" jss15 bg-white">
@@ -465,6 +468,7 @@
                     <div class="carousel-inneri  row  mx-auto" role="listbox">
 
                         @foreach($coz as $key=>$cozy)
+                        @if(strtolower($cozy->category->category_name)=="arts")
                         <div class="col-md-3    active">
                             <a href="{{route('coursedetail',$cozy->id)}}">
                                 <div class="card cardc rounded ">
@@ -505,7 +509,7 @@
                             </a>
 
                         </div>
-
+                        @endif
                         @endforeach
                         <a class="carousel-control-prev " style="margin-left: -24px;" href="#carousel-example4"
                             role="button" data-slide="prev"><small class=" jss15 bg-white">
@@ -535,6 +539,7 @@
                     <div class="carousel-inneri  row  mx-auto" role="listbox">
 
                         @foreach($coz as $key=>$cozy)
+                        @if(strtolower($cozy->category->category_name)=="transportation")
                         <div class="col-md-3    active">
                             <a href="{{route('coursedetail',$cozy->id)}}">
                                 <div class="card cardc rounded ">
@@ -575,7 +580,7 @@
                             </a>
 
                         </div>
-
+                        @endif
                         @endforeach
                         <a class="carousel-control-prev " style="margin-left: -24px;" href="#carousel-example4"
                             role="button" data-slide="prev"><small class=" jss15 bg-white">
@@ -605,6 +610,7 @@
                     <div class="carousel-inneri  row  mx-auto" role="listbox">
 
                         @foreach($coz as $key=>$cozy)
+                        @if(strtolower($cozy->category->category_name)=="skills")
                         <div class="col-md-3    active">
                             <a href="{{route('coursedetail',$cozy->id)}}">
                                 <div class="card cardc rounded ">
@@ -645,7 +651,7 @@
                             </a>
 
                         </div>
-
+                        @endif
                         @endforeach
                         <a class="carousel-control-prev " style="margin-left: -24px;" href="#carousel-example4"
                             role="button" data-slide="prev"><small class=" jss15 bg-white">
@@ -675,6 +681,7 @@
                     <div class="carousel-inneri  row  mx-auto" role="listbox">
 
                         @foreach($coz as $key=>$cozy)
+                        @if(strtolower($cozy->category->category_name)=="business")
                         <div class="col-md-3    active">
                             <a href="{{route('coursedetail',$cozy->id)}}">
                                 <div class="card cardc rounded ">
@@ -715,7 +722,7 @@
                             </a>
 
                         </div>
-
+                        @endif
                         @endforeach
                         <a class="carousel-control-prev " style="margin-left: -24px;" href="#carousel-example4"
                             role="button" data-slide="prev"><small class=" jss15 bg-white">

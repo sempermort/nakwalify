@@ -83,7 +83,7 @@ class UserController extends Controller
     {
         $fileContents = Storage::disk('local')->get("covervid/{$vid}");
         $response = Response($fileContents, 200);
-        $response->header('Content-Type', 'image/{explode(".",$vid)[1]}');
+        $response->header('Content-Type', 'image/{explode(".",$vid)[1]})}');
 
         return $response;
     }
@@ -139,6 +139,44 @@ class UserController extends Controller
 
         return view('user.instructor.create-courses')->with('corses', $corses)->with('subcorses', $subcorses);
     }
+    //editcourse
+    public function editCourse($id)
+    {
+        $maincourse =Course::find($id);
+        $corses = Category::all();
+        $subcorses = Subcategory::all();
+
+
+        return view('user.instructor.edit-course')->with('corses', $corses)
+        ->with('mcourse', $maincourse)
+        ->with('subcorses', $subcorses);
+    }
+    public function posteditCourse(Request $request)
+    {
+        $course = Course::findOrFail($request->cid);
+        $validatedData = $request->validate([
+            'course_title' => 'required|unique:courses,course_title',
+            'course_subt' => 'required',
+            'language' => 'required',
+            'category_Id' => 'required',
+            'subcategory_Id' => 'required',
+            'mainrequire' => 'required',
+            'mainwlearn' => 'required',
+            'price' => 'required',
+            'course_des' => 'required',
+
+        ]);
+  
+        try {
+
+            $course->fill($validatedData)->save();
+
+
+        } catch (\Illuminate\Database\QueryException $ex) {
+            dd($ex->getMessage());
+        }
+        return redirect()->route('editcontent', ['id' => $course_ided->id]);
+    }
 
     public function postaddCourse(Request $request)
     {
@@ -168,9 +206,15 @@ class UserController extends Controller
 //Add course page 2
     public function addVideos($idcourse)
     {
-        return view('user.instructor.addvideo')->with('course_id', $idcourse);
+        $videz=Videos::where('course_id',$idcourse)->get();
+        return view('user.instructor.addvideo')->with('vidoz', $videz)
+        ->with('course_id', $idcourse);
     }
-
+    public function addVideos_edit($idcourse)
+    {
+        $videz=Videos::where('course_id',$idcourse)->get();
+        return view('user.instructor.addvideo-edit')->with('vidoz', $videz);
+    }
     public function postaddVideos(Request $request)
     {
 
@@ -238,10 +282,74 @@ class UserController extends Controller
         return Response()->json($cvideo);
 
     }
+    public function postaddVideos_edit(Request $request)
+    {
 
+
+        $cvideo = new Videos();
+
+//if request containd video files
+// if($request->hasfile('videos'))
+// {
+        $videos = new Videos();
+        // $filed=$request->file('videos');
+        // $filename = $filed->getClientOriginalName();
+        // //if video contains the require extension
+        // $video = Youtube::upload(
+        //     $filed->getPathName(), [
+        //     'title'       => $filename,
+        //     'description' => 'nakwalify videos',
+        //     'status'=>'unlisted',
+        // ]);
+
+        // $path="https://www.youtube.com/watch?v={$video->getVideoId()}";
+        $path = $request->videos;
+        $videos->video_title = $path;
+        $videos->video_type = "videocourse";
+        $videos->video_path = $path;
+        $videos->course_id = $request->course_id;
+        $videos->video_desc = $request->description;
+        $videos->save();
+        $cvideo = $videos;
+
+//}
+        if ($request->hasfile('pdfes') && $cvideo != null) {
+            $coursef = new Course_files();
+            $filed = $request->file('pdfes');
+            $filename = $filed->getClientOriginalName();
+
+            $path = $filed->store('/temppdf');
+            $coursef->course_file_title = $filename;
+            $coursef->file_type = "pdfcourse";
+            $coursef->file_path = $path;
+            $coursef->videos_id = $cvideo->id;
+            $coursef->save();
+
+        }
+        if (isset($request->pptxes) && $cvideo != null) {
+            foreach ($request->file('pptxes') as $pptes) {
+                $course = new Course_files();
+
+                $filename = $pptes->getClientOriginalName();
+
+                $path = $pptes->store('/tempppt');
+                $course->course_file_title = $filename;
+                $course->file_type = "pptcourse";
+                $course->file_path = $path;
+                $course->videos_id = $cvideo->id;
+                $course->save();
+            }
+        }
+
+        return Response()->json($cvideo);
+
+    }
+    //-----------Question-----------------------
     public function addQuestion($id)
     {
-        return view('user.instructor.addquestions')->with("video_id", $id);
+        $qstnlst=Questions::where('video_id',$id)->get();
+        return view('user.instructor.addquestions')->with("qlst", $qstnlst)
+        ->with("video_id", $id);
     }
 
     public function addQuestionpost(Request $request)
@@ -278,7 +386,20 @@ class UserController extends Controller
 
         return Response()->json($question);
     }
+    public function deleteqstn($id)
+{
+    $q =Questions::find($id);
+  
+        $q->delete();
+        $a=Answers::where('question_id',$id)->get();
+        foreach($a as $an)
+        {
+            $an->delete();
+        }
 
+        return Response()->json($q);
+}
+//--------------question-------------------------
     public function takequiz($id)
     {
         $vido = Videos::find($id);
@@ -394,6 +515,14 @@ class UserController extends Controller
     }
 
 //delete video
+public function deletevid($id)
+{
+
+    $p = Videos::find($id);
+        $p->delete();
+
+        return Response()->json($p);
+}
     public function destroyvid($id, Request $request)
     {
 
@@ -455,7 +584,7 @@ class UserController extends Controller
     {
 
         if ($id != null) {
-            return redirect()->route('viewcourse', ['id' => $request->courseid]);
+            return redirect()->route('viewcourse', ['id' => $id]);
         } else {
             return redirect()->route('addcontent', ['id' => $id]);
         }

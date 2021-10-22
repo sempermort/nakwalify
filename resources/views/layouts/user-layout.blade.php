@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Poultry Learning</title>
+    <title>nakwalify</title>
     <base href="/">
 
     <link rel="icon" type="image/png" href="./assets/images/fav.png">
@@ -45,12 +45,10 @@
 
         @auth
             <a href="{{url('/category')}}" class="navbar-brand"
-               style="font-family:'Kaushan_Script'; font-weight: bolder;  font-size :35px!important; color:#fff !important;">Poultry
-                Learning</a>
+               style="font-family:'Kaushan_Script'; font-weight: bolder;  font-size :35px!important; color:#fff !important;">nakwalify</a>
         @else
             <a href="{{url('/')}}" class="navbar-brand"
-               style="font-family:'Kaushan_Script'; font-weight: bolder;  font-size :35px!important; color:#fff !important;">Poultry
-                Learning</a>
+               style="font-family:'Kaushan_Script'; font-weight: bolder;  font-size :35px!important; color:#fff !important;">nakwalify</a>
         @endauth
 
         <button class="navbar-toggler toggle_menu" type="button" data-toggle="collapse"
@@ -854,11 +852,7 @@
     </script>
 
     <script>
-        <!--
-        Initialize
-        the
-        plugin
-        -->
+        <!--Initialize the plugin-->
         $(".card-img-overlay").mouseover(function () {
             $(this).find($(".jss16")).css({
                 "display":

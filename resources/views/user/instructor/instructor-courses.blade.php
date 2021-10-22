@@ -63,21 +63,27 @@
                                         <tr>
 
 
-                                            <th scope="col"><input type="text" value="Courses 73" class="form-control"></th>
+                                            <th scope="col"><input type="text" value="Courses 73" class="form-control">
+                                            </th>
 
 
-                                            <th scope="col"><input type="text" value="Courses 73" class="form-control"></th>
+                                            <th scope="col"><input type="text" value="Courses 73" class="form-control">
+                                            </th>
 
 
-                                            <th scope="col"><input type="text" value="Categories 10" class="form-control"></th>
+                                            <th scope="col"><input type="text" value="Categories 10"
+                                                    class="form-control"></th>
 
 
-                                            <th scope="col"><input type="text" value="Inactive 12" class="form-control"></th>
+                                            <th scope="col"><input type="text" value="Inactive 12" class="form-control">
+                                            </th>
 
 
-                                            <th scope="col"><input type="text" value="Active 66" class="form-control"></th>
+                                            <th scope="col"><input type="text" value="Active 66" class="form-control">
+                                            </th>
                                             <th></th>
-                                            <th scope="col"> <span>Filter </span><input type="text" value="" class="form-control"></th>
+                                            <th scope="col"> <span>Filter </span><input type="text" value=""
+                                                    class="form-control"></th>
                                         </tr>
                                         <tr>
 
@@ -99,17 +105,20 @@
                                             <td class="text-center">15</td>
                                             <td class="text-center">5</td>
                                             <td class="text-center"><a href="instructor_courses.html#">
-                        @if(isset($coz->category->category_name))                        {{$coz->category->category_name}}
-                    @endif</a></td>
+                                                    @if(isset($coz->category->category_name))
+                                                    {{$coz->category->category_name}}
+                                                    @endif
+                                                </a></td>
                                             <td class="text-center"><b class="course_active">Active</b></td>
                                             <td class="text-center">
-                         <small class="d-flex">
-                         <a href="" title="Edit" class=" btn btn-success p-1">Edit  <i
-                                                        class="fa fa-edit"></i></a>
-                                                <a href="" title="Delete" class=" btn btn-danger p-1">Delete  <i
-                                                        class="fa fa-trash"></i></a>
+                                                <small class="d-flex">
+                                                    <a href="{{route('editcourse',$coz->id)}}" title="Edit" class=" btn btn-success p-1">Edit <i
+                                                            class="fa fa-edit"></i></a>
+                                                    <a href="" title="Delete" class=" btn btn-danger p-1">Delete <i
+                                                            class="fa fa-trash"></i></a>
 
-                         </small>                                                              </td>
+                                                </small>
+                                            </td>
                                         </tr>
                                         @endforeach
                                     </tbody>

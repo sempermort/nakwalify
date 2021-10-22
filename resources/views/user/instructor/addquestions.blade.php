@@ -18,7 +18,7 @@
         </div><br />
         @endif
 
-        <form method="post" id="vidform" enctype="multipart/form-data">
+        <form >
             @csrf
             <div class="row " style="  margin-top: 2.5rem !important;">
                 <div class="card w-90">
@@ -26,17 +26,21 @@
                         <div class="card p-0 col-4 border-radius-0 m-2 border-0">
                             <div class="card-body p-0 pt-2 m-1 border">
                                 <div class=" btn-group-vertical col-12  text-left" id="ql" role="group">
+                                    @php $e=1; @endphp
+                                    @foreach($qlst as $ls)
+                                    <div class="d-flex justify-content-between  w-100" >
+                                    <a class=" w-90 btn btn-info mb-2 p-1 text-white text-left vditem">
+                                    {{$e}}. {{$ls->question}}'...'
+                                    </a>
+                                    <button type="button"  class="btn btn-default  mb-2 p-1 w-10"
+                                            onclick="destquestion('{{$ls->id}}')">
+                                            <i class="pl-2 fa fa-times "></i></button>
+                                </div>
+                                    @php $e++; @endphp
+                                    @endforeach
                                 </div>
                             </div>
-                            <div class="textarea_dt mt-5 ">
-
-                                <div class="ui form swdh339">
-
-                                    <div class="field border rounded " style="height:170px;">
-
-                                    </div>
-                                </div>
-                            </div>
+                         
                         </div>
                         <div class="card col-8 border-radius-0 m-2 p-0  border-left-0 border-right-0">
 
@@ -95,20 +99,20 @@
 
                     <div class=" mrl-3">
 
-                        <input type="text" name="video_id" value={{$video_id}} id="pdf-btn" hidden />
+                        <input type="text" name="video_id" value="{{$video_id}}" id="pdf-btn" hidden />
                         <div class="mt-5 mb-5">
-                            <button class="btn btn-success rounded  m-1 col-2 float-right " id="addvid-btn"
-                                type="button" onclick="ajaxed3()" type="submit">
+                            <a class="btn btn-success rounded  m-1 col-2 float-right " id="addvid-btn"  onclick="ajaxeq()" >
                                 save Question
-                            </button>
+                           </a>
                         </div>
                         <div class="mt-5  d-flex justify-content-between clear-both">
                             <a class="btn btn-info btn-pill  m-1 col-2 " href="{{route('addcourse')}}">
                                 Previous
                             </a>
-                            <a class="btn btn-info btn-pill  m-1 col-2 " href="{{route('takequiz',['id'=>$video_id])}}">
+                          
+                            <a class="btn btn-info btn-pill  m-1 col-2 " href="{{route('takequiz',$video_id)}}">
                                 Next
-</a>
+                            </a>
                         </div>
 
                     </div>
@@ -129,5 +133,110 @@
 
             iq++;
         };
+        
+        function ajaxeq() {
+
+            var objprogress = document.getElementById("progressob");
+            
+            var form_data = new FormData();
+           
+            form_data.append('questiontype', $('input[name=questiontype]').val());        
+            form_data.append('question', $('input[name=question]').val());
+            form_data.append('video_id', $('input[name=video_id]').val());
+           
+
+
+           
+
+            var answer = $('input[name*=answer]');
+            for (var i = 0; i < answer.length; i++) {
+                form_data.append(answer[i].name, answer[i].value);
+            }
+            var correct = $('input[name*=correct]');
+            for (var i = 0; i < correct.length; i++) {
+                if($(correct[i]).is(':checked')){
+                form_data.append(correct[i].name, correct[i].value);
+                }
+            }
+            $.ajax({
+                type: 'POST',
+                url: "{{route('savquestion') }}",
+                data: form_data,
+                processData: false,
+                contentType: false,        
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                success: function(data) {
+                    if ((data.errors)) {
+                        alert(data.errors);
+                    } else {
+
+                        window.location.reload();
+                    }
+                },
+                xhr: function() {
+                    var xhr = new XMLHttpRequest();
+                    //Upload progress
+
+                    xhr.upload.addEventListener("progress", function(evt) {
+                        if (evt.lengthComputable) {
+
+                            //Do something with upload progress
+                            objprogress.max = evt.total;
+                            objprogress.value = evt.loaded;
+                        }
+                    }, false);
+
+                    return xhr;
+                },
+                beforeSend: function(xhr) {
+                    $('.loading-overlay-image-container').show();
+                    $('.loading-overlay').show();
+                },
+                complete: function(data) {
+                    $('.loading-overlay-image-container').hide();
+                    $('.loading-overlay').hide();
+                },
+
+
+
+
+                error: function(data) {
+                    $('.loading-overlay-image-container').hide();
+                    $('.loading-overlay').hide();
+
+                }
+
+
+            });
+        };
+function destquestion(id) {
+
+
+var token = $("meta[name='csrf-token']").attr("content");
+$.ajax({
+    url: "destqstn/" + id,
+    type: 'DELETE',
+    data: {
+        "id": id,
+        "_token": token,
+    },
+    beforeSend: function () {
+        $('.loading-overlay-image-container').show();
+        $('.loading-overlay').show();
+    },
+    complete: function () {
+        $('.loading-overlay-image-container').hide();
+        $('.loading-overlay').hide();
+    },
+    success: function (data) {
+
+         window.location.reload();
+    }
+
+});
+
+};
         </script>
         @endsection

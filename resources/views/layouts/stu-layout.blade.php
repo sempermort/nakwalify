@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Poultry Learning</title>
+    <title>nakwalify</title>
     <base href="/">
 
     <link rel="icon" type="image/png" href="./assets/images/fav.png">
@@ -26,21 +26,22 @@
     <link href="{{ asset('css/multitemslide.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
-        </script>
+    </script>
 </head>
 
 <body>
-    <header class=" position-relative " style="z-index:9;">
-        <nav class="navbar navbar-expand-lg" style="background-color: #3a9982;">
+    <header class="" style="z-index:9;">
+  
+        <nav class="navbar navbar-expand-lg navbar-fixed-top" style="">
 
 
-        @auth
-        <a href="{{url('/category')}}" class="navbar-brand"
-                style="font-family:'Kaushan_Script'; font-weight: bolder;  font-size :35px!important; color:#fff !important;">Poultry Learning</a>
-  @else
-  <a href="{{url('/')}}" class="navbar-brand"
-                style="font-family:'Kaushan_Script'; font-weight: bolder;  font-size :35px!important; color:#fff !important;">Poultry Learning</a>
-@endauth
+            @auth
+            <a href="{{url('/category')}}" class="navbar-brand"
+                style="font-family:'Kaushan_Script'; font-weight: bolder;  font-size :35px!important; ">nakwalify</a>
+            @else
+            <a href="{{url('/')}}" class="navbar-brand"
+                style="font-family:'Kaushan_Script'; font-weight: bolder;  font-size :35px!important; ">nakwalify</a>
+            @endauth
 
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -144,7 +145,8 @@
                     </li>
                     <li class="dropdown ml-4">
                         <a href="" class="option_links  " id="dropdownMenuButton" title="Notifications"><i
-                                class='fa fa-bell' style="margin-top: 22px; color:#fff;"></i><span class="noti_count"></span></a>
+                                class='fa fa-bell' style="margin-top: 22px; color:#fff;"></i><span
+                                class="noti_count"></span></a>
                         <div class="dropdown-content overflow-auto" aria-labelledby="dropdownMenuButton">
                             <a href="create_new_course.html#" class="channel_my item dropdown-item">
                                 <div class="profile_link">
@@ -265,37 +267,38 @@
 
 
         </nav>
+
     </header>
 
 
 
     <div class="">
-        <main style="margin-top: -60px; ">
+        <main style=" ">
             @yield('content')
         </main>
         <div class="modal fade  " id="register" tabindex="-1" role="dialog">
-    <div class="modal-dialog custome-dialog" role="document" style="
+            <div class="modal-dialog custome-dialog" role="document" style="
 	max-width: 81%!mportant;">
-        <div class="modal-content bg-transparent border-none">
+                <div class="modal-content bg-transparent border-none">
 
-            <div class="row">
-                <div class="col-6">
-                    <div class="h-580 bg-darkpale "></div>
-                </div>
-                <div class="col-6">
-                    <div class="p-3">
-                        <div class=" bg-light ">
-                            <div class="modal-header border-bottom-0 p-1">
-                                <P>Select the type of account</P>
-                                <a href="//" class="float- btn-outline-dark p-2 " data-dismiss="modal"
-                                    aria-label="Close">
-                                    <span class="align-self-center" aria-hidden="true">&times;</span>
-                                </a>
-                            </div>
-                            <div class="form-horizontal">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="h-580 bg-darkpale "></div>
+                        </div>
+                        <div class="col-6">
+                            <div class="p-3">
+                                <div class=" bg-light ">
+                                    <div class="modal-header border-bottom-0 p-1">
+                                        <P>Select the type of account</P>
+                                        <a href="//" class="float- btn-outline-dark p-2 " data-dismiss="modal"
+                                            aria-label="Close">
+                                            <span class="align-self-center" aria-hidden="true">&times;</span>
+                                        </a>
+                                    </div>
+                                    <div class="form-horizontal">
 
-                                <div class="w-100">
-                                    <!-- <div class="col-10  m-auto tabs-container">
+                                        <div class="w-100">
+                                            <!-- <div class="col-10  m-auto tabs-container">
                                         <div class=" d-flex mb-3">
 
                                             <button class="col-6 btn btn-primary active" id="tab1" data-toggle="tab"
@@ -307,265 +310,265 @@
 
                                     </div> -->
 
-                                    <div class="tab-content">
-                                        <div id="tab-1" class="@tabpane2">
-                                            <div class="panel-body">
-                                                <div class="form-horizontal col-10  m-auto">
-                                                    <a href="{{ url('/redirectgoogle') }}"
-                                                        class="col-12 btn btn-outline-dark">
-                                                        <i class="fab fa-google float-left"></i> <span
-                                                            class="text-left">
-                                                            Continue With
-                                                            Google</a>
+                                            <div class="tab-content">
+                                                <div id="tab-1" class="@tabpane2">
+                                                    <div class="panel-body">
+                                                        <div class="form-horizontal col-10  m-auto">
+                                                            <a href="{{ url('/redirectgoogle') }}"
+                                                                class="col-12 btn btn-outline-dark">
+                                                                <i class="fab fa-google float-left"></i> <span
+                                                                    class="text-left">
+                                                                    Continue With
+                                                                    Google</a>
 
-                                                    <a class="col-12 btn btn-outline-dark">
-                                                        <i class="fab fa-facebook float-left"></i>
-                                                        <span class="text-left">Continue With
-                                                            Facebook</span> </a>
-                                                    <a class="col-12 btn btn-outline-dark">
-                                                        <i class="fab fa-twitter float-left"></i> <span
-                                                            class="text-left">Continue With
-                                                            Twitter </span></a>
-                                                    <div class="d-flex custome-hrc   text-center w-90">
-                                                        <hr class="w-auto">
-                                                        <p class="w-auto text-nowrap">or</p>
-                                                        <hr class=" w-auto">
-                                                    </div>
-                                                    <!-- Validation Errors -->
-                                                    <x-auth-validation-errors class="mb-4" :errors="$errors" />
-                                                    <form method="POST" action="{{ route('register') }}">
-                                                        @csrf
-
-                                                        <div class=" form-group mb-1">
-                                                            <div class="d-flex  justify-content-between">
-                                                                <div style="width: 48%;"> <input type="text"
-                                                                        name="fname" value="{{ old('fname') }}" required
-                                                                        autocomplete="name" autofocus id="FirstName"
-                                                                        class="form-control" placeholder="First Name">
-                                                                    @error('fname')
-                                                                    <span class="invalid-feedback" role="alert">
-                                                                        <strong>{{ $message }}</strong>
-                                                                    </span>
-                                                                    @enderror
-                                                                </div>
-                                                                <div style="width: 48%;"> <input type="text"
-                                                                        name="lname" value="{{ old('lname') }}" required
-                                                                        autocomplete="name" autofocus id="lastName"
-                                                                        class="form-control" placeholder="Last Name">
-                                                                    @error('lname')
-                                                                    <span class="invalid-feedback" role="alert">
-                                                                        <strong>{{ $message }}</strong>
-                                                                    </span>
-                                                                    @enderror
-                                                                </div>
+                                                            <a class="col-12 btn btn-outline-dark">
+                                                                <i class="fab fa-facebook float-left"></i>
+                                                                <span class="text-left">Continue With
+                                                                    Facebook</span> </a>
+                                                            <a class="col-12 btn btn-outline-dark">
+                                                                <i class="fab fa-twitter float-left"></i> <span
+                                                                    class="text-left">Continue With
+                                                                    Twitter </span></a>
+                                                            <div class="d-flex custome-hrc   text-center w-90">
+                                                                <hr class="w-auto">
+                                                                <p class="w-auto text-nowrap">or</p>
+                                                                <hr class=" w-auto">
                                                             </div>
-                                                        </div>
-                                                        <div class=" mb-1 form-group">
-                                                            <input type="email" name="email" id="email"
-                                                                value="{{ old('email') }}" required autocomplete="email"
-                                                                class=" form-control" placeholder="Email Address">
-                                                            @error('email')
-                                                            <span class="invalid-feedback" role="alert">
-                                                                <strong>{{ $message }}</strong>
-                                                            </span>
-                                                            @enderror
-                                                        </div>
+                                                            <!-- Validation Errors -->
+                                                            <x-auth-validation-errors class="mb-4" :errors="$errors" />
+                                                            <form method="POST" action="{{ route('register') }}">
+                                                                @csrf
+
+                                                                <div class=" form-group mb-1">
+                                                                    <div class="d-flex  justify-content-between">
+                                                                        <div style="width: 48%;"> <input type="text"
+                                                                                name="fname" value="{{ old('fname') }}"
+                                                                                required autocomplete="name" autofocus
+                                                                                id="FirstName" class="form-control"
+                                                                                placeholder="First Name">
+                                                                            @error('fname')
+                                                                            <span class="invalid-feedback" role="alert">
+                                                                                <strong>{{ $message }}</strong>
+                                                                            </span>
+                                                                            @enderror
+                                                                        </div>
+                                                                        <div style="width: 48%;"> <input type="text"
+                                                                                name="lname" value="{{ old('lname') }}"
+                                                                                required autocomplete="name" autofocus
+                                                                                id="lastName" class="form-control"
+                                                                                placeholder="Last Name">
+                                                                            @error('lname')
+                                                                            <span class="invalid-feedback" role="alert">
+                                                                                <strong>{{ $message }}</strong>
+                                                                            </span>
+                                                                            @enderror
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class=" mb-1 form-group">
+                                                                    <input type="email" name="email" id="email"
+                                                                        value="{{ old('email') }}" required
+                                                                        autocomplete="email" class=" form-control"
+                                                                        placeholder="Email Address">
+                                                                    @error('email')
+                                                                    <span class="invalid-feedback" role="alert">
+                                                                        <strong>{{ $message }}</strong>
+                                                                    </span>
+                                                                    @enderror
+                                                                </div>
 
 
-                                                        <div class=" form-group mb-1">
-                                                            <div class="d-flex justify-content-between">
-                                                                <input type="text" name="Ccode" id="Ccode"
-                                                                    class="form-control" style="width: 28%;"
-                                                                    value="+255">
+                                                                <div class=" form-group mb-1">
+                                                                    <div class="d-flex justify-content-between">
+                                                                        <input type="text" name="Ccode" id="Ccode"
+                                                                            class="form-control" style="width: 28%;"
+                                                                            value="+255">
+                                                                        <div>
+                                                                            <input type="text" name="phonenumber"
+                                                                                id="phonenumber" class="form-control"
+                                                                                value="{{ old('phonenumber') }}"
+                                                                                required autocomplete="phonenumber"
+                                                                                style="width: 68%;">
+                                                                            @error('phonenumber') <span
+                                                                                class="invalid-feedback" role="alert">
+                                                                                <strong>{{ $message }}</strong>
+                                                                            </span>
+                                                                            @enderror
+                                                                        </div>
+
+                                                                    </div>
+
+                                                                </div>
+
+                                                                <div class=" form-group">
+                                                                    <input type="password" name="password" id="password"
+                                                                        required autocomplete="new-password"
+                                                                        class=" form-control" placeholder="Password">
+                                                                    @error('password')
+                                                                    <span class="invalid-feedback" role="alert">
+                                                                        <strong>{{ $message }}</strong>
+                                                                    </span>
+                                                                    @enderror
+                                                                </div>
+                                                                <div class=" mb-1">
+                                                                    <input type="password" id="cpassword"
+                                                                        class=" form-control"
+                                                                        name="password_confirmation" required
+                                                                        autocomplete="new-password"
+                                                                        placeholder="Confirm Password">
+                                                                </div>
+                                                                <div class=" form-group m-2">
+                                                                    <div class="text-center m-auto ">
+                                                                        <button data-dismiss="modal"
+                                                                            class="form-control m-auto w-80 btn-primary">
+                                                                            {{ __('Register') }}</button>
+
+                                                                        <p>Already a Member
+                                                                            <button data-toggle="modal"
+                                                                                data-target="#signin"
+                                                                                class=" btn btn-default "
+                                                                                style="margin-top: -4px;">Sign
+                                                                                In</button>
+                                                                        </p>
+
+
+                                                                    </div>
+                                                                </div>
+                                                            </form>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div id="tab-2" class="@tabpane">
+                                                    <div class="panel-body">
+
+                                                        <div class="form-horizontal">
+
+                                                            <GuardianCreate />
+
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade  " id="signin" tabindex="-1" role="dialog">
+            <div class="modal-dialog custome-dialog" role="document">
+                <div class="modal-content bg-transparent border-none">
+
+
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="h-580 bg-darkpale "></div>
+                        </div>
+                        <div class="col-6">
+                            <div class="p-3">
+                                <div class=" bg-light ">
+                                    <div class="modal-header d-flex justify-content-end border-bottom-0 p-1">
+
+                                        <a href="//" class="float-right btn-outline-dark p-2 " data-dismiss="modal"
+                                            aria-label="Close">
+                                            <span class="align-self-center" aria-hidden="true">&times;</span>
+                                        </a>
+                                    </div>
+                                    <div class="form-horizontal">
+
+                                        <div class="w-100">
+
+                                            <div class="tab-content">
+                                                <div id="tab-1" class="@tabpane2">
+                                                    <div class="panel-body">
+                                                        <div class="form-horizontal col-10  m-auto">
+                                                            <a href="{{ url('/redirectgoogle') }}"
+                                                                class="col-12 btn btn-outline-dark">
+                                                                <i class="fab fa-google float-left"></i> <span
+                                                                    class="text-left">
+                                                                    Continue With
+                                                                    Google</a>
+
+                                                            <a class="col-12 btn btn-outline-dark">
+                                                                <i class="fab fa-facebook float-left"></i>
+                                                                <span class="text-left">Continue With
+                                                                    Facebook</span> </a>
+                                                            <a class="col-12 btn btn-outline-dark">
+                                                                <i class="fab fa-twitter float-left"></i> <span
+                                                                    class="text-left">Continue With
+                                                                    Twitter </span></a>
+                                                            <div class="d-flex custome-hrc   text-center w-90">
+                                                                <hr class=" w-40">
+                                                                <p class="w-20">or</p>
+                                                                <hr class=" w-40">
+                                                            </div>
+                                                            <!-- Validation Errors -->
+                                                            <x-auth-validation-errors class="mb-4" :errors="$errors" />
+
+                                                            <form method="POST" action="{{ route('login') }}">
+                                                                @csrf
+
+                                                                <!-- Email Address -->
                                                                 <div>
-                                                                    <input type="text" name="phonenumber"
-                                                                        id="phonenumber" class="form-control"
-                                                                        value="{{ old('phonenumber') }}" required
-                                                                        autocomplete="phonenumber" style="width: 68%;">
-                                                                    @error('phonenumber') <span class="invalid-feedback"
-                                                                        role="alert">
-                                                                        <strong>{{ $message }}</strong>
-                                                                    </span>
-                                                                    @enderror
+                                                                    <x-label for="email" :value="__('Email')" />
+
+                                                                    <x-input id="email" class="block mt-1 w-full"
+                                                                        type="email" name="email" :value="old('email')"
+                                                                        required autofocus />
                                                                 </div>
 
-                                                            </div>
+                                                                <!-- Password -->
+                                                                <div class="mt-4">
+                                                                    <x-label for="password" :value="__('Password')" />
 
+                                                                    <x-input id="password" class="block mt-1 w-full"
+                                                                        type="password" name="password" required
+                                                                        autocomplete="current-password" />
+                                                                </div>
+
+                                                                <!-- Remember Me -->
+                                                                <div class="block mt-4">
+                                                                    <label for="remember_me"
+                                                                        class="inline-flex items-center">
+                                                                        <input id="remember_me" type="checkbox"
+                                                                            class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                                                                            name="remember">
+                                                                        <span
+                                                                            class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
+                                                                    </label>
+                                                                </div>
+
+                                                                <div class="flex items-center justify-end mt-4">
+                                                                    @if (Route::has('password.request'))
+                                                                    <a class="underline text-sm text-gray-600 hover:text-gray-900"
+                                                                        href="{{ route('password.request') }}">
+                                                                        {{ __('Forgot your password?') }}
+                                                                    </a>
+                                                                    @endif
+
+                                                                    <x-button class="ml-3" data-dismiss="modal">
+                                                                        {{ __('Log in') }}
+                                                                    </x-button>
+                                                                </div>
+                                                            </form>
                                                         </div>
-
-                                                        <div class=" form-group">
-                                                            <input type="password" name="password" id="password"
-                                                                required autocomplete="new-password"
-                                                                class=" form-control" placeholder="Password">
-                                                            @error('password')
-                                                            <span class="invalid-feedback" role="alert">
-                                                                <strong>{{ $message }}</strong>
-                                                            </span>
-                                                            @enderror
-                                                        </div>
-                                                        <div class=" mb-1">
-                                                            <input type="password" id="cpassword" class=" form-control"
-                                                                name="password_confirmation" required
-                                                                autocomplete="new-password"
-                                                                placeholder="Confirm Password">
-                                                        </div>
-                                                        <div class=" form-group m-2">
-                                                            <div class="text-center m-auto ">
-                                                                <button data-dismiss="modal"
-                                                                    class="form-control m-auto w-80 btn-primary">
-                                                                    {{ __('Register') }}</button>
-
-                                                                <p>Already a Member
-                                                                    <button data-toggle="modal" data-target="#signin"
-                                                                        class=" btn btn-default "
-                                                                        style="margin-top: -4px;">Sign
-                                                                        In</button>
-                                                                </p>
-
-
-                                                            </div>
-                                                        </div>
-                                                    </form>
-
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div id="tab-2" class="@tabpane">
-                                            <div class="panel-body">
-
-                                                <div class="form-horizontal">
-
-                                                    <GuardianCreate />
-
-                                                </div>
-
-                                            </div>
-                                        </div>
-
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="modal fade  " id="signin" tabindex="-1" role="dialog">
-    <div class="modal-dialog custome-dialog" role="document">
-        <div class="modal-content bg-transparent border-none">
-
-
-            <div class="row">
-                <div class="col-6">
-                    <div class="h-580 bg-darkpale "></div>
-                </div>
-                <div class="col-6">
-                    <div class="p-3">
-                        <div class=" bg-light ">
-                            <div class="modal-header d-flex justify-content-end border-bottom-0 p-1">
-
-                                <a href="//" class="float-right btn-outline-dark p-2 " data-dismiss="modal"
-                                    aria-label="Close">
-                                    <span class="align-self-center" aria-hidden="true">&times;</span>
-                                </a>
-                            </div>
-                            <div class="form-horizontal">
-
-                                <div class="w-100">
-
-                                    <div class="tab-content">
-                                        <div id="tab-1" class="@tabpane2">
-                                            <div class="panel-body">
-                                                <div class="form-horizontal col-10  m-auto">
-                                                    <a href="{{ url('/redirectgoogle') }}"
-                                                        class="col-12 btn btn-outline-dark">
-                                                        <i class="fab fa-google float-left"></i> <span
-                                                            class="text-left">
-                                                            Continue With
-                                                            Google</a>
-
-                                                    <a class="col-12 btn btn-outline-dark">
-                                                        <i class="fab fa-facebook float-left"></i>
-                                                        <span class="text-left">Continue With
-                                                            Facebook</span> </a>
-                                                    <a class="col-12 btn btn-outline-dark">
-                                                        <i class="fab fa-twitter float-left"></i> <span
-                                                            class="text-left">Continue With
-                                                            Twitter </span></a>
-                                                    <div class="d-flex custome-hrc   text-center w-90">
-                                                        <hr class=" w-40">
-                                                        <p class="w-20">or</p>
-                                                        <hr class=" w-40">
                                                     </div>
-                                                    <!-- Validation Errors -->
-                                                    <x-auth-validation-errors class="mb-4" :errors="$errors" />
-
-                                                    <form method="POST" action="{{ route('login') }}">
-                                                        @csrf
-
-                                                        <!-- Email Address -->
-                                                        <div>
-                                                            <x-label for="email" :value="__('Email')" />
-
-                                                            <x-input id="email" class="block mt-1 w-full" type="email"
-                                                                name="email" :value="old('email')" required autofocus />
-                                                        </div>
-
-                                                        <!-- Password -->
-                                                        <div class="mt-4">
-                                                            <x-label for="password" :value="__('Password')" />
-
-                                                            <x-input id="password" class="block mt-1 w-full"
-                                                                type="password" name="password" required
-                                                                autocomplete="current-password" />
-                                                        </div>
-
-                                                        <!-- Remember Me -->
-                                                        <div class="block mt-4">
-                                                            <label for="remember_me" class="inline-flex items-center">
-                                                                <input id="remember_me" type="checkbox"
-                                                                    class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                                                                    name="remember">
-                                                                <span
-                                                                    class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
-                                                            </label>
-                                                        </div>
-
-                                                        <div class="flex items-center justify-end mt-4">
-                                                            @if (Route::has('password.request'))
-                                                            <a class="underline text-sm text-gray-600 hover:text-gray-900"
-                                                                href="{{ route('password.request') }}">
-                                                                {{ __('Forgot your password?') }}
-                                                            </a>
-                                                            @endif
-
-                                                            <x-button class="ml-3" data-dismiss="modal">
-                                                                {{ __('Log in') }}
-                                                            </x-button>
-                                                        </div>
-                                                    </form>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div id="tab-2" class="@tabpane">
-                                            <div class="panel-body">
-
-                                                <div class="form-horizontal">
-
-                                                    <GuardianCreate />
-
                                                 </div>
 
-                                            </div>
-                                        </div>
 
+
+                                            </div>
+
+                                        </div>
                                     </div>
-
                                 </div>
                             </div>
                         </div>
@@ -573,8 +576,6 @@
                 </div>
             </div>
         </div>
-    </div>
-</div>
         <footer class="bg-greenpale  pt-5 pb-5 w-100" style="background: #3a9982;">
             <div class="d-flex kfooter">
                 <div class="col-3">
@@ -633,7 +634,7 @@
         </script>
 
 
-        <script>
+<script>
         // $(document).ready(function() {
         //     $('.collapsible').collapsible();
 
