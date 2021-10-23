@@ -182,7 +182,7 @@
                         <div class="col-md-3  mb-4  ">
                             <a href="{{route('coursedetail',$cozy->id)}}">
                                 <div class="card h-400 cardc rounded ">
-                                    <div class="h-250">
+                                    <div class="h-220">
                                         @if(isset($cozy->mediaCover->file_path))
 
                                         @php $src=$cozy->mediaCover->file_path; @endphp
@@ -254,7 +254,7 @@
                         <div class="col-md-3     mb-4  ">
                             <a href="{{route('coursedetail',$cozy->id)}}">
                                 <div class="card h-400 cardc rounded ">
-                                    <div class="h-250">
+                                    <div class="h-220">
 
                                         @if(isset($cozy->mediaCover->file_path))
                                         <img class="card-img-top  object-cover h-100 w-100"
@@ -293,7 +293,7 @@
                             </a>
 
                         </div>
-             
+
                         @endif
                         @endforeach
                         <a class="carousel-control-prev " style="margin-left: -24px;" href="#carousel-example4"
@@ -328,7 +328,7 @@
                         <div class="col-md-3    mb-4">
                             <a href="{{route('coursedetail',$cozy->id)}}">
                                 <div class="card h-400 cardc rounded ">
-                                    <div class="h-250">
+                                    <div class="h-220">
 
                                         @if(isset($cozy->mediaCover->file_path))
                                         <img class="card-img-top  object-cover h-100 w-100"
@@ -402,7 +402,7 @@
                         <div class="col-md-3    active">
                             <a href="{{route('coursedetail',$cozy->id)}}">
                                 <div class="card h-400 cardc rounded ">
-                                    <div class="h-250">
+                                    <div class="h-220">
                                         @if(isset($cozy->mediaCover->file_path))
                                         <img class="card-img-top  object-cover h-100 w-100"
                                             src="{{route('get-copic',explode('/',$cozy->mediaCover->file_path)[1])}}"
@@ -438,7 +438,7 @@
                                 </div>
                             </a>
 
-                        </div>                       
+                        </div>
                         @endif
                         @endforeach
                         <a class="carousel-control-prev " style="margin-left: -24px;" href="#carousel-example4"
@@ -473,7 +473,7 @@
                         <div class="col-md-3    active">
                             <a href="{{route('coursedetail',$cozy->id)}}">
                                 <div class="card h-400 cardc rounded ">
-                                    <div class="h-250">
+                                    <div class="h-220">
                                         @if(isset($cozy->mediaCover->file_path))
                                         <img class="card-img-top  object-cover h-100 w-100"
                                             src="{{route('get-copic',explode('/',$cozy->mediaCover->file_path)[1])}}"
@@ -544,7 +544,7 @@
                         <div class="col-md-3    active">
                             <a href="{{route('coursedetail',$cozy->id)}}">
                                 <div class="card h-400 cardc rounded ">
-                                    <div class="h-250">
+                                    <div class="h-220">
                                         @if(isset($cozy->mediaCover->file_path))
                                         <img class="card-img-top  object-cover h-100 w-100"
                                             src="{{route('get-copic',explode('/',$cozy->mediaCover->file_path)[1])}}"
@@ -615,7 +615,7 @@
                         <div class="col-md-3    active">
                             <a href="{{route('coursedetail',$cozy->id)}}">
                                 <div class="card h-400 cardc rounded ">
-                                    <div class="h-250">
+                                    <div class="h-220">
                                         @if(isset($cozy->mediaCover->file_path))
                                         <img class="card-img-top  object-cover h-100 w-100"
                                             src="{{route('get-copic',explode('/',$cozy->mediaCover->file_path)[1])}}"
@@ -686,7 +686,7 @@
                         <div class="col-md-3    active">
                             <a href="{{route('coursedetail',$cozy->id)}}">
                                 <div class="card h-400 cardc rounded ">
-                                    <div class="h-250">
+                                    <div class="h-220">
                                         @if(isset($cozy->mediaCover->file_path))
                                         <img class="card-img-top  object-cover h-100 w-100"
                                             src="{{route('get-copic',explode('/',$cozy->mediaCover->file_path)[1])}}"
