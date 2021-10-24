@@ -638,15 +638,15 @@
           window.onscroll = scrollFunction;
 
 function scrollFunction() {
-    alert("nipo")
+
    var element = document.getElementById("mainavbar");
    element.style.transition = "all 2s";
    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
       element.classList.add("bg-white");
       element.classList.add("navbar-light");
    } else if (document.body.scrollTop < 20 || document.documentElement.scrollTop < 20) {
-      element.classList.remove("bg-colori2");
-      element.classList.add("bg-colori");
+      element.classList.remove("bg-white");
+      element.classList.remove("navbar-light");
 
    }
 
