@@ -201,7 +201,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="m-2">
+                                    <div class="m-2 p-0">
                                         <p class="card-text  d-flex justify-content-between">
                                             <small class="card-text">22 trainees </small>
                                             <small class="card-text"> 50m</small>
@@ -272,7 +272,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="m-2">
+                                    <div class="m-2 p-0">
                                         <p class="card-text  d-flex justify-content-between">
                                             <small class="card-text">23,162 trainees </small>
                                             <small class="card-text">1h 50m</small>
@@ -346,7 +346,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="m-2">
+                                    <div class="m-2 p-0">
                                         <p class="card-text  d-flex justify-content-between">
                                             <small class="card-text">23,162 trainees </small>
                                             <small class="card-text">1h 50m</small>
@@ -418,7 +418,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="m-2">
+                                    <div class="m-2 p-0">
                                         <p class="card-text  d-flex justify-content-between">
                                             <small class="card-text">23,162 trainees </small>
                                             <small class="card-text">1h 50m</small>
@@ -489,7 +489,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="m-2">
+                                    <div class="m-2 p-0">
                                         <p class="card-text  d-flex justify-content-between">
                                             <small class="card-text">23,162 trainees </small>
                                             <small class="card-text">1h 50m</small>
@@ -560,7 +560,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="m-2">
+                                    <div class="m-2 p-0">
                                         <p class="card-text  d-flex justify-content-between">
                                             <small class="card-text">23,162 trainees </small>
                                             <small class="card-text">1h 50m</small>
@@ -631,7 +631,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="m-2">
+                                    <div class="m-2 p-0">
                                         <p class="card-text  d-flex justify-content-between">
                                             <small class="card-text">23,162 trainees </small>
                                             <small class="card-text">1h 50m</small>
@@ -702,7 +702,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="m-2">
+                                    <div class="m-2 p-0">
                                         <p class="card-text  d-flex justify-content-between">
                                             <small class="card-text">23,162 trainees </small>
                                             <small class="card-text">1h 50m</small>
