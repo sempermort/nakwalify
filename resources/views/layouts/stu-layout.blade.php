@@ -31,8 +31,8 @@
 
 <body>
     <header class="position-absolute w-100" style="z-index:9;">
-  
-        <nav class="navbar navbar-expand-lg " style="">
+
+        <nav class="navbar navbar-expand-lg" id="mainavbar" style="">
 
 
             @auth
@@ -50,7 +50,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-                <ul class="navbar-nav ml-auto">
+                <ul class="navbar-nav ml-auto mr-4">
 
                     @auth
                     <li class="dropdown ml-4">
@@ -247,14 +247,14 @@
                     @endauth
                     @guest
                     <li class="ml-3">
-                        <button data-toggle="modal" data-target="#signin" class="opts_account text-white"
+                        <button data-toggle="modal" data-target="#signin" class="opts_account t-white"
                             title="Account">
                             Login
                         </button>
 
                     </li>
                     <li class="ml-3">
-                        <button data-toggle="modal" data-target="#register" class="opts_account text-white"
+                        <button data-toggle="modal" data-target="#register" class="opts_account t-white"
                             title="Account">
                             Register
                         </button>
@@ -635,10 +635,22 @@
 
 
 <script>
-        // $(document).ready(function() {
-        //     $('.collapsible').collapsible();
+          window.onscroll = scrollFunction;
 
-        // });
+function scrollFunction() {
+    alert("nipo")
+   var element = document.getElementById("mainavbar");
+   element.style.transition = "all 2s";
+   if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+      element.classList.add("bg-white");
+      element.classList.add("navbar-light");
+   } else if (document.body.scrollTop < 20 || document.documentElement.scrollTop < 20) {
+      element.classList.remove("bg-colori2");
+      element.classList.add("bg-colori");
+
+   }
+
+}
 
         $('.nastay').on('click', 'a', function() {
 
@@ -729,6 +741,8 @@
         $('.nav3').removeClass('d-nonel').addClass('d-blockl');
         $('.nav1').addClass('d-blockl');
         });
+
+
 
     </script>
 </body>

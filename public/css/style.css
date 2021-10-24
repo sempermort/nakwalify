@@ -10,10 +10,11 @@ body {
     color: rgba(0, 0, 0, 0.87);
     width: 100%;
     height: 100%;
+    overflow-x: hidden;
 }
 
 .welcome {
-    height: 550px;
+    height: 500px;
 }
 
 .signin {
@@ -910,4 +911,12 @@ p {
 
 .h-vid {
     height: 650px;
+}
+
+.t-white {
+    color: #fff;
+}
+
+.t-dark {
+    color: rgb(19, 17, 17);
 }

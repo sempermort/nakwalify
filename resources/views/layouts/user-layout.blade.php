@@ -58,10 +58,10 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-            <ul class="navbar-nav ml-auto">
+            <ul class="navbar-nav ml-auto mr-4">
 
                 @auth
-    
+
                     <li class="dropdown ml-4">
                         <a href="create_new_course.html#" class="opts_account text-white" title="Account">
                             Naqualify Business
