@@ -920,3 +920,9 @@ p {
 .t-dark {
     color: rgb(19, 17, 17);
 }
+
+.ellipsis {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
