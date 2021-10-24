@@ -273,7 +273,7 @@
 
 
     <div class="">
-        <main style=" ">
+        <main >
             @yield('content')
         </main>
         <div class="modal fade  " id="register" tabindex="-1" role="dialog">

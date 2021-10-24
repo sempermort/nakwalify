@@ -139,7 +139,7 @@
 
 </section>
 <br>
-<section style="position:relative;">
+<section style="position:relative; width:85%; margin:0 auto">
     <div class="">
         <h2 class="font-weight-bolder text-center">Discover LifeLong Learning</h2>
 
@@ -749,63 +749,65 @@
             </div>
         </div>
 
-        <div class="mt-5 ">
+    </div>
+</section>
+<section>
+<div class="mt-5 ">
 
-            <div id="carouselExampleIndicators" class="carousel h-400 carousel-fade" data-ride="carousel" style="">
+<div id="carouselExampleIndicators" class="carousel h-400 carousel-fade" data-ride="carousel" style="">
 
-                <div class="carousel-inner">
-                    <div class="carousel-item active h-400 ">
-                        <img src="{{asset('assets/images/2.png')}}" class="img-fluid center " style="" alt="">
-                        <div class="invisiblely">
-                            <div class="carousel-caption slide-top">
-                                <div class=" itm">
-                                    <div class="banner-content">
+    <div class="carousel-inner">
+        <div class="carousel-item active h-400 ">
+            <img src="{{asset('assets/images/2.png')}}" class="img-fluid center " style="" alt="">
+            <div class="invisiblely">
+                <div class="carousel-caption slide-top">
+                    <div class=" itm">
+                        <div class="banner-content">
 
-                                        <div class=""><span>Build Meaningful Self-Care Into
-                                                Every Day</span></div>
-                                        <div class="banner-description">Join superstar Jonathan Van Ness and
-                                            best-selling author Chidera Eggerue for this powerful new
-                                            self-care workshop, kicking off July 12th.</div>
-                                        <div class="banner-actions"><a href=""
-                                                class="btn btn-default bg-landing"><span>Join
-                                                    Now</span></a></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item  h-400 ">
-                        <img src="{{asset('assets/images/2.png')}}" class="img-fluid center " style="" alt="">
-                        <div class="invisiblely">
-                            <div class="carousel-caption slide-top">
-                                <div class=" itm">
-                                    <div class="banner-content">
-
-                                        <div class=""><span>Build Meaningful Self-Care Into
-                                                Every Day</span></div>
-                                        <div class="banner-description">Join superstar Jonathan Van Ness and
-                                            best-selling author Chidera Eggerue for this powerful new
-                                            self-care workshop, kicking off July 12th.</div>
-                                        <div class="banner-actions"><a href=""
-                                                class="btn btn-default bg-landing"><span>Join
-                                                    Now</span></a></div>
-                                    </div>
-                                </div>
-                            </div>
+                            <div class=""><span>Build Meaningful Self-Care Into
+                                    Every Day</span></div>
+                            <div class="banner-description">Join superstar Jonathan Van Ness and
+                                best-selling author Chidera Eggerue for this powerful new
+                                self-care workshop, kicking off July 12th.</div>
+                            <div class="banner-actions"><a href=""
+                                    class="btn btn-default bg-landing"><span>Join
+                                        Now</span></a></div>
                         </div>
                     </div>
                 </div>
-                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Previous</span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only">Next</span>
-                </a>
+            </div>
+        </div>
+        <div class="carousel-item  h-400 ">
+            <img src="{{asset('assets/images/2.png')}}" class="img-fluid center " style="" alt="">
+            <div class="invisiblely">
+                <div class="carousel-caption slide-top">
+                    <div class=" itm">
+                        <div class="banner-content">
+
+                            <div class=""><span>Build Meaningful Self-Care Into
+                                    Every Day</span></div>
+                            <div class="banner-description">Join superstar Jonathan Van Ness and
+                                best-selling author Chidera Eggerue for this powerful new
+                                self-care workshop, kicking off July 12th.</div>
+                            <div class="banner-actions"><a href=""
+                                    class="btn btn-default bg-landing"><span>Join
+                                        Now</span></a></div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+</div>
 </section>
 
 
