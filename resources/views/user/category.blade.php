@@ -153,14 +153,18 @@
 
                 <div class="row mt-5">
                     @foreach($coz as $key=>$cozy)
+                    <div class="col-md-3  mb-4  ">
+                            <a href="{{route('coursedetail',$cozy->id)}}">
+                                <div class="card h-350 cardc rounded ">
+                                    <div class="h-220">
+                                        @if(isset($cozy->mediaCover->file_path))
 
-                    <div class="col-md-4 mb-3">
-                        <a href="{{route('coursedetail',$cozy->id)}}">
-                        <div class="card cardc h-400 rounded ">
-                        <div class="h-250">
+                                        @php $src=$cozy->mediaCover->file_path; @endphp
                                         <img class="card-img-top  object-cover h-100 w-100"
-                                            src="{{route('get-copic',explode('/',$cozy->mediaCover->file_path)[1])}}"
-                                            alt="Card image cap">
+                                            src="{{route('get-copic',explode('/',$src)[1])}}" alt="Card image cap">
+                                        @endif
+
+
                                         <div class="card-img-overlay">
                                             <span class=" jss16 m-25-auto ">
                                                 <span class="material-icons-round ">
@@ -171,27 +175,24 @@
                                         </div>
                                     </div>
 
-                            <div class="m-2">
-                                <p class="card-text  d-flex justify-content-between">
-                                    <small class="card-text">23,162 trainees </small>
-                                    <small class="card-text">1h 50m</small>
-                                </p>
+                                    <div class="m-2 p-0">
+                                        <p class="card-text  d-flex justify-content-between">
+                                            <small class="card-text">22 trainees </small>
+                                            <small class="card-text"> 50m</small>
+                                        </p>
 
 
-                                <p class="card-text bold"><a href="http://" target="_blank"
-                                        rel="noopener noreferrer">{{$cozy->course_subt}}</a> </p>
-                                <p class="card-text d-flex justify-content-between">
+                                        <p class="card-text bold ellipsis">{{$cozy->course_subt}}</p>
 
-                                    <small class="card-text"><span class="material-icons-outlined">
-                                            bookmark_border
-                                        </span></small>
-                                </p>
-                            </div>
+                                    </div>
+
+                                </div>
+                            </a>
+
 
                         </div>
-                    </a>
 
-                    </div>
+
 
                     @endforeach
 
