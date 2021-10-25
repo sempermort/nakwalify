@@ -668,7 +668,7 @@
                     </div>
                 </div>
                 <div class="col-md-3">
-                    <div class="coy pl-2">
+                    <div class="coy pl-2 ml-3">
                         <h4><a class="text-dark text-nowrap" href="#">Future Basics</a></h4>
                         <p>Copyright &copy; 2021 &middot; All Rights Reserved &middot; </p>
                     </div>
