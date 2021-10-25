@@ -49,6 +49,61 @@
                 <i class="material-icons-outlined text-white bg-transparent">menu</i>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="dropdown w-80 ml-5">
+            <a class="btn btn-default bg-transparent text-white dropdown-toggle " href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Browse
+            </a>
+
+            <div class="dropdown-menu w-100" aria-labelledby="dropdownMenuLink">
+                <div class="row">
+
+            <div class=" nastay col-4">
+                <div class="m-5 ">
+                    <p class="border-bottom"> CREATE</p>
+                    <a href="#" class="waves-effect waves-light">Livestock </a>
+                    <a href="#" class="waves-effect waves-light">Agriculture</a>
+                    <a href="#" class="waves-effect waves-light">Arts & Crafts</a>
+                    <a href="#" class="waves-effect waves-light">Transportation</a>
+                    <a href="#" class="waves-effect waves-light">Life Skills</a>
+                    <a href="#" class="waves-effect waves-light">Graphics</a>
+                    <a href="#" class="waves-effect waves-light">Software Development</a>
+                    <a href="#" class="waves-effect waves-light">Foresty</a>
+
+
+
+                </div>
+            </div>
+            <div class=" nastay col-4 border-right">
+                <div class="m-5">
+                <div class="mb-3">
+                <p class=" border-bottom  "> BUILD</p>
+                <a href="#" class="waves-effect waves-light">Business Analytics </a>
+                <a href="#" class="waves-effect waves-light">Freelance &Enterpreneurship</a>
+                <a href="#" class="waves-effect waves-light">Leadership & Management</a>
+                <a href="#" class="waves-effect waves-light">Marketing</a>
+                </div>
+
+                <div class="mt-2">
+                <p class=" border-bottom  "> THRIVE</p>
+                <a href="#" class="waves-effect waves-light">Lifestyle</a>
+                <a href="#" class="waves-effect waves-light">Productivity</a>
+                </div>
+               </div>
+             </div>
+            <div class=" nastay col-4 ">
+            <div class="m-5">
+                <a href="#" class="waves-effect waves-light font-bolder">All Classes </a>
+                <a href="#" class="waves-effect waves-light font-bolder">Workshops</a>
+                <a href="#" class="waves-effect waves-light font-bolder">Student Projects</a>
+                <a href="#" class="waves-effect waves-light font-bolder">Live Sessions</a>
+
+
+            </div>
+                </div>
+                </div>
+            </div>
+            </div>
+
 
                 <ul class="navbar-nav ml-auto mr-4">
 

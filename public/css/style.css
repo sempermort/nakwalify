@@ -926,3 +926,7 @@ p {
     white-space: nowrap;
     text-overflow: ellipsis; */
 }
+
+.flex-even {
+    flex: 1;
+}
