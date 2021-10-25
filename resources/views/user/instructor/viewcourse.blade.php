@@ -5,9 +5,9 @@
 @section('content')
 
 
-@php$id=1;@php
+@php $id=1; @endphp
 <div class="sa4d25 bg-darknavy p-4">
-    <div class="mt-3">
+    <div class="mt-5">
         <h2 class="text-white"></i> {{$course->course_title}} </h2>
         <p class=" text-white">
             {{substr($course->course_des, 0, 130)}}...
