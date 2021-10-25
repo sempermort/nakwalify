@@ -632,13 +632,8 @@
             </div>
         </div>
         <footer class="bg-greenpale  pt-5 pb-5 w-100" style="background: #3a9982;">
-            <div class="row text-center kfooter">
-                <div class="col-md-3">
-                    <div class="coy pl-2">
-                        <h4><a class="text-dark text-nowrap" href="#">Future Basics</a></h4>
-                        <p>Copyright &copy; 2021 &middot; All Rights Reserved &middot; </p>
-                    </div>
-                </div>
+            <div class=" d-flex flex-row-reverse text-center kfooter">
+
                 <div class="col-md-9">
                     <div class="row ">
                         <div class="col-md-3 p-1 ">
@@ -670,6 +665,12 @@
                         </div>
 
 
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="coy pl-2">
+                        <h4><a class="text-dark text-nowrap" href="#">Future Basics</a></h4>
+                        <p>Copyright &copy; 2021 &middot; All Rights Reserved &middot; </p>
                     </div>
                 </div>
             </div>
