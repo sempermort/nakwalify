@@ -5,7 +5,7 @@
 @section('content')
 
 
-
+@php$id=1;@php
 <div class="sa4d25 bg-darknavy p-4">
     <div class="mt-3">
         <h2 class="text-white"></i> {{$course->course_title}} </h2>
