@@ -714,50 +714,49 @@
         </div>
     </div>
     <footer class="bg-greenpale  pt-5 pb-5 w-100" style="background: #3a9982;">
-        <div class="d-flex kfooter">
-            <div class="col-3">
-                <div class="coy pl-2">
-                    <h4><a class="text-dark text-nowrap" href="#">Future Basics</a></h4>
-                    <p>Copyright &copy; 2021 &middot; All Rights Reserved &middot; </p>
+            <div class="row text-center kfooter">
+                <div class="col-md-3">
+                    <div class="coy pl-2">
+                        <h4><a class="text-dark text-nowrap" href="#">Future Basics</a></h4>
+                        <p>Copyright &copy; 2021 &middot; All Rights Reserved &middot; </p>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="row ">
+                        <div class="col-md-3 p-1 ">
+                            <p class="nav-link m-0"><strong>Company</p></strong>
+                            <a class="nav-link" href="#">About</a>
+                            <a class="nav-link" href="#">Careers</a>
+                            <a class="nav-link" href="#">Partinerships</a>
+                            <a class="nav-link" href="#">Social Media</a>
+                        </div>
+                        <div class="col-md-3 p-1 ">
+                            <p class="nav-link m-0"><strong>Community</p></strong>
+                            <a class="nav-link" href="#">Free Classes</a>
+                            <a class="nav-link" href="#">Business</a>
+                            <a class="nav-link" href="#">packages</a>
+                            <a class="nav-link" href="#">Feature</a>
+                        </div>
+                        <div class="col-md-3 p-1 ">
+                            <p class="nav-link m-0"><strong>Contact</p></strong>
+                            <a class="nav-link" href="#">Resource</a>
+                            <a class="nav-link" href="#">Recource</a>
+                            <a class="nav-link" href="#">Resource</a>
+                        </div>
+
+                        <div class="col-md-3 p-1 ">
+                            <p class="nav-link m-0"><strong>More</p></strong>
+                            <a class="nav-link" href="#">Help</a>
+                            <a class="nav-link" href="#">Privacy</a>
+                            <a class="nav-link" href="#">Terms</a>
+                        </div>
+
+
+                    </div>
                 </div>
             </div>
-            <div class="col-9">
-                <div class="row ">
-                    <div class="col-3 p-1 ">
-                        <p class="nav-link m-0"><strong>Company</strong></p>
-                        <a class="nav-link" href="#">About</a>
-                        <a class="nav-link" href="#">Careers</a>
-                        <a class="nav-link" href="#">Partinerships</a>
-                        <a class="nav-link" href="#">Social Media</a>
-                    </div>
-                    <div class="col-3 p-1 ">
-                        <p class="nav-link m-0"><strong>Community</strong></p>
-                        <a class="nav-link" href="#">Free Classes</a>
-                        <a class="nav-link" href="#">Business</a>
-                        <a class="nav-link" href="#">packages</a>
-                        <a class="nav-link" href="#">Feature</a>
-                    </div>
-                    <div class="col-3 p-1 ">
-                        <p class="nav-link m-0"><strong>Contact</strong></p>
-                        <a class="nav-link" href="#">Resource</a>
-                        <a class="nav-link" href="#">Recource</a>
-                        <a class="nav-link" href="#">Resource</a>
-                    </div>
 
-                    <div class="col-3 p-1 ">
-                        <p class="nav-link m-0"><strong>More</strong></p>
-                        <a class="nav-link" href="#">Help</a>
-                        <a class="nav-link" href="#">Privacy</a>
-                        <a class="nav-link" href="#">Terms</a>
-                    </div>
-
-
-                </div>
-            </div>
-        </div>
-        <br>
-        <br>
-    </footer>
+        </footer>
 
 
     <script src="{{ asset('assets/js/jquery-3.3.1.min.js') }}"></script>

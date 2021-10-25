@@ -50,7 +50,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <div class="dropdown w-80 ml-5">
-            <a class="btn btn-default bg-transparent text-white dropdown-toggle " href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="btn bg-transparent text-white dropdown-toggle " href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Browse
             </a>
 
@@ -632,37 +632,37 @@
             </div>
         </div>
         <footer class="bg-greenpale  pt-5 pb-5 w-100" style="background: #3a9982;">
-            <div class="d-flex kfooter">
-                <div class="col-3">
+            <div class="row text-center kfooter">
+                <div class="col-md-3">
                     <div class="coy pl-2">
                         <h4><a class="text-dark text-nowrap" href="#">Future Basics</a></h4>
                         <p>Copyright &copy; 2021 &middot; All Rights Reserved &middot; </p>
                     </div>
                 </div>
-                <div class="col-9">
+                <div class="col-md-9">
                     <div class="row ">
-                        <div class="col-3 p-1 ">
+                        <div class="col-md-3 p-1 ">
                             <p class="nav-link m-0"><strong>Company</p></strong>
                             <a class="nav-link" href="#">About</a>
                             <a class="nav-link" href="#">Careers</a>
                             <a class="nav-link" href="#">Partinerships</a>
                             <a class="nav-link" href="#">Social Media</a>
                         </div>
-                        <div class="col-3 p-1 ">
+                        <div class="col-md-3 p-1 ">
                             <p class="nav-link m-0"><strong>Community</p></strong>
                             <a class="nav-link" href="#">Free Classes</a>
                             <a class="nav-link" href="#">Business</a>
                             <a class="nav-link" href="#">packages</a>
                             <a class="nav-link" href="#">Feature</a>
                         </div>
-                        <div class="col-3 p-1 ">
+                        <div class="col-md-3 p-1 ">
                             <p class="nav-link m-0"><strong>Contact</p></strong>
                             <a class="nav-link" href="#">Resource</a>
                             <a class="nav-link" href="#">Recource</a>
                             <a class="nav-link" href="#">Resource</a>
                         </div>
 
-                        <div class="col-3 p-1 ">
+                        <div class="col-md-3 p-1 ">
                             <p class="nav-link m-0"><strong>More</p></strong>
                             <a class="nav-link" href="#">Help</a>
                             <a class="nav-link" href="#">Privacy</a>

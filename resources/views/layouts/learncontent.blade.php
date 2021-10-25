@@ -9,1046 +9,299 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
-
-    <link
-        href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
-        rel="stylesheet">
+    <link href="{{ asset('assets/bootstrap-4.3.1-dist/css/bootstrap.min.css') }}" rel="stylesheet">
 
     <style>
-    body,
-    html {
-        width: 100%;
-        height: 100%;
-        margin: 0;
-        padding: 0
-    }
+   @import url(https://fonts.googleapis.com/css?family=Rubik:300,400,500,700);
+body {
+ font-family:Rubik,sans-serif;
+ position:relative;
+ font-weight:400;
+ font-size:15px;
+ overflow:hidden;
+}
+ul {
+ padding:0;
+ margin:0
+}
+li {
+ list-style:none
+}
+a:focus,a:hover {
+ text-decoration:none;
+ -webkit-transition:.3s ease;
+ -o-transition:.3s ease;
+ transition:.3s ease
+}
+a:focus {
+ outline:0
+}
+img {
+ max-width:100%
+}
+p {
+ font-size:16px;
+ line-height:30px;
+ color:#898b96;
+ font-weight:300
+}
+h4 {
+ font-family:Rubik,sans-serif;
+ margin:0;
+ font-weight:400;
+ padding:0;
+ color:#363940
+}
+a {
+ color:#5867dd
+}
+.no-padding {
+ padding:0!important
+}
+.go_top {
+ line-height:40px;
+ cursor:pointer;
+ width:40px;
+ background:#5867dd;
+ color:#fff;
+ position:fixed;
+ -webkit-box-shadow:0 4px 4px rgba(0,0,0,.1);
+ box-shadow:0 4px 4px rgba(0,0,0,.1);
+ -webkit-border-radius:50%;
+ border-radius:50%;
+ right:-webkit-calc((100% - 1140px)/ 2);
+ right:calc((100% - 1140px)/ 2);
+ z-index:111;
+ bottom:80px;
+ text-align:center
+}
+.go_top span {
+ display:inline-block
+}
+.footer-big {
+ padding:105px 0 65px 0
+}
+.footer-big .footer-widget {
+ margin-bottom:40px
+}
+.footer--light {
+ background:#e7e8ed
+}
+.footer-big .footer-menu ul li a,.footer-big p,.footer-big ul li {
+ color:#898b96
+}
+.footer-menu {
+ padding-left:48px
+}
+.footer-menu ul li a {
+ font-size:15px;
+ line-height:32px;
+ -webkit-transition:.3s;
+ -o-transition:.3s;
+ transition:.3s
+}
+.footer-menu ul li a:hover {
+ color:#5867dd
+}
+.footer-menu--1 {
+ width:100%
+}
+.footer-widget-title {
+ line-height:42px;
+ margin-bottom:10px;
+ font-size:18px
+}
+.mini-footer {
+ background:#192027;
+ text-align:center;
+ padding:32px 0
+}
+.mini-footer p {
+ margin:0;
+ line-height:26px;
+ font-size:15px;
+ color:#999
+}
+.mini-footer p a {
+ color:#5867dd
+}
+.mini-footer p a:hover {
+ color:#34bfa3
+}
+.widget-about img {
+ display:block;
+ margin-bottom:30px
+}
+.widget-about p {
+ font-weight:400
+}
+.widget-about .contact-details {
+ margin:30px 0 0 0
+}
+.widget-about .contact-details li {
+ margin-bottom:10px
+}
+.widget-about .contact-details li:last-child {
+ margin-bottom:0
+}
+.widget-about .contact-details li span {
+ padding-right:12px
+}
+.widget-about .contact-details li a {
+ color:#5867dd
+}
+@media (max-width:991px) {
+ .footer-menu {
+  padding-left:0
+ }
+}
 
-    iframe::-webkit-scrollbar {
-        display: none;
-    }
     </style>
-    <link href="{{ asset('css/materialize.css') }}" rel="stylesheet">
 </head>
 
 <body class="">
 
+<footer class="footer-area footer--light">
+  <div class="footer-big">
+    <!-- start .container -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 col-sm-12">
+          <div class="footer-widget">
+            <div class="widget-about">
+            <div class="coy pl-2">
+                        <h4><a class="text-dark text-nowrap" href="#">Future Basics</a></h4>
+                        <p>Copyright &copy; 2021 &middot; All Rights Reserved &middot; </p>
+            </div>>
+            </div>
+          </div>
+          <!-- Ends: .footer-widget -->
+        </div>
+        <!-- end /.col-md-4 -->
+        <div class="col-md-3 col-sm-4">
+          <div class="footer-widget">
+            <div class="footer-menu footer-menu--1">
+              <h4 class="footer-widget-title">Popular Category</h4>
+              <ul>
+                <li>
+                  <a href="#">Wordpress</a>
+                </li>
+                <li>
+                  <a href="#">Plugins</a>
+                </li>
+                <li>
+                  <a href="#">Joomla Template</a>
+                </li>
+                <li>
+                  <a href="#">Admin Template</a>
+                </li>
+                <li>
+                  <a href="#">HTML Template</a>
+                </li>
+              </ul>
+            </div>
+            <!-- end /.footer-menu -->
+          </div>
+          <!-- Ends: .footer-widget -->
+        </div>
+        <!-- end /.col-md-3 -->
 
-    <div class="collapsible h-100">
-        <li>
-            <div class="collapsible-header">
-                <div class="material-icons">
-                    expand_more
-                </div>
-                <div class="d-flex justify-content-between w-100">
-                    <div class="font-weight-bold">Introduction</div>
-                    <div class="d-flex justify-content-between col-3">
-                        <p class="text-nowrap">3 lectures </p>
-                        <p class="text-nowrap">• 9min</p>
-                    </div>
-                </div>
+        <div class="col-md-3 col-sm-4">
+          <div class="footer-widget">
+            <div class="footer-menu">
+              <h4 class="footer-widget-title">Our Company</h4>
+              <ul>
+                <li>
+                  <a href="#">About Us</a>
+                </li>
+                <li>
+                  <a href="#">How It Works</a>
+                </li>
+                <li>
+                  <a href="#">Affiliates</a>
+                </li>
+                <li>
+                  <a href="#">Testimonials</a>
+                </li>
+                <li>
+                  <a href="#">Contact Us</a>
+                </li>
+                <li>
+                  <a href="#">Plan &amp; Pricing</a>
+                </li>
+                <li>
+                  <a href="#">Blog</a>
+                </li>
+              </ul>
             </div>
-            <div class="collapsible-body">
-                <div class="d-flex justify-content-between w-100">
-                    <span class="material-icons">
-                        play_circle_filled
-                    </span>
-                    <div class="d-flex justify-content-between w-100  m-1 pl-2">
-                        <div class=""><a href="http://" class="underline" target="_blank"
-                                rel="noopener noreferrer">Course
-                                Outline</a> </div>
-                        <div class="d-flex justify-content-between col-3">
-                            <div class="div"><a href="http://" class="text-" target="_blank"
-                                    rel="noopener noreferrer">preview</a> </div>
-                            <div class="div">05:57</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-between w-100">
-                    <span class="material-icons">
-                        insert_drive_file
-                    </span>
-                    <div class="d-flex justify-content-between w-100 m-1 pl-2">
-                        <div class="">Join Our Online Classroom</div>
-                        <div class="d-flex justify-content-between col-3">
-                            <div class="div"></div>
-                            <div class="div">01:15</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-between w-100">
-                    <span class="material-icons">
-                        insert_drive_file
-                    </span>
-                    <div class="d-flex justify-content-between w-100 m-1 pl-2">
-                        <div class="">Excercise: Meet The Community</div>
-                        <div class="d-flex justify-content-between col-3">
-                            <div class="div"> </div>
-                            <div class="div">01:25</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </li>
-        <li>
-            <div class="collapsible-header">
-                <div class="material-icons">
-                    expand_more
-                </div>
-                <div class="d-flex justify-content-between w-100">
-                    <div class="font-weight-bold">Python Introduction</div>
-                    <div class="d-flex justify-content-between col-3">
-                        <div class="div">10 lectures </div>
-                        <div class="div">• 36min</div>
-                    </div>
-                </div>
-            </div>
-            <div class="collapsible-body">
-                <div class="d-flex justify-content-between w-100">
-                    <span class="material-icons">
-                        play_circle_filled
-                    </span>
-                    <div class="d-flex justify-content-between w-100  m-1 pl-2">
-                        <div class=""><a href="http://" class="underline" target="_blank" rel="noopener noreferrer">What
-                                Is Programming Language</a> </div>
-                        <div class="d-flex justify-content-between col-3">
-                            <div class="div"><a href="http://" class="text-" target="_blank"
-                                    rel="noopener noreferrer">preview</a> </div>
-                            <div class="div">06:25</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-between w-100">
-                    <span class="material-icons">
-                        play_circle_filled
-                    </span>
-                    <div class="d-flex justify-content-between w-100  m-1 pl-2">
-                        <div class=""><a href="http://" class="underline" target="_blank"
-                                rel="noopener noreferrer">Python Interpreter</a> </div>
-                        <div class="d-flex justify-content-between col-3">
-                            <div class="div"><a href="http://" class="text-" target="_blank"
-                                    rel="noopener noreferrer">preview</a> </div>
-                            <div class="div">07:04</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-between w-100">
-                    <span class="material-icons">
-                        play_circle_filled
-                    </span>
-                    <div class="d-flex justify-content-between w-100 m-1 pl-2">
-                        <div class="">How to Run Python Code</div>
-                        <div class="d-flex justify-content-between col-3">
-                            <div class="div"> </div>
-                            <div class="div">04:53</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-between w-100">
-                    <span class="material-icons">
-                        insert_drive_file
-                    </span>
-                    <div class="d-flex justify-content-between w-100 m-1 pl-2">
-                        <div class="">Note: Jumping To Developer Environment</div>
-                        <div class="d-flex justify-content-between col-3">
-                            <div class="div"> </div>
-                            <div class="div">01:25</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-between w-100">
-                    <span class="material-icons">
-                        play_circle_filled
-                    </span>
-                    <div class="d-flex justify-content-between w-100  m-1 pl-2">
-                        <div class=""><a href="http://" class="underline" target="_blank" rel="noopener noreferrer">Our
-                                First Python Program</a>
-                        </div>
-                        <div class="d-flex justify-content-between col-3">
-                            <div class="div"><a href="http://" class="text-" target="_blank"
-                                    rel="noopener noreferrer">preview</a>
-                            </div>
-                            <div class="div">07:43</div>
-                        </div>
-                    </div>
-                </div>
-        </li>
-        <li>
-            <div class="collapsible-header">
-                <div class="material-icons">
-                    expand_more
-                </div>
-                <div class="d-flex justify-content-between w-100">
-                    <div class="font-weight-bold">Python Introduction</div>
-                    <div class="d-flex justify-content-between col-3">
-                        <div class="div">10 lectures </div>
-                        <div class="div">• 36min</div>
-                    </div>
-                </div>
-            </div>
-            <div class="collapsible-body">
-                <div class="d-flex justify-content-between w-100">
-                    <span class="material-icons">
-                        play_circle_filled
-                    </span>
-                    <div class="d-flex justify-content-between w-100  m-1 pl-2">
-                        <div class=""><a href="http://" class="underline" target="_blank" rel="noopener noreferrer">What
-                                Is Programming Language</a> </div>
-                        <div class="d-flex justify-content-between col-3">
-                            <div class="div"><a href="http://" class="text-" target="_blank"
-                                    rel="noopener noreferrer">preview</a> </div>
-                            <div class="div">06:25</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-between w-100">
-                    <span class="material-icons">
-                        play_circle_filled
-                    </span>
-                    <div class="d-flex justify-content-between w-100  m-1 pl-2">
-                        <div class=""><a href="http://" class="underline" target="_blank"
-                                rel="noopener noreferrer">Python Basics</a> </div>
-                        <div class="d-flex justify-content-between col-3">
-                            <div class="div"><a href="http://" class="text-" target="_blank"
-                                    rel="noopener noreferrer">preview</a> </div>
-                            <div class="div">07:04</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-between w-100">
-                    <span class="material-icons">
-                        play_circle_filled
-                    </span>
-                    <div class="d-flex justify-content-between w-100 m-1 pl-2">
-                        <div class="">How to Run Python Code</div>
-                        <div class="d-flex justify-content-between col-3">
-                            <div class="div"> </div>
-                            <div class="div">04:53</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-between w-100">
-                    <span class="material-icons">
-                        insert_drive_file
-                    </span>
-                    <div class="d-flex justify-content-between w-100 m-1 pl-2">
-                        <div class="">Note: Jumping To Developer Environment</div>
-                        <div class="d-flex justify-content-between col-3">
-                            <div class="div"> </div>
-                            <div class="div">01:25</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-between w-100">
-                    <span class="material-icons">
-                        play_circle_filled
-                    </span>
-                    <div class="d-flex justify-content-between w-100  m-1 pl-2">
-                        <div class=""><a href="http://" class="underline" target="_blank" rel="noopener noreferrer">Our
-                                First Python Program</a>
-                        </div>
-                        <div class="d-flex justify-content-between col-3">
-                            <div class="div"><a href="http://" class="text-" target="_blank"
-                                    rel="noopener noreferrer">preview</a>
-                            </div>
-                            <div class="div">07:43</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-between w-100">
-                    <span class="material-icons">
-                        play_circle_filled
-                    </span>
-                    <div class="d-flex justify-content-between w-100  m-1 pl-2">
-                        <div class=""><a href="http://" class="underline" target="_blank" rel="noopener noreferrer">What
-                                Is Programming Language</a> </div>
-                        <div class="d-flex justify-content-between col-3">
-                            <div class="div"><a href="http://" class="text-" target="_blank"
-                                    rel="noopener noreferrer">preview</a> </div>
-                            <div class="div">06:25</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-between w-100">
-                    <span class="material-icons">
-                        play_circle_filled
-                    </span>
-                    <div class="d-flex justify-content-between w-100  m-1 pl-2">
-                        <div class=""><a href="http://" class="underline" target="_blank"
-                                rel="noopener noreferrer">Python Basics</a> </div>
-                        <div class="d-flex justify-content-between col-3">
-                            <div class="div"><a href="http://" class="text-" target="_blank"
-                                    rel="noopener noreferrer">preview</a> </div>
-                            <div class="div">07:04</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-between w-100">
-                    <span class="material-icons">
-                        play_circle_filled
-                    </span>
-                    <div class="d-flex justify-content-between w-100 m-1 pl-2">
-                        <div class="">How to Run Python Code</div>
-                        <div class="d-flex justify-content-between col-3">
-                            <div class="div"> </div>
-                            <div class="div">04:53</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-between w-100">
-                    <span class="material-icons">
-                        insert_drive_file
-                    </span>
-                    <div class="d-flex justify-content-between w-100 m-1 pl-2">
-                        <div class="">Note: Jumping To Developer Environment</div>
-                        <div class="d-flex justify-content-between col-3">
-                            <div class="div"> </div>
-                            <div class="div">01:25</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-between w-100">
-                    <span class="material-icons">
-                        play_circle_filled
-                    </span>
-                    <div class="d-flex justify-content-between w-100  m-1 pl-2">
-                        <div class=""><a href="http://" class="underline" target="_blank" rel="noopener noreferrer">Our
-                                First Python Program</a>
-                        </div>
-                        <div class="d-flex justify-content-between col-3">
-                            <div class="div"><a href="http://" class="text-" target="_blank"
-                                    rel="noopener noreferrer">preview</a>
-                            </div>
-                            <div class="div">07:43</div>
-                        </div>
-                    </div>
-                </div>
-        </li>
-        <li>
-            <div class="collapsible-header">
-                <div class="material-icons">
-                    expand_more
-                </div>
-                <div class="d-flex justify-content-between w-100">
-                    <div class="font-weight-bold">Python Basics II</div>
-                    <div class="d-flex justify-content-between col-3">
-                        <div class="div">10 lectures </div>
-                        <div class="div">• 36min</div>
-                    </div>
-                </div>
-            </div>
-            <div class="collapsible-body">
-                <div class="d-flex justify-content-between w-100">
-                    <span class="material-icons">
-                        play_circle_filled
-                    </span>
-                    <div class="d-flex justify-content-between w-100  m-1 pl-2">
-                        <div class=""><a href="http://" class="underline" target="_blank" rel="noopener noreferrer">What
-                                Is Programming Language</a> </div>
-                        <div class="d-flex justify-content-between col-3">
-                            <div class="div"><a href="http://" class="text-" target="_blank"
-                                    rel="noopener noreferrer">preview</a> </div>
-                            <div class="div">06:25</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-between w-100">
-                    <span class="material-icons">
-                        play_circle_filled
-                    </span>
-                    <div class="d-flex justify-content-between w-100  m-1 pl-2">
-                        <div class=""><a href="http://" class="underline" target="_blank"
-                                rel="noopener noreferrer">Python Interpreter</a> </div>
-                        <div class="d-flex justify-content-between col-3">
-                            <div class="div"><a href="http://" class="text-" target="_blank"
-                                    rel="noopener noreferrer">preview</a> </div>
-                            <div class="div">07:04</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-between w-100">
-                    <span class="material-icons">
-                        play_circle_filled
-                    </span>
-                    <div class="d-flex justify-content-between w-100 m-1 pl-2">
-                        <div class="">How to Run Python Code</div>
-                        <div class="d-flex justify-content-between col-3">
-                            <div class="div"> </div>
-                            <div class="div">04:53</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-between w-100">
-                    <span class="material-icons">
-                        insert_drive_file
-                    </span>
-                    <div class="d-flex justify-content-between w-100 m-1 pl-2">
-                        <div class="">Note: Jumping To Developer Environment</div>
-                        <div class="d-flex justify-content-between col-3">
-                            <div class="div"> </div>
-                            <div class="div">01:25</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-between w-100">
-                    <span class="material-icons">
-                        play_circle_filled
-                    </span>
-                    <div class="d-flex justify-content-between w-100  m-1 pl-2">
-                        <div class=""><a href="http://" class="underline" target="_blank" rel="noopener noreferrer">Our
-                                First Python Program</a>
-                        </div>
-                        <div class="d-flex justify-content-between col-3">
-                            <div class="div"><a href="http://" class="text-" target="_blank"
-                                    rel="noopener noreferrer">preview</a>
-                            </div>
-                            <div class="div">07:43</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-between w-100">
-                    <span class="material-icons">
-                        play_circle_filled
-                    </span>
-                    <div class="d-flex justify-content-between w-100  m-1 pl-2">
-                        <div class=""><a href="http://" class="underline" target="_blank" rel="noopener noreferrer">What
-                                Is Programming Language</a> </div>
-                        <div class="d-flex justify-content-between col-3">
-                            <div class="div"><a href="http://" class="text-" target="_blank"
-                                    rel="noopener noreferrer">preview</a> </div>
-                            <div class="div">06:25</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-between w-100">
-                    <span class="material-icons">
-                        play_circle_filled
-                    </span>
-                    <div class="d-flex justify-content-between w-100  m-1 pl-2">
-                        <div class=""><a href="http://" class="underline" target="_blank"
-                                rel="noopener noreferrer">Python Basics</a> </div>
-                        <div class="d-flex justify-content-between col-3">
-                            <div class="div"><a href="http://" class="text-" target="_blank"
-                                    rel="noopener noreferrer">preview</a> </div>
-                            <div class="div">07:04</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-between w-100">
-                    <span class="material-icons">
-                        play_circle_filled
-                    </span>
-                    <div class="d-flex justify-content-between w-100 m-1 pl-2">
-                        <div class="">How to Run Python Code</div>
-                        <div class="d-flex justify-content-between col-3">
-                            <div class="div"> </div>
-                            <div class="div">04:53</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-between w-100">
-                    <span class="material-icons">
-                        insert_drive_file
-                    </span>
-                    <div class="d-flex justify-content-between w-100 m-1 pl-2">
-                        <div class="">Note: Jumping To Developer Environment</div>
-                        <div class="d-flex justify-content-between col-3">
-                            <div class="div"> </div>
-                            <div class="div">01:25</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-between w-100">
-                    <span class="material-icons">
-                        play_circle_filled
-                    </span>
-                    <div class="d-flex justify-content-between w-100  m-1 pl-2">
-                        <div class=""><a href="http://" class="underline" target="_blank" rel="noopener noreferrer">Our
-                                First Python Program</a>
-                        </div>
-                        <div class="d-flex justify-content-between col-3">
-                            <div class="div"><a href="http://" class="text-" target="_blank"
-                                    rel="noopener noreferrer">preview</a>
-                            </div>
-                            <div class="div">07:43</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-between w-100">
-                    <span class="material-icons">
-                        play_circle_filled
-                    </span>
-                    <div class="d-flex justify-content-between w-100  m-1 pl-2">
-                        <div class=""><a href="http://" class="underline" target="_blank" rel="noopener noreferrer">What
-                                Is Programming Language</a> </div>
-                        <div class="d-flex justify-content-between col-3">
-                            <div class="div"><a href="http://" class="text-" target="_blank"
-                                    rel="noopener noreferrer">preview</a> </div>
-                            <div class="div">06:25</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-between w-100">
-                    <span class="material-icons">
-                        play_circle_filled
-                    </span>
-                    <div class="d-flex justify-content-between w-100  m-1 pl-2">
-                        <div class=""><a href="http://" class="underline" target="_blank"
-                                rel="noopener noreferrer">Python Basics</a> </div>
-                        <div class="d-flex justify-content-between col-3">
-                            <div class="div"><a href="http://" class="text-" target="_blank"
-                                    rel="noopener noreferrer">preview</a> </div>
-                            <div class="div">07:04</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-between w-100">
-                    <span class="material-icons">
-                        play_circle_filled
-                    </span>
-                    <div class="d-flex justify-content-between w-100 m-1 pl-2">
-                        <div class="">How to Run Python Code</div>
-                        <div class="d-flex justify-content-between col-3">
-                            <div class="div"> </div>
-                            <div class="div">04:53</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-between w-100">
-                    <span class="material-icons">
-                        insert_drive_file
-                    </span>
-                    <div class="d-flex justify-content-between w-100 m-1 pl-2">
-                        <div class="">Note: Jumping To Developer Environment</div>
-                        <div class="d-flex justify-content-between col-3">
-                            <div class="div"> </div>
-                            <div class="div">01:25</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-between w-100">
-                    <span class="material-icons">
-                        play_circle_filled
-                    </span>
-                    <div class="d-flex justify-content-between w-100  m-1 pl-2">
-                        <div class=""><a href="http://" class="underline" target="_blank" rel="noopener noreferrer">Our
-                                First Python Program</a>
-                        </div>
-                        <div class="d-flex justify-content-between col-3">
-                            <div class="div"><a href="http://" class="text-" target="_blank"
-                                    rel="noopener noreferrer">preview</a>
-                            </div>
-                            <div class="div">07:43</div>
-                        </div>
-                    </div>
-                </div>
-        </li>
-        <li>
-            <div class="collapsible-header">
-                <div class="material-icons">
-                    expand_more
-                </div>
-                <div class="d-flex justify-content-between w-100">
-                    <div class="font-weight-bold">Developer Environment</div>
-                    <div class="d-flex justify-content-between col-3">
-                        <div class="div">10 lectures </div>
-                        <div class="div">• 36min</div>
-                    </div>
-                </div>
-            </div>
-            <div class="collapsible-body">
-                <div class="d-flex justify-content-between w-100">
-                    <span class="material-icons">
-                        play_circle_filled
-                    </span>
-                    <div class="d-flex justify-content-between w-100  m-1 pl-2">
-                        <div class=""><a href="http://" class="underline" target="_blank" rel="noopener noreferrer">What
-                                Is Programming Language</a> </div>
-                        <div class="d-flex justify-content-between col-3">
-                            <div class="div"><a href="http://" class="text-" target="_blank"
-                                    rel="noopener noreferrer">preview</a> </div>
-                            <div class="div">06:25</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-between w-100">
-                    <span class="material-icons">
-                        play_circle_filled
-                    </span>
-                    <div class="d-flex justify-content-between w-100  m-1 pl-2">
-                        <div class=""><a href="http://" class="underline" target="_blank"
-                                rel="noopener noreferrer">Python Interpreter</a> </div>
-                        <div class="d-flex justify-content-between col-3">
-                            <div class="div"><a href="http://" class="text-" target="_blank"
-                                    rel="noopener noreferrer">preview</a> </div>
-                            <div class="div">07:04</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-between w-100">
-                    <span class="material-icons">
-                        play_circle_filled
-                    </span>
-                    <div class="d-flex justify-content-between w-100 m-1 pl-2">
-                        <div class="">How to Run Python Code</div>
-                        <div class="d-flex justify-content-between col-3">
-                            <div class="div"> </div>
-                            <div class="div">04:53</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-between w-100">
-                    <span class="material-icons">
-                        insert_drive_file
-                    </span>
-                    <div class="d-flex justify-content-between w-100 m-1 pl-2">
-                        <div class="">Note: Jumping To Developer Environment</div>
-                        <div class="d-flex justify-content-between col-3">
-                            <div class="div"> </div>
-                            <div class="div">01:25</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-between w-100">
-                    <span class="material-icons">
-                        play_circle_filled
-                    </span>
-                    <div class="d-flex justify-content-between w-100  m-1 pl-2">
-                        <div class=""><a href="http://" class="underline" target="_blank" rel="noopener noreferrer">Our
-                                First Python Program</a>
-                        </div>
-                        <div class="d-flex justify-content-between col-3">
-                            <div class="div"><a href="http://" class="text-" target="_blank"
-                                    rel="noopener noreferrer">preview</a>
-                            </div>
-                            <div class="div">07:43</div>
-                        </div>
-                    </div>
-                </div>
-        </li>
-        <li>
-            <div class="collapsible-header">
-                <div class="material-icons">
-                    expand_more
-                </div>
-                <div class="d-flex justify-content-between w-100">
-                    <div class="font-weight-bold">Advanced Python :Object Oriented Programming</div>
-                    <div class="d-flex justify-content-between col-3">
-                        <div class="div">10 lectures </div>
-                        <div class="div">• 36min</div>
-                    </div>
-                </div>
-            </div>
-            <div class="collapsible-body">
-                <div class="d-flex justify-content-between w-100">
-                    <span class="material-icons">
-                        play_circle_filled
-                    </span>
-                    <div class="d-flex justify-content-between w-100  m-1 pl-2">
-                        <div class=""><a href="http://" class="underline" target="_blank" rel="noopener noreferrer">What
-                                Is Programming Language</a> </div>
-                        <div class="d-flex justify-content-between col-3">
-                            <div class="div"><a href="http://" class="text-" target="_blank"
-                                    rel="noopener noreferrer">preview</a> </div>
-                            <div class="div">06:25</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-between w-100">
-                    <span class="material-icons">
-                        play_circle_filled
-                    </span>
-                    <div class="d-flex justify-content-between w-100  m-1 pl-2">
-                        <div class=""><a href="http://" class="underline" target="_blank"
-                                rel="noopener noreferrer">Python Interpreter</a> </div>
-                        <div class="d-flex justify-content-between col-3">
-                            <div class="div"><a href="http://" class="text-" target="_blank"
-                                    rel="noopener noreferrer">preview</a> </div>
-                            <div class="div">07:04</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-between w-100">
-                    <span class="material-icons">
-                        play_circle_filled
-                    </span>
-                    <div class="d-flex justify-content-between w-100 m-1 pl-2">
-                        <div class="">How to Run Python Code</div>
-                        <div class="d-flex justify-content-between col-3">
-                            <div class="div"> </div>
-                            <div class="div">04:53</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-between w-100">
-                    <span class="material-icons">
-                        insert_drive_file
-                    </span>
-                    <div class="d-flex justify-content-between w-100 m-1 pl-2">
-                        <div class="">Note: Jumping To Developer Environment</div>
-                        <div class="d-flex justify-content-between col-3">
-                            <div class="div"> </div>
-                            <div class="div">01:25</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-between w-100">
-                    <span class="material-icons">
-                        play_circle_filled
-                    </span>
-                    <div class="d-flex justify-content-between w-100  m-1 pl-2">
-                        <div class=""><a href="http://" class="underline" target="_blank" rel="noopener noreferrer">Our
-                                First Python Program</a>
-                        </div>
-                        <div class="d-flex justify-content-between col-3">
-                            <div class="div"><a href="http://" class="text-" target="_blank"
-                                    rel="noopener noreferrer">preview</a>
-                            </div>
-                            <div class="div">07:43</div>
-                        </div>
-                    </div>
-                </div>
-        </li>
-        <li>
-            <div class="collapsible-header">
-                <div class="material-icons">
-                    expand_more
-                </div>
-                <div class="d-flex justify-content-between w-100">
-                    <div class="font-weight-bold">Advanced Python: Functional programming</div>
-                    <div class="d-flex justify-content-between col-3">
-                        <div class="div">10 lectures </div>
-                        <div class="div">• 36min</div>
-                    </div>
-                </div>
-            </div>
-            <div class="collapsible-body">
-                <div class="d-flex justify-content-between w-100">
-                    <span class="material-icons">
-                        play_circle_filled
-                    </span>
-                    <div class="d-flex justify-content-between w-100  m-1 pl-2">
-                        <div class=""><a href="http://" class="underline" target="_blank" rel="noopener noreferrer">What
-                                Is Programming Language</a> </div>
-                        <div class="d-flex justify-content-between col-3">
-                            <div class="div"><a href="http://" class="text-" target="_blank"
-                                    rel="noopener noreferrer">preview</a> </div>
-                            <div class="div">06:25</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-between w-100">
-                    <span class="material-icons">
-                        play_circle_filled
-                    </span>
-                    <div class="d-flex justify-content-between w-100  m-1 pl-2">
-                        <div class=""><a href="http://" class="underline" target="_blank"
-                                rel="noopener noreferrer">Python Interpreter</a> </div>
-                        <div class="d-flex justify-content-between col-3">
-                            <div class="div"><a href="http://" class="text-" target="_blank"
-                                    rel="noopener noreferrer">preview</a> </div>
-                            <div class="div">07:04</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-between w-100">
-                    <span class="material-icons">
-                        play_circle_filled
-                    </span>
-                    <div class="d-flex justify-content-between w-100 m-1 pl-2">
-                        <div class="">How to Run Python Code</div>
-                        <div class="d-flex justify-content-between col-3">
-                            <div class="div"> </div>
-                            <div class="div">04:53</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-between w-100">
-                    <span class="material-icons">
-                        insert_drive_file
-                    </span>
-                    <div class="d-flex justify-content-between w-100 m-1 pl-2">
-                        <div class="">Note: Jumping To Developer Environment</div>
-                        <div class="d-flex justify-content-between col-3">
-                            <div class="div"> </div>
-                            <div class="div">01:25</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-between w-100">
-                    <span class="material-icons">
-                        play_circle_filled
-                    </span>
-                    <div class="d-flex justify-content-between w-100  m-1 pl-2">
-                        <div class=""><a href="http://" class="underline" target="_blank" rel="noopener noreferrer">Our
-                                First Python Program</a>
-                        </div>
-                        <div class="d-flex justify-content-between col-3">
-                            <div class="div"><a href="http://" class="text-" target="_blank"
-                                    rel="noopener noreferrer">preview</a>
-                            </div>
-                            <div class="div">07:43</div>
-                        </div>
-                    </div>
-                </div>
-        </li>
-        <li>
-            <div class="collapsible-header">
-                <div class="material-icons">
-                    expand_more
-                </div>
-                <div class="d-flex justify-content-between w-100">
-                    <div class="font-weight-bold">Advanced Python: Decorators</div>
-                    <div class="d-flex justify-content-between col-3">
-                        <div class="div">10 lectures </div>
-                        <div class="div">• 36min</div>
-                    </div>
-                </div>
-            </div>
-            <div class="collapsible-body">
-                <div class="d-flex justify-content-between w-100">
-                    <span class="material-icons">
-                        play_circle_filled
-                    </span>
-                    <div class="d-flex justify-content-between w-100  m-1 pl-2">
-                        <div class=""><a href="http://" class="underline" target="_blank" rel="noopener noreferrer">What
-                                Is Programming Language</a> </div>
-                        <div class="d-flex justify-content-between col-3">
-                            <div class="div"><a href="http://" class="text-" target="_blank"
-                                    rel="noopener noreferrer">preview</a> </div>
-                            <div class="div">06:25</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-between w-100">
-                    <span class="material-icons">
-                        play_circle_filled
-                    </span>
-                    <div class="d-flex justify-content-between w-100  m-1 pl-2">
-                        <div class=""><a href="http://" class="underline" target="_blank"
-                                rel="noopener noreferrer">Python Interpreter</a> </div>
-                        <div class="d-flex justify-content-between col-3">
-                            <div class="div"><a href="http://" class="text-" target="_blank"
-                                    rel="noopener noreferrer">preview</a> </div>
-                            <div class="div">07:04</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-between w-100">
-                    <span class="material-icons">
-                        play_circle_filled
-                    </span>
-                    <div class="d-flex justify-content-between w-100 m-1 pl-2">
-                        <div class="">How to Run Python Code</div>
-                        <div class="d-flex justify-content-between col-3">
-                            <div class="div"> </div>
-                            <div class="div">04:53</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-between w-100">
-                    <span class="material-icons">
-                        insert_drive_file
-                    </span>
-                    <div class="d-flex justify-content-between w-100 m-1 pl-2">
-                        <div class="">Note: Jumping To Developer Environment</div>
-                        <div class="d-flex justify-content-between col-3">
-                            <div class="div"> </div>
-                            <div class="div">01:25</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-between w-100">
-                    <span class="material-icons">
-                        play_circle_filled
-                    </span>
-                    <div class="d-flex justify-content-between w-100  m-1 pl-2">
-                        <div class=""><a href="http://" class="underline" target="_blank" rel="noopener noreferrer">Our
-                                First Python Program</a>
-                        </div>
-                        <div class="d-flex justify-content-between col-3">
-                            <div class="div"><a href="http://" class="text-" target="_blank"
-                                    rel="noopener noreferrer">preview</a>
-                            </div>
-                            <div class="div">07:43</div>
-                        </div>
-                    </div>
-                </div>
-        </li>
-        <li>
-            <div class="collapsible-header">
-                <div class="material-icons">
-                    expand_more
-                </div>
-                <div class="d-flex justify-content-between w-100">
-                    <div class="font-weight-bold">Advanced Python:Error Handling</div>
-                    <div class="d-flex justify-content-between col-3">
-                        <div class="div">10 lectures </div>
-                        <div class="div">• 36min</div>
-                    </div>
-                </div>
-            </div>
-            <div class="collapsible-body">
-                <div class="d-flex justify-content-between w-100">
-                    <span class="material-icons">
-                        play_circle_filled
-                    </span>
-                    <div class="d-flex justify-content-between w-100  m-1 pl-2">
-                        <div class=""><a href="http://" class="underline" target="_blank" rel="noopener noreferrer">What
-                                Is Programming Language</a> </div>
-                        <div class="d-flex justify-content-between col-3">
-                            <div class="div"><a href="http://" class="text-" target="_blank"
-                                    rel="noopener noreferrer">preview</a> </div>
-                            <div class="div">06:25</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-between w-100">
-                    <span class="material-icons">
-                        play_circle_filled
-                    </span>
-                    <div class="d-flex justify-content-between w-100  m-1 pl-2">
-                        <div class=""><a href="http://" class="underline" target="_blank"
-                                rel="noopener noreferrer">Python Interpreter</a> </div>
-                        <div class="d-flex justify-content-between col-3">
-                            <div class="div"><a href="http://" class="text-" target="_blank"
-                                    rel="noopener noreferrer">preview</a> </div>
-                            <div class="div">07:04</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-between w-100">
-                    <span class="material-icons">
-                        play_circle_filled
-                    </span>
-                    <div class="d-flex justify-content-between w-100 m-1 pl-2">
-                        <div class="">How to Run Python Code</div>
-                        <div class="d-flex justify-content-between col-3">
-                            <div class="div"> </div>
-                            <div class="div">04:53</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-between w-100">
-                    <span class="material-icons">
-                        insert_drive_file
-                    </span>
-                    <div class="d-flex justify-content-between w-100 m-1 pl-2">
-                        <div class="">Note: Jumping To Developer Environment</div>
-                        <div class="d-flex justify-content-between col-3">
-                            <div class="div"> </div>
-                            <div class="div">01:25</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-between w-100">
-                    <span class="material-icons">
-                        play_circle_filled
-                    </span>
-                    <div class="d-flex justify-content-between w-100  m-1 pl-2">
-                        <div class=""><a href="http://" class="underline" target="_blank" rel="noopener noreferrer">Our
-                                First Python Program</a>
-                        </div>
-                        <div class="d-flex justify-content-between col-3">
-                            <div class="div"><a href="http://" class="text-" target="_blank"
-                                    rel="noopener noreferrer">preview</a>
-                            </div>
-                            <div class="div">07:43</div>
-                        </div>
-                    </div>
-                </div>
-        </li>
-        <li>
-            <div class="collapsible-header">
-                <div class="material-icons">
-                    expand_more
-                </div>
-                <div class="d-flex justify-content-between w-100">
-                    <div class="font-weight-bold">Advanced Python Generators</div>
-                    <div class="d-flex justify-content-between col-3">
-                        <div class="div">10 lectures </div>
-                        <div class="div">• 36min</div>
-                    </div>
-                </div>
-            </div>
-            <div class="collapsible-body">
-                <div class="d-flex justify-content-between w-100">
-                    <span class="material-icons">
-                        play_circle_filled
-                    </span>
-                    <div class="d-flex justify-content-between w-100  m-1 pl-2">
-                        <div class=""><a href="http://" class="underline" target="_blank" rel="noopener noreferrer">What
-                                Is Programming Language</a> </div>
-                        <div class="d-flex justify-content-between col-3">
-                            <div class="div"><a href="http://" class="text-" target="_blank"
-                                    rel="noopener noreferrer">preview</a> </div>
-                            <div class="div">06:25</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-between w-100">
-                    <span class="material-icons">
-                        play_circle_filled
-                    </span>
-                    <div class="d-flex justify-content-between w-100  m-1 pl-2">
-                        <div class=""><a href="http://" class="underline" target="_blank"
-                                rel="noopener noreferrer">Python Interpreter</a> </div>
-                        <div class="d-flex justify-content-between col-3">
-                            <div class="div"><a href="http://" class="text-" target="_blank"
-                                    rel="noopener noreferrer">preview</a> </div>
-                            <div class="div">07:04</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-between w-100">
-                    <span class="material-icons">
-                        play_circle_filled
-                    </span>
-                    <div class="d-flex justify-content-between w-100 m-1 pl-2">
-                        <div class="">How to Run Python Code</div>
-                        <div class="d-flex justify-content-between col-3">
-                            <div class="div"> </div>
-                            <div class="div">04:53</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-between w-100">
-                    <span class="material-icons">
-                        insert_drive_file
-                    </span>
-                    <div class="d-flex justify-content-between w-100 m-1 pl-2">
-                        <div class="">Note: Jumping To Developer Environment</div>
-                        <div class="d-flex justify-content-between col-3">
-                            <div class="div"> </div>
-                            <div class="div">01:25</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="d-flex justify-content-between w-100">
-                    <span class="material-icons">
-                        play_circle_filled
-                    </span>
-                    <div class="d-flex justify-content-between w-100  m-1 pl-2">
-                        <div class=""><a href="http://" class="underline" target="_blank" rel="noopener noreferrer">Our
-                                First Python Program</a>
-                        </div>
-                        <div class="d-flex justify-content-between col-3">
-                            <div class="div"><a href="http://" class="text-" target="_blank"
-                                    rel="noopener noreferrer">preview</a>
-                            </div>
-                            <div class="div">07:43</div>
-                        </div>
-                    </div>
-                </div>
-        </li>
+            <!-- end /.footer-menu -->
+          </div>
+          <!-- Ends: .footer-widget -->
+        </div>
+        <!-- end /.col-lg-3 -->
 
+        <div class="col-md-3 col-sm-4">
+          <div class="footer-widget">
+            <div class="footer-menu no-padding">
+              <h4 class="footer-widget-title">Help Support</h4>
+              <ul>
+                <li>
+                  <a href="#">Support Forum</a>
+                </li>
+                <li>
+                  <a href="#">Terms &amp; Conditions</a>
+                </li>
+                <li>
+                  <a href="#">Support Policy</a>
+                </li>
+                <li>
+                  <a href="#">Refund Policy</a>
+                </li>
+                <li>
+                  <a href="#">FAQs</a>
+                </li>
+                <li>
+                  <a href="#">Buyers Faq</a>
+                </li>
+                <li>
+                  <a href="#">Sellers Faq</a>
+                </li>
+              </ul>
+            </div>
+            <!-- end /.footer-menu -->
+          </div>
+          <!-- Ends: .footer-widget -->
+        </div>
+        <!-- Ends: .col-lg-3 -->
 
+      </div>
+      <!-- end /.row -->
     </div>
+    <!-- end /.container -->
+  </div>
+  <!-- end /.footer-big -->
 
+  <div class="mini-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="copyright-text">
+            <p>© 2018
+              <a href="#">DigiPro</a>. All rights reserved. Created by
+              <a href="#">AazzTech</a>
+            </p>
+          </div>
 
-
-
-
-    <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
+          <div class="go_top">
+            <span class="icon-arrow-up"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+<script src="{{ asset('assets/js/jquery.min.js') }}"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.js"></script>
 
     <script src="{{ asset('js/materialize.js') }}"></script>
@@ -1057,7 +310,4 @@
         $('.collapsible').collapsible();
     });
     </script>
-
-</body>
-
 </html>
