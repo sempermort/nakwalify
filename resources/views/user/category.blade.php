@@ -6,8 +6,11 @@
     #mainavbar{
         background-color: #3a9982;
     }
+    .navbar-brand a{
+        color:#fff!important;
+    }
 </style>
-<div class="sa4d25 p-5">
+<div class="sa4d25 p-5 mt-5">
     <div class="d-flex">
         <div class=" hide-on-med-and-down d-none d-md-block d-lg-block mt-5 col-3">
             <div class=" nastay">
