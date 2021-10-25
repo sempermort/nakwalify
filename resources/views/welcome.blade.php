@@ -756,8 +756,8 @@
                     <div class=" itm">
                         <div class="banner-content">
 
-                            <div class=""><span>Build Meaningful Self-Care Into
-                                    Every Day</span></div>
+                            <div class="banner-h">Build Meaningful Self-Care Into
+                                    Every Day</div>
                             <div class="banner-description">Join superstar Jonathan Van Ness and
                                 best-selling author Chidera Eggerue for this powerful new
                                 self-care workshop, kicking off July 12th.</div>
@@ -776,8 +776,8 @@
                     <div class=" itm">
                         <div class="banner-content">
 
-                            <div class=""><span>Build Meaningful Self-Care Into
-                                    Every Day</span></div>
+                            <div class="banner-h">Build Meaningful Self-Care Into
+                                    Every Day</div>
                             <div class="banner-description">Join superstar Jonathan Van Ness and
                                 best-selling author Chidera Eggerue for this powerful new
                                 self-care workshop, kicking off July 12th.</div>
