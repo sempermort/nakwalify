@@ -49,12 +49,12 @@
                 <i class="material-icons-outlined text-white bg-transparent">menu</i>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <div class="dropdown w-80 ml-5">
+            <div class="  ml-5">
             <a class="btn bg-transparent text-white dropdown-toggle " href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Browse
             </a>
 
-            <div class="dropdown-menu w-100" aria-labelledby="dropdownMenuLink">
+            <div class="dropdown-menu  " aria-labelledby="dropdownMenuLink" style="margin-left:223px;top: unset;">
                 <div class="row">
 
             <div class=" nastay col-4">
