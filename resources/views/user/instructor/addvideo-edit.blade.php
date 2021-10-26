@@ -27,7 +27,7 @@
                             <div class="card-body p-0 pt-2 m-1 border">
                                 <div class=" btn-group-vertical col-12  text-left" id="vidb" role="group">
                                 <input type="text" name="course_id"
-                                value={{$vidoz->first()->course_id}}  hidden />
+                                value="{{isset($vidoz->first()->course_id)? $vidoz->first()->course_id:''}}"  hidden />
                                     @php $i=1;@endphp
                                     @foreach($vidoz as $vido)
                                     <div class="d-flex justify-content-between  w-100" id="{{substr('$vido->video_title',6)}}">

@@ -16,20 +16,19 @@
                 </div> -->
                 <div class="row">
                     <div class="col-md-4 col-lg-3 white p-0 vid-coz " id="vid">
-
-                                    <div class="">
+                  
+                      <div class="">
                                     <a class=" "   href="{{route('viewcourse',$selcoz->id)}}">
-                                    @if(isset($cozy->mediaCover->file_path))
-                                    <video width="400" height="220" poster="{{route('get-copic',explode('/',$selcoz->mediaCover->file_path)[1])}}" class="w-100 object-cover "
-                            controls>
-                                @else
-                                <video width="400" height="220" poster="" class="w-100 object-cover "
-                            controls>
-                                            @endif
-
-
-                        </video></a>
-                                    </div>
+                                   
+                                    <video width="400" height="220" 
+                                    @if(isset($selcoz->mediaCover->file_path))
+                                    @php $src=$selcoz->mediaCover->file_path; @endphp
+                                    <img class="card-img-top  object-cover h-100 w-100"
+                                    poster="{{route('get-copic',explode('/',$src)[1])}}"
+                                    @endif
+                                    controls></video>
+                                </a>
+                    </div>
 
 
                         <div class="mt-0 ">
@@ -129,7 +128,7 @@
 
                             <div class="">
                                 <button class="btn btn-outline-dark font-weight-bold border border-white black text-white  p-2
-                                 ">Wish list <span class="material-icons-outlined " style="font-size:16px">
+                                 " onclick="addwish()">Wish list <span class="material-icons-outlined " style="font-size:16px">
                                         favorite_border
                                     </span></button>
                                 <button
@@ -392,5 +391,16 @@ function myFunction(x) {
 var x = window.matchMedia("(max-width: 769px)")
 myFunction(x) // Call listener function at run time
 x.addListener(myFunction) // Attach listener function on state changes
+
+
+function addwish()
+{
+    var coz_id={{$selcoz->id}};
+    var user_id={{isset(auth()->user()->id)?auth()->user()->id:""}};
+    var vel="wish";
+    var urlo={{route('wishlist')}};
+
+    ajaxedw(coz_id,user_id,urlo,vel);
+}
 </script>
 @endsection

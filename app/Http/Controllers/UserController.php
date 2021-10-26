@@ -602,11 +602,7 @@ public function deletevid($id)
     public function addCover($id)
     {
 
-        if ($id != null) {
-            return redirect()->route('viewcourse', ['id' => $id]);
-        } else {
-            return redirect()->route('addcontent', ['id' => $id]);
-        }
+        return view('user.instructor.addcover')->with('courseid', $id);
     }
 
     public function postaddCover(Request $request)
@@ -687,21 +683,12 @@ public function deletevid($id)
     { $wish = Wishlist::create([
         'course_id' => $request->course_id,
         'category_id' => $request->user_Id,
-        'wished' => $request->vel,
+        'wishtype' => $request->vel,
     ]);
 
     return Response()->json($wish);
     }
-    public function complited(Request $request)
-    {
-         $comp = Wishlist::create([
-            'course_id' => $request->course_id,
-            'category_id' => $request->user_Id,
-            'completed' => $request->vel,
-        ]);
-
-        return Response()->json($comp);
-    }
+   
 
     public function review()
     {
