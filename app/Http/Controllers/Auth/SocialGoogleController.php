@@ -25,21 +25,8 @@ public function callback()
             $finduser = User::where('google_id', $user->id)->first();
             $userr2 = User::where('email', $user->email)->first();
             if($finduser){
-                Auth::login($finduser);             
-                switch(Auth::user()->role_id){
-                    case 1:
-                    $this->redirectTo = '/instructordashboard';
-                    return $this->redirectTo;
-                        break;
-                    case 2:
-                            $this->redirectTo = '/category';
-                        return $this->redirectTo;
-                        break;
-                  
-                    default:
-                        $this->redirectTo = '/login';
-                        return $this->redirectTo;
-                }
+                Auth::login($finduser);
+                return redirect('/category');
             }
             else if($userr2){
                 Auth::login($userr2);
