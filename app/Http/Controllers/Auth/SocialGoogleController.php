@@ -25,8 +25,21 @@ public function callback()
             $finduser = User::where('google_id', $user->id)->first();
             $userr2 = User::where('email', $user->email)->first();
             if($finduser){
-                Auth::login($finduser);
-                return redirect('/category');
+                Auth::login($finduser);             
+                switch(Auth::user()->role_id){
+                    case 1:
+                    $this->redirectTo = '/instructordashboard';
+                    return $this->redirectTo;
+                        break;
+                    case 2:
+                            $this->redirectTo = '/category';
+                        return $this->redirectTo;
+                        break;
+                  
+                    default:
+                        $this->redirectTo = '/login';
+                        return $this->redirectTo;
+                }
             }
             else if($userr2){
                 Auth::login($userr2);
@@ -39,7 +52,7 @@ public function callback()
                     'fname' => $namearray[0],
                     'lname' => $namearray[1],
                     'email' => $user->email,
-                    'role_id'=>'1',
+                    'role_id'=>'2',
                     'google_id'=> $user->id,
                     'password' => encrypt('')
                 ]);
