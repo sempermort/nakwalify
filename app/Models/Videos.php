@@ -26,4 +26,8 @@ class Videos extends Model
     {
         return $this->hasMany(Course_files::class);
     }
+    public function question()
+    {
+        return $this->hasMany(Questions::class);
+    }
 }

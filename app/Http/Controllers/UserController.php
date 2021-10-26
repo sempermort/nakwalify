@@ -155,7 +155,7 @@ class UserController extends Controller
     {
         $course = Course::findOrFail($request->cid);
         $validatedData = $request->validate([
-            'course_title' => 'required|unique:courses,course_title',
+            'course_title' => 'required',
             'course_subt' => 'required',
             'language' => 'required',
             'category_Id' => 'required',
@@ -166,7 +166,7 @@ class UserController extends Controller
             'course_des' => 'required',
 
         ]);
-  
+
         try {
 
             $course->fill($validatedData)->save();
@@ -175,7 +175,7 @@ class UserController extends Controller
         } catch (\Illuminate\Database\QueryException $ex) {
             dd($ex->getMessage());
         }
-        return redirect()->route('editcontent', ['id' => $course_ided->id]);
+        return redirect()->route('editcontent', ['id' => $course->id]);
     }
 
     public function postaddCourse(Request $request)
@@ -203,6 +203,25 @@ class UserController extends Controller
         return redirect()->route('addcontent', ['id' => $course_ided->id]);
     }
 
+    public function deletecourse($id)
+{
+    $c = Course::find($id);
+    foreach($c->Videos as $vi)
+    {
+        foreach($vi->question as $qn)
+        {
+            foreach($qn->answers as $an)
+                {
+                    $an->delete();
+                }
+            $qn->delete();
+        }
+        $vi->delete();
+    }
+        $c->delete();
+
+        return Response()->json($c);
+}
 //Add course page 2
     public function addVideos($idcourse)
     {
@@ -389,7 +408,7 @@ class UserController extends Controller
     public function deleteqstn($id)
 {
     $q =Questions::find($id);
-  
+
         $q->delete();
         $a=Answers::where('question_id',$id)->get();
         foreach($a as $an)
@@ -663,6 +682,25 @@ public function deletevid($id)
     public function deleteacc()
     {
         return view('user.account.deleteacc');
+    }
+    public function wishlist(Request $request)
+    { $wish = Wishlist::create([
+        'course_id' => $request->course_id,
+        'category_id' => $request->user_Id,
+        'wished' => $request->vel,
+    ]);
+
+    return Response()->json($wish);
+    }
+    public function complited(Request $request)
+    {
+         $comp = Wishlist::create([
+            'course_id' => $request->course_id,
+            'category_id' => $request->user_Id,
+            'completed' => $request->vel,
+        ]);
+
+        return Response()->json($comp);
     }
 
     public function review()

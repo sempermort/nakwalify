@@ -1114,6 +1114,41 @@
             });
 
         };
+
+function ajaxedw(coz-id,user_id,urlo,vel) {
+
+
+var form_data = new FormData();
+
+form_data.append('user_id',user_id );
+form_data.append('course-id',coz-id);
+
+$.ajax({
+    type: 'POST',
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    },
+    url: urlo,
+    data: form_data,
+    processData: false,
+    contentType: false,
+    success: function (data) {
+        if ((data.errors)) {
+            alert(data.errors);
+        } else {
+        alert("wished");
+
+        }
+    },
+    error: function (data) {
+        $('.loading-overlay-image-container').hide();
+        $('.loading-overlay').hide();
+
+    }
+
+
+});
+};
     </script>
 
     <script src="{{ asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>

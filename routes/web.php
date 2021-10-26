@@ -41,6 +41,8 @@ Route::get('/addcourse', 'App\Http\Controllers\UserController@addCourse')->name(
 Route::get('/editcourse/{id}', 'App\Http\Controllers\UserController@editCourse')->name('editcourse');
 Route::post('/addcoursepost', 'App\Http\Controllers\UserController@postaddCourse')->name('addcoursepost');
 Route::post('/editcoursepost', 'App\Http\Controllers\UserController@posteditCourse')->name('editcoursepost');
+Route::delete('/deletecourse/{id}', 'App\Http\Controllers\UserController@deletecourse')->name('deletecourse');
+
 //=================end course======
 
 Route::get('/takequiz/{id}', 'App\Http\Controllers\UserController@takequiz')->name('takequiz');
@@ -81,6 +83,8 @@ Route::get('/review', 'App\Http\Controllers\UserController@review')->name('revie
 Route::get('/notification', 'App\Http\Controllers\UserController@notification')->name('notification');
 Route::get('/myaccount', 'App\Http\Controllers\UserController@myaccount')->name('myaccount');
 Route::get('/coursepurches', 'App\Http\Controllers\UserController@coursepurch')->name('coursepurches');
+Route::post('/wishlist', 'App\Http\Controllers\UserController@wishlist')->name('wishlist');
+Route::post('/complited', 'App\Http\Controllers\UserController@complited')->name('complited');
 Route::get('/deleteaccount', 'App\Http\Controllers\UserController@deleteacc')->name('deleteaccount');
 Route::get('/createcert', 'App\Http\Controllers\UserController@createcert')->name('createcert');
 // Route::get('/category', 'App\Http\Controllers\UserController@category')->middleware('verified')->name('category');
