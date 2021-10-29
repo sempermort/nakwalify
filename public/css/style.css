@@ -354,6 +354,10 @@
         margin-top: 3.5rem !important;
     }
     
+    .mt-30 {
+        margin-top: 7rem;
+    }
+    
     .material-icons.md-18 {
         font-size: 18px;
     }

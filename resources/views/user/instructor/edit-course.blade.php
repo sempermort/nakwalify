@@ -130,7 +130,7 @@
                                                         @foreach( $mcourse->mainwlearn as  $arriy)
                                                         @foreach( explode(',', $arriy)  as  $learn)
                                                         <div class=" border-0 mr-2">
-                                                            <div><a href="#!" class=" "><i class="material-icons">done</i></a>
+                                                            <div><i class="material-icons">done</i>
                                                                 {{$learn}} </div>
                                                                 <input type="hidden" name="mainwlearn[{{$learn}}]" 
                                                                 value="">
@@ -156,7 +156,8 @@
                                                         @foreach( $mcourse->mainrequire as  $arriy)
                                                         @foreach( explode(',', $arriy)  as  $learn)
                                                         <div class=" border-0 mr-2">
-                                                            <div><a href="#!" class=" "><i class="material-icons">done</i></a>
+                                                            <div>
+                                                                <i class="material-icons">done</i>
                                                                 {{$learn}} </div>
                                                                 <input type="hidden" name="mainrequire[{{$learn}}]" 
                                                                 value="">

@@ -3,7 +3,7 @@
 @section('content')
 
 
-<div class="sa4d25 mt-20 ">
+<div class="sa4d25 mt-30 ">
     <div class="container  mb-5">
         <div class=" mb-4 mt-4">
             <h3 class="udlite-heading">{{count($cozes)}} results for “{{$searched}}”</h2>

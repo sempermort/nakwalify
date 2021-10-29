@@ -1,10 +1,10 @@
 @extends('layouts.stu-layout')
 
 @section('content')
-<div class="bg-black">
+<div class="bg-black p-5">
 
 
-    <div class=" pb-1 pt-5 pl-5 ">
+    <div class=" pb-1  m-5 ">
         <h1 class="text-white font-weight-bolder">My Learning</h1>
     </div>
 
@@ -32,7 +32,7 @@
         </div>
     </div>
 </div>
-<div class="">
+<div class="" style="width:80%; margin:2rem auto;">
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
@@ -42,20 +42,10 @@
                             <div class="_htg451">
                                 <div class="_htg452">
 
-                                    <div class="mt-5">
-                                        <div class="row justify-content-between  mt-5">
+                                    <div class="">
+                                        <div class="row justify-content-between  ">
 
-                                            <h3>All My Courses</h3>
-                                            <div class="input-group col-md-3 ">
-                                                <div class="input-group mb-3">
-                                                    <input type="text" class="form-control" placeholder="Search Course"
-                                                        aria-label="Search My Courses" aria-describedby="basic-addon2">
-                                                    <div class="input-group-append">
-                                                        <button class="btn btn-outline-secondary" type="button"><i
-                                                                class="fa fa-search"></i></button>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                            <h3>All My Courses</h3>                                       
 
                                         </div>
                                         <div class="row mt-5">
