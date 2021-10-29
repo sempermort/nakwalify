@@ -129,9 +129,13 @@
                                                         <div class="grid-container border " id="gridwlearn">
                                                         @foreach( $mcourse->mainwlearn as  $arriy)
                                                         @foreach( explode(',', $arriy)  as  $learn)
-                                                        <div class=" border-0 mr-2">
-                                                            <div><i class="material-icons">done</i>
-                                                                {{$learn}} </div>
+                                                        <div class=" mrq border-0 mr-2">
+                                                            
+                                                                <button type="button" onclick="dellearn(event)" target="_blank" rel="noopener noreferrer">
+                                                                <i class="material-icons">delete</i>
+                                                                            </button>
+                                                                
+                                                                {{$learn}}
                                                                 <input type="hidden" name="mainwlearn[{{$learn}}]" 
                                                                 value="{{$learn}}">
                                                         </div>
@@ -155,10 +159,12 @@
                                                         <div class="grid-container border gridrequire">
                                                         @foreach( $mcourse->mainrequire as  $arriy)
                                                         @foreach( explode(',', $arriy)  as  $learn)
-                                                        <div class=" border-0 mr-2">
-                                                            <div>
-                                                                <i class="material-icons">done</i>
-                                                                {{$learn}} </div>
+                                                        <div class="mrq border-0 mr-2 ">
+                                                            
+                                                            <button type="button" onclick="dellearn(event)" target="_blank" rel="noopener noreferrer">
+                                                                <i class="material-icons">delete</i>
+</button>
+                                                                {{$learn}} 
                                                                 <input type="hidden" name="mainrequire[{{$learn}}]" 
                                                                 value="{{$learn}}">
                                                         </div>
@@ -292,6 +298,14 @@
 
 
 <script>
+
+function dellearn(ev)
+{
+  
+    ev.target.closest(".mrq").remove();
+}
+
+
       const learnarry=[];
       var it=1;
         function addwlearnin(){
@@ -299,9 +313,11 @@
             const mainwlearn = document.getElementById('mainwlearn');
             if(wywlearn.value!=null){
             var htmlearn =
-            '<div class="collection-item border-0">'+
-            '<div  class="m-2 primary-content"><i class="material-icons">done</i>'+
-            wywlearn.value+'</div></div>'+
+           
+            '<div  class="mrq m-2 primary-content">'+
+            '<button type="button" onclick="dellearn(event)" target="_blank" rel="noopener noreferrer">'+
+            '<i class="material-icons">delete</i></button>'
+            wywlearn.value+'</div>'+
             '<input type="hidden" name="mainwlearn['+it+']" value="'+wywlearn.value+'">';
             $("#gridwlearn").append(htmlearn);
                    wywlearn.value='';
@@ -315,10 +331,12 @@
            const requires = document.getElementById('requirement');
            if(requires.value!=null){
            var req =
-           '<div class="collection-item border-0">'+
-           '<div  class="m-2 primary-content">'+
+           
+           '<div  class="mrq m-2 primary-content">'+
+           '<button type="button" onclick="dellearn(event)" target="_blank" rel="noopener noreferrer">'+
+           '<i class="material-icons">delete</i></button>'
            requires.value+'</div>'+
-           '</div>  <input type="hidden" name="mainrequire['+requires.value+']"  value="'+requires.value+'">';
+           '<input type="hidden" name="mainrequire['+requires.value+']"  value="'+requires.value+'">';
            $(".gridrequire").append(req);
                   requires.value='';
            }
