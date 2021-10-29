@@ -133,7 +133,7 @@
                                                             <div><i class="material-icons">done</i>
                                                                 {{$learn}} </div>
                                                                 <input type="hidden" name="mainwlearn[{{$learn}}]" 
-                                                                value="">
+                                                                value="{{$learn}}">
                                                         </div>
                                                         @endforeach
                                                         @endforeach
@@ -160,7 +160,7 @@
                                                                 <i class="material-icons">done</i>
                                                                 {{$learn}} </div>
                                                                 <input type="hidden" name="mainrequire[{{$learn}}]" 
-                                                                value="">
+                                                                value="{{$learn}}">
                                                         </div>
                                                         @endforeach
                                                         @endforeach
@@ -297,30 +297,32 @@
         function addwlearnin(){
             const wywlearn = document.getElementById('wywlearn');
             const mainwlearn = document.getElementById('mainwlearn');
-            
+            if(wywlearn.value!=null){
             var htmlearn =
             '<div class="collection-item border-0">'+
             '<div  class="m-2 primary-content"><i class="material-icons">done</i>'+
             wywlearn.value+'</div></div>'+
-            '<input type="hidden" name="mainwlearn['+it+']" value="">';
-                   
+            '<input type="hidden" name="mainwlearn['+it+']" value="'+wywlearn.value+'">';
+            $("#gridwlearn").append(htmlearn);
                    wywlearn.value='';
-            
+            it++;
+            }
         };
 
         var main  =[];
         function addrequirement(){
-            if(mainrequire.value!=null){
+         
            const requires = document.getElementById('requirement');
-           const mainrequire = document.getElementById('mainrequire');
+           if(requires.value!=null){
            var req =
            '<div class="collection-item border-0">'+
            '<div  class="m-2 primary-content">'+
            requires.value+'</div>'+
-           '</div>  <input type="hidden" name="mainrequire['+requires.value+']"  value="">';
-                  
+           '</div>  <input type="hidden" name="mainrequire['+requires.value+']"  value="'+requires.value+'">';
+           $(".gridrequire").append(req);
                   requires.value='';
-            }
+           }
+            
        };
        function ajaxed5() {
             var objprogress = document.getElementById("progressob");

@@ -143,6 +143,7 @@ class UserController extends Controller
     //editcourse
     public function editCourse($id)
     {
+        
         $maincourse =Course::find($id);
         $corses = Category::all();
         $subcorses = Subcategory::all();
@@ -154,6 +155,8 @@ class UserController extends Controller
     }
     public function posteditCourse(Request $request)
     {
+       
+        
         $course = Course::findOrFail($request->cid);
         $validatedData = $request->validate([
             'course_title' => 'required',
@@ -167,7 +170,7 @@ class UserController extends Controller
             'course_des' => 'required',
 
         ]);
-
+        
         try {
 
             $course->fill($validatedData)->save();

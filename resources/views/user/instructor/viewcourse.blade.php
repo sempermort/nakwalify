@@ -6,8 +6,8 @@
 
 
 @php $id=1; @endphp
-<div class="sa4d25 bg-darknavy p-4 mt-30">
-    <div class="mt-5">
+<div class="sa4d25 bg-darknavy p-4 ">
+    <div class="mt-30">
         <h2 class="text-white"></i> {{$course->course_title}} </h2>
         <p class=" text-white">
             {{substr($course->course_des, 0, 130)}}...
@@ -82,7 +82,7 @@
 
                                     @php $id=1; $suml=0;@endphp
                                     @foreach ($videos as $vids)
-                        <li class="list-group-item btn transparent mb-3 list-group-item-action    bg-darknavy active" style=""
+                        <li class="list-group-item btn transparent mb-3 list-group-item-action    bg-darknavy active"
                             onclick="vidliclicked('{{$vids->video_path}}',{{count($videos)}},{{$id}},{{$vids->id}})"
                             id="{{'vids'.$id}}">
                             <a class="text-white font-weight-bold   d-flex justify-content-between ">
