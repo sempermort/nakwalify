@@ -2,9 +2,10 @@
 
 @section('content')
 <style>
-    .sfw{
-        display:none;
-    }
+.mainavba{
+     background:transparent;
+}
+     </style>
 </style>
 <section>
     <div class="h-vid position-relative" style="">
@@ -809,6 +810,22 @@
 
 <script>
 
-
+$(function(){
+    var elementnav = document.getElementById("mainavbar");
+   elementnav.style.transition = "all 2s"; 
+  $(window).scroll(function(){
+   
+    if($(this).scrollTop()>=50){  
+      
+      elementnav.classList.add("bg-dark");
+      elementnav.classList.add("navbar-light");
+   } else {
+      elementnav.classList.remove("bg-dark");
+      elementnav.classList.remove("navbar-light");
+      
+   
+    }
+  });
+});
 </script>
 @endsection

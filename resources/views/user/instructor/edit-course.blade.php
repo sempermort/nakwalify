@@ -132,6 +132,8 @@
                                                         <div class=" border-0 mr-2">
                                                             <div><a href="#!" class=" "><i class="material-icons">done</i></a>
                                                                 {{$learn}} </div>
+                                                                <input type="hidden" name="mainwlearn[{{$learn}}]" 
+                                                                value="">
                                                         </div>
                                                         @endforeach
                                                         @endforeach
@@ -139,8 +141,7 @@
                                                         <div class="">
                                                             <input class="w-100 form-control form-rounded" type="text"
                                                                 id="wywlearn" value="">
-                                                            <input type="hidden" name="mainwlearn[]" id="mainwlearn"
-                                                                value="">
+                                                            
                                                         </div>
                                                     </div>
                                                     <div class="addlearn ml-3" style="padding-top: 2.4rem;">
@@ -157,6 +158,8 @@
                                                         <div class=" border-0 mr-2">
                                                             <div><a href="#!" class=" "><i class="material-icons">done</i></a>
                                                                 {{$learn}} </div>
+                                                                <input type="hidden" name="mainrequire[{{$learn}}]" 
+                                                                value="">
                                                         </div>
                                                         @endforeach
                                                         @endforeach
@@ -164,8 +167,7 @@
                                                         <div class="">
                                                             <input class="w-100 form-rounded form-control" type="text"  id="requirement"
                                                                 value="">
-                                                            <input type="hidden" name="mainrequire[]" id="mainrequire"
-                                                                value="">
+                                                            
                                                         </div>
                                                     </div>
                                                     <div class="addrequire ml-3" style="padding-top: 2.4rem;">
@@ -290,22 +292,19 @@
 
 <script>
       const learnarry=[];
+      var it=1;
         function addwlearnin(){
             const wywlearn = document.getElementById('wywlearn');
             const mainwlearn = document.getElementById('mainwlearn');
-            if(wywlearn.value!=null){
+            
             var htmlearn =
             '<div class="collection-item border-0">'+
             '<div  class="m-2 primary-content"><i class="material-icons">done</i>'+
-            wywlearn.value+'</div></div>';
-                    $("#gridwlearn").append(htmlearn);
-
-                   learnarry.push(wywlearn.value);
-
-                   mainwlearn.value=learnarry.slice();
-
+            wywlearn.value+'</div></div>'+
+            '<input type="hidden" name="mainwlearn['+it+']" value="">';
+                   
                    wywlearn.value='';
-            }
+            
         };
 
         var main  =[];
@@ -317,12 +316,8 @@
            '<div class="collection-item border-0">'+
            '<div  class="m-2 primary-content">'+
            requires.value+'</div>'+
-           '</div>';
-                   $(".gridrequire").append(req);
-
-                  main.push(requires.value);
-
-                  mainrequire.value=main.slice();
+           '</div>  <input type="hidden" name="mainrequire['+requires.value+']"  value="">';
+                  
                   requires.value='';
             }
        };

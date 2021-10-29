@@ -26,17 +26,18 @@
     <link href="{{ asset('css/multitemslide.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 <style></style>
+<script src="{{ asset('assets/js/jquery.min.js') }}"></script>
 </head>
 
 <body>
     <header class="position-absolute w-100" style="z-index:9;">
 
-        <nav class="navbar navbar-expand-lg fixed-top" id="mainavbar"  style="height:70px">
+        <nav class="navbar navbar-expand-lg fixed-top backg mainavba " id="mainavbar"  style="height:70px; ">
             @auth
-            <a href="{{url('/category')}}" class="navbar-brand"
+            <a href="{{url('/category')}}" class="navbar-brand text-white"
                 style="font-family:'Kaushan_Script'; font-weight: bolder;  font-size :35px!important; ">nakwalify</a>
             @else
-            <a href="{{url('/')}}" class="navbar-brand"
+            <a href="{{url('/')}}" class="navbar-brand text-white"
                 style="font-family:'Kaushan_Script'; font-weight: bolder;  font-size :35px!important; ">nakwalify</a>
             @endauth
 
@@ -102,7 +103,7 @@
                     <div class="input-group custom-search-form">
                         <input type="text" name="search" class="form-control " style="width:60%" placeholder="Search ....">
                         <span class="input-group-btn">
-                        <button type="submit" class="btn btn-default-sm">
+                        <button type="submit" class="btn btn-default-sm text-white">
                             <i class="fa fa-search"></i>
                         </button>
                         </span>
@@ -704,7 +705,7 @@ var elementnav = document.getElementById("mainavbar");
 
 }
 </script>
-<script src="{{ asset('assets/js/jquery.min.js') }}"></script>
+
 
 
         <script src="{{ asset('assets/bootstrap-4.3.1-dist/js/bootstrap.min.js') }}"></script>
@@ -717,23 +718,7 @@ var elementnav = document.getElementById("mainavbar");
 
 <script>
  
- $(function(){
-    var elementnav = document.getElementById("mainavbar");
-   elementnav.style.transition = "all 2s"; 
-  $(window).scroll(function(){
-   
-    if($(this).scrollTop()>=50){  
-      
-      elementnav.classList.add("bg-dark");
-      elementnav.classList.add("navbar-light");
-   } else {
-      elementnav.classList.remove("bg-dark");
-      elementnav.classList.remove("navbar-light");
-      
-   
-    }
-  });
-});
+
 
 
         $('.nastay').on('click', 'a', function() {

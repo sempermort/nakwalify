@@ -6,7 +6,7 @@
 
 
 @php $id=1; @endphp
-<div class="sa4d25 bg-darknavy p-4">
+<div class="sa4d25 bg-darknavy p-4 mt-30">
     <div class="mt-5">
         <h2 class="text-white"></i> {{$course->course_title}} </h2>
         <p class=" text-white">

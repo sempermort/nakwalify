@@ -40,14 +40,14 @@
 </div>
 <header class=" mb-5  ">
 
-    <nav class="navbar navbar-expand-lg" style="background-color: #3a9982;">
+    <nav class="navbar navbar-expand-lg bg-dark" >
 
 
         @auth
-            <a href="{{url('/category')}}" class="navbar-brand"
+            <a href="{{url('/category')}}" class="navbar-brand text-white"
                style="font-family:'Kaushan_Script'; font-weight: bolder;  font-size :35px!important; color:#fff !important;">nakwalify</a>
         @else
-            <a href="{{url('/')}}" class="navbar-brand"
+            <a href="{{url('/')}}" class="navbar-brand text-white"
                style="font-family:'Kaushan_Script'; font-weight: bolder;  font-size :35px!important; color:#fff !important;">nakwalify</a>
         @endauth
 
@@ -112,47 +112,7 @@
 
                         </div>
                     </li>
-                    <li class="dropdown ml-4">
-                        <a  class="opts_account" title="Account">
-                            <span class="material-icons-outlined text-white " style="font-size:20px">
-                                favorite_border
-                            </span>
-                        </a>
-                        <div class=" dropdown-content text-center">
-                            <div class="d-flex flex-nowrap m-2">
-                                <div class="card-image ">
-                                    <img src="{{asset('assets/images/instructor_12.jpg')}}" alt="" class="">
-                                </div>
-                                <div class="w-100">
-                                    <div class=" m-1">
-
-                                        <div class="title font-weight-bolder">Complete Python Developer in
-                                            2021:Zero
-                                            to
-                                            Mastery
-                                        </div>
-                                        <a href="#" class="title font-weight-bolder " style="color: blue;">start
-                                            Learning
-                                        </a>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div class="m-2 border-top">
-                                <a href="{{url('/coursepurches')}}"
-                                   class="btn btn-outline-dark btn-block text-dark font-weight-bolder ">Add to
-                                    cart</a>
-
-                            </div>
-
-                            <div class="m-2 border-top">
-                                <a href="{{url('/myaccount')}}"
-                                   class="btn btn-block bg-black text-white font-weight-bolder ">Go to
-                                    Wishlist</a>
-
-                            </div>
-                        </div>
-                    </li>
+                
                     <li class="dropdown ml-4">
                         <a  class=" text-white " id="dropdownMenuButton" title="Notifications"><i
                                 class='fa fa-bell text-white' style="margin-top: 22px; color:#fff;"></i><span
@@ -393,7 +353,7 @@
     </main>
     <div class="modal fade  " id="register" tabindex="-1" role="dialog">
         <div class="modal-dialog custome-dialog" role="document" style="
-	max-width: 81%!mportant;">
+	max-width: 81%!important;">
             <div class="modal-content bg-transparent border-none">
 
                 <div class="row">
@@ -852,7 +812,7 @@
     </script>
 
     <script>
-       
+
         $(".card-img-overlay").mouseover(function () {
             $(this).find($(".jss16")).css({
                 "display":
