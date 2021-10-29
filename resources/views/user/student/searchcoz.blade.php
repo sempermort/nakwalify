@@ -1,14 +1,10 @@
 @extends('layouts.stu-layout')
 
 @section('content')
-<style>
-    #mainavbar{
-        background:grey;
-    }
-</style>
 
-<div class="sa4d25">
-    <div class="container mt-20  mb-5">
+
+<div class="sa4d25 mt-20 ">
+    <div class="container  mb-5">
         <div class=" mb-4 mt-4">
             <h3 class="udlite-heading">{{count($cozes)}} results for “{{$searched}}”</h2>
             <div class="d-flex justify-content-between mb-4 mt-4  ">
