@@ -300,8 +300,7 @@
 <script>
 
 function dellearn(ev)
-{
-  
+{  
     ev.target.closest(".mrq").remove();
 }
 
@@ -311,12 +310,12 @@ function dellearn(ev)
         function addwlearnin(){
             const wywlearn = document.getElementById('wywlearn');
             const mainwlearn = document.getElementById('mainwlearn');
-            if(wywlearn.value!=null){
+            if(wywlearn.value!=""){
             var htmlearn =
            
             '<div  class="mrq m-2 primary-content">'+
             '<button type="button" onclick="dellearn(event)" target="_blank" rel="noopener noreferrer">'+
-            '<i class="material-icons">delete</i></button>'
+            '<i class="material-icons">delete</i></button>'+
             wywlearn.value+'</div>'+
             '<input type="hidden" name="mainwlearn['+it+']" value="'+wywlearn.value+'">';
             $("#gridwlearn").append(htmlearn);
@@ -329,12 +328,12 @@ function dellearn(ev)
         function addrequirement(){
          
            const requires = document.getElementById('requirement');
-           if(requires.value!=null){
+           if(requires.value!=""){
            var req =
            
            '<div  class="mrq m-2 primary-content">'+
            '<button type="button" onclick="dellearn(event)" target="_blank" rel="noopener noreferrer">'+
-           '<i class="material-icons">delete</i></button>'
+           '<i class="material-icons">delete</i></button>'+
            requires.value+'</div>'+
            '<input type="hidden" name="mainrequire['+requires.value+']"  value="'+requires.value+'">';
            $(".gridrequire").append(req);
