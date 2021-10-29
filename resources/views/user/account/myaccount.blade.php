@@ -223,23 +223,14 @@
                                 <div class="_htg452">
                                     <div class="row justify-content-between">
                                         <h3>Purchased Courses</h3>
-                                        <div class="input-group col-md-3 float-right ">
-                                            <div class="input-group mb-3">
-                                                <input type="text" class="form-control" placeholder="Search My Courses"
-                                                    aria-label="Search Course" aria-describedby="basic-addon2">
-                                                <div class="input-group-append">
-                                                    <button class="btn btn-outline-secondary" type="button"><i
-                                                            class="fa fa-search"></i></button>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        
                                     </div>
 
                                     <div class="row">
                                         <div class="col-md-12">
-                                            <div class="fcrse_1 mt-20">
+                                            <div class="fcrse_1 ">
                                                 <a href="course_detail_view.html" class="hf_img">
-                                                    <img src="{{asset('assets/images/course_5.jpg')}}" alt="">
+                                                    <img src="{{asset('assets/images/course_6.jpg')}}" alt="">
                                                     <div class="course-overlay">
                                                         <div class="badge_seller">Bestseller</div>
                                                         <div class="crse_reviews">
@@ -273,7 +264,7 @@
 
                                                 </div>
                                             </div>
-                                            <div class="fcrse_1 mt-30">
+                                            <div class="fcrse_1 ">
                                                 <a href="course_detail_view.html" class="hf_img">
                                                     <img src="{{asset('assets/images/course_7.jpg')}}" alt="">
                                                     <div class="course-overlay">
@@ -309,7 +300,7 @@
 
                                                 </div>
                                             </div>
-                                            <div class="fcrse_1 mt-30">
+                                            <div class="fcrse_1 ">
                                                 <a href="course_detail_view.html" class="hf_img">
                                                     <img src="{{asset('assets/images/course_9.jpg')}}" alt="">
                                                     <div class="course-overlay">
@@ -345,7 +336,7 @@
 
                                                 </div>
                                             </div>
-                                            <div class="fcrse_1 mt-30">
+                                            <div class="fcrse_1 ">
                                                 <a href="course_detail_view.html" class="hf_img">
                                                     <img src="{{asset('assets/images/course_10.jpg')}}" alt="">
                                                     <div class="course-overlay">
@@ -390,16 +381,7 @@
                             <div class="student_reviews">
                                 <div class="row justify-content-between">
                                     <h3></h3>
-                                    <div class="input-group col-md-3  ">
-                                        <div class="input-group mb-3">
-                                            <input type="text" class="form-control" placeholder="Search  Course"
-                                                aria-label="Search  Course" aria-describedby="basic-addon2">
-                                            <div class="input-group-append">
-                                                <button class="btn btn-outline-secondary" type="button"><i
-                                                        class="fa fa-search"></i></button>
-                                            </div>
-                                        </div>
-                                    </div>
+                                  
                                 </div>
 
                                 <div class="row">
@@ -461,16 +443,7 @@
                             <div class="student_reviews">
                                 <div class="row justify-content-between">
                                     <h3></h3>
-                                    <div class="input-group col-md-3  ">
-                                        <div class="input-group mb-3">
-                                            <input type="text" class="form-control" placeholder="Search  Course"
-                                                aria-label="Search  Course" aria-describedby="basic-addon2">
-                                            <div class="input-group-append">
-                                                <button class="btn btn-outline-secondary" type="button"><i
-                                                        class="fa fa-search"></i></button>
-                                            </div>
-                                        </div>
-                                    </div>
+                                   
                                 </div>
 
                                 <div class="row">
