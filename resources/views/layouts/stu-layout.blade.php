@@ -98,7 +98,7 @@
        
         
             </div>
-            <form action="{{ route('searchcourse') }}" class="w-50 sfw" method="POST">
+            <form action="{{ route('searchcourse') }}" class="w-60 sfw" method="POST">
             @csrf
                     <div class="input-group custom-search-form">
                         <input type="text" name="search" class="form-control " style="width:60%" placeholder="Search ....">
