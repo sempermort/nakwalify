@@ -80,7 +80,7 @@
                         </div>
                     </li>
                     <li class="dropdown ml-4">
-                        <a href="" class="opts_account text-white" title="Account">
+                        <a href="{{url('/myaccount')}}" class="opts_account text-white" title="Account">
                             My Learning
                         </a>
                         <div class=" dropdown-content">
@@ -96,7 +96,7 @@
                                             to
                                             Mastery
                                         </div>
-                                        <a href="http//" class="title font-weight-bolder text-blue"
+                                        <a  class="title font-weight-bolder text-blue"
                                            style="color: blue;">start Learning
                                         </a>
                                     </div>
@@ -113,7 +113,7 @@
                         </div>
                     </li>
                     <li class="dropdown ml-4">
-                        <a href="" class="opts_account" title="Account">
+                        <a  class="opts_account" title="Account">
                             <span class="material-icons-outlined text-white " style="font-size:20px">
                                 favorite_border
                             </span>
@@ -154,11 +154,11 @@
                         </div>
                     </li>
                     <li class="dropdown ml-4">
-                        <a href="" class=" text-white " id="dropdownMenuButton" title="Notifications"><i
+                        <a  class=" text-white " id="dropdownMenuButton" title="Notifications"><i
                                 class='fa fa-bell text-white' style="margin-top: 22px; color:#fff;"></i><span
                                 class="noti_count"></span></a>
                         <div class="dropdown-content overflow-auto" aria-labelledby="dropdownMenuButton">
-                            <a href="" class="channel_my item dropdown-item">
+                            <a  class="channel_my item dropdown-item">
                                 <div class="profile_link">
                                     <img src="./assets/images/left-imgs/img-1.jpg" alt="">
                                     <div class="pd_content p-0 m-0">
@@ -170,7 +170,7 @@
                                     </div>
                                 </div>
                             </a>
-                            <a href="" class="channel_my item dropdown-item">
+                            <a  class="channel_my item dropdown-item">
                                 <div class=" profile_link">
                                     <img src="./assets/images/left-imgs/img-2.jpg" alt="">
                                     <div class="pd_content">
@@ -182,7 +182,7 @@
                                     </div>
                                 </div>
                             </a>
-                            <a href="" class="channel_my item dropdown-item">
+                            <a  class="channel_my item dropdown-item">
                                 <div class="profile_link">
                                     <img src="./assets/images/left-imgs/img-9.jpg" alt="">
                                     <div class="pd_content p-0 m-0">
@@ -191,12 +191,12 @@
                                     </div>
                                 </div>
                             </a>
-                            <a class="vbm_btn" href="">View All <i
+                            <a class="vbm_btn" >View All <i
                                     class='uil uil-arrow-right dropdown-item"'></i></a>
                         </div>
                     </li>
                     <li class=" dropdown">
-                        <a href="" class="opts_account" title="Account">
+                        <a  class="opts_account" title="Account">
                             <img src="./assets/images/hd_dp.jpg" alt="">
                         </a>
                         <div class=" dropdown-content">
@@ -232,7 +232,7 @@
 
                             </div>
                             <div class="night_mode_switch__btn">
-                                <a href="" id="night-mode" class="btn-night-mode">
+                                <a  id="night-mode" class="btn-night-mode">
                                     <i class="uil uil-moon"></i> Night mode
                                     <span class="btn-night-mode-switch">
                                         <span class="uk-switch-button"></span>
@@ -251,7 +251,7 @@
                             <div class="">
                                 <a href="{{url('/accsetting')}}" class="item channel_item">Setting</a>
                                 <a href="{{route('logout')}}" class="item channel_item">Sign Out</a>
-                                <a href="" class="item channel_item">Language English
+                                <a  class="item channel_item">Language English
                                     <i class="fa fa-globe "></i></a>
                             </div>
 
