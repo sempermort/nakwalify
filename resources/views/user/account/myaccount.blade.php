@@ -1,4 +1,4 @@
-@extends('layouts.user-layout')
+@extends('layouts.stu-layout')
 
 @section('content')
 <div class="bg-black">

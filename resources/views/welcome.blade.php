@@ -1,7 +1,11 @@
 @extends('layouts.stu-layout')
 
 @section('content')
-
+<style>
+    .sfw{
+        display:none;
+    }
+</style>
 <section>
     <div class="h-vid position-relative" style="">
         <video autoplay muted loop class="w-100 h-100 object-cover " id="myVideo">
@@ -804,23 +808,7 @@
 
 
 <script>
-<!-- Initialize the plugin
--->
-$(".card-img-overlay").mouseover(function
-()
-{
-$(this).find($(".jss16")).css({
-"display":
-"flex"
-});
-});
-$(".card-img-overlay").mouseout(function
-()
-{
-$(this).find($(".jss16")).css({
-"display":
-"none"
-});
-});
+
+
 </script>
 @endsection

@@ -852,7 +852,7 @@
     </script>
 
     <script>
-        <!--Initialize the plugin-->
+       
         $(".card-img-overlay").mouseover(function () {
             $(this).find($(".jss16")).css({
                 "display":

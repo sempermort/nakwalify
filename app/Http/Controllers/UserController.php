@@ -10,6 +10,7 @@ use App\Models\Videos;
 use App\Models\Mediacover;
 use App\Models\Questions;
 use App\Models\Answers;
+use App\Models\Wishlist;
 use App\Models\Course_files;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
@@ -644,8 +645,19 @@ public function deletevid($id)
 
         return redirect()->route('viewcourse', ['id' => $request->courseid]);
     }
+    public function searchcourse($search)
+    {
 
+        $cozes = Course::where('course_title','like','%'.$search.'%')->orderBy('id')->paginate(6);
+        return view('user.student.searchcoz')->with('cozes', $cozes);
+    }
 
+    public function searchcoursepost(Request $request)
+    {
+        $cozes = Course::where('course_title','like','%'.$request->search.'%')->orderBy('id')->paginate(6);
+        return view('user.student.searchcoz')->with('cozes', $cozes)
+        ->with('searched', $request->search);
+    }
     public function courseDetail($id)
     {
 
@@ -688,7 +700,7 @@ public function deletevid($id)
 
     return Response()->json($wish);
     }
-   
+
 
     public function review()
     {

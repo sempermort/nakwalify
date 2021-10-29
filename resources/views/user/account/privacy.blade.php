@@ -2615,24 +2615,7 @@
     <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <script type="text/javascript" src="js/mdb.min.js"></script>
     <script>
-    <!-- Initialize the plugin
-    -->
-    $(".card-img-overlay").mouseover(function
-    ()
-    {
-    $(this).find($(".jss16")).css({
-    "display":
-    "flex"
-    });
-    });
-    $(".card-img-overlay").mouseout(function
-    ()
-    {
-    $(this).find($(".jss16")).css({
-    "display":
-    "none"
-    });
-    });
+
 
     $(document).ready(function() {
 // SideNav Button Initialization

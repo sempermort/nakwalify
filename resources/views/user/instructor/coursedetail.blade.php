@@ -16,11 +16,11 @@
                 </div> -->
                 <div class="row">
                     <div class="col-md-4 col-lg-3 white p-0 vid-coz " id="vid">
-                  
+
                       <div class="">
                                     <a class=" "   href="{{route('viewcourse',$selcoz->id)}}">
-                                   
-                                    <video width="400" height="220" 
+
+                                    <video width="400" height="220"
                                     @if(isset($selcoz->mediaCover->file_path))
                                     @php $src=$selcoz->mediaCover->file_path; @endphp
                                     <img class="card-img-top  object-cover h-100 w-100"
@@ -149,13 +149,13 @@
         </div>
 </div>
 <div class="container mt-0 pl-2">
-    <h6 class="font-weight-bolder m-3">What you will learn</h6>
+    <h6 class="font-weight-bold m-3">What you will learn</h6>
     <div class="grid-container border  col-md-8">
     @foreach( $selcoz->mainwlearn as  $arriy)
         @foreach( explode(',', $arriy)  as  $learn)
         <div class=" border-0 mr-2">
             <div><a href="#!" class=" "><i class="material-icons">done</i></a>
-                {{$learn}} </div>
+                {!!$learn!!} </div>
         </div>
         @endforeach
         @endforeach
@@ -393,14 +393,14 @@ myFunction(x) // Call listener function at run time
 x.addListener(myFunction) // Attach listener function on state changes
 
 
-function addwish()
-{
-    var coz_id={{$selcoz->id}};
-    var user_id={{isset(auth()->user()->id)?auth()->user()->id:""}};
-    var vel="wish";
-    var urlo={{route('wishlist')}};
+// function addwish()
+// {
+//     var coz_id={{$selcoz->id}};
+//     var user_id={{isset(auth()->user()->id)?auth()->user()->id:""}};
+//     var vel="wish";
+//     var urlo={{route('wishlist')}};
 
-    ajaxedw(coz_id,user_id,urlo,vel);
-}
+//     ajaxedw(coz_id,user_id,urlo,vel);
+// }
 </script>
 @endsection

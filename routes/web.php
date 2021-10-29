@@ -87,6 +87,7 @@ Route::post('/wishlist', 'App\Http\Controllers\UserController@wishlist')->name('
 Route::post('/complited', 'App\Http\Controllers\UserController@complited')->name('complited');
 Route::get('/deleteaccount', 'App\Http\Controllers\UserController@deleteacc')->name('deleteaccount');
 Route::get('/createcert', 'App\Http\Controllers\UserController@createcert')->name('createcert');
+Route::post('/searchcourse', 'App\Http\Controllers\UserController@searchcoursepost')->name('searchcourse');
 // Route::get('/category', 'App\Http\Controllers\UserController@category')->middleware('verified')->name('category');
 Route::get('/category', 'App\Http\Controllers\UserController@category')->middleware(['verified','auth'])->name('category');
 Route::get('/accsetting', 'App\Http\Controllers\UserController@accSetting')->name('accsetting');

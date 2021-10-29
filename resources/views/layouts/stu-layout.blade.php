@@ -25,16 +25,13 @@
 
     <link href="{{ asset('css/multitemslide.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
-    <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
-    </script>
+<style></style>
 </head>
 
 <body>
     <header class="position-absolute w-100" style="z-index:9;">
 
-        <nav class="navbar navbar-expand-lg" id="mainavbar" style="">
-
-
+        <nav class="navbar navbar-expand-lg fixed-top" id="mainavbar"  style="height:70px">
             @auth
             <a href="{{url('/category')}}" class="navbar-brand"
                 style="font-family:'Kaushan_Script'; font-weight: bolder;  font-size :35px!important; ">nakwalify</a>
@@ -43,70 +40,75 @@
                 style="font-family:'Kaushan_Script'; font-weight: bolder;  font-size :35px!important; ">nakwalify</a>
             @endauth
 
-
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="material-icons-outlined text-white bg-transparent">menu</i>
             </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="collapse navbar-collapse " id="navbarSupportedContent">
+       
             <div class="  ml-5">
-            <a class="btn bg-transparent text-white dropdown-toggle " href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Browse
-            </a>
+                <a class="btn bg-transparent text-white dropdown-toggle " href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Browse
+                </a>
 
-            <div class="dropdown-menu  " aria-labelledby="dropdownMenuLink" style="margin-left:223px;top: unset;">
-                <div class="row">
+                <div class="dropdown-menu  " aria-labelledby="dropdownMenuLink" style="margin-left:223px;top: unset;">
+                        <div class="row">
 
-            <div class=" nastay col-4">
-                <div class="m-5 ">
-                    <p class="border-bottom"> CREATE</p>
-                    <a href="#" class="waves-effect waves-light">Livestock </a>
-                    <a href="#" class="waves-effect waves-light">Agriculture</a>
-                    <a href="#" class="waves-effect waves-light">Arts & Crafts</a>
-                    <a href="#" class="waves-effect waves-light">Transportation</a>
-                    <a href="#" class="waves-effect waves-light">Life Skills</a>
-                    <a href="#" class="waves-effect waves-light">Graphics</a>
-                    <a href="#" class="waves-effect waves-light">Software Development</a>
-                    <a href="#" class="waves-effect waves-light">Foresty</a>
+                            <div class=" nastay col-4">
+                                <div class="m-5 ">
+                                    <p class="border-bottom"> CREATE</p>
+                                    <a href="#" class="waves-effect waves-light">Livestock </a>
+                                    <a href="#" class="waves-effect waves-light">Agriculture</a>
+                                    <a href="#" class="waves-effect waves-light">Arts & Crafts</a>
+                                    <a href="#" class="waves-effect waves-light">Transportation</a>
+                                    <a href="#" class="waves-effect waves-light">Life Skills</a>
+                                    <a href="#" class="waves-effect waves-light">Graphics</a>
+                                    <a href="#" class="waves-effect waves-light">Software Development</a>
+                                    <a href="#" class="waves-effect waves-light">Foresty</a>
+                                </div>
+                            </div>
+                            <div class=" nastay col-4 border-right">
+                                <div class="m-5">
+                                <div class="mb-3">
+                                <p class=" border-bottom  "> BUILD</p>
+                                <a href="#" class="waves-effect waves-light">Business Analytics </a>
+                                <a href="#" class="waves-effect waves-light">Freelance &Enterpreneurship</a>
+                                <a href="#" class="waves-effect waves-light">Leadership & Management</a>
+                                <a href="#" class="waves-effect waves-light">Marketing</a>
+                                </div>
 
-
-
+                                <div class="mt-2">
+                                <p class=" border-bottom  "> THRIVE</p>
+                                <a href="#" class="waves-effect waves-light">Lifestyle</a>
+                                <a href="#" class="waves-effect waves-light">Productivity</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class=" nastay col-4 ">
+                            <div class="m-5">
+                                <a href="#" class="waves-effect waves-light font-bolder">All Classes </a>
+                                <a href="#" class="waves-effect waves-light font-bolder">Workshops</a>
+                                <a href="#" class="waves-effect waves-light font-bolder">Student Projects</a>
+                                <a href="#" class="waves-effect waves-light font-bolder">Live Sessions</a>
+                            </div>
+                        </div>
                 </div>
+            </div>      
+       
+        
             </div>
-            <div class=" nastay col-4 border-right">
-                <div class="m-5">
-                <div class="mb-3">
-                <p class=" border-bottom  "> BUILD</p>
-                <a href="#" class="waves-effect waves-light">Business Analytics </a>
-                <a href="#" class="waves-effect waves-light">Freelance &Enterpreneurship</a>
-                <a href="#" class="waves-effect waves-light">Leadership & Management</a>
-                <a href="#" class="waves-effect waves-light">Marketing</a>
-                </div>
-
-                <div class="mt-2">
-                <p class=" border-bottom  "> THRIVE</p>
-                <a href="#" class="waves-effect waves-light">Lifestyle</a>
-                <a href="#" class="waves-effect waves-light">Productivity</a>
-                </div>
-               </div>
-             </div>
-            <div class=" nastay col-4 ">
-            <div class="m-5">
-                <a href="#" class="waves-effect waves-light font-bolder">All Classes </a>
-                <a href="#" class="waves-effect waves-light font-bolder">Workshops</a>
-                <a href="#" class="waves-effect waves-light font-bolder">Student Projects</a>
-                <a href="#" class="waves-effect waves-light font-bolder">Live Sessions</a>
-
-
-            </div>
-                </div>
-                </div>
-            </div>
-            </div>
-
-
+            <form action="{{ route('searchcourse') }}" class="w-50 sfw" method="POST">
+            @csrf
+                    <div class="input-group custom-search-form">
+                        <input type="text" name="search" class="form-control " style="width:60%" placeholder="Search ....">
+                        <span class="input-group-btn">
+                        <button type="submit" class="btn btn-default-sm">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        </span>
+                    </div>
+                </form>
                 <ul class="navbar-nav ml-auto mr-4">
-
                     @auth
                     <li class="dropdown ml-4">
                         <a href="create_new_course.html#" class="opts_account text-white" title="Account">
@@ -241,7 +243,7 @@
                         </div>
                     </li>
                     <li class=" dropdown">
-                        <a href="create_new_course.html#" class="opts_account" title="Account">
+                        <a  class="opts_account" title="Account">
                             <img src="./assets/images/hd_dp.jpg" alt="">
                         </a>
                         <div class=" dropdown-content">
@@ -268,7 +270,6 @@
                                                     height="25">2</div>
                                         </div>
                                         @endif
-
                                     </div>
                                 </div>
 
@@ -281,6 +282,13 @@
                                     </span>
                                 </a>
                             </div>
+                            @if(Auth::user()->role_id=='1')
+
+                            <div class="border-bottom mb-2">
+                                <a href="{{url('/instructordashboard')}}" class="item btn btn-info channel_item">Admin</a>
+                               
+                            </div>
+                            @endif
                             @if(Auth::user()->role_id=='2')
 
                             <div class="border-bottom mb-2">
@@ -318,9 +326,6 @@
                     @endguest
                 </ul>
             </div>
-
-
-
         </nav>
 
     </header>
@@ -333,7 +338,7 @@
         </main>
         <div class="modal fade  " id="register" tabindex="-1" role="dialog">
             <div class="modal-dialog custome-dialog" role="document" style="
-	max-width: 81%!mportant;">
+	max-width: 81%!important;">
                 <div class="modal-content bg-transparent border-none">
 
                     <div class="row">
@@ -421,7 +426,7 @@
                                                                     </div>
                                                                 </div>
                                                                 <div class=" mb-1 form-group">
-                                                                    <input type="email" name="email" id="email"
+                                                                    <input type="email" name="email" 
                                                                         value="{{ old('email') }}" required
                                                                         autocomplete="email" class=" form-control"
                                                                         placeholder="Email Address">
@@ -456,7 +461,7 @@
                                                                 </div>
 
                                                                 <div class=" form-group">
-                                                                    <input type="password" name="password" id="password"
+                                                                    <input type="password" name="password" 
                                                                         required autocomplete="new-password"
                                                                         class=" form-control" placeholder="Password">
                                                                     @error('password')
@@ -575,7 +580,7 @@
                                                                 <div>
                                                                     <x-label for="email" :value="__('Email')" />
 
-                                                                    <x-input id="email" class="block mt-1 w-full"
+                                                                    <x-input  class="block mt-1 w-full"
                                                                         type="email" name="email" :value="old('email')"
                                                                         required autofocus />
                                                                 </div>
@@ -680,6 +685,26 @@
 
 
 
+        <script>
+        //   window.onscroll = scrollFunction;
+          
+function scrollFunction() {
+
+var elementnav = document.getElementById("mainavbar");
+   elementnav.style.transition = "all 2s";  
+   if (body.scrollTop < 50 ) {
+      
+      elementnav.classList.add("bg-dark");
+      elementnav.classList.add("navbar-light");
+   } else {
+      elementnav.classList.remove("bg-dark");
+      elementnav.classList.remove("navbar-light");
+      
+   }
+
+}
+</script>
+<script src="{{ asset('assets/js/jquery.min.js') }}"></script>
 
 
         <script src="{{ asset('assets/bootstrap-4.3.1-dist/js/bootstrap.min.js') }}"></script>
@@ -691,22 +716,25 @@
 
 
 <script>
-          window.onscroll = scrollFunction;
+ 
+ $(function(){
+    var elementnav = document.getElementById("mainavbar");
+   elementnav.style.transition = "all 2s"; 
+  $(window).scroll(function(){
+   
+    if($(this).scrollTop()>=50){  
+      
+      elementnav.classList.add("bg-dark");
+      elementnav.classList.add("navbar-light");
+   } else {
+      elementnav.classList.remove("bg-dark");
+      elementnav.classList.remove("navbar-light");
+      
+   
+    }
+  });
+});
 
-function scrollFunction() {
-
-   var element = document.getElementById("mainavbar");
-   element.style.transition = "all 2s";
-   if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-      element.classList.add("bg-white");
-      element.classList.add("navbar-light");
-   } else if (document.body.scrollTop < 20 || document.documentElement.scrollTop < 20) {
-      element.classList.remove("bg-white");
-      element.classList.remove("navbar-light");
-
-   }
-
-}
 
         $('.nastay').on('click', 'a', function() {
 
@@ -761,15 +789,13 @@ function scrollFunction() {
         </script>
 
         <script>
-        <!-- Initialize the plugin-->
+
         $(".card-img-overlay").mouseover(function()       {
         $(this).find($(".jss16")).css({"display":"flex"});
         });
         $(".card-img-overlay").mouseout(function ()
         {
-        $(this).find($(".jss16")).css({
-        "display":
-        "none"
+        $(this).find($(".jss16")).css({"display":"none"
         });
         });
 
