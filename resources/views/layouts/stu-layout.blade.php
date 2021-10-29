@@ -98,7 +98,7 @@
        
         
             </div>
-            <form action="{{ route('searchcourse') }}" class="w-60 sfw" method="POST">
+            <form action="{{ route('searchcourse') }}" class="w-55 sfw" method="POST">
             @csrf
                     <div class="d-flex custom-search-form">
                         <input type="text" name="search" class="form-control form-rounded w-100"  placeholder="Search ...." required>
@@ -109,7 +109,7 @@
                         </span>
                     </div>
                 </form>
-                <ul class="navbar-nav ml-auto mr-4">
+                <ul class="navbar-nav ml-auto mr-4 cfont">
                     @auth
                     <li class="dropdown ml-4">
                         <a href="create_new_course.html#" class="opts_account text-white" title="Account">
@@ -128,7 +128,7 @@
                         </div>
                     </li>
                     <li class="dropdown ml-4">
-                        <a href="create_new_course.html#" class="opts_account text-white" title="Account">
+                        <a href="{{url('/myaccount')}}" class="opts_account text-white" title="Account">
                             My Learning
                         </a>
                         <div class=" dropdown-content">
@@ -144,7 +144,7 @@
                                             to
                                             Mastery
                                         </div>
-                                        <a href="http//" class="title font-weight-bolder text-blue"
+                                        <a href="{{url('/myaccount')}}" class="title font-weight-bolder text-blue"
                                             style="color: blue;">start Learning
                                         </a>
                                     </div>
