@@ -98,7 +98,7 @@
        
         
             </div>
-            <form action="{{ route('searchcourse') }}" class="w-55 sfw" method="POST">
+            <form action="{{ route('searchcourse') }}" class="w-53 sfw" method="POST">
             @csrf
                     <div class="d-flex custom-search-form">
                         <input type="text" name="search" class="form-control form-rounded w-100"  placeholder="Search ...." required>
