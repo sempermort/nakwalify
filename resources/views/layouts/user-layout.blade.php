@@ -40,7 +40,7 @@
 </div>
 <header class=" mb-5  ">
 
-    <nav class="navbar navbar-expand-lg bg-dark" >
+    <nav class="navbar navbar-expand-lg backg" >
 
 
         @auth
