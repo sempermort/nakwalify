@@ -3,10 +3,10 @@
 @section('content')
 
 <div class="sa4d25">
-    <section>
+
 
         <div class="bg-black">
-            <div class="container" style="padding-top:80px">
+            <div class="container  " style="padding-top:80px">
                 <!-- <div class="nav-wrapper mb-1">
                     <div class="d-flex ">
                         <a href="#!" class="breadcrumb-item">Development</a>
@@ -14,7 +14,7 @@
                         <a href="#!" class="breadcrumb-item active">Python</a>
                     </div>
                 </div> -->
-                <div class="row">
+                <div class="row mt-20 ">
                     <div class="col-md-4 col-lg-3 white p-0 vid-coz " id="vid">
 
                       <div class="">
@@ -150,11 +150,11 @@
 </div>
 <div class="container mt-0 pl-2">
     <h6 class="font-weight-bold m-3">What you will learn</h6>
-    <div class="grid-container border  col-md-8">
+    <div class="grid-container border p-0  col-md-8">
     @foreach( $selcoz->mainwlearn as  $arriy)
         @foreach( explode(',', $arriy)  as  $learn)
-        <div class=" border-0 mr-2">
-            <div><a href="#!" class=" "><i class="material-icons">done</i></a>
+        <div class=" border-0 ">
+            <div class="mr-2 font-weight-normal"><a  class=" "><i class="material-icons">done</i></a>
                 {!!$learn!!} </div>
         </div>
         @endforeach
@@ -179,7 +179,7 @@
 
         @foreach( $selcoz->mainrequire as  $arri)
         @foreach( explode(',', $arri)  as  $value)
-        <li class=" p-2">
+        <li class="font-weight-normal p-2">
             {{$value}}</li>
         @endforeach
         @endforeach
@@ -190,160 +190,9 @@
 
 
 </div>
-<!-- <div class="container mt-5">
-    <h6 class="font-weight-bolder">Frequently Bought Together</h6>
-    <ul class="collection col-md-8">
-        <li class="collection-item mt-2 pl-2">
-            <div class="d-flex flex-nowrap">
-                <div class="card-image mr-2">
-                    <img src="{{asset('assets/images/instructor_12.jpg')}}" alt="" class="">
-                </div>
-                <div class="w-100">
-                    <div class=" d-flex justify-content-between">
-
-                        <div class="title font-weight-bolder">Complete Python Developer in 2021:Zero to Mastery
-                            <div class="d-flex justify-content-start mt-4">
-                                <span class="mr-4 font-weight-bold">30.5 total hours</span>
-                                <span class="">Updated 7/2021</span>
-                            </div>
-                        </div>
-                        <div class="text-warning">4.7 <i class="fa fa-star"></i></div>
-                        <div class=""><i class="fa fa-group"></i> 87,317</div>
-                        <div>
-                            <div class="">Tshs 25000</div>
-                            <div class="faint"><strike>Tshs 45000</strike></div>
-                        </div>
-                        <a class="btn-floating  waves-effect waves-teal white  btn-large "><i
-                                class="material-icons-outlined text-dark">
-                                favorite_border
-                            </i></a>
-                    </div>
-
-                </div>
-            </div>
 
 
-        </li>
 
-        <li class="collection-item mt-2 pl-2">
-            <div class="d-flex flex-nowrap">
-                <div class="card-image mr-2">
-                    <img src="{{asset('assets/images/instructor_12.jpg')}}" alt="" class="">
-                </div>
-                <div class="w-100">
-                    <div class=" d-flex justify-content-between">
-
-                        <div class="title font-weight-bolder">Complete Python Developer in 2021:Zero to Mastery
-                            <div class="d-flex justify-content-start mt-4">
-                                <span class="mr-4 font-weight-bold">30.5 total hours</span>
-                                <span class="">Updated 7/2021</span>
-                            </div>
-                        </div>
-                        <div class="text-warning">4.7 <i class="fa fa-star"></i></div>
-                        <div class=""><i class="fa fa-group"></i> 87,317</div>
-                        <div>
-                            <div class="">Tshs 25000</div>
-                            <div class="faint"><strike>Tshs 45000</strike></div>
-                        </div>
-                        <a class="btn-floating  waves-effect waves-teal white  btn-large "><i
-                                class="material-icons-outlined text-dark">
-                                favorite_border
-                            </i></a>
-                    </div>
-
-                </div>
-            </div>
-
-
-        </li>
-        <li class="collection-item mt-2 pl-2">
-            <div class="d-flex flex-nowrap">
-                <div class="card-image mr-2">
-                    <img src="{{asset('assets/images/instructor_12.jpg')}}" alt="" class="">
-                </div>
-                <div class="w-100">
-                    <div class=" d-flex justify-content-between">
-
-                        <div class="title font-weight-bolder">{{$selcoz->course_title}}
-                            <div class="d-flex justify-content-start mt-4">
-                                <span class="mr-4 font-weight-bold">30.5 total hours</span>
-
-                            </div>
-                        </div>
-                        <div class="text-warning">4.7 <i class="fa fa-star"></i></div>
-                        <div class=""><i class="fa fa-group"></i> 87,317</div>
-                        <div>
-                            <div class="">Tshs {{$selcoz->price}}</div>
-                            <div class="faint"><strike>Tshs 45000</strike></div>
-                        </div>
-                        <a class="btn-floating  waves-effect waves-teal white  btn-large "><i
-                                class="material-icons-outlined text-dark">
-                                favorite_border
-                            </i></a>
-                    </div>
-
-                </div>
-            </div>
-
-
-        </li>
-
-        <li class="collection-item mt-2 pl-2">
-            <div class="d-flex flex-nowrap">
-                <div class="card-image mr-2">
-                    <img src="{{asset('assets/images/instructor_12.jpg')}}" alt="" class="">
-                </div>
-                <div class="w-100">
-                    <div class=" d-flex justify-content-between">
-
-                        <div class="title font-weight-bolder">Complete Python Developer in 2021:Zero to Mastery
-                            <div class="d-flex justify-content-start mt-4">
-                                <span class="mr-4 font-weight-bold">30.5 total hours</span>
-                                <span class="">Updated 7/2021</span>
-                            </div>
-                        </div>
-                        <div class="text-warning">4.7 <i class="fa fa-star"></i></div>
-                        <div class=""><i class="fa fa-group"></i> 87,317</div>
-                        <div>
-                            <div class="">Tshs 25000</div>
-                            <div class="faint"><strike>Tshs 45000</strike></div>
-                        </div>
-                        <a class="btn-floating  waves-effect waves-teal white  btn-large "><i
-                                class="material-icons-outlined text-dark">
-                                favorite_border
-                            </i></a>
-                    </div>
-
-                </div>
-            </div>
-
-
-        </li>
-    </ul>
-</div>
-<div class="container mt-5">
-
-    <div class="border p-3 col-md-8">
-        <h6 class="font-weight-bolder"> Top companies trust Naqualify</h6>
-        <p>Get your team access to Naqualify's top 1.000+ courses</p>
-        <div class="text-center d-flex justify-content-between">
-            <span class="m-2 t-50"> <img src="{{asset('assets/images/payments/applepay.svg')}}" class=" t-50"
-                    alt=""></span>
-            <span class="m-2 t-50"><img src="{{asset('assets/images/payments/neteller.svg')}}" class=" t-50"
-                    alt=""></span>
-            <span class="m-2 t-50"><img src="{{asset('assets/svgs/brands/mizuni.svg')}}" class=" t-50" alt=""></span>
-            <span class="m-2 t-50"><img src="{{asset('assets/svgs/brands/microsoft.svg')}}" class=" t-50" alt=""></span>
-            <span class="m-2 "><img src="{{asset('assets/svgs/brands/medrt.svg')}}" class=" t-50" alt=""></span>
-        </div>
-        <div class="text-center m-3">
-            <button class="btn-outline-dark bg-light  p-2">Try Naqualify Business</button>
-        </div>
-
-    </div>
-
-</div> -->
-
-</section>
 </div>
 
 <script>
