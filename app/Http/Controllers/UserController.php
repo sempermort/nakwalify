@@ -143,7 +143,7 @@ class UserController extends Controller
     //editcourse
     public function editCourse($id)
     {
-        
+
         $maincourse =Course::find($id);
         $corses = Category::all();
         $subcorses = Subcategory::all();
@@ -155,8 +155,8 @@ class UserController extends Controller
     }
     public function posteditCourse(Request $request)
     {
-       
-        
+
+
         $course = Course::findOrFail($request->cid);
         $validatedData = $request->validate([
             'course_title' => 'required',
@@ -170,7 +170,7 @@ class UserController extends Controller
             'course_des' => 'required',
 
         ]);
-        
+
         try {
 
             $course->fill($validatedData)->save();
@@ -647,6 +647,15 @@ public function deletevid($id)
 
 
         return redirect()->route('viewcourse', ['id' => $request->courseid]);
+    }
+    public function autocompleteSearch(Request $request)
+    {
+          $query = $request->get('term');
+
+          $filterResult =Course::select('course_title')
+          ->where('course_title', 'LIKE', '%'. $query. '%')->pluck('course_title');;
+
+          return response()->json($filterResult);
     }
     public function searchcourse($search)
     {

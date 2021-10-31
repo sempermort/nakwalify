@@ -46,7 +46,7 @@
                 <i class="material-icons-outlined text-white bg-transparent">menu</i>
             </button>
             <div class="collapse navbar-collapse " id="navbarSupportedContent">
-       
+
             <div class="  ml-5">
                 <a class="btn bg-transparent text-white dropdown-toggle " href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Browse
@@ -94,14 +94,14 @@
                             </div>
                         </div>
                 </div>
-            </div>      
-       
-        
+            </div>
+
+
             </div>
             <form action="{{ route('searchcourse') }}" class="w-53 sfw" method="POST">
             @csrf
                     <div class="d-flex custom-search-form">
-                        <input type="text" name="search" class="form-control form-rounded w-100"  placeholder="Search ...." required>
+                        <input type="text" name="search"  id="search"class="form-control form-rounded w-100"  placeholder="Search ...." required>
                         <span class="input-group-btn">
                         <button type="submit" class="btn btn-default-sm text-white">
                             <i class="fa fa-search"></i>
@@ -160,7 +160,7 @@
 
                         </div>
                     </li>
-                   
+
                     <li class="dropdown ml-4">
                         <a href="" class="option_links  " id="dropdownMenuButton" title="Notifications"><i
                                 class='fa fa-bell' style="margin-top: 22px; color:#fff;"></i><span
@@ -247,7 +247,7 @@
 
                             <div class="border-bottom mb-2">
                                 <a href="{{url('/instructordashboard')}}" class="item btn btn-info channel_item">Admin</a>
-                               
+
                             </div>
                             @endif
                             @if(Auth::user()->role_id=='2')
@@ -387,7 +387,7 @@
                                                                     </div>
                                                                 </div>
                                                                 <div class=" mb-1 form-group">
-                                                                    <input type="email" name="email" 
+                                                                    <input type="email" name="email"
                                                                         value="{{ old('email') }}" required
                                                                         autocomplete="email" class=" form-control"
                                                                         placeholder="Email Address">
@@ -422,7 +422,7 @@
                                                                 </div>
 
                                                                 <div class=" form-group">
-                                                                    <input type="password" name="password" 
+                                                                    <input type="password" name="password"
                                                                         required autocomplete="new-password"
                                                                         class=" form-control" placeholder="Password">
                                                                     @error('password')
@@ -648,19 +648,19 @@
 
         <script>
         //   window.onscroll = scrollFunction;
-          
+
 function scrollFunction() {
 
 var elementnav = document.getElementById("mainavbar");
-   elementnav.style.transition = "all 2s";  
+   elementnav.style.transition = "all 2s";
    if (body.scrollTop < 50 ) {
-      
+
       elementnav.classList.add("bg-dark");
       elementnav.classList.add("navbar-light");
    } else {
       elementnav.classList.remove("bg-dark");
       elementnav.classList.remove("navbar-light");
-      
+
    }
 
 }
@@ -674,10 +674,10 @@ var elementnav = document.getElementById("mainavbar");
         <!-- <script src="{{ asset('js/app.js') }}"></script> -->
         <script src="{{ asset('js/slides.js') }}">
         </script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.1/bootstrap3-typeahead.min.js"></script>
 
 <script>
- 
+
 
 
 
@@ -770,6 +770,18 @@ var elementnav = document.getElementById("mainavbar");
         });
 
 
+
+        var route = "{{ url('autocomplete-search') }}";
+
+        $('#search').typeahead({
+            source: function (query, process) {
+
+                return $.get(route, { term: query }, function (data) {
+
+                    return process(data);
+                });
+            }
+        });
 
     </script>
 </body>
