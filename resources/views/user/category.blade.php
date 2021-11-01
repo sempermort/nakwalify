@@ -34,7 +34,7 @@
             </div>
 
             <div class="hide-on-med-and-down ">
-                <div class="d-flex flex-wrap p-5 font-weight-bold ">
+                <div class="d-flex flex-wrap  font-weight-bold ">
 
                     <span class="m-3 p-1">RELATED SKILLs</span>
                     @foreach($subcat as $subcatg)
@@ -45,8 +45,8 @@
                 </div>
             </div>
 
-            <div class="mt-3 border-top d-none d-lg-block d-md-block">
-                <div class="d-flex justify-content-end  mt-5">
+            <div class=" border-top d-none d-lg-block d-md-block">
+                <div class="d-flex justify-content-end  ">
 
 
                     <p class=""><strong class="col-lg-1 col-md-2 col-sm-1 mr-2 ">SORT BY</strong></p>
