@@ -33,6 +33,11 @@
     <header class="position-absolute w-100" style="z-index:9;">
 
         <nav class="navbar navbar-expand-lg fixed-top backg mainavba " id="mainavbar"  style="height:70px; ">
+
+        <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="material-icons-outlined text-white bg-transparent">menu</i>
+            </button>
             @auth
             <a href="{{url('/category')}}" class="navbar-brand text-white"
                 style="font-family:'Kaushan_Script'; font-weight: bolder;  font-size :35px!important; ">nakwalify</a>
@@ -41,11 +46,8 @@
                 style="font-family:'Kaushan_Script'; font-weight: bolder;  font-size :35px!important; ">nakwalify</a>
             @endauth
 
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="material-icons-outlined text-white bg-transparent">menu</i>
-            </button>
-            <div class="collapse navbar-collapse " id="navbarSupportedContent">
+           
+            <div class="collapse navbar-collapse " >
 
             <div class="  ml-5">
                 <a class="btn bg-transparent text-white dropdown-toggle " href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -269,29 +271,61 @@
                         </div>
                     </li>
                     @endauth
-                    @guest
-                    <li class="ml-3">
-                        <button data-toggle="modal" data-target="#signin" class="opts_account t-white"
+                  
+                </ul>
+            </div>
+            <ul class="navbar-nav ml-auto  mr-4 cfont">
+            @guest
+                    <li class="ml-3 d-block   d-md-none ">
+                        <a  href="{{route('login')}}" class="btn border t-white"
+                            title="Account">
+                            Login
+</a>
+
+                    </li>
+                    <li class="ml-3 d-none d-md-block d-lg-block">
+                        <button data-toggle="modal" data-target="#signin" class="btn border t-white"
                             title="Account">
                             Login
                         </button>
 
                     </li>
-                    <li class="ml-3">
-                        <button data-toggle="modal" data-target="#register" class="opts_account t-white"
+                    <li class="ml-3 collapse navbar-collapse">
+                        <button data-toggle="modal" data-target="#register" class="btn border t-white"
                             title="Account">
                             Register
                         </button>
 
                     </li>
                     @endguest
-                </ul>
-            </div>
+</ul>
         </nav>
+    <div class="collapse w-100" id="navbarSupportedContent" style="position:absolute; top:70px; ">
+    <nav class="navbar navbar-expand-sm bg-light justify-content-center">
 
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link pri" href="{{url('/')}}">HOME</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link pri" href="{{route('category')}}">BROWSE</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link pri" >Naqualify Business</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link pri" >Contact</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link pri" >About Us</a>
+    </li>
+  </ul>
+
+</nav>
+ </div>
     </header>
 
-
+  
 
     <div class="">
         <main >
@@ -672,7 +706,7 @@ var elementnav = document.getElementById("mainavbar");
         <script src="{{ asset('assets/js/night-mode.js') }}"></script>
 
         <!-- <script src="{{ asset('js/app.js') }}"></script> -->
-        <script src="{{ asset('js/slides.js') }}">
+        <!-- <script src="{{ asset('js/slides.js') }}"> -->
         </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.1/bootstrap3-typeahead.min.js"></script>
 

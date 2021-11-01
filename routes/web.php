@@ -89,7 +89,7 @@ Route::get('/deleteaccount', 'App\Http\Controllers\UserController@deleteacc')->n
 Route::get('/createcert', 'App\Http\Controllers\UserController@createcert')->name('createcert');
 Route::post('/searchcourse', 'App\Http\Controllers\UserController@searchcoursepost')->name('searchcourse');
 Route::get('/autocomplete-search', [UserController::class, 'autocompleteSearch']);
-Route::get('/category', 'App\Http\Controllers\UserController@category')->middleware(['verified','auth'])->name('category');
+Route::get('/category', 'App\Http\Controllers\UserController@category')->name('category');
 Route::get('/accsetting', 'App\Http\Controllers\UserController@accSetting')->name('accsetting');
 Route::get('/lcontent', 'App\Http\Controllers\UserController@lcontent')->name('lcontent');
 

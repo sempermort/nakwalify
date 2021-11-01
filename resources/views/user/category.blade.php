@@ -2,38 +2,25 @@
 
 @section('content')
 
-<style>
-    #mainavbar{
-        background-color: #3a9982;
-    }
-    .navbar-brand a{
-        color:#fff!important;
-    }
-</style>
+
 <div class="sa4d25 p-5 mt-5">
     <div class="d-flex">
-        <div class=" hide-on-med-and-down d-none d-md-block d-lg-block mt-5 col-3">
+        <div class=" hide-on-med-and-down d-none d-md-block d-lg-block mt-5 col-2">
             <div class=" nastay">
-                <a href="#" class="waves-effect waves-light">All Classes</a>
-                <p class=" border-bottom  "> CREATE</p>
-                <a href="#" class="waves-effect waves-light">Animation </a>
-                <a href="#" class="waves-effect waves-light">Creative Writing</a>
-                <a href="#" class="waves-effect waves-light">Video & Film</a>
-                <a href="#" class="waves-effect waves-light">Fine Art</a>
-                <a href="#" class="waves-effect waves-light">Graphic Design</a>
-                <a href="#" class="waves-effect waves-light">Illustration</a>
-                <a href="#" class="waves-effect waves-light">Music</a>
-                <a href="#" class="waves-effect waves-light">Photography</a>
+                <a href="#" class="waves-effect waves-light">All Courses</a>
+                <p class=" border-bottom  "> CATEGORY</p>
+                @foreach($cat as $category)
+                <a href="#" class="waves-effect waves-light">{{$category->category_name}} </a>
+                @endforeach
             </div>
         </div>
-        <div class=" col-md-9">
+        <div class=" col-md-10">
 
             <div class="jss11 jss13 jss7 mt-5" role="img" aria-label="Online Animation Classes">
                 <div class="jss12 jss14">
                     <div class="p-md-5 text-white text-left">
-                        <h3 class="font-weight-bolder  text-left ">Online Animation Classes</h3>
-                        <p class=" font-weight-bold text-white p-2">Find what fascinates you as you explore
-                            these animation classes.</p>
+                        <h3 class="font-weight-bolder  text-left ">Online  Classes</h3>
+                        <p class=" font-weight-bold text-white p-2">Find what fascinates you as you explore  these  courses.</p>
                         <div>
                             <div class="p-2">
                                 <button type="button"
@@ -50,23 +37,11 @@
                 <div class="d-flex flex-wrap p-5 font-weight-bold ">
 
                     <span class="m-3 p-1">RELATED SKILLs</span>
-                    <button class="btn-outline-dark btntrs m-2 p-1 rounded border border-dark">2d Animation
-                    </button>
-                    <button class="btn-outline-dark btntrs m-2 p-1  rounded border border-dark">Adobe Illustrator
-                    </button>
-                    <button class="btn-outline-dark btntrs m-2 p-1  rounded border border-dark">After Effects
-                    </button>
-                    <button class="btn-outline-dark btntrs m-2 p-1  rounded border border-dark">Animation </button>
-                    <button class="btn-outline-dark btntrs m-2 p-1  rounded border border-dark">Character Animation
-                    </button>
-                    <button class="btn-outline-dark btntrs m-2 p-1  rounded border border-dark">Creative </button>
-                    <button class="btn-outline-dark btntrs m-2 p-1  rounded border border-dark">Video&Film </button>
-                    <button class="btn-outline-dark btntrs m-2 p-1  rounded border border-dark">Motion Graphics
-                    </button>
-                    <button class="btn-outline-dark btntrs m-2 p-1  rounded border border-dark">Video Editing
-                    </button>
-                    <button class="btn-outline-dark btntrs m-2 p-1  rounded border border-dark">Visual Effects
-                    </button>
+                    @foreach($subcat as $subcatg)
+                    <button class="btn-outline-dark btntrs m-2 p-1 rounded border border-dark">
+                        {{$subcatg->subcategory_name}}
+                    </button>                  
+                    @endforeach
                 </div>
             </div>
 
@@ -149,19 +124,26 @@
                     </div>
                 </div>
 
+                <div id="carousel-example4" class="carousel slide m-4" data-interval="false"  data-ride="carousel">
+                    <div class="carousel-inner" role="listbox">
 
-
-                <div class="row mt-5">
-                    @foreach($coz as $key=>$cozy)
-                    <div class="col-md-3  mb-4  ">
+                        @foreach($coz as $key=>$cozy)
+                        @if($key==0)
+                        <div class="carousel-item  active">
+                        <div class=" d-flex ">  
+                        @endif
+                        @if($key%4==0&&$key!=0)
+                        <div class="carousel-item ">
+                        <div class=" d-flex "> 
+                        @endif
+                        <div class="col-md-3   mb-4 ">
                             <a href="{{route('coursedetail',$cozy->id)}}">
                                 <div class="card h-350 cardc rounded ">
                                     <div class="h-220">
                                         @if(isset($cozy->mediaCover->file_path))
 
                                         @php $src=$cozy->mediaCover->file_path; @endphp
-                                        <img class="card-img-top  object-cover h-100 w-100"
-                                            src="{{route('get-copic',explode('/',$src)[1])}}" alt="Card image cap">
+                                        <img class="card-img-top  object-cover h-100 w-100" src="{{route('get-copic',explode('/',$src)[1])}}" alt="Card image cap">
                                         @endif
 
 
@@ -192,12 +174,30 @@
 
                         </div>
 
+                       @if(($key+1)%4==0)</div></div>
+                       @elseif(count($coz)-1==$key)
+                       </div></div>
+                       @endif 
+                        @endforeach
+                        <a class="carousel-control-prev " style="margin-left: -24px;" href="#carousel-example4" role="button" data-slide="prev"><small class=" jss15 bg-white">
+                                <span class="material-icons dark  ">
+                                    chevron_left
+                                </span>
+                            </small>
 
+                        </a>
+                        <a class="carousel-control-next" style="margin-right: -24px;" href="#carousel-example4" role="button" data-slide="next">
+                            <i class=" jss15  ">
+                                <span class="material-icons dark font-weight-light">
+                                    chevron_right
+                                </span>
+                            </i>
 
-                    @endforeach
+                            </button>
+                        </a>
+                    </div>
 
-                </div>
-
+                </div>              
             </div>
         </div>
     </div>

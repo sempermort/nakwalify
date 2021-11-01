@@ -2,15 +2,15 @@
 
 @section('content')
 <style>
-.mainavba{
-     background:transparent;
-}
-     </style>
+    .mainavba {
+        background: transparent;
+    }
+</style>
 </style>
 <section>
     <div class="h-vid position-relative" style="">
         <video autoplay muted loop class="w-100 h-100 object-cover " id="myVideo">
-            <source src="{{asset('assets/vids/cover vid.mp4')}}"  type="video/mp4">
+            <source src="{{asset('assets/vids/cover vid.mp4')}}" type="video/mp4">
         </video>
         <div class=" regform card col-md-4  col-lg-3 col-sm-6 ">
 
@@ -46,20 +46,14 @@
 
                                         <div class=" form-group mb-1">
                                             <div class="d-flex  justify-content-between">
-                                                <div style="width: 48%;"> <input type="text" name="fname"
-                                                        value="{{ old('fname') }}" required autocomplete="name"
-                                                        autofocus id="FirstName" class="form-control"
-                                                        placeholder="First Name">
+                                                <div style="width: 48%;"> <input type="text" name="fname" value="{{ old('fname') }}" required autocomplete="name" autofocus id="FirstName" class="form-control" placeholder="First Name">
                                                     @error('fname')
                                                     <span class="invalid-feedback" role="alert">
                                                         <strong>{{ $message }}</strong>
                                                     </span>
                                                     @enderror
                                                 </div>
-                                                <div style="width: 48%;"> <input type="text" name="lname"
-                                                        value="{{ old('lname') }}" required autocomplete="name"
-                                                        autofocus id="lastName" class="form-control"
-                                                        placeholder="last Name">
+                                                <div style="width: 48%;"> <input type="text" name="lname" value="{{ old('lname') }}" required autocomplete="name" autofocus id="lastName" class="form-control" placeholder="last Name">
                                                     @error('lname')
                                                     <span class="invalid-feedback" role="alert">
                                                         <strong>{{ $message }}</strong>
@@ -69,9 +63,7 @@
                                             </div>
                                         </div>
                                         <div class=" mb-1 form-group">
-                                            <input type="email" name="email" id="email" name="email"
-                                                value="{{ old('email') }}" required autocomplete="email"
-                                                class=" form-control" placeholder="Email Address">
+                                            <input type="email" name="email" id="email" name="email" value="{{ old('email') }}" required autocomplete="email" class=" form-control" placeholder="Email Address">
                                             @error('email')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -82,11 +74,8 @@
 
                                         <div class=" form-group mb-1">
                                             <div class="d-flex justify-content-between">
-                                                <input type="text" name="Ccode" id="Ccode" class="form-control mr-2"
-                                                    style="width: 28%;" readonly value="+255">
-                                                <input type="text" name="phonenumber" id="phonenumber"
-                                                    class="form-control" value="{{ old('phonenumber') }}" required
-                                                    autocomplete="phonenumber" style="width: 72%;">
+                                                <input type="text" name="Ccode" id="Ccode" class="form-control mr-2" style="width: 28%;" readonly value="+255">
+                                                <input type="text" name="phonenumber" id="phonenumber" class="form-control" value="{{ old('phonenumber') }}" required autocomplete="phonenumber" style="width: 72%;">
                                                 <div>
 
                                                     @error('phonenumber') <span class="invalid-feedback" role="alert">
@@ -100,9 +89,7 @@
                                         </div>
 
                                         <div class=" form-group">
-                                            <input type="password" name="password" id="password" required
-                                                autocomplete="new-password" class=" form-control"
-                                                placeholder="Password">
+                                            <input type="password" name="password" id="password" required autocomplete="new-password" class=" form-control" placeholder="Password">
                                             @error('password')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
@@ -111,17 +98,14 @@
 
                                         </div>
                                         <div class=" mb-1">
-                                            <input type="password" id="cpassword" class=" form-control"
-                                                name="password_confirmation" required autocomplete="new-password"
-                                                placeholder="Confirm Password">
+                                            <input type="password" id="cpassword" class=" form-control" name="password_confirmation" required autocomplete="new-password" placeholder="Confirm Password">
                                         </div>
                                         <div class=" form-group m-2">
                                             <div class="text-center m-auto ">
                                                 <button class="form-control m-auto w-80 btn-primary">
                                                     {{ __('Register') }}</button>
 
-                                                <p>Already a Member <button class=" btn btn-default "
-                                                        style="margin-top: -4px;">Sign
+                                                <p>Already a Member <button class=" btn btn-default " style="margin-top: -4px;">Sign
                                                         In</button></p>
 
 
@@ -178,21 +162,26 @@
         <div class="tab-content">
             <div id="all" class="tab-pane fade show  active">
 
-                <div id="carousel-example4" class="carousel slide m-4" data-interval="false" ride="false"
-                    data-ride="carousel">
-                    <div class="carousel-inneri  row  mx-auto" role="listbox">
+                <div id="carousel-example4" class="carousel slide m-4" data-interval="false"  data-ride="carousel">
+                    <div class="carousel-inner" role="listbox">
 
                         @foreach($coz as $key=>$cozy)
-
-                        <div class="col-md-3  mb-4  ">
+                        @if($key==0)
+                        <div class="carousel-item  active">
+                        <div class=" d-flex ">  
+                        @endif
+                        @if($key%4==0&&$key!=0)
+                        <div class="carousel-item ">
+                        <div class=" d-flex "> 
+                        @endif
+                        <div class="col-md-3   mb-4 ">
                             <a href="{{route('coursedetail',$cozy->id)}}">
                                 <div class="card h-350 cardc rounded ">
                                     <div class="h-220">
                                         @if(isset($cozy->mediaCover->file_path))
 
                                         @php $src=$cozy->mediaCover->file_path; @endphp
-                                        <img class="card-img-top  object-cover h-100 w-100"
-                                            src="{{route('get-copic',explode('/',$src)[1])}}" alt="Card image cap">
+                                        <img class="card-img-top  object-cover h-100 w-100" src="{{route('get-copic',explode('/',$src)[1])}}" alt="Card image cap">
                                         @endif
 
 
@@ -223,18 +212,19 @@
 
                         </div>
 
-
+                       @if(($key+1)%4==0)</div></div>
+                       @elseif(count($coz)-1==$key)
+                       </div></div>
+                       @endif 
                         @endforeach
-                        <a class="carousel-control-prev " style="margin-left: -24px;" href="#carousel-example4"
-                            role="button" data-slide="prev"><small class=" jss15 bg-white">
+                        <a class="carousel-control-prev " style="margin-left: -24px;" href="#carousel-example4" role="button" data-slide="prev"><small class=" jss15 bg-white">
                                 <span class="material-icons dark  ">
                                     chevron_left
                                 </span>
                             </small>
 
                         </a>
-                        <a class="carousel-control-next" style="margin-right: -24px;" href="#carousel-example4"
-                            role="button" data-slide="next">
+                        <a class="carousel-control-next" style="margin-right: -24px;" href="#carousel-example4" role="button" data-slide="next">
                             <i class=" jss15  ">
                                 <span class="material-icons dark font-weight-light">
                                     chevron_right
@@ -249,8 +239,7 @@
             </div>
 
             <div id="Livestock" class="tab-pane fade ">
-                <div id="carousel-example42" class="carousel slide m-4" data-interval="false" ride="false"
-                    data-ride="carousel">
+                <div id="carousel-example4a" class="carousel slide m-4" data-interval="false" ride="false" data-ride="carousel">
                     <div class="carousel-inneri  row  mx-auto" role="listbox">
 
                         @foreach($coz as $key=>$cozy)
@@ -261,9 +250,7 @@
                                     <div class="h-220">
 
                                         @if(isset($cozy->mediaCover->file_path))
-                                        <img class="card-img-top  object-cover h-100 w-100"
-                                            src="{{route('get-copic',explode('/',$cozy->mediaCover->file_path)[1])}}"
-                                            alt="Card image cap">
+                                        <img class="card-img-top  object-cover h-100 w-100" src="{{route('get-copic',explode('/',$cozy->mediaCover->file_path)[1])}}" alt="Card image cap">
                                         @endif
 
                                         <div class="card-img-overlay">
@@ -299,16 +286,14 @@
 
                         @endif
                         @endforeach
-                        <a class="carousel-control-prev " style="margin-left: -24px;" href="#carousel-example4"
-                            role="button" data-slide="prev"><small class=" jss15 bg-white">
+                        <a class="carousel-control-prev " style="margin-left: -24px;" href="#carousel-example4a" role="button" data-slide="prev"><small class=" jss15 bg-white">
                                 <span class="material-icons dark  ">
                                     chevron_left
                                 </span>
                             </small>
 
                         </a>
-                        <a class="carousel-control-next" style="margin-right: -24px;" href="#carousel-example4"
-                            role="button" data-slide="next">
+                        <a class="carousel-control-next" style="margin-right: -24px;" href="#carousel-example4a" role="button" data-slide="next">
                             <i class=" jss15  ">
                                 <span class="material-icons dark font-weight-light">
                                     chevron_right
@@ -322,8 +307,7 @@
                 </div>
             </div>
             <div id="Agriculture" class="tab-pane fade ">
-                <div id="carousel-example4" class="carousel slide m-4" data-interval="false" ride="false"
-                    data-ride="carousel">
+                <div id="carousel-example4" class="carousel slide m-4" data-interval="false" ride="false" data-ride="carousel">
                     <div class="carousel-inneri  row  mx-auto" role="listbox">
 
                         @foreach($coz as $key=>$cozy)
@@ -334,9 +318,7 @@
                                     <div class="h-220">
 
                                         @if(isset($cozy->mediaCover->file_path))
-                                        <img class="card-img-top  object-cover h-100 w-100"
-                                            src="{{route('get-copic',explode('/',$cozy->mediaCover->file_path)[1])}}"
-                                            alt="Card image cap">
+                                        <img class="card-img-top  object-cover h-100 w-100" src="{{route('get-copic',explode('/',$cozy->mediaCover->file_path)[1])}}" alt="Card image cap">
                                         @endif
 
                                         <div class="card-img-overlay">
@@ -372,16 +354,14 @@
                         @endif
                         @endforeach
 
-                        <a class="carousel-control-prev " style="margin-left: -24px;" href="#carousel-example4"
-                            role="button" data-slide="prev"><small class=" jss15 bg-white">
+                        <a class="carousel-control-prev " style="margin-left: -24px;" href="#carousel-example4" role="button" data-slide="prev"><small class=" jss15 bg-white">
                                 <span class="material-icons dark  ">
                                     chevron_left
                                 </span>
                             </small>
 
                         </a>
-                        <a class="carousel-control-next" style="margin-right: -24px;" href="#carousel-example4"
-                            role="button" data-slide="next">
+                        <a class="carousel-control-next" style="margin-right: -24px;" href="#carousel-example4" role="button" data-slide="next">
                             <i class=" jss15  ">
                                 <span class="material-icons dark font-weight-light">
                                     chevron_right
@@ -395,8 +375,7 @@
                 </div>
             </div>
             <div id="Forestry" class="tab-pane  fade ">
-                <div id="carousel-example43" class="carousel slide m-4" data-interval="false" ride="false"
-                    data-ride="carousel">
+                <div id="carousel-example4" class="carousel slide m-4" data-interval="false" ride="false" data-ride="carousel">
                     <div class="carousel-inneri  row  mx-auto" role="listbox">
 
                         @foreach($coz as $key=>$cozy)
@@ -406,9 +385,7 @@
                                 <div class="card h-350 cardc rounded ">
                                     <div class="h-220">
                                         @if(isset($cozy->mediaCover->file_path))
-                                        <img class="card-img-top  object-cover h-100 w-100"
-                                            src="{{route('get-copic',explode('/',$cozy->mediaCover->file_path)[1])}}"
-                                            alt="Card image cap">
+                                        <img class="card-img-top  object-cover h-100 w-100" src="{{route('get-copic',explode('/',$cozy->mediaCover->file_path)[1])}}" alt="Card image cap">
                                         @endif
                                         <div class="card-img-overlay">
                                             <span class=" jss16 m-25-auto ">
@@ -442,16 +419,14 @@
                         </div>
                         @endif
                         @endforeach
-                        <a class="carousel-control-prev " style="margin-left: -24px;" href="#carousel-example4"
-                            role="button" data-slide="prev"><small class=" jss15 bg-white">
+                        <a class="carousel-control-prev " style="margin-left: -24px;" href="#carousel-example4" role="button" data-slide="prev"><small class=" jss15 bg-white">
                                 <span class="material-icons dark  ">
                                     chevron_left
                                 </span>
                             </small>
 
                         </a>
-                        <a class="carousel-control-next" style="margin-right: -24px;" href="#carousel-example4"
-                            role="button" data-slide="next">
+                        <a class="carousel-control-next" style="margin-right: -24px;" href="#carousel-example4" role="button" data-slide="next">
                             <i class=" jss15  ">
                                 <span class="material-icons dark font-weight-light">
                                     chevron_right
@@ -465,8 +440,7 @@
                 </div>
             </div>
             <div id="Arts" class="tab-pane fade ">
-                <div id="carousel-example44" class="carousel slide m-4" data-interval="false" ride="false"
-                    data-ride="carousel">
+                <div id="carousel-example4" class="carousel slide m-4" data-interval="false" ride="false" data-ride="carousel">
                     <div class="carousel-inneri  row  mx-auto" role="listbox">
 
                         @foreach($coz as $key=>$cozy)
@@ -476,9 +450,7 @@
                                 <div class="card h-350 cardc rounded ">
                                     <div class="h-220">
                                         @if(isset($cozy->mediaCover->file_path))
-                                        <img class="card-img-top  object-cover h-100 w-100"
-                                            src="{{route('get-copic',explode('/',$cozy->mediaCover->file_path)[1])}}"
-                                            alt="Card image cap">
+                                        <img class="card-img-top  object-cover h-100 w-100" src="{{route('get-copic',explode('/',$cozy->mediaCover->file_path)[1])}}" alt="Card image cap">
                                         @endif
                                         <div class="card-img-overlay">
                                             <span class=" jss16 m-25-auto ">
@@ -512,16 +484,14 @@
                         </div>
                         @endif
                         @endforeach
-                        <a class="carousel-control-prev " style="margin-left: -24px;" href="#carousel-example4"
-                            role="button" data-slide="prev"><small class=" jss15 bg-white">
+                        <a class="carousel-control-prev " style="margin-left: -24px;" href="#carousel-example4" role="button" data-slide="prev"><small class=" jss15 bg-white">
                                 <span class="material-icons dark  ">
                                     chevron_left
                                 </span>
                             </small>
 
                         </a>
-                        <a class="carousel-control-next" style="margin-right: -24px;" href="#carousel-example4"
-                            role="button" data-slide="next">
+                        <a class="carousel-control-next" style="margin-right: -24px;" href="#carousel-example4" role="button" data-slide="next">
                             <i class=" jss15  ">
                                 <span class="material-icons dark font-weight-light">
                                     chevron_right
@@ -535,8 +505,7 @@
                 </div>
             </div>
             <div id="Transportation" class="tab-pane fade ">
-                <div id="carousel-example45" class="carousel slide m-4" data-interval="false" ride="false"
-                    data-ride="carousel">
+                <div id="carousel-example4" class="carousel slide m-4" data-interval="false" ride="false" data-ride="carousel">
                     <div class="carousel-inneri  row  mx-auto" role="listbox">
 
                         @foreach($coz as $key=>$cozy)
@@ -546,9 +515,7 @@
                                 <div class="card h-350 cardc rounded ">
                                     <div class="h-220">
                                         @if(isset($cozy->mediaCover->file_path))
-                                        <img class="card-img-top  object-cover h-100 w-100"
-                                            src="{{route('get-copic',explode('/',$cozy->mediaCover->file_path)[1])}}"
-                                            alt="Card image cap">
+                                        <img class="card-img-top  object-cover h-100 w-100" src="{{route('get-copic',explode('/',$cozy->mediaCover->file_path)[1])}}" alt="Card image cap">
                                         @endif
                                         <div class="card-img-overlay">
                                             <span class=" jss16 m-25-auto ">
@@ -582,16 +549,14 @@
                         </div>
                         @endif
                         @endforeach
-                        <a class="carousel-control-prev " style="margin-left: -24px;" href="#carousel-example4"
-                            role="button" data-slide="prev"><small class=" jss15 bg-white">
+                        <a class="carousel-control-prev " style="margin-left: -24px;" href="#carousel-example4" role="button" data-slide="prev"><small class=" jss15 bg-white">
                                 <span class="material-icons dark  ">
                                     chevron_left
                                 </span>
                             </small>
 
                         </a>
-                        <a class="carousel-control-next" style="margin-right: -24px;" href="#carousel-example4"
-                            role="button" data-slide="next">
+                        <a class="carousel-control-next" style="margin-right: -24px;" href="#carousel-example4" role="button" data-slide="next">
                             <i class=" jss15  ">
                                 <span class="material-icons dark font-weight-light">
                                     chevron_right
@@ -605,8 +570,7 @@
                 </div>
             </div>
             <div id="Skills" class="tab-pane  fade ">
-                <div id="carousel-example46" class="carousel slide m-4" data-interval="false" ride="false"
-                    data-ride="carousel">
+                <div id="carousel-example4" class="carousel slide m-4" data-interval="false" ride="false" data-ride="carousel">
                     <div class="carousel-inneri  row  mx-auto" role="listbox">
 
                         @foreach($coz as $key=>$cozy)
@@ -616,9 +580,7 @@
                                 <div class="card h-350 cardc rounded ">
                                     <div class="h-220">
                                         @if(isset($cozy->mediaCover->file_path))
-                                        <img class="card-img-top  object-cover h-100 w-100"
-                                            src="{{route('get-copic',explode('/',$cozy->mediaCover->file_path)[1])}}"
-                                            alt="Card image cap">
+                                        <img class="card-img-top  object-cover h-100 w-100" src="{{route('get-copic',explode('/',$cozy->mediaCover->file_path)[1])}}" alt="Card image cap">
                                         @endif
                                         <div class="card-img-overlay">
                                             <span class=" jss16 m-25-auto ">
@@ -652,16 +614,14 @@
                         </div>
                         @endif
                         @endforeach
-                        <a class="carousel-control-prev " style="margin-left: -24px;" href="#carousel-example4"
-                            role="button" data-slide="prev"><small class=" jss15 bg-white">
+                        <a class="carousel-control-prev " style="margin-left: -24px;" href="#carousel-example4" role="button" data-slide="prev"><small class=" jss15 bg-white">
                                 <span class="material-icons dark  ">
                                     chevron_left
                                 </span>
                             </small>
 
                         </a>
-                        <a class="carousel-control-next" style="margin-right: -24px;" href="#carousel-example4"
-                            role="button" data-slide="next">
+                        <a class="carousel-control-next" style="margin-right: -24px;" href="#carousel-example4" role="button" data-slide="next">
                             <i class=" jss15  ">
                                 <span class="material-icons dark font-weight-light">
                                     chevron_right
@@ -675,20 +635,17 @@
                 </div>
             </div>
             <div id="Business" class="tab-pane  fade">
-                <div id="carousel-example47" class="carousel slide m-4" data-interval="false" ride="false"
-                    data-ride="carousel">
-                    <div class="carousel-inneri  row  mx-auto" role="listbox">
+                <div id="carousel-example4" class="carousel slide m-4" data-interval="false" ride="false" data-ride="carousel">
+                    <div class="carousel-inner  row  mx-auto" role="listbox">
 
                         @foreach($coz as $key=>$cozy)
                         @if(strtolower($cozy->category->category_name)=="business")
-                        <div class="col-md-3    active">
+                        <div class="col-md-3    ">
                             <a href="{{route('coursedetail',$cozy->id)}}">
                                 <div class="card h-350 cardc rounded ">
                                     <div class="h-220">
                                         @if(isset($cozy->mediaCover->file_path))
-                                        <img class="card-img-top  object-cover h-100 w-100"
-                                            src="{{route('get-copic',explode('/',$cozy->mediaCover->file_path)[1])}}"
-                                            alt="Card image cap">
+                                        <img class="card-img-top  object-cover h-100 w-100" src="{{route('get-copic',explode('/',$cozy->mediaCover->file_path)[1])}}" alt="Card image cap">
                                         @endif
                                         <div class="card-img-overlay">
                                             <span class=" jss16 m-25-auto ">
@@ -722,16 +679,14 @@
                         </div>
                         @endif
                         @endforeach
-                        <a class="carousel-control-prev " style="margin-left: -24px;" href="#carousel-example4"
-                            role="button" data-slide="prev"><small class=" jss15 bg-white">
+                        <a class="carousel-control-prev " style="margin-left: -24px;" href="#carousel-example4" role="button" data-slide="prev"><small class=" jss15 bg-white">
                                 <span class="material-icons dark  ">
                                     chevron_left
                                 </span>
                             </small>
 
                         </a>
-                        <a class="carousel-control-next" style="margin-right: -24px;" href="#carousel-example4"
-                            role="button" data-slide="next">
+                        <a class="carousel-control-next" style="margin-right: -24px;" href="#carousel-example4" role="button" data-slide="next">
                             <i class=" jss15  ">
                                 <span class="material-icons dark font-weight-light">
                                     chevron_right
@@ -749,83 +704,80 @@
     </div>
 </section>
 <section>
-<div class="mt-5 ">
+    <div class="mt-5 ">
 
-<div id="carouselExampleIndicators" class="carousel h-400 carousel-fade" data-ride="carousel" style="">
+        <div id="carousel-b" class="carousel slide h-400 carousel-fade" data-ride="carousel">
 
-    <div class="carousel-inner">
-        <div class="carousel-item active h-400 ">
-            <img src="{{asset('assets/images/2.png')}}" class="img-fluid center " style="" alt="">
-            <div class="invisiblely">
-                <div class="carousel-caption slide-top">
-                    <div class=" itm">
-                        <div class="banner-content">
+            <div class="carousel-inner">
+                <div class="carousel-item active h-400 ">
+                    <img src="{{asset('assets/images/2.png')}}" class="img-fluid center " alt="">
+                    <div class="invisiblely">
+                        <div class="carousel-caption slide-top">
+                            <div class=" itm">
+                                <div class="banner-content">
 
-                            <div class="banner-h">Build Meaningful Self-Care Into
-                                    Every Day</div>
-                            <div class="banner-description">Join superstar Jonathan Van Ness and
-                                best-selling author Chidera Eggerue for this powerful new
-                                self-care workshop, kicking off July 12th.</div>
-                            <div class="banner-actions"><a href=""
-                                    class="btn btn-default bg-landing"><span>Join
-                                        Now</span></a></div>
+                                    <div class="banner-h">Build Meaningful Self-Care Into
+                                        Every Day</div>
+                                    <div class="banner-description">Join superstar Jonathan Van Ness and
+                                        best-selling author Chidera Eggerue for this powerful new
+                                        self-care workshop, kicking off July 12th.</div>
+                                    <div class="banner-actions"><a href="" class="btn btn-default bg-landing"><span>Join
+                                                Now</span></a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item  h-400 ">
+                    <img src="{{asset('assets/images/2.png')}}" class="img-fluid center " style="" alt="">
+                    <div class="invisiblely">
+                        <div class="carousel-caption slide-top">
+                            <div class=" itm">
+                                <div class="banner-content">
+
+                                    <div class="banner-h">Build Meaningful Self-Care Into
+                                        Every Day</div>
+                                    <div class="banner-description">Join superstar Jonathan Van Ness and
+                                        best-selling author Chidera Eggerue for this powerful new
+                                        self-care workshop, kicking off July 12th.</div>
+                                    <div class="banner-actions"><a href="" class="btn btn-default bg-landing"><span>Join
+                                                Now</span></a></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="carousel-item  h-400 ">
-            <img src="{{asset('assets/images/2.png')}}" class="img-fluid center " style="" alt="">
-            <div class="invisiblely">
-                <div class="carousel-caption slide-top">
-                    <div class=" itm">
-                        <div class="banner-content">
-
-                            <div class="banner-h">Build Meaningful Self-Care Into
-                                    Every Day</div>
-                            <div class="banner-description">Join superstar Jonathan Van Ness and
-                                best-selling author Chidera Eggerue for this powerful new
-                                self-care workshop, kicking off July 12th.</div>
-                            <div class="banner-actions"><a href=""
-                                    class="btn btn-default bg-landing"><span>Join
-                                        Now</span></a></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <a class="carousel-control-prev" href="#carousel-b" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carousel-b" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
         </div>
     </div>
-    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-    </a>
-</div>
-</div>
 </section>
 
 
 <script>
+    $(function() {
+        var elementnav = document.getElementById("mainavbar");
+        elementnav.style.transition = "all 2s";
+        $(window).scroll(function() {
 
-$(function(){
-    var elementnav = document.getElementById("mainavbar");
-   elementnav.style.transition = "all 2s"; 
-  $(window).scroll(function(){
-   
-    if($(this).scrollTop()>=50){  
-      
-      elementnav.classList.add("bg-dark");
-      elementnav.classList.add("navbar-light");
-   } else {
-      elementnav.classList.remove("bg-dark");
-      elementnav.classList.remove("navbar-light");
-      
-   
-    }
-  });
-});
+            if ($(this).scrollTop() >= 50) {
+
+                elementnav.classList.add("bg-dark");
+                elementnav.classList.add("navbar-light");
+            } else {
+                elementnav.classList.remove("bg-dark");
+                elementnav.classList.remove("navbar-light");
+
+
+            }
+        });
+    });
 </script>
 @endsection

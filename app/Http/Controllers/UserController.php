@@ -763,7 +763,11 @@ public function deletevid($id)
     {
 
         $coz = Course::all();
-        return view('user.category')->with('coz', $coz);
+        $cat = Category::all();
+        $subcat = SubCategory::all();
+        return view('user.category')->with('coz', $coz)
+        ->with('cat', $cat)
+        ->with('subcat', $subcat);
     }
 
     public function accSetting()

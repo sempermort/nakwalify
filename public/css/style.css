@@ -966,3 +966,8 @@
     .backg {
         background: rgb(52, 58, 64);
     }
+    .pri {
+        color: #002333;
+        text-decoration: none;
+        font-weight: 700;
+    }
