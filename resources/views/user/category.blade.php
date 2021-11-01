@@ -3,7 +3,7 @@
 @section('content')
 
 
-<div class="sa4d25 p-5 mt-3">
+<div class="sa4d25  mt-20">
     <div class="d-flex">
         <div class=" hide-on-med-and-down d-none d-md-block d-lg-block mt-5 col-2">
             <div class=" nastay">
