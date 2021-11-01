@@ -972,3 +972,18 @@
         text-decoration: none;
         font-weight: 700;
     }
+    .jss15 {
+
+        width: 40px;
+        cursor: pointer;
+        height: 40px;
+        display: flex;
+        box-shadow: 0 2px 4px 0 rgba(187, 187, 187, 0.5);
+        align-items: center;
+        border-color: transparent;
+        border-style: solid;
+        border-width: 1px;
+        border-radius: 50%;
+        justify-content: center;
+    
+    }
