@@ -125,125 +125,125 @@
                 </div>
 
                 <div class="tab-content">
-            <div id="all" class="tab-pane fade show  active">
+                        <div id="all" class="tab-pane fade show  active">
 
-                <div id="exampleSlider" class=" " >
-                    <div class="MS-content" >
+                            <div id="exampleSlider" class=" " >
+                                <div class="MS-content" >
 
-                        @foreach($coz as $key=>$cozy)
-                        
-                        <div class=" item  ">
-                            <div class="m-2"> 
-                            <a href="{{route('coursedetail',$cozy->id)}}">
-                                <div class="card h-350 cardc rounded ">
-                                    <div class="h-220">
-                                        @if(isset($cozy->mediaCover->file_path))
+                                    @foreach($coz as $key=>$cozy)
+                                    
+                                    <div class=" item  ">
+                                        <div class="m-2"> 
+                                        <a href="{{route('coursedetail',$cozy->id)}}">
+                                            <div class="card h-350 cardc rounded ">
+                                                <div class="h-220">
+                                                    @if(isset($cozy->mediaCover->file_path))
 
-                                        @php $src=$cozy->mediaCover->file_path; @endphp
-                                        <img class="card-img-top  object-cover h-100 w-100" src="{{route('get-copic',explode('/',$src)[1])}}" alt="Card image cap">
-                                        @endif
-
-
-                                        <div class="card-img-overlay">
-                                            <span class=" jss16 m-25-auto ">
-                                                <span class="material-icons-round ">
-                                                    play_arrow
-                                                </span>
-                                            </span>
-
-                                        </div>
-                                    </div>
-
-                                    <div class="m-2 p-0">
-                                        <p class="card-text  d-flex justify-content-between">
-                                            <small class="card-text">22 trainees </small>
-                                            <small class="card-text"> 50m</small>
-                                        </p>
+                                                    @php $src=$cozy->mediaCover->file_path; @endphp
+                                                    <img class="card-img-top  object-cover h-100 w-100" src="{{route('get-copic',explode('/',$src)[1])}}" alt="Card image cap">
+                                                    @endif
 
 
-                                        <p class="card-text bold ellipsis">{{$cozy->course_subt}}</p>
-
-                                    </div>
-
-                                </div>
-                            </a>
-
-                          </div>
-                        </div>
-
-                     
-                        @endforeach
-                        
-                        
-                    </div>
-                    <div class="MS-controls">
-               <button class="MS-left"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
-                <button class="MS-right"><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
-                        </div>
-
-                </div>
-            </div>
-        @foreach($cat as $cate)
-                    <div id="{{$cate->category_name}}" class="tab-pane fade ">
-                    <div id="exampleSlider" class=" " >
-                            <div class="MS-content" >
-                            
-                                @foreach($cate->courses as $key=>$cozy)
-                        
-                                <div class=" item  ">
-                                    <div class="m-2"> 
-                                    <a href="{{route('coursedetail',$cozy->id)}}">
-                                        <div class="card h-350 cardc rounded ">
-                                            <div class="h-220">
-                                                @if(isset($cozy->mediaCover->file_path))
-
-                                                @php $src=$cozy->mediaCover->file_path; @endphp
-                                                <img class="card-img-top  object-cover h-100 w-100" src="{{route('get-copic',explode('/',$src)[1])}}" alt="Card image cap">
-                                                @endif
-
-
-                                                <div class="card-img-overlay">
-                                                    <span class=" jss16 m-25-auto ">
-                                                        <span class="material-icons-round ">
-                                                            play_arrow
+                                                    <div class="card-img-overlay">
+                                                        <span class=" jss16 m-25-auto ">
+                                                            <span class="material-icons-round ">
+                                                                play_arrow
+                                                            </span>
                                                         </span>
-                                                    </span>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="m-2 p-0">
+                                                    <p class="card-text  d-flex justify-content-between">
+                                                        <small class="card-text">22 trainees </small>
+                                                        <small class="card-text"> 50m</small>
+                                                    </p>
+
+
+                                                    <p class="card-text bold ellipsis">{{$cozy->course_subt}}</p>
 
                                                 </div>
-                                            </div>
-
-                                            <div class="m-2 p-0">
-                                                <p class="card-text  d-flex justify-content-between">
-                                                    <small class="card-text">22 trainees </small>
-                                                    <small class="card-text"> 50m</small>
-                                                </p>
-
-
-                                                <p class="card-text bold ellipsis">{{$cozy->course_subt}}</p>
 
                                             </div>
+                                        </a>
 
-                                        </div>
-                                    </a>
+                                    </div>
+                                    </div>
 
-                                </div>
-                                </div>
-                                                
-                                @endforeach
                                 
-                                
+                                    @endforeach
+                                    
+                                    
+                                </div>
+                                <div class="MS-controls">
+                        <button class="MS-left"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
+                            <button class="MS-right"><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+                                    </div>
+
                             </div>
-                            <div class="MS-controls">
-                    <button class="MS-left"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
-                        <button class="MS-right"><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
-                                </div>
-
                         </div>
-                    </div>
-                    </div>
-        @endforeach
+                    @foreach($cat as $cate)
+                        <div id="{{$cate->category_name}}" class="tab-pane fade ">
+                            <div id="exampleSlider" class="" >
+                                        <div class="MS-content" >
+                                        
+                                            @foreach($cate->courses as $key=>$cozy)
+                                    
+                                            <div class=" item  ">
+                                                <div class="m-2"> 
+                                                <a href="{{route('coursedetail',$cozy->id)}}">
+                                                    <div class="card h-350 cardc rounded ">
+                                                        <div class="h-220">
+                                                            @if(isset($cozy->mediaCover->file_path))
 
-        </div>             
+                                                            @php $src=$cozy->mediaCover->file_path; @endphp
+                                                            <img class="card-img-top  object-cover h-100 w-100" src="{{route('get-copic',explode('/',$src)[1])}}" alt="Card image cap">
+                                                            @endif
+
+
+                                                            <div class="card-img-overlay">
+                                                                <span class=" jss16 m-25-auto ">
+                                                                    <span class="material-icons-round ">
+                                                                        play_arrow
+                                                                    </span>
+                                                                </span>
+
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="m-2 p-0">
+                                                            <p class="card-text  d-flex justify-content-between">
+                                                                <small class="card-text">22 trainees </small>
+                                                                <small class="card-text"> 50m</small>
+                                                            </p>
+
+
+                                                            <p class="card-text bold ellipsis">{{$cozy->course_subt}}</p>
+
+                                                        </div>
+
+                                                    </div>
+                                                </a>
+
+                                            </div>
+                                            </div>
+                                                            
+                                            @endforeach
+                                            
+                                            
+                                        </div>
+                                        <div class="MS-controls">
+                                <button class="MS-left"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
+                                    <button class="MS-right"><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+                                            </div>
+
+                            </div>
+                        </div>
+                            
+                    @endforeach
+
+                </div>             
             </div>
         </div>
     </div>
