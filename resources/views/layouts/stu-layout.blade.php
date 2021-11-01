@@ -23,9 +23,9 @@
     <link href="{{ asset('assets/bootstrap-4.3.1-dist/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet">
 
-    <link href="{{ asset('css/multitemslide.css') }}" rel="stylesheet">
+   
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
-<style></style>
+    <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
 <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
 </head>
 
@@ -706,7 +706,7 @@ var elementnav = document.getElementById("mainavbar");
         <script src="{{ asset('assets/js/night-mode.js') }}"></script>
 
         <!-- <script src="{{ asset('js/app.js') }}"></script> -->
-        <!-- <script src="{{ asset('js/slides.js') }}"> -->
+        <script src="{{ asset('js/multislider.js') }}">
         </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.1/bootstrap3-typeahead.min.js"></script>
 
@@ -715,15 +715,15 @@ var elementnav = document.getElementById("mainavbar");
 
 
 
-        $('.nastay').on('click', 'a', function() {
+        // $('.nastay').on('click', 'a', function() {
 
-            $(this).addClass('active').addClass('noHover')
-                .siblings().removeClass('active').removeClass('noHover');
-            var url = location.pathname
-            location.href = url + this.getAttribute('href');
-            $(this.getAttribute('href')).addClass('active').addClass('show')
-                .siblings().removeClass('active').removeClass('show');
-        });
+        //     $(this).addClass('active').addClass('noHover')
+        //         .siblings().removeClass('active').removeClass('noHover');
+        //     var url = location.pathname
+        //     location.href = url + this.getAttribute('href');
+        //     $(this.getAttribute('href')).addClass('active').addClass('show')
+        //         .siblings().removeClass('active').removeClass('show');
+        // });
         $(".filt").click(function() {
             $("#chkfilter").toggle();
         });
@@ -760,8 +760,32 @@ var elementnav = document.getElementById("mainavbar");
 
             $(this).addClass('active').addClass('noHover')
                 .siblings().removeClass('active').removeClass('noHover');
-            location.href = $(this).getAttribute("href");
+            var r = $(this).attr("href");
+            $(r).addClass('show').addClass('active').siblings().removeClass('show').removeClass('active');
         });
+
+        function opent(evt, cityName) {
+  // Declare all variables
+  var i, tabcontent, tablinks;
+
+  // Get all elements with class="tabcontent" and hide them
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  // Get all elements with class="tablinks" and remove the class "active"
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+
+  // Show the current tab, and add an "active" class to the button that opened the tab
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+
         $(".filt").click(function() {
             $("#chkfilter").toggle();
         });
@@ -817,6 +841,11 @@ var elementnav = document.getElementById("mainavbar");
             }
         });
 
+
+        $('#exampleSlider').multislider({
+    interval:0,
+  
+});
     </script>
 </body>
 

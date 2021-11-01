@@ -3,14 +3,14 @@
 @section('content')
 
 
-<div class="sa4d25 p-5 mt-5">
+<div class="sa4d25 p-5 mt-3">
     <div class="d-flex">
         <div class=" hide-on-med-and-down d-none d-md-block d-lg-block mt-5 col-2">
             <div class=" nastay">
-                <a href="#" class="waves-effect waves-light">All Courses</a>
+                <a href="#all" data-toggle="tab" class="waves-effect waves-light active">All Courses</a>
                 <p class=" border-bottom  "> CATEGORY</p>
                 @foreach($cat as $category)
-                <a href="#" class="waves-effect waves-light">{{$category->category_name}} </a>
+                <a href="#{{$category->category_name}}"  data-toggle="tab" class="waves-effect waves-light">{{$category->category_name}} </a>
                 @endforeach
             </div>
         </div>
@@ -45,7 +45,7 @@
                 </div>
             </div>
 
-            <div class=" border-top d-none d-lg-block d-md-block">
+            <div class="mt-2 border-top d-none d-lg-block d-md-block">
                 <div class="d-flex justify-content-end  ">
 
 
@@ -124,19 +124,16 @@
                     </div>
                 </div>
 
-                <div id="carousel-example4" class="carousel slide m-4" data-interval="false"  data-ride="carousel">
-                    <div class="carousel-inner" role="listbox">
+                <div class="tab-content">
+            <div id="all" class="tab-pane fade show  active">
+
+                <div id="exampleSlider" class=" " >
+                    <div class="MS-content" >
 
                         @foreach($coz as $key=>$cozy)
-                        @if($key==0)
-                        <div class="carousel-item  active">
-                        <div class=" d-flex ">  
-                        @endif
-                        @if($key%4==0&&$key!=0)
-                        <div class="carousel-item ">
-                        <div class=" d-flex "> 
-                        @endif
-                        <div class="col-md-3   mb-4 ">
+                        
+                        <div class=" item  ">
+                            <div class="m-2"> 
                             <a href="{{route('coursedetail',$cozy->id)}}">
                                 <div class="card h-350 cardc rounded ">
                                     <div class="h-220">
@@ -171,33 +168,82 @@
                                 </div>
                             </a>
 
-
+                          </div>
                         </div>
 
-                       @if(($key+1)%4==0)</div></div>
-                       @elseif(count($coz)-1==$key)
-                       </div></div>
-                       @endif 
+                     
                         @endforeach
-                        <a class="carousel-control-prev " style="margin-left: -24px;" href="#carousel-example4" role="button" data-slide="prev"><small class=" jss15 bg-white">
-                                <span class="material-icons dark  ">
-                                    chevron_left
-                                </span>
-                            </small>
-
-                        </a>
-                        <a class="carousel-control-next" style="margin-right: -24px;" href="#carousel-example4" role="button" data-slide="next">
-                            <i class=" jss15  ">
-                                <span class="material-icons dark font-weight-light">
-                                    chevron_right
-                                </span>
-                            </i>
-
-                            </button>
-                        </a>
+                        
+                        
                     </div>
+                    <div class="MS-controls">
+               <button class="MS-left"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
+                <button class="MS-right"><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+                        </div>
 
-                </div>              
+                </div>
+            </div>
+        @foreach($cat as $cate)
+                    <div id="{{$cate->category_name}}" class="tab-pane fade ">
+                    <div id="exampleSlider" class=" " >
+                            <div class="MS-content" >
+                            
+                                @foreach($cate->courses as $key=>$cozy)
+                        
+                                <div class=" item  ">
+                                    <div class="m-2"> 
+                                    <a href="{{route('coursedetail',$cozy->id)}}">
+                                        <div class="card h-350 cardc rounded ">
+                                            <div class="h-220">
+                                                @if(isset($cozy->mediaCover->file_path))
+
+                                                @php $src=$cozy->mediaCover->file_path; @endphp
+                                                <img class="card-img-top  object-cover h-100 w-100" src="{{route('get-copic',explode('/',$src)[1])}}" alt="Card image cap">
+                                                @endif
+
+
+                                                <div class="card-img-overlay">
+                                                    <span class=" jss16 m-25-auto ">
+                                                        <span class="material-icons-round ">
+                                                            play_arrow
+                                                        </span>
+                                                    </span>
+
+                                                </div>
+                                            </div>
+
+                                            <div class="m-2 p-0">
+                                                <p class="card-text  d-flex justify-content-between">
+                                                    <small class="card-text">22 trainees </small>
+                                                    <small class="card-text"> 50m</small>
+                                                </p>
+
+
+                                                <p class="card-text bold ellipsis">{{$cozy->course_subt}}</p>
+
+                                            </div>
+
+                                        </div>
+                                    </a>
+
+                                </div>
+                                </div>
+                                                
+                                @endforeach
+                                
+                                
+                            </div>
+                            <div class="MS-controls">
+                    <button class="MS-left"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
+                        <button class="MS-right"><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+                                </div>
+
+                        </div>
+                    </div>
+                    </div>
+        @endforeach
+
+        </div>             
             </div>
         </div>
     </div>

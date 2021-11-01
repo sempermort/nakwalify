@@ -136,45 +136,23 @@
             <li class="nav-item">
                 <a class="nav-link active" data-toggle="tab" href="#all">All Categories</a>
             </li>
+            @foreach($cat as $cate)
             <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#Livestock">Livestock</a>
+                <a class="nav-link" data-toggle="tab" href="#{{$cate->category_name}}">{{$cate->category_name}}</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" data-toggle="tab" href="#Agriculture">Agriculture </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link " data-toggle="tab" href="#Forestry">Forestry</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link " data-toggle="tab" href="#Arts">Arts & Crafts</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link " data-toggle="tab" href="#Transportation">Transportation</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link " data-toggle="tab" href="#Skills">Life Skills</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link " data-toggle="tab" href="#Business">Business</a>
-            </li>
+            @endforeach
         </ul>
 
         <div class="tab-content">
             <div id="all" class="tab-pane fade show  active">
 
-                <div id="carousel-example4" class="carousel slide m-4" data-interval="false"  data-ride="carousel">
-                    <div class="carousel-inner" role="listbox">
+                <div id="exampleSlider" class=" " >
+                    <div class="MS-content" >
 
                         @foreach($coz as $key=>$cozy)
-                        @if($key==0)
-                        <div class="carousel-item  active">
-                        <div class=" d-flex ">  
-                        @endif
-                        @if($key%4==0&&$key!=0)
-                        <div class="carousel-item ">
-                        <div class=" d-flex "> 
-                        @endif
-                        <div class="col-md-3   mb-4 ">
+                        
+                        <div class=" item  ">
+                            <div class="m-2"> 
                             <a href="{{route('coursedetail',$cozy->id)}}">
                                 <div class="card h-350 cardc rounded ">
                                     <div class="h-220">
@@ -209,496 +187,81 @@
                                 </div>
                             </a>
 
-
+                          </div>
                         </div>
 
-                       @if(($key+1)%4==0)</div></div>
-                       @elseif(count($coz)-1==$key)
-                       </div></div>
-                       @endif 
+                     
                         @endforeach
-                        <a class="carousel-control-prev " style="margin-left: -24px;" href="#carousel-example4" role="button" data-slide="prev"><small class=" jss15 bg-white">
-                                <span class="material-icons dark  ">
-                                    chevron_left
-                                </span>
-                            </small>
-
-                        </a>
-                        <a class="carousel-control-next" style="margin-right: -24px;" href="#carousel-example4" role="button" data-slide="next">
-                            <i class=" jss15  ">
-                                <span class="material-icons dark font-weight-light">
-                                    chevron_right
-                                </span>
-                            </i>
-
-                            </button>
-                        </a>
+                        
+                        
                     </div>
+                    <div class="MS-controls">
+               <button class="MS-left"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
+                <button class="MS-right"><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
+                        </div>
 
                 </div>
             </div>
+        @foreach($cat as $cate)
+                    <div id="{{$cate->category_name}}" class="tab-pane fade ">
+                    <div id="exampleSlider" class=" " >
+                            <div class="MS-content" >
+                            
+                                @foreach($cate->courses as $key=>$cozy)
+                        
+                                <div class=" item  ">
+                                    <div class="m-2"> 
+                                    <a href="{{route('coursedetail',$cozy->id)}}">
+                                        <div class="card h-350 cardc rounded ">
+                                            <div class="h-220">
+                                                @if(isset($cozy->mediaCover->file_path))
 
-            <div id="Livestock" class="tab-pane fade ">
-                <div id="carousel-example4a" class="carousel slide m-4" data-interval="false" ride="false" data-ride="carousel">
-                    <div class="carousel-inneri  row  mx-auto" role="listbox">
+                                                @php $src=$cozy->mediaCover->file_path; @endphp
+                                                <img class="card-img-top  object-cover h-100 w-100" src="{{route('get-copic',explode('/',$src)[1])}}" alt="Card image cap">
+                                                @endif
 
-                        @foreach($coz as $key=>$cozy)
-                        @if(strtolower($cozy->category->category_name)=="livestock")
-                        <div class="col-md-3     mb-4  ">
-                            <a href="{{route('coursedetail',$cozy->id)}}">
-                                <div class="card h-350 cardc rounded ">
-                                    <div class="h-220">
 
-                                        @if(isset($cozy->mediaCover->file_path))
-                                        <img class="card-img-top  object-cover h-100 w-100" src="{{route('get-copic',explode('/',$cozy->mediaCover->file_path)[1])}}" alt="Card image cap">
-                                        @endif
+                                                <div class="card-img-overlay">
+                                                    <span class=" jss16 m-25-auto ">
+                                                        <span class="material-icons-round ">
+                                                            play_arrow
+                                                        </span>
+                                                    </span>
 
-                                        <div class="card-img-overlay">
-                                            <span class=" jss16 m-25-auto ">
-                                                <span class="material-icons-round ">
-                                                    play_arrow
-                                                </span>
-                                            </span>
+                                                </div>
+                                            </div>
+
+                                            <div class="m-2 p-0">
+                                                <p class="card-text  d-flex justify-content-between">
+                                                    <small class="card-text">22 trainees </small>
+                                                    <small class="card-text"> 50m</small>
+                                                </p>
+
+
+                                                <p class="card-text bold ellipsis">{{$cozy->course_subt}}</p>
+
+                                            </div>
 
                                         </div>
-                                    </div>
-
-                                    <div class="m-2 p-0">
-                                        <p class="card-text  d-flex justify-content-between">
-                                            <small class="card-text">23,162 trainees </small>
-                                            <small class="card-text">1h 50m</small>
-                                        </p>
-
-
-                                        <p class="card-text bold ellipsis">{{$cozy->course_subt}} </p>
-                                        <p class="card-text d-flex justify-content-between">
-
-                                            <small class="card-text"><span class="material-icons-outlined">
-                                                    bookmark_border
-                                                </span></small>
-                                        </p>
-                                    </div>
+                                    </a>
 
                                 </div>
-                            </a>
-
-                        </div>
-
-                        @endif
-                        @endforeach
-                        <a class="carousel-control-prev " style="margin-left: -24px;" href="#carousel-example4a" role="button" data-slide="prev"><small class=" jss15 bg-white">
-                                <span class="material-icons dark  ">
-                                    chevron_left
-                                </span>
-                            </small>
-
-                        </a>
-                        <a class="carousel-control-next" style="margin-right: -24px;" href="#carousel-example4a" role="button" data-slide="next">
-                            <i class=" jss15  ">
-                                <span class="material-icons dark font-weight-light">
-                                    chevron_right
-                                </span>
-                            </i>
-
-                            </button>
-                        </a>
-                    </div>
-
-                </div>
-            </div>
-            <div id="Agriculture" class="tab-pane fade ">
-                <div id="carousel-example4" class="carousel slide m-4" data-interval="false" ride="false" data-ride="carousel">
-                    <div class="carousel-inneri  row  mx-auto" role="listbox">
-
-                        @foreach($coz as $key=>$cozy)
-                        @if(strtolower($cozy->category->category_name)=="agriculture")
-                        <div class="col-md-3    mb-4">
-                            <a href="{{route('coursedetail',$cozy->id)}}">
-                                <div class="card h-350 cardc rounded ">
-                                    <div class="h-220">
-
-                                        @if(isset($cozy->mediaCover->file_path))
-                                        <img class="card-img-top  object-cover h-100 w-100" src="{{route('get-copic',explode('/',$cozy->mediaCover->file_path)[1])}}" alt="Card image cap">
-                                        @endif
-
-                                        <div class="card-img-overlay">
-                                            <span class=" jss16 m-25-auto ">
-                                                <span class="material-icons-round ">
-                                                    play_arrow
-                                                </span>
-                                            </span>
-
-                                        </div>
-                                    </div>
-
-                                    <div class="m-2 p-0">
-                                        <p class="card-text  d-flex justify-content-between">
-                                            <small class="card-text">23,162 trainees </small>
-                                            <small class="card-text">1h 50m</small>
-                                        </p>
-
-
-                                        <p class="card-text bold ellipsis">{{$cozy->course_subt}} </p>
-                                        <p class="card-text d-flex justify-content-between">
-
-                                            <small class="card-text"><span class="material-icons-outlined">
-                                                    bookmark_border
-                                                </span></small>
-                                        </p>
-                                    </div>
-
                                 </div>
-                            </a>
-
-                        </div>
-                        @endif
-                        @endforeach
-
-                        <a class="carousel-control-prev " style="margin-left: -24px;" href="#carousel-example4" role="button" data-slide="prev"><small class=" jss15 bg-white">
-                                <span class="material-icons dark  ">
-                                    chevron_left
-                                </span>
-                            </small>
-
-                        </a>
-                        <a class="carousel-control-next" style="margin-right: -24px;" href="#carousel-example4" role="button" data-slide="next">
-                            <i class=" jss15  ">
-                                <span class="material-icons dark font-weight-light">
-                                    chevron_right
-                                </span>
-                            </i>
-
-                            </button>
-                        </a>
-                    </div>
-
-                </div>
-            </div>
-            <div id="Forestry" class="tab-pane  fade ">
-                <div id="carousel-example4" class="carousel slide m-4" data-interval="false" ride="false" data-ride="carousel">
-                    <div class="carousel-inneri  row  mx-auto" role="listbox">
-
-                        @foreach($coz as $key=>$cozy)
-                        @if(strtolower($cozy->category->category_name)=="forestry")
-                        <div class="col-md-3    active">
-                            <a href="{{route('coursedetail',$cozy->id)}}">
-                                <div class="card h-350 cardc rounded ">
-                                    <div class="h-220">
-                                        @if(isset($cozy->mediaCover->file_path))
-                                        <img class="card-img-top  object-cover h-100 w-100" src="{{route('get-copic',explode('/',$cozy->mediaCover->file_path)[1])}}" alt="Card image cap">
-                                        @endif
-                                        <div class="card-img-overlay">
-                                            <span class=" jss16 m-25-auto ">
-                                                <span class="material-icons-round ">
-                                                    play_arrow
-                                                </span>
-                                            </span>
-
-                                        </div>
-                                    </div>
-
-                                    <div class="m-2 p-0">
-                                        <p class="card-text  d-flex justify-content-between">
-                                            <small class="card-text">23,162 trainees </small>
-                                            <small class="card-text">1h 50m</small>
-                                        </p>
-
-
-                                        <p class="card-text bold ellipsis">{{$cozy->course_subt}} </p>
-                                        <p class="card-text d-flex justify-content-between">
-
-                                            <small class="card-text"><span class="material-icons-outlined">
-                                                    bookmark_border
-                                                </span></small>
-                                        </p>
-                                    </div>
-
+                                                
+                                @endforeach
+                                
+                                
+                            </div>
+                            <div class="MS-controls">
+                    <button class="MS-left"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
+                        <button class="MS-right"><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
                                 </div>
-                            </a>
 
                         </div>
-                        @endif
-                        @endforeach
-                        <a class="carousel-control-prev " style="margin-left: -24px;" href="#carousel-example4" role="button" data-slide="prev"><small class=" jss15 bg-white">
-                                <span class="material-icons dark  ">
-                                    chevron_left
-                                </span>
-                            </small>
-
-                        </a>
-                        <a class="carousel-control-next" style="margin-right: -24px;" href="#carousel-example4" role="button" data-slide="next">
-                            <i class=" jss15  ">
-                                <span class="material-icons dark font-weight-light">
-                                    chevron_right
-                                </span>
-                            </i>
-
-                            </button>
-                        </a>
                     </div>
-
-                </div>
-            </div>
-            <div id="Arts" class="tab-pane fade ">
-                <div id="carousel-example4" class="carousel slide m-4" data-interval="false" ride="false" data-ride="carousel">
-                    <div class="carousel-inneri  row  mx-auto" role="listbox">
-
-                        @foreach($coz as $key=>$cozy)
-                        @if(strtolower($cozy->category->category_name)=="arts")
-                        <div class="col-md-3    active">
-                            <a href="{{route('coursedetail',$cozy->id)}}">
-                                <div class="card h-350 cardc rounded ">
-                                    <div class="h-220">
-                                        @if(isset($cozy->mediaCover->file_path))
-                                        <img class="card-img-top  object-cover h-100 w-100" src="{{route('get-copic',explode('/',$cozy->mediaCover->file_path)[1])}}" alt="Card image cap">
-                                        @endif
-                                        <div class="card-img-overlay">
-                                            <span class=" jss16 m-25-auto ">
-                                                <span class="material-icons-round ">
-                                                    play_arrow
-                                                </span>
-                                            </span>
-
-                                        </div>
-                                    </div>
-
-                                    <div class="m-2 p-0">
-                                        <p class="card-text  d-flex justify-content-between">
-                                            <small class="card-text">23,162 trainees </small>
-                                            <small class="card-text">1h 50m</small>
-                                        </p>
-
-
-                                        <p class="card-text bold ellipsis">{{$cozy->course_subt}} </p>
-                                        <p class="card-text d-flex justify-content-between">
-
-                                            <small class="card-text"><span class="material-icons-outlined">
-                                                    bookmark_border
-                                                </span></small>
-                                        </p>
-                                    </div>
-
-                                </div>
-                            </a>
-
-                        </div>
-                        @endif
-                        @endforeach
-                        <a class="carousel-control-prev " style="margin-left: -24px;" href="#carousel-example4" role="button" data-slide="prev"><small class=" jss15 bg-white">
-                                <span class="material-icons dark  ">
-                                    chevron_left
-                                </span>
-                            </small>
-
-                        </a>
-                        <a class="carousel-control-next" style="margin-right: -24px;" href="#carousel-example4" role="button" data-slide="next">
-                            <i class=" jss15  ">
-                                <span class="material-icons dark font-weight-light">
-                                    chevron_right
-                                </span>
-                            </i>
-
-                            </button>
-                        </a>
                     </div>
+        @endforeach
 
-                </div>
-            </div>
-            <div id="Transportation" class="tab-pane fade ">
-                <div id="carousel-example4" class="carousel slide m-4" data-interval="false" ride="false" data-ride="carousel">
-                    <div class="carousel-inneri  row  mx-auto" role="listbox">
-
-                        @foreach($coz as $key=>$cozy)
-                        @if(strtolower($cozy->category->category_name)=="transportation")
-                        <div class="col-md-3    active">
-                            <a href="{{route('coursedetail',$cozy->id)}}">
-                                <div class="card h-350 cardc rounded ">
-                                    <div class="h-220">
-                                        @if(isset($cozy->mediaCover->file_path))
-                                        <img class="card-img-top  object-cover h-100 w-100" src="{{route('get-copic',explode('/',$cozy->mediaCover->file_path)[1])}}" alt="Card image cap">
-                                        @endif
-                                        <div class="card-img-overlay">
-                                            <span class=" jss16 m-25-auto ">
-                                                <span class="material-icons-round ">
-                                                    play_arrow
-                                                </span>
-                                            </span>
-
-                                        </div>
-                                    </div>
-
-                                    <div class="m-2 p-0">
-                                        <p class="card-text  d-flex justify-content-between">
-                                            <small class="card-text">23,162 trainees </small>
-                                            <small class="card-text">1h 50m</small>
-                                        </p>
-
-
-                                        <p class="card-text bold ellipsis">{{$cozy->course_subt}} </p>
-                                        <p class="card-text d-flex justify-content-between">
-
-                                            <small class="card-text"><span class="material-icons-outlined">
-                                                    bookmark_border
-                                                </span></small>
-                                        </p>
-                                    </div>
-
-                                </div>
-                            </a>
-
-                        </div>
-                        @endif
-                        @endforeach
-                        <a class="carousel-control-prev " style="margin-left: -24px;" href="#carousel-example4" role="button" data-slide="prev"><small class=" jss15 bg-white">
-                                <span class="material-icons dark  ">
-                                    chevron_left
-                                </span>
-                            </small>
-
-                        </a>
-                        <a class="carousel-control-next" style="margin-right: -24px;" href="#carousel-example4" role="button" data-slide="next">
-                            <i class=" jss15  ">
-                                <span class="material-icons dark font-weight-light">
-                                    chevron_right
-                                </span>
-                            </i>
-
-                            </button>
-                        </a>
-                    </div>
-
-                </div>
-            </div>
-            <div id="Skills" class="tab-pane  fade ">
-                <div id="carousel-example4" class="carousel slide m-4" data-interval="false" ride="false" data-ride="carousel">
-                    <div class="carousel-inneri  row  mx-auto" role="listbox">
-
-                        @foreach($coz as $key=>$cozy)
-                        @if(strtolower($cozy->category->category_name)=="skills")
-                        <div class="col-md-3    active">
-                            <a href="{{route('coursedetail',$cozy->id)}}">
-                                <div class="card h-350 cardc rounded ">
-                                    <div class="h-220">
-                                        @if(isset($cozy->mediaCover->file_path))
-                                        <img class="card-img-top  object-cover h-100 w-100" src="{{route('get-copic',explode('/',$cozy->mediaCover->file_path)[1])}}" alt="Card image cap">
-                                        @endif
-                                        <div class="card-img-overlay">
-                                            <span class=" jss16 m-25-auto ">
-                                                <span class="material-icons-round ">
-                                                    play_arrow
-                                                </span>
-                                            </span>
-
-                                        </div>
-                                    </div>
-
-                                    <div class="m-2 p-0">
-                                        <p class="card-text  d-flex justify-content-between">
-                                            <small class="card-text">23,162 trainees </small>
-                                            <small class="card-text">1h 50m</small>
-                                        </p>
-
-
-                                        <p class="card-text bold ellipsis">{{$cozy->course_subt}} </p>
-                                        <p class="card-text d-flex justify-content-between">
-
-                                            <small class="card-text"><span class="material-icons-outlined">
-                                                    bookmark_border
-                                                </span></small>
-                                        </p>
-                                    </div>
-
-                                </div>
-                            </a>
-
-                        </div>
-                        @endif
-                        @endforeach
-                        <a class="carousel-control-prev " style="margin-left: -24px;" href="#carousel-example4" role="button" data-slide="prev"><small class=" jss15 bg-white">
-                                <span class="material-icons dark  ">
-                                    chevron_left
-                                </span>
-                            </small>
-
-                        </a>
-                        <a class="carousel-control-next" style="margin-right: -24px;" href="#carousel-example4" role="button" data-slide="next">
-                            <i class=" jss15  ">
-                                <span class="material-icons dark font-weight-light">
-                                    chevron_right
-                                </span>
-                            </i>
-
-                            </button>
-                        </a>
-                    </div>
-
-                </div>
-            </div>
-            <div id="Business" class="tab-pane  fade">
-                <div id="carousel-example4" class="carousel slide m-4" data-interval="false" ride="false" data-ride="carousel">
-                    <div class="carousel-inner  row  mx-auto" role="listbox">
-
-                        @foreach($coz as $key=>$cozy)
-                        @if(strtolower($cozy->category->category_name)=="business")
-                        <div class="col-md-3    ">
-                            <a href="{{route('coursedetail',$cozy->id)}}">
-                                <div class="card h-350 cardc rounded ">
-                                    <div class="h-220">
-                                        @if(isset($cozy->mediaCover->file_path))
-                                        <img class="card-img-top  object-cover h-100 w-100" src="{{route('get-copic',explode('/',$cozy->mediaCover->file_path)[1])}}" alt="Card image cap">
-                                        @endif
-                                        <div class="card-img-overlay">
-                                            <span class=" jss16 m-25-auto ">
-                                                <span class="material-icons-round ">
-                                                    play_arrow
-                                                </span>
-                                            </span>
-
-                                        </div>
-                                    </div>
-
-                                    <div class="m-2 p-0">
-                                        <p class="card-text  d-flex justify-content-between">
-                                            <small class="card-text">23,162 trainees </small>
-                                            <small class="card-text">1h 50m</small>
-                                        </p>
-
-
-                                        <p class="card-text bold ellipsis">{{$cozy->course_subt}} </p>
-                                        <p class="card-text d-flex justify-content-between">
-
-                                            <small class="card-text"><span class="material-icons-outlined">
-                                                    bookmark_border
-                                                </span></small>
-                                        </p>
-                                    </div>
-
-                                </div>
-                            </a>
-
-                        </div>
-                        @endif
-                        @endforeach
-                        <a class="carousel-control-prev " style="margin-left: -24px;" href="#carousel-example4" role="button" data-slide="prev"><small class=" jss15 bg-white">
-                                <span class="material-icons dark  ">
-                                    chevron_left
-                                </span>
-                            </small>
-
-                        </a>
-                        <a class="carousel-control-next" style="margin-right: -24px;" href="#carousel-example4" role="button" data-slide="next">
-                            <i class=" jss15  ">
-                                <span class="material-icons dark font-weight-light">
-                                    chevron_right
-                                </span>
-                            </i>
-
-                            </button>
-                        </a>
-                    </div>
-
-                </div>
-            </div>
         </div>
 
     </div>

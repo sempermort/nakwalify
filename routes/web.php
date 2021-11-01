@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UserController;
 use App\Models\Course;
+use App\Models\Category;
 use App\Models\Mediacover;
 use App\Http\Controllers\BusinessController;
 use Illuminate\Support\Facades\Auth;
@@ -22,13 +23,17 @@ use Illuminate\Support\Facades\Auth;
 Auth::routes();
 Route::get('/', function () {
     $coz=Course::all();
-    return view('welcome')->with('coz',$coz);
+    $cat=Category::all();
+   
+    return view('welcome')->with('coz',$coz)
+    ->with('cat',$cat);
 })->middleware('guest');
 
 Route::get('/welcome', function () {
       $coz=Course::all();
-
-    return view('welcome')->with('coz',$coz);
+      $cat=Category::all();
+    return view('welcome')->with('coz',$coz)
+    ->with('cat',$cat);
 })->middleware('guest')->name('welcome');
 
 // Route::get('/admin', 'AdminController@index')->name('admin')->middleware('admin');
