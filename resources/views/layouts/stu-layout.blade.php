@@ -300,7 +300,7 @@
                     @endguest
 </ul>
         </nav>
-    <div class="collapse w-100" id="navbarSupportedContent" style="position:absolute; top:70px; ">
+    <div class="collapse fixed-top w-100" id="navbarSupportedContent" style="top:70px; ">
     <nav class="navbar navbar-expand-sm bg-light justify-content-center">
 
   <ul class="navbar-nav">

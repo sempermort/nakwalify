@@ -263,9 +263,19 @@
                                     
                             </div>
                             <div class="MS-controls">
-                                <button class="MS-left"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
-                                    <button class="MS-right"><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
-                            </div>
+                            <button class="MS-left">    
+                             <small class=" jss15 bg-white ">
+                                    <span class="material-icons dark  ">
+                                        chevron_left
+                                    </span>
+                                </small> </button>
+                            <button class="MS-right">
+                            <small class=" jss15 bg-white ">
+                                    <span class="material-icons dark  ">
+                                        chevron_right
+                                    </span>
+                                </small> </button>
+                    </div>
 
                     </div>
                 </div>
