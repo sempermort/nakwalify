@@ -150,11 +150,12 @@
 </div>
 <div class="container mt-0 pl-2">
     <h6 class="font-weight-bold mt-3 mb-3">What you will learn</h6>
-    <div class="grid-container border p-0  col-md-8">
+    <div class=" border p-0  col-md-8">
     @foreach( $selcoz->mainwlearn as  $arriy)
         @foreach( explode(',', $arriy)  as  $learn)
         <div class=" border-0 ">
-            <div class="mr-2 font-weight-normal"><a  class=" "><i class="material-icons">done</i></a>
+            <div class="mr-2 font-weight-normal p-1" style=" background-color: rgba(255, 255, 255, 0.6);">
+                <a  class=" "><i class="material-icons">done</i></a>
                 {!!$learn!!} </div>
         </div>
         @endforeach
