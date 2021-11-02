@@ -633,7 +633,7 @@
                 </div>
             </div>
         </div>
-        <footer class="bg-greenpale  pt-5 pb-5 w-100" style="background: #3a9982;">
+        <footer class="bg-greenpale  pt-5 pb-5  w-100" style="background: #3a9982;">
             <div class=" d-flex flex-row-reverse text-center kfooter">
 
                 <div class="col-md-9">
