@@ -36,17 +36,17 @@
                         <div class="checkout-tabs">
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
                                 <li class="nav-item">
-                                    <a href="checkout_course.html#credit-method-tab" id="credit-tab"
+                                    <a href="#credit-method-tab" id="credit-tab"
                                         class="nav-link active" data-toggle="tab"><i
                                             class="uil uil-card-atm check_icon5"></i>Mobile option</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="checkout_course.html#bank-method-tab" id="bank-tab" class="nav-link"
+                                    <a href="#bank-method-tab" id="bank-tab" class="nav-link"
                                         data-toggle="tab"><i class="uil uil-university check_icon5"></i>Bank
                                         Transfer</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="checkout_course.html#payapl-method-tab" id="payapl-tab" class="nav-link"
+                                    <a href="#payapl-method-tab" id="payapl-tab" class="nav-link"
                                         data-toggle="tab"><i class="uil uil-paypal check_icon5"></i>Paypal</a>
                                 </li>
 
@@ -115,13 +115,13 @@
                                                 <label>Bank Name</label>
                                                 <select class="ui hj145 dropdown cntry152 prompt srch_explore"
                                                     name="Bank[name]">
-                                                    <option value="">State Bank of India</option>
-                                                    <option value="1">Indian Bank</option>
-                                                    <option value="2">ICICI Bank</option>
-                                                    <option value="3">HDFC Bank</option>
-                                                    <option value="4">Yes Bank</option>
-                                                    <option value="5">Oriental Bank</option>
-                                                    <option value="6">Punjab National Bank</option>
+                                                    <option value="">CRDB</option>
+                                                    <option value="1">NBC</option>
+                                                    <option value="2">Exim</option>
+                                                    <option value="3">Equity</option>
+                                                    <option value="4">BancAbc</option>
+                                                    <option value="5">Akiba</option>
+                                                    <option value="6">NMB</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -141,35 +141,12 @@
                                 aria-labelledby="payapl-tab">
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <p class="t-body">After payment via PayPal's secure checkout, we will send you a
-                                            link to download your files.</p>
+                                        <!-- <p class="t-body">After payment via PayPal's secure checkout, we will send you a
+                                            link to download your files.</p> -->
                                         <div class="media h-mt2">
-                                            <div class="media__item -align-center">
-                                                <p class="t2-body h-m0">PayPal accepts</p>
-                                            </div>
+                                          
                                             <div class="media__body">
-                                                <ul id="paypal-gateway" class="financial-institutes">
-                                                    <li class="financial-institutes__logo">
-                                                        <img alt="Visa" title="Visa"
-                                                            src="images/membership/pyicon-1.svg">
-                                                    </li>
-                                                    <li class="financial-institutes__logo">
-                                                        <img alt="MasterCard" title="MasterCard"
-                                                            src="images/membership/pyicon-2.svg">
-                                                    </li>
-                                                    <li class="financial-institutes__logo">
-                                                        <img alt="American Express" title="American Express"
-                                                            src="images/membership/pyicon-3.svg">
-                                                    </li>
-                                                    <li class="financial-institutes__logo">
-                                                        <img alt="Discover" title="Discover"
-                                                            src="images/membership/pyicon-4.svg">
-                                                    </li>
-                                                    <li class="financial-institutes__logo">
-                                                        <img alt="China UnionPay" title="China UnionPay"
-                                                            src="images/membership/pyicon-5.svg">
-                                                    </li>
-                                                </ul>
+                                              <h4 class="text-center">Coming Soon</h4>
                                             </div>
                                         </div>
                                     </div>

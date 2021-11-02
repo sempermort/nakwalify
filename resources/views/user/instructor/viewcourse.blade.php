@@ -210,10 +210,15 @@ document.cookie = "witcher=Geralt; SameSite=None; Secure"
         madeu(urlu);
 
         };
-
+const meid="{{$meid}}";
+if(typeof meid !== 'undefined')
+{
+    $(meid).click();
+}
+else{
 
 $('#vids'+1).click();
-
+}
         function replayvid() {
             player.playVideo()
 
@@ -357,5 +362,9 @@ var player;
 
             }
         }
+
+
+
+
     </script>
     @endsection
