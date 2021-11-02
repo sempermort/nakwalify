@@ -175,12 +175,12 @@
     </div>
 
     <h6 class="font-weight-bolder"> Requirements</h6>
-    <ul class="col-md-8 p-0">
+    <ul class="col-md-8 " style="list-style: square">
 
         @foreach( $selcoz->mainrequire as  $arri)
         @foreach( explode(',', $arri)  as  $value)
-        <li class="font-weight-normal p-2">
-            {{$value}}</li>
+        <li class="font-weight-normal p-1">
+         {{$value}}</li>
         @endforeach
         @endforeach
     </ul>
