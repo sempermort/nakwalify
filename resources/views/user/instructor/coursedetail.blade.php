@@ -149,7 +149,7 @@
         </div>
 </div>
 <div class="container mt-0 pl-2">
-    <h6 class="font-weight-bold m-3">What you will learn</h6>
+    <h6 class="font-weight-bold mt-3 mb-3">What you will learn</h6>
     <div class="grid-container border p-0  col-md-8">
     @foreach( $selcoz->mainwlearn as  $arriy)
         @foreach( explode(',', $arriy)  as  $learn)
@@ -175,7 +175,7 @@
     </div>
 
     <h6 class="font-weight-bolder"> Requirements</h6>
-    <ul class="col-md-8">
+    <ul class="col-md-8 p-0">
 
         @foreach( $selcoz->mainrequire as  $arri)
         @foreach( explode(',', $arri)  as  $value)

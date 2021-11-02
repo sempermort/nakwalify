@@ -92,6 +92,7 @@ Route::post('/wishlist', 'App\Http\Controllers\UserController@wishlist')->name('
 Route::post('/complited', 'App\Http\Controllers\UserController@complited')->name('complited');
 Route::get('/deleteaccount', 'App\Http\Controllers\UserController@deleteacc')->name('deleteaccount');
 Route::get('/createcert', 'App\Http\Controllers\UserController@createcert')->name('createcert');
+//-------------searching------------
 Route::post('/searchcourse', 'App\Http\Controllers\UserController@searchcoursepost')->name('searchcourse');
 Route::get('/autocomplete-search', [UserController::class, 'autocompleteSearch']);
 Route::get('/category', 'App\Http\Controllers\UserController@category')->middleware(['verified','auth'])->name('category');

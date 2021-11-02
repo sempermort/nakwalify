@@ -48,10 +48,10 @@
         .font-xxl {
             font-size: 3vh !important;
         }
-        .coli a,
+        /* .coli a,
         h6 {
             font-size: 2vw;
-        }
+        } */
         .banner-description {
             font-size: 14px !important;
             line-height: 23px;
@@ -75,10 +75,10 @@
         .dv-black {
             margin: -110px 0 0 60px !important;
         }
-        .coli a,
+        /* .coli a,
         h6 {
             font-size: 1.8vw !important;
-        }
+        } */
     }
     
     @media (min-width: 1200px) {
@@ -106,12 +106,12 @@
         .font-xxl {
             font-size: 2.6vh !important;
         }
-        .coli a,
+        /* .coli a,
         h6 {
             font-size: 2vw;
             display: initial;
             padding: 0vw;
-        }
+        } */
         .h-400 {
             height: 350px !important;
         }
@@ -287,10 +287,10 @@
     strong {
         color: #000;
     }
-    
-    .coli {
+    /* .coli {
         text-align: start;
     }
+     */
     
     .coy a {
         font-size: 1.2em !important;
@@ -933,10 +933,8 @@
     }
     
     .ellipsis {
-   
-    white-space: normal;
-    font-weight:700;
-           
+        white-space: normal;
+        font-weight: 700;
     }
     
     .flex-even {
@@ -967,13 +965,14 @@
     .backg {
         background: rgb(52, 58, 64);
     }
+    
     .pri {
         color: #002333;
         text-decoration: none;
         font-weight: 700;
     }
+    
     .jss15 {
-
         width: 40px;
         cursor: pointer;
         height: 40px;
@@ -985,5 +984,4 @@
         border-width: 1px;
         border-radius: 50%;
         justify-content: center;
-    
     }
