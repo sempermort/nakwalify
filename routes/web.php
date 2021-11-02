@@ -87,7 +87,7 @@ Route::get('/earnings', 'App\Http\Controllers\UserController@earnings')->name('e
 Route::get('/review', 'App\Http\Controllers\UserController@review')->name('review');
 Route::get('/notification', 'App\Http\Controllers\UserController@notification')->name('notification');
 Route::get('/myaccount', 'App\Http\Controllers\UserController@myaccount')->name('myaccount');
-Route::get('/coursepurches', 'App\Http\Controllers\UserController@coursepurch')->name('coursepurches');
+Route::get('/coursepurches/{id}', 'App\Http\Controllers\UserController@coursepurch')->name('coursepurches');
 Route::post('/wishlist', 'App\Http\Controllers\UserController@wishlist')->name('wishlist');
 Route::post('/complited', 'App\Http\Controllers\UserController@complited')->name('complited');
 Route::get('/deleteaccount', 'App\Http\Controllers\UserController@deleteacc')->name('deleteaccount');

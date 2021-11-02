@@ -733,9 +733,10 @@ public function deletevid($id)
         return view('user.instructor.review');
     }
 
-    public function coursepurch()
+    public function coursepurch($id)
     {
-        return view('user.instructor.coursepurch');
+        $course=Course::find($id);
+        return view('user.instructor.coursepurch')->with('course',$course);
     }
 
     public function notification()

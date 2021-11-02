@@ -348,7 +348,7 @@
 <div class="loading-overlay"></div>
 
 <div class="wrapper  p-0">
-    <main class="" style="">
+    <main class="">
         @yield('content')
     </main>
     <div class="modal fade  " id="register" tabindex="-1" role="dialog">

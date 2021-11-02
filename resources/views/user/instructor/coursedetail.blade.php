@@ -42,13 +42,16 @@
                                 @endif
                                 </p>
                             </strong>
-                            <!-- <button class=" border-0 p-2 btn  btn-info col-md-12  mt-0 mb-1 text-white">Add
-                                to Cart</button> -->
-                            <!-- <button class="btn btn-outline-dark  p-2   col-md-12 mt-1 mb-1 "><a
-                                    href="{{route('viewcourse',$selcoz->id)}}">Go to corse</a> </button> -->
-
-                                    <a class="btn  btn-info text-white  p-2  col-md-12 mt-1 mb-3 "
-                                    href="{{route('viewcourse',$selcoz->id)}}">Go to course</a>
+                            @if($selcoz->price==0)
+                            <a class="btn  btn-info text-white  p-2  col-md-12 mt-1 mb-3 "
+                                    href="{{route('coursepurches',$selcoz->id)}}">Go to course</a>
+                               @else
+                                Tshs
+                                <a class="btn  btn-info text-white  p-2  col-md-12 mt-1 mb-3 "
+                                    href="{{route('coursepurches',$selcoz->id)}}">Go to Purchase</a>
+                                @endif
+                             
+                                 
                             <small class="m-0 d-none text-center">
                                 <p class="m-0  p-0">30-Day Money-Back Guarantee </p>
                             </small>

@@ -1,7 +1,7 @@
-@extends('layouts.user-layout')
+@extends('layouts.stu-layout')
 
 @section('content')
-<div class="">
+<div class=" mt-30">
 
     <div class="">
         <div class="container">
@@ -20,8 +20,7 @@
                             <div class="w-100">
                                 <div class=" m-1">
 
-                                    <div class="title font-weight-bolder">Complete Python Developer in 2021:Zero to
-                                        Mastery <h4 class="float-right">Tsh 25000</h4>
+                                    <div class="title font-weight-bolder">{{$course->course_title}} <h4 class="float-right">{{$course->price>0?"Tshs   $course->price":"Free"}}</h4>
                                     </div>
 
                                 </div>
@@ -189,19 +188,28 @@
                         <div class="order_dt_section">
                             <div class="order_title">
                                 <h4>Orignal Price</h4>
-                                <div class="order_price">$15</div>
+                                <div class="order_price">
+                                    {{$course->price>0?"Tshs ".($course->price+(5 / 100) * $course->price):"Free"}}</div>
                             </div>
                             <div class="order_title">
                                 <h4 class="font-weight-bold">Discount Price</h4>
-                                <div class="order_price">$5</div>
+                                <div class="order_price">
+                                    {{$course->price>0?"Tshs ".((5 / 100) * $course->price):"0"}}</div>
                             </div>
                             <div class="order_title">
                                 <h2>Total</h2>
-                                <div class="order_price5">$10</div>
+                                <div class="order_price5">
+                                    {{$course->price>0?"Tshs   $course->price":"Free"}}</div>
                             </div>
                             <div class="scr_text"><i class="uil uil-lock-alt">
-
-                            <button class="chckot_btn" type="submit">Confirm Checkout</button>
+                            @if($course->price==0)
+                            <a class="btn  btn-info text-white  p-2  col-md-12 mt-1 mb-3 "
+                                    href="{{route('viewcourse',$course->id)}}">Go to  free course</a>
+                               @else
+                                Tshs
+                                <button class="chckot_btn" type="submit">Confirm Checkout</button>
+                                @endif
+                          
                         </div>
                     </div>
                 </div>
