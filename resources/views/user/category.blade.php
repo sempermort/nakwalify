@@ -116,7 +116,7 @@
            
 
             <div class="m-5">
-       <div class=" font-weight-bold">
+       <div class="headline__main-text">
            <h2>Learn what You care about</h2>
        </div>
                 <div class="tab-content">
