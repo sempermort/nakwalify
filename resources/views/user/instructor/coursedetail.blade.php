@@ -243,14 +243,14 @@ myFunction(x) // Call listener function at run time
 x.addListener(myFunction) // Attach listener function on state changes
 
 
-// function addwish()
-// {
-//     var coz_id={{$selcoz->id}};
-//     var user_id={{isset(auth()->user()->id)?auth()->user()->id:""}};
-//     var vel="wish";
-//     var urlo={{route('wishlist')}};
+function addwish()
+{
+    var coz_id="{{$selcoz->id}}";
+    var user_id="{{isset(auth()->user()->id)?auth()->user()->id:''}}";
+    var vel="wish";
+    var urlo="{{route('wishlist')}}";
 
-//     ajaxedw(coz_id,user_id,urlo,vel);
-// }
+    ajaxedw(coz_id,user_id,urlo,vel);
+}
 </script>
 @endsection

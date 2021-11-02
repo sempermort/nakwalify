@@ -704,13 +704,27 @@ public function deletevid($id)
         return view('user.account.deleteacc');
     }
     public function wishlist(Request $request)
-    { $wish = Wishlist::create([
-        'course_id' => $request->course_id,
-        'category_id' => $request->user_Id,
-        'wishtype' => $request->vel,
-    ]);
-
-    return Response()->json($wish);
+    { 
+     
+        $wishd=Wishlist::where('course_id',$request->course_id)->
+                         where('user_id',$request->user_id)->
+                         where('wishtype',$request->vel)->get();
+                         
+                         if(count($wishd)>0){
+                          
+                            return Response()->json($wishd);
+                          
+                         }
+                         else{
+                            $wish = Wishlist::create([
+                                'course_id' => $request->course_id,
+                                'user_id' => $request->user_id,
+                                'wishtype' => $request->vel,
+                            ]);
+                          
+                            return Response()->json($wish);
+                         }
+   
     }
 
 
@@ -761,7 +775,6 @@ public function deletevid($id)
 
     public function category()
     {
-
         $coz = Course::all();
         $cat = Category::all();
         $subcat = SubCategory::all();

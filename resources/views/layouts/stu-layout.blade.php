@@ -846,6 +846,36 @@ var elementnav = document.getElementById("mainavbar");
     interval:0,
   
 });
+function ajaxedw(coz_id,user_id,urlo,vel)
+ {
+    var form_data = new FormData();
+    form_data.append('user_id',user_id );
+    form_data.append('course_id',coz_id);
+    form_data.append('vel',vel);
+    $.ajax({
+        type: 'POST',
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        url: urlo,
+        data: form_data,
+        processData: false,
+        contentType: false,
+        success: function (data) {
+            if ((data.errors)) {
+                alert(data.errors);
+            } else {
+            alert("wished");
+
+            }
+        },
+        error: function (data) {
+            $('.loading-overlay-image-container').hide();
+            $('.loading-overlay').hide();
+
+        },
+    });
+};
     </script>
 </body>
 
