@@ -679,8 +679,8 @@
         padding: 0;
     }
     
-    .nastay a,
-    p {
+    .nastay>a,
+    .nastay>p {
         font-weight: 400;
         border-radius: 5px;
         display: block;

@@ -6,12 +6,90 @@
 <div class="sa4d25  mt-20">
     <div class="d-flex">
         <div class=" hide-on-med-and-down d-none d-md-block d-lg-block mt-5 col-2">
-            <div class=" nastay">
-                <a href="#all" data-toggle="tab" class="waves-effect waves-light active">All Courses</a>
+            <div class="ml-2">
+            <div class=" nastay position-relative">
+                <a href="#all" data-toggle="tab" class="waves-effect waves-light active">
+                    All Courses
+                </a>
                 <p class=" border-bottom  "> CATEGORY</p>
                 @foreach($cat as $category)
                 <a href="#{{$category->category_name}}"  data-toggle="tab" class="waves-effect waves-light">{{$category->category_name}} </a>
                 @endforeach
+            </div>
+            <div class="position-relative border-top  mt-4">
+                <div class="d-flex flex-column ">
+                    <p class=""><strong class=" ">SORT BY</strong></p>
+                    <select class="browser-default    form-control">
+                        <option value="" selected>Popular</option>
+                        <option value="1">Trending</option>
+                    </select>
+                    <select class="browser-default   form-control">
+                        <option value="" selected>Last 6 Monthes</option>
+                        <option value="1">All Time</option>
+                        <option value="1">Last Month</option>
+                        <option value="1">Last Week</option>
+                    </select>
+                 
+
+                </div>
+            </div> 
+            <div class="position-relative mt-4" id="chkfilter" >
+                   
+                        <div class="form-group ">
+                            <label for="Classtype" class="font-weight-bold">
+                                <strong>Class Type</strong></label>
+                            <div class="">
+
+                                <p class="form-check-inline m-2">
+                                    <label>
+                                        <input type="checkbox" />
+                                        <span>Premium</span>
+                                    </label>
+                                </p>
+                                <p class="form-check-inline m-2">
+                                    <label>
+                                        <input type="checkbox" />
+                                        <span>Free</span>
+                                    </label>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="form-group ">
+                            <label for="Classtype" class="font-weight-bold">
+                                <strong>Class Length</strong></label>
+                            <div class="">
+
+                                <p class="form-check-inline m-2">
+                                    <label>
+                                        <input type="checkbox" />
+                                        <span>
+                                            < 15 min</span>
+                                    </label>
+                                </p>
+                                <p class="form-check-inline m-2">
+                                    <label>
+                                        <input type="checkbox" />
+                                        <span>15 - 30 min</span>
+                                    </label>
+                                </p>
+                                <p class="form-check-inline m-2">
+                                    <label>
+                                        <input type="checkbox" />
+                                        <span> 30 - 60 min</span>
+                                    </label>
+                                </p>
+                                <p class="form-check-inline m-2">
+                                    <label>
+                                        <input type="checkbox" />
+                                        <span>> 60 min</span>
+                                    </label>
+                                </p>
+                            </div>
+                        </div>
+                  
+                </div>
+ 
+        
             </div>
         </div>
         <div class=" col-md-10">
@@ -33,97 +111,14 @@
                 </div>
             </div>
 
-            <div class="hide-on-med-and-down ">
-                <div class="d-flex flex-wrap  font-weight-bold ">
+         
 
-                    <span class="m-3 p-1">RELATED SKILLs</span>
-                    @foreach($subcat as $subcatg)
-                    <button class="btn-outline-dark btntrs m-2 p-1 rounded border border-dark">
-                        {{$subcatg->subcategory_name}}
-                    </button>                  
-                    @endforeach
-                </div>
-            </div>
+           
 
-            <div class="mt-2 border-top d-none d-lg-block d-md-block">
-                <div class="d-flex justify-content-end  ">
-
-
-                    <p class=""><strong class="col-lg-1 col-md-2 col-sm-1 mr-2 ">SORT BY</strong></p>
-                    <select class="browser-default  col-lg-2 col-md-2 col-sm-2 mr-2  p-0 form-control">
-                        <option value="" selected>Popular</option>
-                        <option value="1">Trending</option>
-                    </select>
-                    <select class="browser-default col-lg-2 col-md-3 col-sm-2 mr-2 p-0 form-control">
-                        <option value="" selected>Last 6 Monthes</option>
-                        <option value="1">All Time</option>
-                        <option value="1">Last Month</option>
-                        <option value="1">Last Week</option>
-                    </select>
-                    <select class="browser-default col-lg-1 col-md-2 col-sm-2 mr-2 p-0 form-control filt"
-                        aria-expanded="false" aria-controls="collapseExample">
-                        <option value="" selected>Filters</option>
-
-                    </select>
-
-                </div>
-            </div>
-
-            <div class="">
-                <div class="" id="chkfilter" style="display:none;">
-                    <div class="d-flex justify-content-start mt-5">
-                        <div class="form-group">
-                            <label for="Classtype" class="font-weight-bold"><strong>Class Type</strong></label>
-                            <div class="">
-
-                                <p class="form-check-inline">
-                                    <label>
-                                        <input type="checkbox" />
-                                        <span>Premium</span>
-                                    </label>
-                                </p>
-                                <p class="form-check-inline">
-                                    <label>
-                                        <input type="checkbox" />
-                                        <span>Free</span>
-                                    </label>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="form-group ml-5">
-                            <label for="Classtype" class="font-weight-bold"><strong>Class Length</strong></label>
-                            <div class="">
-
-                                <p class="form-check-inline">
-                                    <label>
-                                        <input type="checkbox" />
-                                        <span>
-                                            < 15 min</span>
-                                    </label>
-                                </p>
-                                <p class="form-check-inline">
-                                    <label>
-                                        <input type="checkbox" />
-                                        <span>15 - 30 min</span>
-                                    </label>
-                                </p>
-                                <p class="form-check-inline">
-                                    <label>
-                                        <input type="checkbox" />
-                                        <span> 30 - 60 min</span>
-                                    </label>
-                                </p>
-                                <p class="form-check-inline">
-                                    <label>
-                                        <input type="checkbox" />
-                                        <span>> 60 min</span>
-                                    </label>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+            <div class="m-5">
+       <div class=" font-weight-bold">
+           <h2>Learn what You care about</h2>
+       </div>
                 <div class="tab-content">
                         <div id="all" class="tab-pane fade show  active">
 

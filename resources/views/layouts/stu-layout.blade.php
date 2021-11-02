@@ -118,10 +118,7 @@
                             Naqualify Business
                         </a>
                         <div class=" dropdown-content text-center">
-                            <p class="font-weight-bold m-2">Get your team access to over 6,000 top Udemy
-                                courses,
-                                anytime,
-                                anywhere.</p>
+                            <h4 class="font-weight-bold m-4">Coming Soon</h4>
                             <div class="m-2">
                                 <button class="btn btn-block bg-black text-white ">Try Naqualify
                                     Business</button>
@@ -133,7 +130,7 @@
                         <a href="{{url('/myaccount')}}" class="opts_account text-white" title="Account">
                             My Learning
                         </a>
-                        <div class=" dropdown-content">
+                        <!-- <div class=" dropdown-content">
                             <div class="d-flex flex-nowrap m-2">
                                 <div class="card-image ">
                                     <img src="{{asset('assets/images/instructor_12.jpg')}}" alt="" class="">
@@ -160,7 +157,7 @@
 
                             </div>
 
-                        </div>
+                        </div> -->
                     </li>
 
                     <li class="dropdown ml-4">
@@ -310,9 +307,14 @@
     <li class="nav-item">
       <a class="nav-link pri" href="{{route('category')}}">BROWSE</a>
     </li>
+    @auth
     <li class="nav-item">
-      <a class="nav-link pri" >Naqualify Business</a>
+      <a href="{{url('/myaccount')}}" class="nav-link pri" >My Learning</a>
     </li>
+    <li class="nav-item">
+      <a  href="{{url('/accsetting')}}" class="nav-link pri" >Profile</a>
+    </li>
+    @endauth
     <li class="nav-item">
       <a class="nav-link pri" >Contact</a>
     </li>
