@@ -37,7 +37,7 @@
                    
                         <div class="form-group ">
                             <label for="Classtype" class="font-weight-bold">
-                                <strong>Class Type</strong></label>
+                                <strong>Course Type</strong></label>
                             <div class="">
 
                                 <p class="form-check-inline m-2">
@@ -56,7 +56,7 @@
                         </div>
                         <div class="form-group ">
                             <label for="Classtype" class="font-weight-bold">
-                                <strong>Class Length</strong></label>
+                                <strong>Course Length</strong></label>
                             <div class="">
 
                                 <p class="form-check-inline m-2">
