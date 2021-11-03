@@ -996,7 +996,7 @@
     }
     
     .auto-85 {
-        width: 75%;
-        margin-right: auto;
-        margin-left: auto;
+        width: 75%!important;
+        margin-right: auto!important;
+        margin-left: auto!important;
     }
