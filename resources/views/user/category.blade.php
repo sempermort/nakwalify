@@ -19,18 +19,18 @@
                 @endforeach
             </div>
             <div class="position-relative border-top  mt-4">
-                <div class="d-flex flex-column ">
+                <div class="">
+                 
                     <p class="label">Language</p>
                     <select class="browser-default    form-control">
                         <option value="1" selected>English</option>
                         <option value="2">Kiswahili</option>
-                    </select>
-                  
+                    </select>             
                  
 
                 </div>
             </div> 
-      
+           
         </div>
         <div class=" col-md-10">
 
