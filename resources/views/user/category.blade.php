@@ -31,7 +31,7 @@
             </div> 
             <div class="position-relative mt-4" id="chkfilter" >
                    
-                        <div class="form-group ">
+                        <!-- <div class="form-group ">
                             <label for="Classtype" class="font-weight-bold">
                                 <strong>Course Type</strong></label>
                             <div class="">
@@ -81,9 +81,9 @@
                                     </label>
                                 </p>
                             </div>
-                        </div>
+                        </div> -->
                   
-                </div>
+          </div>
  
         
             </div>
