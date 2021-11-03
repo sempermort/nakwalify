@@ -20,79 +20,17 @@
             </div>
             <div class="position-relative border-top  mt-4">
                 <div class="d-flex flex-column ">
-                    <p class=""><strong class=" ">SORT BY</strong></p>
+                    <p class="label">Language</p>
                     <select class="browser-default    form-control">
-                        <option value="" selected>Popular</option>
-                        <option value="1">Trending</option>
+                        <option value="1" selected>English</option>
+                        <option value="2">Kiswahili</option>
                     </select>
-                    <select class="browser-default   form-control">
-                        <option value="" selected>Last 6 Monthes</option>
-                        <option value="1">All Time</option>
-                        <option value="1">Last Month</option>
-                        <option value="1">Last Week</option>
-                    </select>
+                  
                  
 
                 </div>
             </div> 
-            <div class="position-relative mt-4" id="chkfilter" >
-                   
-                        <div class="form-group ">
-                            <label for="Classtype" class="font-weight-bold">
-                                <strong>Course Type</strong></label>
-                            <div class="">
-
-                                <p class="form-check-inline m-2">
-                                    <label>
-                                        <input type="checkbox" />
-                                        <span>Premium</span>
-                                    </label>
-                                </p>
-                                <p class="form-check-inline m-2">
-                                    <label>
-                                        <input type="checkbox" />
-                                        <span>Free</span>
-                                    </label>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="form-group ">
-                            <label for="Classtype" class="font-weight-bold">
-                                <strong>Course Length</strong></label>
-                            <div class="">
-
-                                <p class="form-check-inline m-2">
-                                    <label>
-                                        <input type="checkbox" />
-                                        <span>
-                                            < 15 min</span>
-                                    </label>
-                                </p>
-                                <p class="form-check-inline m-2">
-                                    <label>
-                                        <input type="checkbox" />
-                                        <span>15 - 30 min</span>
-                                    </label>
-                                </p>
-                                <p class="form-check-inline m-2">
-                                    <label>
-                                        <input type="checkbox" />
-                                        <span> 30 - 60 min</span>
-                                    </label>
-                                </p>
-                                <p class="form-check-inline m-2">
-                                    <label>
-                                        <input type="checkbox" />
-                                        <span>> 60 min</span>
-                                    </label>
-                                </p>
-                            </div>
-                        </div>
-                  
-                </div>
- 
-        
-            </div>
+      
         </div>
         <div class=" col-md-10">
 
