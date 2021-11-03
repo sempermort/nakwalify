@@ -4,7 +4,9 @@
 
 
 <div class="sa4d25  mt-20 " >
-    <div class="d-flex auto85">
+    <div class="d-flex " style=" width: 75%;
+        margin-right: auto;
+        margin-left: auto;">
         <div class=" hide-on-med-and-down d-none d-md-block d-lg-block mt-5 col-2">
             <div class="ml-2">
             <div class=" nastay position-relative">
