@@ -113,7 +113,7 @@
 
             <div class="m-5">
        <div class="headline__main-text">
-           <h2>Learn what You care about</h2>
+           Recommended for you
        </div>
                 <div class="tab-content">
                         <div id="all" class="tab-pane fade show  active">
