@@ -995,4 +995,8 @@
         letter-spacing: -.05rem;
     }
     
-    .auto-85 {width:75%; margin-right:auto; margin-left:auto}
+    .auto-85 {
+        width: 75%;
+        margin-right: auto;
+        margin-left: auto;
+    }
