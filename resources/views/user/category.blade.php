@@ -111,7 +111,7 @@
 
            
 
-            <div class="m-5">
+            <div class=""style="margin:3rem 10px;">
        <div class="headline__main-text">
            <h2> Recommended for you
 </h2>

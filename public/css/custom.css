@@ -1,76 +1,82 @@
-
 #exampleSlider {
-  position: relative;
+    position: relative;
 }
 
 #exampleSlider .MS-content {
-  margin: 15px 5%;
-  overflow: hidden;
-  white-space: nowrap;
+    margin: 15px 0%;
+    overflow: hidden;
+    white-space: nowrap;
+}
 
-}
 @media (max-width: 767px) {
-  #exampleSlider .MS-content {
-    margin: 0;
-  }
+    #exampleSlider .MS-content {
+        margin: 0;
+    }
 }
+
 #exampleSlider .MS-content .item {
-  display: inline-block;
-  height: 100%;
-  overflow: hidden;
-  position: relative;
-  vertical-align: top;
-  
-  border-right: none;
-  width: 30%;
-}
-@media (max-width: 1200px) {
-  #exampleSlider .MS-content .item {
-    width: 25%;
-  }
-}
-@media (max-width: 992px) {
-  #exampleSlider .MS-content .item {
-    width: 33.3333%;
-  }
-}
-@media (max-width: 767px) {
-  #exampleSlider .MS-content .item {
-    width: 50%;
-  }
-}
-@media (max-width: 500px) {
-  #exampleSlider .MS-content .item {
-    width: 100%;
-  }
+    display: inline-block;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    vertical-align: top;
+    border-right: none;
+    width: 30%;
 }
 
+@media (max-width: 1200px) {
+    #exampleSlider .MS-content .item {
+        width: 25%;
+    }
+}
+
+@media (max-width: 992px) {
+    #exampleSlider .MS-content .item {
+        width: 33.3333%;
+    }
+}
+
+@media (max-width: 767px) {
+    #exampleSlider .MS-content .item {
+        width: 50%;
+    }
+}
+
+@media (max-width: 500px) {
+    #exampleSlider .MS-content .item {
+        width: 100%;
+    }
+}
 
 #exampleSlider .MS-controls button:hover {
-  cursor: pointer;
+    cursor: pointer;
 }
+
 #exampleSlider .MS-controls .MS-left {
-  left: 10px;
+    left: 10px;
 }
+
 @media (max-width: 992px) {
-  #exampleSlider .MS-controls .MS-left {
-    left: -2px;
-  }
+    #exampleSlider .MS-controls .MS-left {
+        left: -2px;
+    }
 }
+
 #exampleSlider .MS-controls .MS-right {
-  right: 10px;
+    right: 10px;
 }
 
 #exampleSlider .MS-controls button {
-  position: absolute;
-  border: none;
-  background: transparent;
-  font-size: 30px;
-  outline: 0;
-  top:50%;
+    position: absolute;
+    border: none;
+    background: transparent;
+    font-size: 30px;
+    outline: 0;
+    top: 50%;
 }
+
 @media (max-width: 992px) {
-  #exampleSlider .MS-controls .MS-right {
-    right: -2px;
-  }
+    #exampleSlider .MS-controls .MS-right {
+        right: -2px;
+    }
 }
