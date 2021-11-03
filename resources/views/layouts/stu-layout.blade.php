@@ -633,7 +633,19 @@
                 </div>
             </div>
         </div>
-        <footer class="bg-greenpale  pt-5 pb-5  w-100" style="background: #3a9982;">
+        <footer class=" bg-darknavy">
+            <div class="container ">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="text-center text-white">
+                            <p class=" text-white" style="font-weight: 400;font-size: 14px;color:#dfdfdf; letter-spacing: 3px;">Copyright © <a href="http://www.futurebasics.co.tz">Future Basics</a>| All right
+                                reserved.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- <footer class="bg-greenpale  pt-5 pb-5  w-100" style="background: #3a9982;">
             <div class=" d-flex flex-row-reverse text-center kfooter">
 
                 <div class="col-md-9">
@@ -677,7 +689,7 @@
                 </div>
             </div>
 
-        </footer>
+        </footer> -->
 
 
 

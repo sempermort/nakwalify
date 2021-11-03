@@ -673,7 +673,19 @@
             </div>
         </div>
     </div>
-    <footer class="bg-greenpale  pt-5 pb-5 w-100" style="background: #3a9982;">
+    <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="block">
+                            <p>Copyright © <a href="http://www.futurebasics.co.tz">Future Basics</a>| All right
+                                reserved.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+ <!-- <footer class="bg-greenpale  pt-5 pb-5 w-100" style="background: #3a9982;">
             <div class="row text-center kfooter">
                 <div class="col-md-3">
                     <div class="coy pl-2">
@@ -716,7 +728,7 @@
                 </div>
             </div>
 
-        </footer>
+        </footer> -->
 
 
     <script src="{{ asset('assets/js/jquery-3.3.1.min.js') }}"></script>

@@ -210,13 +210,12 @@ document.cookie = "witcher=Geralt; SameSite=None; Secure"
         madeu(urlu);
 
         };
-const meid="{{$meid}}";
-if(typeof meid !== 'undefined')
+const meid="{{isset($meid)?$meid:0}}";
+if(meid != 0)
 {
     $(meid).click();
 }
 else{
-
 $('#vids'+1).click();
 }
         function replayvid() {
@@ -363,7 +362,15 @@ var player;
             }
         }
 
+        function addv()
+{
+    var coz_id="{{$course->id}}";
+    var user_id="{{isset(auth()->user()->id)?auth()->user()->id:''}}";
+    var vel="#vids"+curid;
+    var urlo="{{route('wishlist')}}";
 
+    ajaxedw(coz_id,user_id,urlo,vel);
+}
 
 
     </script>
