@@ -232,7 +232,7 @@
                         <!-- Modal body -->
                         <div class="modal-body">
                             <div style="width: 100%; height: 83vh;">
-                                <div class="sa4d25 bg-darknavy p-5">
+                                <div class=" bg-darknavy p-5">
                                     <div class="">
                                         <h2 class="text-white ctitle"></i> </h2>
                                         <p class=" text-white ptitle">
