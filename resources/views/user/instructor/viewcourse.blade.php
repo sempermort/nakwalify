@@ -82,8 +82,8 @@
 
                                     @php $id=1; $suml=0;@endphp
                                     @foreach ($videos as $vids)
-                        <li class="list-group-item btn transparent mb-3 list-group-item-action    bg-darknavy active"
-                            onclick="vidliclicked('{{$vids->video_path}}',{{count($videos)}},{{$id}},{{$vids->id}})"
+                        <li class="list-group-item btn transparent mb-3 vide list-group-item-action    bg-darknavy active"
+                            onclick="vidliclicked('{{$vids->video_path}}',{{count($videos)}},{{$id}},{{$vids->id}},event)"
                             id="{{'vids'.$id}}">
                             <a class="text-white font-weight-bold   d-flex justify-content-between ">
                                 video {{$id}} <span class="secondary-content vdurant"></span></a>
@@ -162,14 +162,14 @@
     </div>
 
     <script>
- // 2. This code loads the IFrame Player API code asynchronously.
- var tag = document.createElement('script');
+        // 2. This code loads the IFrame Player API code asynchronously.
+        var tag = document.createElement('script');
 
-tag.src = "https://www.youtube.com/iframe_api";
-var firstScriptTag = document.getElementsByTagName('script')[0];
-firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+        tag.src = "https://www.youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-document.cookie = "witcher=Geralt; SameSite=None; Secure"
+        document.cookie = "witcher=Geralt; SameSite=None; Secure"
 
     function openCity(evt, cityName) {
         var i, tabcontent, tablinks;
@@ -199,21 +199,30 @@ document.cookie = "witcher=Geralt; SameSite=None; Secure"
         var modal =  0;
         var curid=0;
 
-        function vidliclicked(urlu,counv,currev,id)
-        {
-
+        function vidliclicked(urlu,counv,currev,id, evt)
+        { 
+            lico = document.getElementsByClassName("vide");
+            for (i = 0; i < lico.length; i++) {
+                lico[i].classList.remove("active");
+            }
         ajaxed4(id);
         totalv=counv;
         currentv=currev;
         currenturl=urlu;
         curid=id;
         madeu(urlu);
-
+   evt.target.classList.add("active");
         };
+
+        addv("start");
+const cov="{{count($videos)>0?count($videos):0}}";
 const meid="{{isset($meid)?$meid:0}}";
 if(meid != 0)
 {
-    $(meid).click();
+    $('#vids'+(parseInt(meid, 10)+1)).click();
+}
+else if(cov==meid){
+$('#vids'+1).click();
 }
 else{
 $('#vids'+1).click();
@@ -294,7 +303,7 @@ $('#vids'+1).click();
 
         function made5(data) {
 
-            var APP_URL = {!! json_encode(url('/')) !!}
+            var APP_URL = {!! json_encode(url('/')) !!};
         var carol = document.getElementById('carol');
         document.querySelectorAll('.carol-it').forEach(e => e.remove());
         for(let i=0; i<data.length;i++){
@@ -346,7 +355,7 @@ var player;
             var videotabi= document.getElementById('videotab');
 
             if(event.data ===0) {
-
+                addv("video");
                     videotabi.insertAdjacentHTML('beforeend',
             '<div id="modaly" class="video-js w-100 h-100 card-img-overlay">' +
             '<div class="text-center" id="message">Take Quiz To continue to the Next lesson</div>' +
@@ -362,14 +371,47 @@ var player;
             }
         }
 
-        function addv()
+        function ajaxedv(coz_id,user_id,urlo,vel,vid_id)
+ {
+    var form_data = new FormData();
+    form_data.append('user_id',user_id );
+    form_data.append('course_id',coz_id);
+    if(vid_id>0){form_data.append('video_id',vid_id);}
+    form_data.append('vel',vel);
+    $.ajax({
+        type: 'POST',
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        },
+        url: urlo,
+        data: form_data,
+        processData: false,
+        contentType: false,
+        success: function (data) {
+            if ((data.errors)) {
+                alert(data.errors);
+            } else {
+            alert("wished");
+
+            }
+        },
+        error: function (data) {
+            $('.loading-overlay-image-container').hide();
+            $('.loading-overlay').hide();
+
+        },
+    });
+};
+
+    function addv(p)
 {
     var coz_id="{{$course->id}}";
     var user_id="{{isset(auth()->user()->id)?auth()->user()->id:''}}";
-    var vel="#vids"+curid;
+    var vel=p;
+    var vid_id=curid;
     var urlo="{{route('wishlist')}}";
 
-    ajaxedw(coz_id,user_id,urlo,vel);
+    ajaxedv(coz_id,user_id,urlo,vel,vid_id);
 }
 
 

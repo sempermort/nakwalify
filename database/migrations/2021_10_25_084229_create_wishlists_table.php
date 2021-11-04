@@ -17,6 +17,7 @@ class CreateWishlistsTable extends Migration
             $table->id();
                 $table->integer('user_id');
                 $table->integer('course_id');
+                $table->integer('video_id')->nullable();
                 $table->string('wishtype');
                 $table->timestamps();
             });

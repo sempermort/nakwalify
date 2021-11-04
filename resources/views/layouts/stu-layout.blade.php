@@ -23,7 +23,7 @@
     <link href="{{ asset('assets/bootstrap-4.3.1-dist/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet">
 
-   
+
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
 <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
@@ -46,7 +46,7 @@
                 style="font-family:'Kaushan_Script'; font-weight: bolder;  font-size :35px!important; ">nakwalify</a>
             @endauth
 
-           
+
             <div class="collapse navbar-collapse " >
 
             <div class="  ml-5">
@@ -268,7 +268,7 @@
                         </div>
                     </li>
                     @endauth
-                  
+
                 </ul>
             </div>
             <ul class="navbar-nav ml-auto  mr-4 cfont">
@@ -327,7 +327,7 @@
  </div>
     </header>
 
-  
+
 
     <div class="">
         <main >
@@ -476,7 +476,7 @@
                                                                 </div>
                                                                 <div class=" form-group m-2">
                                                                     <div class="text-center m-auto ">
-                                                                        <button data-dismiss="modal"
+                                                                        <button
                                                                             class="form-control m-auto w-80 btn-primary">
                                                                             {{ __('Register') }}</button>
 
@@ -554,14 +554,11 @@
                                                                     Continue With
                                                                     Google</a>
 
-                                                            <a class="col-12 btn btn-outline-dark">
+                                                            <a href="{{ url('/redirectfacebook') }}"class="col-12 btn btn-outline-dark">
                                                                 <i class="fab fa-facebook float-left"></i>
                                                                 <span class="text-left">Continue With
                                                                     Facebook</span> </a>
-                                                            <a class="col-12 btn btn-outline-dark">
-                                                                <i class="fab fa-twitter float-left"></i> <span
-                                                                    class="text-left">Continue With
-                                                                    Twitter </span></a>
+
                                                             <div class="d-flex custome-hrc   text-center w-90">
                                                                 <hr class=" w-40">
                                                                 <p class="w-20">or</p>
@@ -611,9 +608,16 @@
                                                                     </a>
                                                                     @endif
 
-                                                                    <x-button class="ml-3" data-dismiss="modal">
+                                                                    <x-button class="ml-3" >
                                                                         {{ __('Log in') }}
                                                                     </x-button>
+                                                                    <p>Dont have Account
+                                                                            <button data-toggle="modal"
+                                                                                data-target="#register"
+                                                                                class=" btn btn-default "
+                                                                                style="margin-top: -4px;">Register
+                                                                                </button>
+                                                                        </p>
                                                                 </div>
                                                             </form>
                                                         </div>
@@ -858,13 +862,14 @@ var elementnav = document.getElementById("mainavbar");
 
         $('#exampleSlider').multislider({
     interval:0,
-  
+
 });
-function ajaxedw(coz_id,user_id,urlo,vel)
+function ajaxedw(coz_id,user_id,urlo,vel,vid_id)
  {
     var form_data = new FormData();
     form_data.append('user_id',user_id );
     form_data.append('course_id',coz_id);
+    if(vid_id>0){form_data.append('video_id',vid_id);}
     form_data.append('vel',vel);
     $.ajax({
         type: 'POST',

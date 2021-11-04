@@ -92,14 +92,18 @@ class UserController extends Controller
     public function viewCourse($id)
     {
         $course = course::find($id);
-
+$meid=Wishlist::select('video_id')
+                ->where('course_id',$id)->
+                where('user_id',auth()->user()->id)->
+                where('wishtype',"video")
+                ->max('video_id');
         $videos = $course->Videos;
-
         // $covid=$course->mediaCover->where('file_type','covervid')->first();
         // $copic=MediaCover::Where('course_id',$id)->where('file_type','coverpic')->first();
 
 
         return view('user.instructor.viewcourse')->with('videos', $videos)
+            ->with('meid', $meid)
             ->with('course', $course);
 
 
@@ -704,27 +708,29 @@ public function deletevid($id)
         return view('user.account.deleteacc');
     }
     public function wishlist(Request $request)
-    { 
-     
+    {
+
         $wishd=Wishlist::where('course_id',$request->course_id)->
                          where('user_id',$request->user_id)->
+                         where('video_id',$request->video_id)->
                          where('wishtype',$request->vel)->get();
-                         
+
                          if(count($wishd)>0){
-                          
+
                             return Response()->json($wishd);
-                          
+
                          }
                          else{
                             $wish = Wishlist::create([
                                 'course_id' => $request->course_id,
                                 'user_id' => $request->user_id,
+                                'video_id' => $request->video_id,
                                 'wishtype' => $request->vel,
                             ]);
-                          
+
                             return Response()->json($wish);
                          }
-   
+
     }
 
 
@@ -746,7 +752,12 @@ public function deletevid($id)
 
     public function myaccount()
     {
-        return view('user.account.myaccount');
+        $totalall=Wishlist::all();
+        $wishes=Wishlist::where('user_id',auth()->user()->id)->get();
+
+     
+        return view('user.account.myaccount')->with("wishes",$wishes)
+        ->with("totalall",$totalall);
     }
 
     public function earnings()

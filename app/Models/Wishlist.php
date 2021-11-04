@@ -13,8 +13,14 @@ class Wishlist extends Model
     protected $fillable = [
 
         'course_id',
+        'video_id',
         'user_id',
         'wishtype'
 
     ];
+    public function course()
+    {
+        return $this->belongsTo(Course::class);
+    }
+
 }
