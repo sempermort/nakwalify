@@ -1,5 +1,11 @@
 @extends('layouts.stu-layout')
-
+<style>
+    footer{
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+    }
+</style>
 @section('content')
 <section>
 <div class="bg-black p-5">
