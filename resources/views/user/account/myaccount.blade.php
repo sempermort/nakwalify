@@ -39,13 +39,14 @@
                         </div>
 
                         <div class="row mt-3 ">
-                            @foreach($wishes as $wish)
-                            <a href="{{route('coursedetail',$wish->course->id)}}">
+                            @foreach($co as $wish)
+                          
+                            <a href="{{route('coursedetail',$wish[0]->course->id)}}">
                                 <div class="col-md-4">
                                     <div class="card cardc rounded mb-3">
-                                        @if(isset($wish->course->mediaCover->file_path))
+                                        @if(isset($wish[0]->course->mediaCover->file_path))
                                         @php
-                                        $src=$wish->course->mediaCover->file_path;
+                                        $src=$wish[0]->course->mediaCover->file_path;
                                         $cnt=0;
                                         @endphp
                                         <img class="card-img-top" width="295" height="165" src="{{route('get-copic',explode('/',$src)[1])}}" alt="Card image cap">
@@ -58,7 +59,7 @@
                                                     $cnt=0;
                                                     @endphp
                                                     @foreach($totalall as $tall)
-                                                    @if($tall->course_id==$wish->course_id)
+                                                    @if($tall->course_id==$wish[0]->course_id)
                                                     @php
                                                     $cnt++;
                                                     @endphp
@@ -71,7 +72,7 @@
 
                                             <p class="card-text bold"><a href="http://" target="_blank" rel="noopener noreferrer">
                                                     {{
-                                                                    $wish->course->course_title
+                                                                    $wish[0]->course->course_title
                                                                 }}</a> </p>
                                             <p class="card-text d-flex justify-content-between">
 

@@ -759,11 +759,14 @@ public function deletevid($id)
     public function myaccount()
     {
         $totalall=Wishlist::all();
-        $wishes=Wishlist::where('user_id',auth()->user()->id)->get();
+
+        $wishes= $totalall->where('user_id',auth()->user()->id);
+        $co=$wishes->groupBy("course_id");
+      
 
 
-        return view('user.account.myaccount')->with("wishes",$wishes)
-        ->with("totalall",$totalall);
+        return view('user.account.myaccount')->with("wishes",$wishes)->with("totalall",$totalall)
+        ->with("co",$co);
     }
 
     public function earnings()
