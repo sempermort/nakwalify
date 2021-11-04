@@ -54,18 +54,8 @@
                                         <div class="m-2">
                                             <p class="card-text m-2 d-flex justify-content-between">
                                                 <small class="card-text">
-                                                    @php
-
-                                                    $cnt=0;
-                                                    @endphp
-                                                    @foreach($totalall as $tall)
-                                                    @if($tall->course_id==$wish[0]->course_id)
-                                                    @php
-                                                    $cnt++;
-                                                    @endphp
-                                                    @endif
-                                                    @endforeach
-                                                    {{$cnt}} trainees </small>
+                                                   
+                                                    {{count($totalall->groupBy('user_id'))}} trainees </small>
                                                 <small class="card-text">1h 50m</small>
                                             </p>
 
