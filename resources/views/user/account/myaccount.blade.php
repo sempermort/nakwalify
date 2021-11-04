@@ -40,7 +40,6 @@
 
                         <div class="row mt-3 ">
                             @foreach($wishes as $wish)
-                            @if($wish->wishtype=="start")
                             <a href="{{route('coursedetail',$wish->course->id)}}">
                                 <div class="col-md-4">
                                     <div class="card cardc rounded mb-3">
@@ -84,7 +83,6 @@
                                     </div>
                                 </div>
                             </a>
-                            @endif
                             @endforeach
 
                         </div>
