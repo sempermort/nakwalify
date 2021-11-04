@@ -637,7 +637,7 @@
                 </div>
             </div>
         </div>
-        <footer class=" bg-darknavy w-100 " style="bottom:0;">
+        <footer class=" bg-darknavy w-100 position-absolute " style="bottom:0;">
             <div class="container ">
                 <div class="row">
                     <div class="col-md-12">
