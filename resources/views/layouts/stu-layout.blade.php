@@ -730,18 +730,6 @@ var elementnav = document.getElementById("mainavbar");
 
 <script>
 
-
-
-
-        // $('.nastay').on('click', 'a', function() {
-
-        //     $(this).addClass('active').addClass('noHover')
-        //         .siblings().removeClass('active').removeClass('noHover');
-        //     var url = location.pathname
-        //     location.href = url + this.getAttribute('href');
-        //     $(this.getAttribute('href')).addClass('active').addClass('show')
-        //         .siblings().removeClass('active').removeClass('show');
-        // });
         $(".filt").click(function() {
             $("#chkfilter").toggle();
         });

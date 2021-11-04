@@ -2,15 +2,23 @@
 
 @section('content')
 
-<div class="sa4d25 p-5">
+<div class="sa4d25 p-5" style="width: 85%;
+margin: 5rem auto;">
     <div class="row border">
         <div class=" col-md-3">
             <div class="text-center mt-3">
                 <div class="bg-black rounded-circle ml-auto  mr-auto " style="width:100px; height:100px;">
-                    <h1 class="text-white m-auto" style="padding-top: 29%;"> J S</h1>
+                @if(isset($muser->profpic->file_path))
+                                        @php
+                                        $src=$muser->profpic->file_path;
+                                        @endphp
+                                        <img class="card-img-top"  src="{{route('get-copic',explode('/',$src)[1])}}" alt="Card image cap">
+                                        @endif
+
                 </div>
 
-                <p class="font-weight-bold">Joe Smith</p>
+                <p class="font-weight-bold">{{$muser->fname}}
+                    {{ $muser->lname}}</p>
             </div>
             <div class=" nastay nav-tabs" role="tablist">
                 <a class="waves-effect waves-light active" data-toggle="tab" href="#profile" role="tab"
@@ -39,27 +47,27 @@
                     <p class=" p-0"> Add information about yourself</p>
                 </div>
                 <div class="border-top">
+                  <form action="" method="post">
                     <div class="container">
+
                         <label for="exampleInputEmail1">Basics:</label>
                         <div class="form-group">
-                            <input type="email" class="form-control" id="exampleInputEmail1"
-                                aria-describedby="emailHelp" placeholder="First Name">
+                            <input type="text" class="form-control" id="fname" value="{{$muser->fname}}"
+                                aria-describedby="fname" name="fname">
                         </div>
                         <div class="form-group">
-                            <input type="email" class="form-control" id="exampleInputEmail1"
-                                aria-describedby="emailHelp" placeholder="Last Name">
+                            <input type="text" class="form-control" id="lname" value="{{$muser->lname}}"
+                                aria-describedby="fname" name="lname">
                         </div>
                         <div class="form-group">
                             <div class="input-group ">
-                                <input type="text" class="form-control" placeholder="HeadLine"
+                                <input type="email" class="form-control" name="email"
+                                value="{{$muser->email}}"
                                     aria-label="Recipient's username" aria-describedby="basic-addon2">
                                 <div class="input-group-append">
                                     <span class="input-group-text" id="basic-addon2">60</span>
                                 </div>
-                            </div>
-                            <small id="emailHelp" class="form-text text-muted ml-3"> Add a professional headline
-                                like, "Engineer at Udemy" or "Architect."</small>
-                        </div>
+                            </div>                        </div>
 
                         <div class="form-group shadow-textarea">
                             <textarea class="form-control z-depth-1" id="exampleFormControlTextarea6" rows="3"
@@ -133,6 +141,7 @@
                     <div class="form-group text-center">
                         <button class="btn btn-default bg-purple">Save</button>
                     </div>
+                    </form>
                 </div>
             </div>
             <div class="tab-pane fade Photo " id="photo" role="tabpanel">

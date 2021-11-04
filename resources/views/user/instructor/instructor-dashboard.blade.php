@@ -22,9 +22,10 @@
             <div class="col-xl-3 col-lg-6 col-md-6">
                 <div class="card_dash">
                     <div class="card_dash_left">
+
                         <h5>Total Enroll</h5>
-                        <h2>1500</h2>
-                        <span class="crdbg_2">New 125</span>
+                        <h2>{{count($toll->groupby('user_id'))}}</h2>
+                        <span class="crdbg_2">New {{count($toll->groupby('user_id'))}}</span>
                     </div>
                     <div class="card_dash_right">
                         <img src="images/dashboard/graduation-cap.svg" alt="">
@@ -35,8 +36,8 @@
                 <div class="card_dash">
                     <div class="card_dash_left">
                         <h5>Total Courses</h5>
-                        <h2>130</h2>
-                        <span class="crdbg_3">New 5</span>
+                        <h2>{{count($cozes)}}</h2>
+
                     </div>
                     <div class="card_dash_right">
                         <img src="images/dashboard/online-course.svg" alt="">
@@ -46,9 +47,11 @@
             <div class="col-xl-3 col-lg-6 col-md-6">
                 <div class="card_dash">
                     <div class="card_dash_left">
+
+
                         <h5>Total trainees</h5>
-                        <h2>2650</h2>
-                        <span class="crdbg_4">New 245</span>
+                        <h2>{{count($users)}}</h2>
+
                     </div>
                     <div class="card_dash_right">
                         <img src="images/dashboard/knowledge.svg" alt="">
@@ -76,21 +79,40 @@
                     <a class="btn btn-default border border-dark ">View All</a>
                 </div>
                 <div class="row mt-5">
-                    <div class="col-md-4">
+                    @foreach($cozes as $cos)
+                    <a href="{{route('coursedetail',$cos->id)}}">
+                    <div class="col-md-4 mb-5">
                         <div class="card cardc rounded ">
-                            <img class="card-img-top w-100" width="295" height="165"
-                              src="{{asset('assets/images/about/company-2.jpg')}}"
-                                alt="Card image cap">
+                            @if(isset($cos->mediaCover->file_path))
+                            @php
+                            $src=$cos->mediaCover->file_path;
+
+                            @endphp
+                            <img class="card-img-top" width="295" height="165" src="{{route('get-copic',explode('/',$src)[1])}}" alt="Card image cap">
+
+                            @endif
                             <div class="m-2">
                                 <p class="card-text  d-flex justify-content-between">
-                                    <small class="card-text">23,162 trainees </small>
-                                    <small class="card-text">1h 50m</small>
+                                    <small class="card-text">
+                                    @php
+
+                                    $cint=0;
+                                    @endphp
+                                    @foreach($toll as $tall)
+                                    @if($tall->course_id==$cos->course_id)
+                                    @php
+                                    $cint++;
+                                    @endphp
+                                    @endif
+                                    @endforeach
+                                    {{$cint}} trainees
+                                    </small>
+                                    <small class="card-text">50m</small>
                                 </p>
 
 
                                 <p class="card-text bold"><a href="http://" target="_blank"
-                                        rel="noopener noreferrer">Art
-                                        Journaling for Self-Care: 3 Exercises for Reflection and Growth</a> </p>
+                                        rel="noopener noreferrer">{{$cos->course_title}}</a> </p>
                                 <p class="card-text d-flex justify-content-between">
                                     <small class="card-text">John Mac-Anthony </small>
                                     <small class="card-text"><span class="material-icons-outlined">
@@ -101,297 +123,18 @@
 
                         </div>
                     </div>
+                    </a>
                     <br>
-                    <div class="col-md-4">
-                        <div class="card cardc rounded mb-3">
-                            <img class="card-img-top w-100" width="295" height="165"
-                                src="{{asset('assets/images/about/company-3.jpg')}}" alt="Card image cap">
-                            <div class="m-2">
-                                <p class="card-text  d-flex justify-content-between">
-                                    <small class="card-text">23,162 trainees </small>
-                                    <small class="card-text">1h 50m</small>
-                                </p>
 
-
-                                <p class="card-text bold"><a href="http://" target="_blank"
-                                        rel="noopener noreferrer">Art
-                                        Journaling for Self-Care: 3 Exercises for Reflection and Growth</a> </p>
-                                <p class="card-text d-flex justify-content-between">
-                                    <small class="card-text">John Mac-Anthony </small>
-                                    <small class="card-text"><span class="material-icons-outlined">
-                                            bookmark_border
-                                        </span></small>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <br>
-                    <div class="col-md-4">
-                        <div class="card cardc rounded mb-3">
-                            <img class="card-img-top w-100" width="295" height="165"
-                                src="{{asset('assets/images/about/company-2.jpg')}}" alt="Card image cap">
-                            <div class="m-2">
-                                <p class="card-text m-2 d-flex justify-content-between">
-                                    <small class="card-text">23,162 trainees </small>
-                                    <small class="card-text">1h 50m</small>
-                                </p>
-
-
-                                <p class="card-text bold"><a href="http://" target="_blank"
-                                        rel="noopener noreferrer">Art
-                                        Journaling for Self-Care: 3 Exercises for Reflection and Growth</a> </p>
-                                <p class="card-text d-flex justify-content-between">
-                                    <small class="card-text">John Mac-Anthony </small>
-                                    <small class="card-text"><span class="material-icons-outlined">
-                                            bookmark_border
-                                        </span></small>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
 
                 </div>
-                <div class="row mt-5">
-                    <div class="col-md-4">
-                        <div class="card cardc rounded ">
-                            <img class="card-img-top w-100" width="295" height="165"
-                              src="{{asset('assets/images/about/company-2.jpg')}}"
-                                alt="Card image cap">
-                            <div class="m-2">
-                                <p class="card-text  d-flex justify-content-between">
-                                    <small class="card-text">23,162 trainees </small>
-                                    <small class="card-text">1h 50m</small>
-                                </p>
 
-
-                                <p class="card-text bold"><a href="http://" target="_blank"
-                                        rel="noopener noreferrer">Art
-                                        Journaling for Self-Care: 3 Exercises for Reflection and Growth</a> </p>
-                                <p class="card-text d-flex justify-content-between">
-                                    <small class="card-text">John Mac-Anthony </small>
-                                    <small class="card-text"><span class="material-icons-outlined">
-                                            bookmark_border
-                                        </span></small>
-                                </p>
-                            </div>
-
-                        </div>
-                    </div>
-                    <br>
-                    <div class="col-md-4">
-                        <div class="card cardc rounded mb-3">
-                            <img class="card-img-top w-100" width="295" height="165"
-                                src="{{asset('assets/images/about/company-3.jpg')}}" alt="Card image cap">
-                            <div class="m-2">
-                                <p class="card-text  d-flex justify-content-between">
-                                    <small class="card-text">23,162 trainees </small>
-                                    <small class="card-text">1h 50m</small>
-                                </p>
-
-
-                                <p class="card-text bold"><a href="http://" target="_blank"
-                                        rel="noopener noreferrer">Art
-                                        Journaling for Self-Care: 3 Exercises for Reflection and Growth</a> </p>
-                                <p class="card-text d-flex justify-content-between">
-                                    <small class="card-text">John Mac-Anthony </small>
-                                    <small class="card-text"><span class="material-icons-outlined">
-                                            bookmark_border
-                                        </span></small>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <br>
-                    <div class="col-md-4">
-                        <div class="card cardc rounded mb-3">
-                            <img class="card-img-top w-100" width="295" height="165"
-                                src="{{asset('assets/images/about/company-2.jpg')}}" alt="Card image cap">
-                            <div class="m-2">
-                                <p class="card-text  d-flex justify-content-between">
-                                    <small class="card-text">23,162 trainees </small>
-                                    <small class="card-text">1h 50m</small>
-                                </p>
-
-
-                                <p class="card-text bold"><a href="http://" target="_blank"
-                                        rel="noopener noreferrer">Art
-                                        Journaling for Self-Care: 3 Exercises for Reflection and Growth</a> </p>
-                                <p class="card-text d-flex justify-content-between">
-                                    <small class="card-text">John Mac-Anthony </small>
-                                    <small class="card-text"><span class="material-icons-outlined">
-                                            bookmark_border
-                                        </span></small>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
             </div>
 
         </div>
         <div>
-            <div class="mt-5">
-                <div class="d-flex justify-content-between mt-5">
-                    <h3>Trending Classes
-                    </h3>
-                    <a class="btn btn-default border border-dark ">View All</a>
-                </div>
-                <div class="row mt-5">
-                    <div class="col-md-4">
-                        <div class="card cardc rounded ">
-                            <img class="card-img-top w-100" width="295" height="165"
-                              src="{{asset('assets/images/about/company-2.jpg')}}"
-                                alt="Card image cap">
-                            <div class="m-2">
-                                <p class="card-text  d-flex justify-content-between">
-                                    <small class="card-text">23,162 trainees </small>
-                                    <small class="card-text">1h 50m</small>
-                                </p>
 
-
-                                <p class="card-text bold"><a href="http://" target="_blank"
-                                        rel="noopener noreferrer">Art
-                                        Journaling for Self-Care: 3 Exercises for Reflection and Growth</a> </p>
-                                <p class="card-text d-flex justify-content-between">
-                                    <small class="card-text">John Mac-Anthony </small>
-                                    <small class="card-text"><span class="material-icons-outlined">
-                                            bookmark_border
-                                        </span></small>
-                                </p>
-
-                            </div>
-                        </div>
-                    </div>
-                    <br>
-                    <div class="col-md-4">
-                        <div class="card cardc rounded mb-3">
-                            <img class="card-img-top w-100" width="295" height="165"
-                                src="{{asset('assets/images/about/company-3.jpg')}}" alt="Card image cap">
-                            <div class="m-2">
-                                <p class="card-text  d-flex justify-content-between">
-                                    <small class="card-text">23,162 trainees </small>
-                                    <small class="card-text">1h 50m</small>
-                                </p>
-
-
-                                <p class="card-text bold"><a href="http://" target="_blank"
-                                        rel="noopener noreferrer">Art
-                                        Journaling for Self-Care: 3 Exercises for Reflection and Growth</a> </p>
-                                <p class="card-text d-flex justify-content-between">
-                                    <small class="card-text">John Mac-Anthony </small>
-                                    <small class="card-text"><span class="material-icons-outlined">
-                                            bookmark_border
-                                        </span></small>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <br>
-                    <div class="col-md-4">
-                        <div class="card cardc rounded mb-3">
-                            <img class="card-img-top w-100" width="295" height="165"
-                                src="{{asset('assets/images/about/company-2.jpg')}}" alt="Card image cap">
-                            <div class="m-2">
-                                <p class="card-text  d-flex justify-content-between">
-                                    <small class="card-text">23,162 trainees </small>
-                                    <small class="card-text">1h 50m</small>
-                                </p>
-
-
-                                <p class="card-text bold"><a href="http://" target="_blank"
-                                        rel="noopener noreferrer">Art
-                                        Journaling for Self-Care: 3 Exercises for Reflection and Growth</a> </p>
-                                <p class="card-text d-flex justify-content-between">
-                                    <small class="card-text">John Mac-Anthony </small>
-                                    <small class="card-text"><span class="material-icons-outlined">
-                                            bookmark_border
-                                        </span></small>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="row mt-5">
-                    <div class="col-md-4">
-                        <div class="card cardc rounded ">
-                            <img class="card-img-top w-100" width="295" height="165"
-                              src="{{asset('assets/images/about/company-2.jpg')}}"
-                                alt="Card image cap">
-                            <div class="m-2">
-                                <p class="card-text m-2 d-flex justify-content-between">
-                                    <small class="card-text">23,162 trainees </small>
-                                    <small class="card-text">1h 50m</small>
-                                </p>
-
-
-                                <p class="card-text bold"><a href="http://" target="_blank"
-                                        rel="noopener noreferrer">Art
-                                        Journaling for Self-Care: 3 Exercises for Reflection and Growth</a> </p>
-                                <p class="card-text d-flex justify-content-between">
-                                    <small class="card-text">John Mac-Anthony </small>
-                                    <small class="card-text"><span class="material-icons-outlined">
-                                            bookmark_border
-                                        </span></small>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <br>
-                    <div class="col-md-4">
-                        <div class="card cardc rounded mb-3">
-                            <img class="card-img-top w-100" width="295" height="165"
-                                src="{{asset('assets/images/about/company-3.jpg')}}" alt="Card image cap">
-                            <div class="m-2">
-                                <p class="card-text  d-flex justify-content-between">
-                                    <small class="card-text">23,162 trainees </small>
-                                    <small class="card-text">1h 50m</small>
-                                </p>
-
-
-                                <p class="card-text bold"><a href="http://" target="_blank"
-                                        rel="noopener noreferrer">Art
-                                        Journaling for Self-Care: 3 Exercises for Reflection and Growth</a> </p>
-                                <p class="card-text d-flex justify-content-between">
-                                    <small class="card-text">John Mac-Anthony </small>
-                                    <small class="card-text"><span class="material-icons-outlined">
-                                            bookmark_border
-                                        </span></small>
-                                </p>
-                            </div>
-
-
-                        </div>
-                    </div>
-                    <br>
-                    <div class="col-md-4">
-                        <div class="card cardc rounded mb-3">
-                            <img class="card-img-top w-100" width="295" height="165"
-                                src="{{asset('assets/images/about/company-2.jpg')}}" alt="Card image cap">
-                            <div class="m-2">
-                                <p class="card-text  d-flex justify-content-between">
-                                    <small class="card-text">23,162 trainees </small>
-                                    <small class="card-text">1h 50m</small>
-                                </p>
-
-
-                                <p class="card-text bold"><a href="http://" target="_blank"
-                                        rel="noopener noreferrer">Art
-                                        Journaling for Self-Care: 3 Exercises for Reflection and Growth</a> </p>
-                                <p class="card-text d-flex justify-content-between">
-                                    <small class="card-text">John Mac-Anthony </small>
-                                    <small class="card-text"><span class="material-icons-outlined">
-                                            bookmark_border
-                                        </span></small>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
 
         </div>
     </div>

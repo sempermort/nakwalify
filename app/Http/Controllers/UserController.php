@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Course;
+use App\Models\User;
+use App\Models\Userpic;
 use App\Models\Category;
 use App\Models\Subcategory;
 use App\Models\Videos;
@@ -41,8 +43,12 @@ class UserController extends Controller
     }
 
     public function instructorDashboard()
-    {
-        return view('user.instructor.instructor-dashboard');
+    { $users = User::All();
+        $cozes = Course::All();
+        $totalall=Wishlist::all();
+        return view('user.instructor.instructor-dashboard')->with('cozes', $cozes)
+        ->with('toll', $totalall)
+        ->with('users', $users);
     }
 
     public function getVideo($video)
@@ -755,7 +761,7 @@ public function deletevid($id)
         $totalall=Wishlist::all();
         $wishes=Wishlist::where('user_id',auth()->user()->id)->get();
 
-     
+
         return view('user.account.myaccount')->with("wishes",$wishes)
         ->with("totalall",$totalall);
     }
@@ -797,7 +803,34 @@ public function deletevid($id)
 
     public function accSetting()
     {
+        $muser = User::findOrFail(auth()->user()->id);
+        return view('user.account.accsetting')->with('muser',$muser);
+    }
+    public function accSettingpost(Request $request)
+    {
+        $pic = new Userpic();
+        $euser = new User();
+
+        $muser = User::findOrFail(auth()->user()->id);
+        if(isset($muser)){
+        if($request->hasfile('profpic'))
+         {
+           $filed = $request->file('profpic');
+
+        $path = $filed->store('/profpic');
+        $pic->fil_path= $path;
+        $pic->user_id=auth()->user()->id;
+        $pic->file_title=$filed->getClientOriginalName();
+
+        $pic->save();
+         }
+         $euser->fname = $request->fname;
+         $euser->lname = $request->lname;
+         $euser->email = $request->email;
+
+         $muser->fill($euser)->save();
         return view('user.account.accsetting');
+        }
     }
 
     public function lcontent()

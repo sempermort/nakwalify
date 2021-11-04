@@ -112,7 +112,7 @@
 
                         </div>
                     </li>
-                
+
                     <li class="dropdown ml-4">
                         <a  class=" text-white " id="dropdownMenuButton" title="Notifications"><i
                                 class='fa fa-bell text-white' style="margin-top: 22px; color:#fff;"></i><span
@@ -673,12 +673,12 @@
             </div>
         </div>
     </div>
-    <footer>
-            <div class="container">
+    <footer class=" bg-darknavy">
+            <div class="container ">
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="block">
-                            <p>Copyright © <a href="http://www.futurebasics.co.tz">Future Basics</a>| All right
+                        <div class="text-center text-white">
+                            <p class=" text-white" style="font-weight: 400;font-size: 14px;color:#dfdfdf; letter-spacing: 3px;">Copyright © <a href="http://www.futurebasics.co.tz">Future Basics</a>| All right
                                 reserved.</p>
                         </div>
                     </div>
