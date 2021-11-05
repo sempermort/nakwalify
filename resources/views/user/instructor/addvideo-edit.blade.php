@@ -28,11 +28,13 @@
                                 <div class=" btn-group-vertical col-12  text-left" id="vidb" role="group">
                                 <input type="text" name="course_id"
                                 value="{{isset($vidoz->first()->course_id)? $vidoz->first()->course_id:''}}"  hidden />
+                                <input type="text" name="video_id" id="vid_ido"
+                                 hidden />
                                     @php $i=1;@endphp
                                     @foreach($vidoz as $vido)
                                     <div class="d-flex justify-content-between  w-100" id="{{substr('$vido->video_title',6)}}">
                                         <div class=" w-90 btn btn-info mb-2 p-1 vditem">
-                                             <a class="" onclick="viditemclicked('{{$vido->video_path}}')">
+                                             <a class="" onclick="viditemclicked('{{$vido->video_path}}','{{$vido->id}}','{{$vido->video_desc}}')">
                                              Video {{$i}}<i class="pl-2 fa fa-play"></i></a>
                                             <a class="ml-3" href="{{route('addquestion',$vido->id)}}">Q<i
                                                     class="pl-2 fa fa-plus "></i></a>
@@ -75,8 +77,8 @@
                                     <label class="malabel" for="actual-btn">Add Video</label>
                                 </div> -->
                                 <div class="input-group mb-3">
-                                    <input type="text" class="form-control" name="videou" placeholder="Enter Video URL"
-                                        aria-label="Enter Video URL" aria-describedby="basic-addon2">
+                                    <input type="text" class="form-control " id="mevid" name="videou"  
+                                       >
                                     <div class="input-group-append">
                                         <span class="input-group-text" id="basic-addon2">@Youtube URL</span>
                                     </div>
@@ -126,8 +128,10 @@
                                 <div class="ui form swdh339">
                                     <label class="control-label">Description</label>
                                     <div class="field border border-dark">
-                                        <textarea rows="5" name="description" id="description"
-                                            placeholder="Insert your course description"></textarea>
+                                        <textarea rows="5" name="description" id="description"                                        
+                                            placeholder="Insert your course description">
+                                            {{isset($vidoz->first()->video_desc)? $vidoz->first()->video_desc:'Video'}}
+                                        </textarea>
                                     </div>
                                 </div>
                                 <!-- <input type="file" id="actual" name="myfile" /> -->
@@ -340,6 +344,8 @@ function destvido(name) {
             var description = document.getElementById("description");
             var form_data = new FormData();
 
+            form_data.append('video_id', $('input[name=video_id]').val());
+
             form_data.append('course_id', $('input[name=course_id]').val());
             // form_data.append('videos', $('#actual-btn').prop('files')[0]);
             form_data.append('videos', $('input[name=videou]').val());
@@ -371,7 +377,7 @@ function destvido(name) {
                         alert(data.errors);
                     } else {
 
-                        window.location.reload();
+                         window.location.reload();
                     }
                 },
                 xhr: function() {
@@ -397,10 +403,6 @@ function destvido(name) {
                     $('.loading-overlay-image-container').hide();
                     $('.loading-overlay').hide();
                 },
-
-
-
-
                 error: function(data) {
                     $('.loading-overlay-image-container').hide();
                     $('.loading-overlay').hide();

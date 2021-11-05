@@ -65,6 +65,8 @@ Route::post('/addcontentpost', 'App\Http\Controllers\UserController@postaddVideo
 Route::get('/editcontent/{id}', 'App\Http\Controllers\UserController@addVideos_edit')->name('editcontent');
 Route::post('/addcontenteditpost', 'App\Http\Controllers\UserController@postaddVideos_edit')->name('addcontenteditpost');
 Route::post('/addvideosajax', 'App\Http\Controllers\UserController@addvideosajax')->name('addvideosajax');
+Route::post('/edituser', 'App\Http\Controllers\UserController@EditUser')->name('edituser');
+Route::post('/edituserpic', 'App\Http\Controllers\UserController@EditUserphoto')->name('edituserpic');
 Route::post('/addpdfsajax', 'App\Http\Controllers\UserController@addpdfsajax')->name('addpdfsajax');
 //=================add content add video======
 

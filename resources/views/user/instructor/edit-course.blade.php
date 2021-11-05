@@ -240,7 +240,10 @@
 
                                 </div>
                                 <div class="step-footer step-tab-pager justify-content-end mb-3">
-                                    <button type="submit" class="btn btn-outline-info btn-lg">Next </button>
+                                    <button type="submit" class="btn btn-outline-info btn-lg">Save </button>
+                                </div>
+                                <div class="step-footer step-tab-pager justify-content-end mb-3">
+                                    <a href="{{route('editcontent',$mcourse->id)}}" class="btn btn-outline-success btn-lg">Next </a>
                                 </div>
                         </form>
                     </div>

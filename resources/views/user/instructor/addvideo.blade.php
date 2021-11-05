@@ -270,6 +270,10 @@
 //         actualBtn.addEventListener('change', function() {
 //             fileChosen.textContent = this.files[0].name;
 //         });
+
+
+
+
             var i = 1;
 
 function made(url, name, id) {
@@ -451,6 +455,7 @@ function destvido(name) {
             // ajaxed2();
             i2++;
         };
+       
 
             </script>
                 @endsection

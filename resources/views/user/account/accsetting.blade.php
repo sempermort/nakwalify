@@ -139,11 +139,12 @@ margin: 5rem auto;">
                     </div>
                     <hr class="mt-3">
                     <div class="form-group text-center">
-                        <button class="btn btn-default bg-purple">Save</button>
+                        <button type="button" class="btn btn-default bg-purple" onclick="basic()">Save</button>
                     </div>
                     </form>
                 </div>
             </div>
+
             <div class="tab-pane fade Photo " id="photo" role="tabpanel">
                 <div class="text-center p-2">
                     <h6 class="font-weight-bolder m-0">Photo</h6>
@@ -154,23 +155,24 @@ margin: 5rem auto;">
                         <label for="exampleInputEmail1">Image preview</label>
                         <div class="form-group  border">
 
-                            <img src="{{asset('assets/images/anonymous.png')}}" alt="" class=" m-25 w-50 image-fluid">
+                            <img src="{{asset('assets/images/anonymous.png')}}" alt="" class="pico m-25 w-50 image-fluid">
                         </div>
                         <div class="form-group">
                             <div class="input-group mb-3">
                                 <div class="custom-file">
-                                    <input type="file" class="custom-file-input" id="inputGroupFile02">
-                                    <label class="custom-file-label" for="inputGroupFile02">Choose file</label>
+                                    <input type="file" class="custom-file-input" 
+                                    onchange="picu(this)" name="profpic"id="profpic">
+                                    <label class="picflabel" id="picflabel" for="profpic">Choose file</label>
                                 </div>
                                 <div class="input-group-append">
-                                    <span class="input-group-text" id="">Upload</span>
+                                    <button type="button" onclick="photo()" class="input-group-text" id="">Upload</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <hr class="mt-3">
                     <div class="form-group text-center">
-                        <button class="btn btn-default bg-purple">Save</button>
+                        <button type="button" class="btn btn-default bg-purple">Save</button>
                     </div>
                 </div>
             </div>
@@ -416,3 +418,112 @@ margin: 5rem auto;">
 
 </div>
 @endsection
+
+<script>
+
+
+function basics()
+{
+    var url="{{route('addcontentpost') }}"
+    var form_data = new FormData();
+
+            form_data.append('fname', $('input[name=fname]').val());
+            form_data.append('lname', $('input[name=lname]').val());
+            form_data.append('email', $('input[name=email]').val());
+
+            ajaxex(url,form_data); 
+}
+
+function basics()
+{
+    var url="{{route('edituser') }}"
+    var form_data = new FormData();
+
+            form_data.append('fname', $('input[name=fname]').val());
+            form_data.append('lname', $('input[name=lname]').val());
+            form_data.append('email', $('input[name=email]').val());
+
+            ajaxex(url,form_data); 
+}
+function picu(url){
+  
+
+
+var label = document.getElementById('picflabel');
+
+label.textContent = url.value;
+if (url.files && url.files[0]) {
+    var ImageDir = new FileReader();
+    ImageDir.onload = function (e) {
+        $('.pico').attr('src', e.target.result);
+        $('.pico').css('height', 'auto');
+        label.textContent = url.value;
+    }
+    ImageDir.readAsDataURL(url.files[0]);
+}
+}
+
+
+function photo()
+{
+  
+    var url="{{route('edituserpic') }}"
+    var form_data = new FormData();
+    form_data.append('profpic', $('#profpic').prop('files')[0]);
+
+            ajaxex(url,form_data); 
+}
+
+function ajaxex(form_data,url) {
+         
+
+            $.ajax({
+                type: 'POST',
+                url: url,
+                data: form_data,
+                processData: false,
+                contentType: false,
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                success: function(data) {
+                    if ((data.errors)) {
+                        alert(data.errors);
+                    } else {
+
+                         window.location.reload();
+                    }
+                },
+                xhr: function() {
+                    var xhr = new XMLHttpRequest();
+                    //Upload progress
+
+                    xhr.upload.addEventListener("progress", function(evt) {
+                        if (evt.lengthComputable) {
+
+                            //Do something with upload progress
+                            objprogress.max = evt.total;
+                            objprogress.value = evt.loaded;
+                        }
+                    }, false);
+
+                    return xhr;
+                },
+                beforeSend: function(xhr) {
+                    $('.loading-overlay-image-container').show();
+                    $('.loading-overlay').show();
+                },
+                complete: function(data) {
+                    $('.loading-overlay-image-container').hide();
+                    $('.loading-overlay').hide();
+                },
+                error: function(data) {
+                    $('.loading-overlay-image-container').hide();
+                    $('.loading-overlay').hide();
+
+                }
+
+
+            });
+        };
+</script>

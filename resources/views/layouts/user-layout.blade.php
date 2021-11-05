@@ -29,6 +29,8 @@
     <link href="{{ asset('assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/vendor/semantic/semantic.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
+
 </head>
 
 <body>
@@ -641,7 +643,7 @@
                                                                     </a>
                                                                 @endif
 
-                                                                <x-button class="ml-3" data-dismiss="modal">
+                                                                <x-button class="ml-3" >
                                                                     {{ __('Log in') }}
                                                                 </x-button>
                                                             </div>
@@ -867,35 +869,34 @@
 
         function ajaxed2() {
 
-            var file_data = $('#pdf-btn').prop('files')[0];
-            var form_data = new FormData();
-            form_data.append('pdfs', file_data);
-            var token = $("meta[name='csrf-token']").attr("content");
-            $.ajax({
-                type: 'POST',
-                url: "{{ route('addpdfsajax') }}",
-                data: form_data,
-                cache: false,
-                "_token": token,
-                contentType: false,
-                processData: false,
-                beforeSend: function () {
-                    $('.loading-overlay-image-container').show();
-                    $('.loading-overlay').show();
-                },
-                complete: function () {
-                    $('.loading-overlay-image-container').hide();
-                    $('.loading-overlay').hide();
-                },
-                success: (data) => {
-                    console.log(data);
-                },
-                error: function (data) {
-                    console.log(data);
-                }
-            });
-        };
-
+var file_data = $('#pdf-btn').prop('files')[0];
+var form_data = new FormData();
+form_data.append('pdfs', file_data);
+var token = $("meta[name='csrf-token']").attr("content");
+$.ajax({
+    type: 'POST',
+    url: "{{ route('addpdfsajax') }}",
+    data: form_data,
+    cache: false,
+    "_token": token,
+    contentType: false,
+    processData: false,
+    beforeSend: function () {
+        $('.loading-overlay-image-container').show();
+        $('.loading-overlay').show();
+    },
+    complete: function () {
+        $('.loading-overlay-image-container').hide();
+        $('.loading-overlay').hide();
+    },
+    success: (data) => {
+        console.log(data);
+    },
+    error: function (data) {
+        console.log(data);
+    }
+});
+};
 
         function ajaxed3() {
 
@@ -985,12 +986,17 @@
             });
         };
 
-        function viditemclicked(url) {
+        function viditemclicked(url,vid_id,descr) {
 
 
             var video = document.getElementById('vidcanva');
             video.setAttribute('src', url);
-
+           
+            $('#mevid').val(url);
+            $('#vid_ido').val(vid_id);
+            $('#description').val(descr);
+           
+          
             var vidtab = document.getElementById("vidtab");
             vidtab.classList.remove("dnot");
             var descr = document.getElementById("descr");

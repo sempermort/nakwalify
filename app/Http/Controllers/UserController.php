@@ -17,6 +17,8 @@ use App\Models\Course_files;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Response;
+use DateTime;
+use DateInterval;
 
 class UserController extends Controller
 {
@@ -29,6 +31,60 @@ class UserController extends Controller
     public function index()
     {
         return view('user.user-dashboard');
+    }
+
+    public function EditUser(Request $request)
+    {
+       
+         
+            $euser = new User();
+    
+            $muser = User::findOrFail(auth()->user()->id);
+            if(isset($muser)){
+                $muser->update([
+             'fname' => $request->fname,
+             'lname' => $request->lname,
+             'email' => $request->email,
+                ]);       
+
+                return response()->json([
+
+                    'success' => 'Record deleted successfully!'
+        
+                ]);
+            }
+
+        }
+    
+    
+    public function EditUserphoto(Request $request)
+    {   
+            $pic = new Userpic();
+          
+            
+            $muser = User::findOrFail(auth()->user()->id);
+            if(isset($muser)){
+            if($request->hasfile('profpic'))
+             {
+               $filed = $request->file('profpic');
+    
+            $path = $filed->store('/profpic');
+            $pic->fil_path= $path;
+            $pic->user_id=auth()->user()->id;
+            $pic->file_title=$filed->getClientOriginalName();
+    
+            $pic->save();
+            return response()->json([
+
+                'success' => 'Record deleted successfully!'
+    
+            ]);
+             }
+      
+        
+            }
+        
+    
     }
 
     public function instructorCourses()
@@ -237,8 +293,16 @@ $meid=Wishlist::select('video_id')
         return Response()->json($c);
 }
 //Add course page 2
+
+public function getDuration($url){
+
+  
+}
     public function addVideos($idcourse)
     {
+       
+   
+
         $videz=Videos::where('course_id',$idcourse)->get();
         return view('user.instructor.addvideo')->with('vidoz', $videz)
         ->with('course_id', $idcourse);
@@ -249,40 +313,52 @@ $meid=Wishlist::select('video_id')
         return view('user.instructor.addvideo-edit')->with('vidoz', $videz);
     }
     public function postaddVideos(Request $request)
-    {
-
-        //  $validatedData = $request->validate([
-        // 'description' => 'required',
-        // 'videos'=>'required|mimes:mp4',
-        // 'pdfes'=>'required|mimes:pdf',
-        // 'pptxes'=>'required|mimes:pptx',
-        // ]);
+   {
+   if(isset($request->video_id)){
+        $coursem = Videos::findOrFail($request->video_id);
+   }
+      
         $cvideo = new Videos();
+        $videos = new Videos(); 
+        
 
-//if request containd video files
-// if($request->hasfile('videos'))
-// {
-        $videos = new Videos();
-        // $filed=$request->file('videos');
-        // $filename = $filed->getClientOriginalName();
-        // //if video contains the require extension
-        // $video = Youtube::upload(
-        //     $filed->getPathName(), [
-        //     'title'       => $filename,
-        //     'description' => 'nakwalify videos',
-        //     'status'=>'unlisted',
-        // ]);
-
-        // $path="https://www.youtube.com/watch?v={$video->getVideoId()}";
         $path = $request->videos;
-        $videos->video_title = $path;
-        $videos->video_type = "videocourse";
+        $vat=explode('/',$path);
+        $video_id=$vat[count($vat)-1];
+
+        $dat=file_get_contents('https://www.googleapis.com/youtube/v3/videos?id='.$video_id.'&part=contentDetails&key=AIzaSyBVwTLZE07d_pCEqifn42YFpcqDzD-wE3c');
+        $duration = json_decode($dat, true);
+        foreach ($duration['items'] as $vidTime) {
+            $vTime= $vidTime['contentDetails']['duration'];
+        }
+       
+        $start = new DateTime('@0'); // Unix epoch
+        $start->add(new DateInterval($vTime));
+        $vTime = $start->format('i:s');   
+    
+     
+        if(isset($coursem)){          
+            $coursem->update([
+       "video_title" => $path,       
+       "video_path" => $path,
+       "video_type" => $vTime,
+       "video_desc" => $request->description,
+       "course_id" => $request->course_id
+            ]);
+         
+        $cvideo = $coursem;
+    }
+    else
+    {
+        $videos->video_title = $path;       
         $videos->video_path = $path;
-        $videos->course_id = $request->course_id;
+        $videos->video_type = $vTime;
         $videos->video_desc = $request->description;
+        $videos->course_id = $request->course_id;
+    
         $videos->save();
         $cvideo = $videos;
-
+    }
 //}
         if ($request->hasfile('pdfes') && $cvideo != null) {
             $coursef = new Course_files();
@@ -315,9 +391,11 @@ $meid=Wishlist::select('video_id')
         return Response()->json($cvideo);
 
     }
+
     public function postaddVideos_edit(Request $request)
     {
 
+        $coursem = Course::findOrFail($request->course_id);
 
         $cvideo = new Videos();
 
@@ -325,26 +403,37 @@ $meid=Wishlist::select('video_id')
 // if($request->hasfile('videos'))
 // {
         $videos = new Videos();
-        // $filed=$request->file('videos');
-        // $filename = $filed->getClientOriginalName();
-        // //if video contains the require extension
-        // $video = Youtube::upload(
-        //     $filed->getPathName(), [
-        //     'title'       => $filename,
-        //     'description' => 'nakwalify videos',
-        //     'status'=>'unlisted',
-        // ]);
+  
 
-        // $path="https://www.youtube.com/watch?v={$video->getVideoId()}";
+
         $path = $request->videos;
+        $vat=explode('/',$path);
+        $video_id=$vat[count($vat)-1];
+
+        $dat=file_get_contents('https://www.googleapis.com/youtube/v3/videos?id='.$video_id.'&part=contentDetails&key=AIzaSyBVwTLZE07d_pCEqifn42YFpcqDzD-wE3c');
+        $duration = json_decode($dat, true);
+        foreach ($duration['items'] as $vidTime) {
+            $vTime= $vidTime['contentDetails']['duration'];
+        }
+        
+        $start = new DateTime('@0'); // Unix epoch
+        $start->add(new DateInterval($vTime));
+        $vTime = $start->format('i:s');
+     
         $videos->video_title = $path;
-        $videos->video_type = "videocourse";
+        $videos->video_type = $vTime;
         $videos->video_path = $path;
         $videos->course_id = $request->course_id;
         $videos->video_desc = $request->description;
+        if(isset($coursem)){
+            $coursem->fill($videos)->save();
+        $cvideo = $coursem;
+    }
+    else
+    {
         $videos->save();
         $cvideo = $videos;
-
+    }
 //}
         if ($request->hasfile('pdfes') && $cvideo != null) {
             $coursef = new Course_files();
