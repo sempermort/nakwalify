@@ -35,56 +35,68 @@ class UserController extends Controller
 
     public function EditUser(Request $request)
     {
-       
-         
+
+
             $euser = new User();
-    
+
             $muser = User::findOrFail(auth()->user()->id);
             if(isset($muser)){
                 $muser->update([
              'fname' => $request->fname,
              'lname' => $request->lname,
              'email' => $request->email,
-                ]);       
+                ]);
 
                 return response()->json([
 
                     'success' => 'Record deleted successfully!'
-        
+
                 ]);
             }
 
         }
-    
-    
+
+
     public function EditUserphoto(Request $request)
-    {   
+    {
             $pic = new Userpic();
-          
-            
-            $muser = User::findOrFail(auth()->user()->id);
-            if(isset($muser)){
+
+
+            $muser = Userpic::where('user_id',auth()->user()->id)->first();
+
             if($request->hasfile('profpic'))
              {
-               $filed = $request->file('profpic');
-    
-            $path = $filed->store('/profpic');
-            $pic->fil_path= $path;
-            $pic->user_id=auth()->user()->id;
-            $pic->file_title=$filed->getClientOriginalName();
-    
-            $pic->save();
-            return response()->json([
+                $filed = $request->file('profpic');
+                $path = $filed->store('/profpic');
+                if(isset($muser)){
+                    $muser->update([
+                        "file_title" => $filed->getClientOriginalName(),
+                        "file_path" =>  $path,
+                        "user_id" => auth()->user()->id,
+                    ]);
+                    return response()->json([
 
-                'success' => 'Record deleted successfully!'
-    
-            ]);
-             }
-      
-        
+                        'success' => 'photo updated successfully!'
+
+                    ]);
+                }
+                else{
+
+
+                $pic->file_path= $path;
+                $pic->user_id=auth()->user()->id;
+                $pic->file_title=$filed->getClientOriginalName();
+
+                $pic->save();
+                return response()->json([
+
+                    'success' => 'photo added successfully!'
+
+                ]);
+                }
             }
-        
-    
+
+
     }
 
     public function instructorCourses()
@@ -142,6 +154,14 @@ class UserController extends Controller
         return $response;
     }
 
+    public function profpic($pic)
+    {
+        $fileContents = Storage::disk('local')->get("profpic/{$pic}");
+        $response = Response($fileContents, 200);
+        $response->header('Content-Type', 'image/{explode(".",$pic)[1]}');
+
+        return $response;
+    }
     public function getcovid($vid)
     {
         $fileContents = Storage::disk('local')->get("covervid/{$vid}");
@@ -296,12 +316,12 @@ $meid=Wishlist::select('video_id')
 
 public function getDuration($url){
 
-  
+
 }
     public function addVideos($idcourse)
     {
-       
-   
+
+
 
         $videz=Videos::where('course_id',$idcourse)->get();
         return view('user.instructor.addvideo')->with('vidoz', $videz)
@@ -317,10 +337,10 @@ public function getDuration($url){
    if(isset($request->video_id)){
         $coursem = Videos::findOrFail($request->video_id);
    }
-      
+
         $cvideo = new Videos();
-        $videos = new Videos(); 
-        
+        $videos = new Videos();
+
 
         $path = $request->videos;
         $vat=explode('/',$path);
@@ -331,31 +351,31 @@ public function getDuration($url){
         foreach ($duration['items'] as $vidTime) {
             $vTime= $vidTime['contentDetails']['duration'];
         }
-       
+
         $start = new DateTime('@0'); // Unix epoch
         $start->add(new DateInterval($vTime));
-        $vTime = $start->format('i:s');   
-    
-     
-        if(isset($coursem)){          
+        $vTime = $start->format('i:s');
+
+
+        if(isset($coursem)){
             $coursem->update([
-       "video_title" => $path,       
+       "video_title" => $path,
        "video_path" => $path,
        "video_type" => $vTime,
        "video_desc" => $request->description,
        "course_id" => $request->course_id
             ]);
-         
+
         $cvideo = $coursem;
     }
     else
     {
-        $videos->video_title = $path;       
+        $videos->video_title = $path;
         $videos->video_path = $path;
         $videos->video_type = $vTime;
         $videos->video_desc = $request->description;
         $videos->course_id = $request->course_id;
-    
+
         $videos->save();
         $cvideo = $videos;
     }
@@ -403,7 +423,7 @@ public function getDuration($url){
 // if($request->hasfile('videos'))
 // {
         $videos = new Videos();
-  
+
 
 
         $path = $request->videos;
@@ -415,11 +435,11 @@ public function getDuration($url){
         foreach ($duration['items'] as $vidTime) {
             $vTime= $vidTime['contentDetails']['duration'];
         }
-        
+
         $start = new DateTime('@0'); // Unix epoch
         $start->add(new DateInterval($vTime));
         $vTime = $start->format('i:s');
-     
+
         $videos->video_title = $path;
         $videos->video_type = $vTime;
         $videos->video_path = $path;
@@ -851,7 +871,7 @@ public function deletevid($id)
 
         $wishes= $totalall->where('user_id',auth()->user()->id);
         $co=$wishes->groupBy("course_id");
-      
+
 
 
         return view('user.account.myaccount')->with("wishes",$wishes)->with("totalall",$totalall)

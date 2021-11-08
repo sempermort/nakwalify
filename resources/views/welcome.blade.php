@@ -150,9 +150,9 @@
                     <div class="MS-content" >
 
                         @foreach($coz as $key=>$cozy)
-                        
+
                             <div class=" item ">
-                            <div class="m-2"> 
+                            <div class="m-2">
                                 <a href="{{route('coursedetail',$cozy->id)}}">
                                     <div class="card h-350 cardc rounded ">
                                         <div class="h-220">
@@ -176,7 +176,8 @@
                                         <div class="m-2 p-0">
                                             <p class="card-text  d-flex justify-content-between">
                                                 <small class="card-text">22 trainees </small>
-                                                <small class="card-text"> 50m</small>
+                                                <small class="card-text">
+                                                    </small>
                                             </p>
 
 
@@ -190,13 +191,13 @@
                             </div>
                             </div>
 
-                     
+
                         @endforeach
-                        
-                        
+
+
                     </div>
                     <div class="MS-controls">
-                        <button class="MS-left">    
+                        <button class="MS-left">
                              <small class=" jss15 bg-white ">
                                     <span class="material-icons dark  ">
                                         chevron_left
@@ -216,11 +217,11 @@
                 <div id="{{$cate->category_name}}" class="tab-pane fade ">
                     <div id="exampleSlider" class=" " >
                             <div class="MS-content" >
-                                
+
                                 @foreach($cate->courses as $key=>$cozy)
-                            
+
                                 <div class=" item  ">
-                                    <div class="m-2"> 
+                                    <div class="m-2">
                                         <a href="{{route('coursedetail',$cozy->id)}}">
                                             <div class="card h-350 cardc rounded ">
                                                 <div class="h-220">
@@ -244,7 +245,9 @@
                                                 <div class="m-2 p-0">
                                                     <p class="card-text  d-flex justify-content-between">
                                                         <small class="card-text">22 trainees </small>
-                                                        <small class="card-text"> 50m</small>
+                                                        <small class="card-text">
+
+                                                        </small>
                                                     </p>
 
 
@@ -257,13 +260,13 @@
 
                                     </div>
                                 </div>
-                                                    
+
                                 @endforeach
-                                    
-                                    
+
+
                             </div>
                             <div class="MS-controls">
-                            <button class="MS-left">    
+                            <button class="MS-left">
                              <small class=" jss15 bg-white ">
                                     <span class="material-icons dark  ">
                                         chevron_left
@@ -279,7 +282,7 @@
 
                     </div>
                 </div>
-                    
+
             @endforeach
 
         </div>

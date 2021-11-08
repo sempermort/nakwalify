@@ -25,7 +25,7 @@
         </div>
     </div>
 </div>
-<div class="" style="width:70%; margin:3rem auto;">
+<div class="" style="width:70%; margin:3rem auto; min-height:320px">
 
     <div class="tab-content" id="nav-tabContent">
         <div class="tab-pane fade show active" id="nav-about" role="tabpanel">
@@ -40,7 +40,7 @@
 
                         <div class="row mt-3 ">
                             @foreach($co as $wish)
-                          
+
                             <a href="{{route('coursedetail',$wish[0]->course->id)}}">
                                 <div class="col-md-4">
                                     <div class="card cardc rounded mb-3">
@@ -54,7 +54,7 @@
                                         <div class="m-2">
                                             <p class="card-text m-2 d-flex justify-content-between">
                                                 <small class="card-text">
-                                                   
+
                                                     {{count($totalall->groupBy('user_id'))}} trainees </small>
                                                 <small class="card-text">1h 50m</small>
                                             </p>

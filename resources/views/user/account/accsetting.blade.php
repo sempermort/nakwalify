@@ -12,13 +12,13 @@ margin: 5rem auto;">
                                         @php
                                         $src=$muser->profpic->file_path;
                                         @endphp
-                                        <img class="card-img-top"  src="{{route('get-copic',explode('/',$src)[1])}}" alt="Card image cap">
+                                        <img class="card-img-top"  src="{{route('profpic',explode('/',$src)[1])}}" alt="Card image cap">
                                         @endif
 
                 </div>
 
                 <p class="font-weight-bold">{{$muser->fname}}
-                    {{ $muser->lname}}</p>
+                    {{$muser->lname}}</p>
             </div>
             <div class=" nastay nav-tabs" role="tablist">
                 <a class="waves-effect waves-light active" data-toggle="tab" href="#profile" role="tab"
@@ -84,60 +84,8 @@ margin: 5rem auto;">
                         </div>
                     </div>
                     <hr class="mt-5">
-                    <div class="container">
-                        <label for="exampleInputEmail1">Links:</label>
-                        <div class="form-group">
-                            <input type="email" class="form-control" id="exampleInputEmail1"
-                                aria-describedby="emailHelp" placeholder="Website (http(s)://..)">
-                        </div>
 
-                        <div class="form-group">
-                            <div class="input-group ">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text" id="basic-addon3">http://twitter.com/</span>
-                                </div>
-                                <input type="text" class="form-control" id="basic-url" placeholder="Twitter Profile"
-                                    aria-describedby="basic-addon3">
-                            </div>
-                            <small id="emailHelp" class="form-text text-muted ml-3"> Add your Twitter username (e.g.
-                                johnsmith).</small>
-                        </div>
-                        <div class="form-group">
-                            <div class="input-group ">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text" id="basic-addon3">http://www.facebook.com/</span>
-                                </div>
-                                <input type="text" class="form-control" id="basic-url" placeholder="Facebook Profile "
-                                    aria-describedby="basic-addon3">
-                            </div>
-                            <small id="emailHelp" class="form-text text-muted ml-3"> Input your Facebook username
-                                (e.g. johnsmith)."</small>
-                        </div>
-                        <div class="form-group">
-                            <div class="input-group ">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text" id="basic-addon3">http://www.linkedin.com/</span>
-                                </div>
-                                <input type="text" class="form-control" id="basic-url" placeholder="Linkedin Profile"
-                                    aria-describedby="basic-addon3">
-                            </div>
-                            <small id="emailHelp" class="form-text text-muted ml-3"> Input your LinkedIn resource id
-                                (e.g. in/johnsmith).</small>
-                        </div>
-                        <div class="form-group">
-                            <div class="input-group ">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text" id="basic-addon3">http://www.youtube.com/</span>
-                                </div>
-                                <input type="text" class="form-control" id="basic-url" placeholder="Youtube Profile"
-                                    aria-describedby="basic-addon3">
-                            </div>
-                            <small id="emailHelp" class="form-text text-muted ml-3"> Input your Youtube username
-                                (e.g. johnsmith).</small>
-                        </div>
 
-                    </div>
-                    <hr class="mt-3">
                     <div class="form-group text-center">
                         <button type="button" class="btn btn-default bg-purple" onclick="basic()">Save</button>
                     </div>
@@ -160,19 +108,17 @@ margin: 5rem auto;">
                         <div class="form-group">
                             <div class="input-group mb-3">
                                 <div class="custom-file">
-                                    <input type="file" class="custom-file-input" 
+                                    <input type="file" hidden class="custom-file-input"
                                     onchange="picu(this)" name="profpic"id="profpic">
-                                    <label class="picflabel" id="picflabel" for="profpic">Choose file</label>
+                                    <label class="picflabel custom-file-label" for="profpic" id="picflabel" >No Choosen file</label>
                                 </div>
-                                <div class="input-group-append">
-                                    <button type="button" onclick="photo()" class="input-group-text" id="">Upload</button>
-                                </div>
+
                             </div>
                         </div>
                     </div>
                     <hr class="mt-3">
                     <div class="form-group text-center">
-                        <button type="button" class="btn btn-default bg-purple">Save</button>
+                        <button type="button" onclick="photo()" class="btn btn-default bg-purple">Save</button>
                     </div>
                 </div>
             </div>
@@ -403,52 +349,16 @@ margin: 5rem auto;">
 
             </div>
 
-
-
-
-
-
-
-
-
         </div>
 
     </div>
 </div>
 
 </div>
-@endsection
 
 <script>
 
-
-function basics()
-{
-    var url="{{route('addcontentpost') }}"
-    var form_data = new FormData();
-
-            form_data.append('fname', $('input[name=fname]').val());
-            form_data.append('lname', $('input[name=lname]').val());
-            form_data.append('email', $('input[name=email]').val());
-
-            ajaxex(url,form_data); 
-}
-
-function basics()
-{
-    var url="{{route('edituser') }}"
-    var form_data = new FormData();
-
-            form_data.append('fname', $('input[name=fname]').val());
-            form_data.append('lname', $('input[name=lname]').val());
-            form_data.append('email', $('input[name=email]').val());
-
-            ajaxex(url,form_data); 
-}
 function picu(url){
-  
-
-
 var label = document.getElementById('picflabel');
 
 label.textContent = url.value;
@@ -462,24 +372,18 @@ if (url.files && url.files[0]) {
     ImageDir.readAsDataURL(url.files[0]);
 }
 }
-
-
-function photo()
+function basic()
 {
-  
-    var url="{{route('edituserpic') }}"
+
     var form_data = new FormData();
-    form_data.append('profpic', $('#profpic').prop('files')[0]);
 
-            ajaxex(url,form_data); 
-}
-
-function ajaxex(form_data,url) {
-         
+            form_data.append('fname', $('input[name=fname]').val());
+            form_data.append('lname', $('input[name=lname]').val());
+            form_data.append('email', $('input[name=email]').val());
 
             $.ajax({
                 type: 'POST',
-                url: url,
+                url: "{{route('edituser') }}",
                 data: form_data,
                 processData: false,
                 contentType: false,
@@ -525,5 +429,64 @@ function ajaxex(form_data,url) {
 
 
             });
-        };
+}
+function photo()
+{
+
+    var form_data = new FormData();
+    form_data.append('profpic', $('#profpic').prop('files')[0]);
+
+    $.ajax({
+                type: 'POST',
+                url:"{{route('edituserpic') }}",
+                data: form_data,
+                processData: false,
+                contentType: false,
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                success: function(data) {
+                    if ((data.errors)) {
+                        alert(data.errors);
+                    } else {
+
+                        // window.location.reload();
+                    }
+                },
+                xhr: function() {
+                    var xhr = new XMLHttpRequest();
+                    //Upload progress
+
+                    xhr.upload.addEventListener("progress", function(evt) {
+                        if (evt.lengthComputable) {
+
+                            //Do something with upload progress
+                            objprogress.max = evt.total;
+                            objprogress.value = evt.loaded;
+                        }
+                    }, false);
+
+                    return xhr;
+                },
+                beforeSend: function(xhr) {
+                    $('.loading-overlay-image-container').show();
+                    $('.loading-overlay').show();
+                },
+                complete: function(data) {
+                    $('.loading-overlay-image-container').hide();
+                    $('.loading-overlay').hide();
+                },
+                error: function(data) {
+                    $('.loading-overlay-image-container').hide();
+                    $('.loading-overlay').hide();
+
+                }
+
+
+            });
+}
+
+
 </script>
+
+@endsection

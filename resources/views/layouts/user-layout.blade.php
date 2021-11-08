@@ -122,7 +122,7 @@
                         <div class="dropdown-content overflow-auto" aria-labelledby="dropdownMenuButton">
                             <a  class="channel_my item dropdown-item">
                                 <div class="profile_link">
-                                    <img src="./assets/images/left-imgs/img-1.jpg" alt="">
+                                    <img src="{{asset('assets/images/beautiful-admin-roles.jpg')}}" alt="">
                                     <div class="pd_content p-0 m-0">
                                         <p class="p-0 m-0 font-weight-bold">Rock William</p>
                                         <p class="p-0 m-0">Like Your Comment On Video <strong>How to create
@@ -991,12 +991,12 @@ $.ajax({
 
             var video = document.getElementById('vidcanva');
             video.setAttribute('src', url);
-           
+
             $('#mevid').val(url);
             $('#vid_ido').val(vid_id);
             $('#description').val(descr);
-           
-          
+
+
             var vidtab = document.getElementById("vidtab");
             vidtab.classList.remove("dnot");
             var descr = document.getElementById("descr");

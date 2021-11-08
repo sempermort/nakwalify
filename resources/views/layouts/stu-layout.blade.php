@@ -28,6 +28,11 @@
 </head>
 
 <body>
+<div class="loading-overlay"></div>
+<div class="loading-overlay-image-container">
+    <img src="{{asset('assets/images/loading.svg')}}" class="loading-overlay-img"/>
+    <progress class="" value="0" id="progressob"></progress>
+</div>
         <header class="position-absolute w-100" style="z-index:9;">
 
             <nav class="navbar navbar-expand-lg fixed-top backg mainavba " id="mainavbar" style="height:70px; ">
@@ -201,7 +206,7 @@
                             <div class=" dropdown-content">
                                 <div class="channel_my">
                                     <div class="profile_link">
-                                        <img src="./assets/images/hd_dp.jpg" alt="">
+                                        <img src="{{asset('assets/images/beautiful-admin-roles.jpg')}}" alt="">
                                         <div class="pd_content">
                                             <div class="rhte85">
                                                 <h6>{{ Auth::user()->fname }} {{ Auth::user()->lname }}</h6>
@@ -664,7 +669,7 @@ var elementnav = document.getElementById("mainavbar");
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-3-typeahead/4.0.1/bootstrap3-typeahead.min.js"></script>
 
 <script>
-
+   var objprogress = document.getElementById("progressob");
         $(".filt").click(function() {
             $("#chkfilter").toggle();
         });

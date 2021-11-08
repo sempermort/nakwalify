@@ -88,7 +88,7 @@ Route::get('/skills', 'App\Http\Controllers\UserController@skills')->name('skill
 Route::get('/earnings', 'App\Http\Controllers\UserController@earnings')->name('earnings');
 Route::get('/review', 'App\Http\Controllers\UserController@review')->name('review');
 Route::get('/notification', 'App\Http\Controllers\UserController@notification')->name('notification');
-Route::get('/myaccount', 'App\Http\Controllers\UserController@myaccount')->name('myaccount');
+Route::get('/myaccount', 'App\Http\Controllers\UserController@myaccount')->middleware(['auth'])->name('myaccount');
 Route::get('/coursepurches/{id}', 'App\Http\Controllers\UserController@coursepurch')->middleware(['auth'])->name('coursepurches');
 Route::post('/wishlist', 'App\Http\Controllers\UserController@wishlist')->name('wishlist');
 Route::post('/complited', 'App\Http\Controllers\UserController@complited')->name('complited');
@@ -116,6 +116,7 @@ Route::get('get-video/{name}', 'App\Http\Controllers\UserController@getVideo')->
 Route::get('get-pdf/{name}', 'App\Http\Controllers\UserController@getPdf')->name('get-pdf');
 Route::get('get-ppt/{name}', 'App\Http\Controllers\UserController@getPpt')->name('get-ppt');
 Route::get('get-copic/{name}', 'App\Http\Controllers\UserController@getcopic')->name('get-copic');
+Route::get('profpic/{name}', 'App\Http\Controllers\UserController@profpic')->name('profpic');
 Route::get('get-covid/{name}', 'App\Http\Controllers\UserController@getcovid')->name('get-covid');
 
 // Route::get('/dashboard', function () {

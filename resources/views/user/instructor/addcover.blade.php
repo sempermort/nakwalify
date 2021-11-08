@@ -59,7 +59,7 @@
                                                                                 id="coverpic">
                                                                             <label class="custom-file-label"
                                                                             id="labelpic"
-                                                                                for="coverpic">No Choose
+                                                                                for="coverpic">No Choosen
                                                                                 file</label>
                                                                         </div>
                                                                     </div>
