@@ -58,7 +58,7 @@
                             <div class="row">
 
                                 <div class=" nastay col-4">
-                                    <div class="m-5 ">
+                                    <div class="m-5 d-flex flex-column text-dark">
                                         <p class="border-bottom"> CREATE</p>
                                         <a href="#" class="waves-effect waves-light">Livestock </a>
                                         <a href="#" class="waves-effect waves-light">Agriculture</a>
@@ -72,7 +72,7 @@
                                 </div>
                                 <div class=" nastay col-4 border-right">
                                     <div class="m-5">
-                                        <div class="mb-3">
+                                        <div class="mb-3 d-flex flex-column text-black">
                                             <p class=" border-bottom  "> BUILD</p>
                                             <a href="#" class="waves-effect waves-light">Business Analytics </a>
                                             <a href="#" class="waves-effect waves-light">Freelance &Enterpreneurship</a>
@@ -80,7 +80,7 @@
                                             <a href="#" class="waves-effect waves-light">Marketing</a>
                                         </div>
 
-                                        <div class="mt-2">
+                                        <div class="mt-2 d-flex flex-column text-black">
                                             <p class=" border-bottom  "> THRIVE</p>
                                             <a href="#" class="waves-effect waves-light">Lifestyle</a>
                                             <a href="#" class="waves-effect waves-light">Productivity</a>
@@ -88,7 +88,7 @@
                                     </div>
                                 </div>
                                 <div class=" nastay col-4 ">
-                                    <div class="m-5">
+                                    <div class="m-5 d-flex flex-column text-black">
                                         <a href="#" class="waves-effect waves-light font-bolder">All Classes </a>
                                         <a href="#" class="waves-effect waves-light font-bolder">Workshops</a>
                                         <a href="#" class="waves-effect waves-light font-bolder">Student Projects</a>
