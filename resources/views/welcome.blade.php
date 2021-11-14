@@ -181,10 +181,12 @@
                                                             $sum=0;
                                                             foreach($cozy->Videos as $corse)
                                                             {
+                                                                if(isset(explode(':',$corse->video_type)[0])){
                                                               $a=  explode(':',$corse->video_type)[0];
                                                               $b=  explode(':',$corse->video_type)[1];
                                                               $c=(int)$b+((int)$a*60);
                                                               $sum=$sum+$c;
+                                                            }
                                                             }
                                                             @endphp
                               {{intdiv($sum,60)}}min:{{$sum%60}} sec
