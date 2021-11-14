@@ -32,9 +32,9 @@
 
 
                         <div class="mt-0 ">
-                            <strong class="d-flex justify-content-between text-dark
+                            <strong class="d-flex justify-content-between
                             ">
-                                <p class=" " id="demo">
+                                <p class="text-dark " id="demo">
                                 @if($selcoz->price==0)
                                 Free
                                @else
@@ -42,7 +42,7 @@
                                {!!$selcoz->price !!}
                                 @endif
                                 </p>
-                                <p class=" ">
+                                <p class="text-dark ">
                                 @php
                                                             $sum=0;
                                                             foreach($selcoz->Videos as $corse)
