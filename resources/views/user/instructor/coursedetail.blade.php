@@ -41,6 +41,22 @@
                                {!!$selcoz->price !!}
                                 @endif
                                 </p>
+                                <p class="float-right text-dark">
+                                @php
+                                                            $sum=0;
+                                                            foreach($selcoz->Videos as $corse)
+                                                            {
+                                                                if(preg_match('~[0-9]+~', $corse->video_type)){
+                                                              $a=  explode(':',$corse->video_type)[0];
+                                                              $b=  explode(':',$corse->video_type)[1];
+                                                              $c=(int)$b+((int)$a*60);
+                                                              $sum=$sum+$c;
+
+                                                            }
+                                                            }
+                                                            @endphp
+                              {{intdiv($sum,60)}}min:{{$sum%60}} sec
+                                </p>
                             </strong>
                             @if($selcoz->price==0)
                             <a class="btn  btn-info text-white  p-2  col-md-12 mt-1 mb-3 "
@@ -50,8 +66,8 @@
                                 <a class="btn  btn-info text-white  p-2  col-md-12 mt-1 mb-3 "
                                     href="{{route('coursepurches',$selcoz->id)}}">Go to Purchase</a>
                                 @endif
-                             
-                                 
+
+
                             <small class="m-0 d-none text-center">
                                 <p class="m-0  p-0">30-Day Money-Back Guarantee </p>
                             </small>
@@ -118,7 +134,7 @@
                                 </div>
                                 <span class="m-1"> (3 ratings)
 
-                                    3 trainees
+                                {{count($selcoz->wished->groupBy('user_id'))}} trainees
                                 </span>
                             </div>
                             <div class="">
