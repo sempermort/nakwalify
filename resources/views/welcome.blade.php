@@ -175,9 +175,20 @@
 
                                         <div class="m-2 p-0">
                                             <p class="card-text  d-flex justify-content-between">
-                                                <small class="card-text">22 trainees </small>
+                                                <small class="card-text">{{count($cozy->wished->groupBy('user_id'))}} trainees </small>
                                                 <small class="card-text">
-                                                    </small>
+                                                @php
+                                                            $sum=0;
+                                                            foreach($cozy->Videos as $corse)
+                                                            {
+                                                              $a=  explode(':',$corse->video_type)[0];
+                                                              $b=  explode(':',$corse->video_type)[1];
+                                                              $c=(int)$b+((int)$a*60);
+                                                              $sum=$sum+$c;
+                                                            }
+                                                            @endphp
+                              {{intdiv($sum,60)}}min:{{$sum%60}} sec
+                                   </small>
                                             </p>
 
 

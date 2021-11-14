@@ -25,12 +25,12 @@
                         <option value="1" selected>English</option>
                         <option value="2">Kiswahili</option>
                     </select>
-                 
+
 
                 </div>
-            </div> 
+            </div>
             <div class="position-relative mt-4" id="chkfilter" >
-                   
+
                         <!-- <div class="form-group ">
                             <label for="Classtype" class="font-weight-bold">
                                 <strong>Course Type</strong></label>
@@ -82,10 +82,10 @@
                                 </p>
                             </div>
                         </div> -->
-                  
+
           </div>
- 
-        
+
+
             </div>
         </div>
         <div class=" col-md-10">
@@ -105,9 +105,9 @@
                         </div>
                     </div>
                 </div>
-            </div>    
+            </div>
 
-           
+
 
             <div class=""style="margin:3rem 10px;">
        <div class="headline__main-text">
@@ -121,9 +121,9 @@
                                 <div class="MS-content" >
 
                                     @foreach($coz as $key=>$cozy)
-                                    
+
                                     <div class=" item  ">
-                                        <div class="m-2"> 
+                                        <div class="m-2">
                                         <a href="{{route('coursedetail',$cozy->id)}}">
                                             <div class="card h-350 cardc rounded ">
                                                 <div class="h-220">
@@ -146,8 +146,20 @@
 
                                                 <div class="m-2 p-0">
                                                     <p class="card-text  d-flex justify-content-between">
-                                                        <small class="card-text">22 trainees </small>
-                                                        <small class="card-text"> 50m</small>
+                                                    <small class="card-text">{{count($cozy->wished->groupBy('user_id'))}} trainees </small>
+                                                <small class="card-text">
+                                                @php
+                                                            $sum=0;
+                                                            foreach($cozy->Videos as $corse)
+                                                            {
+                                                              $a=  explode(':',$corse->video_type)[0];
+                                                              $b=  explode(':',$corse->video_type)[1];
+                                                              $c=(int)$b+((int)$a*60);
+                                                              $sum=$sum+$c;
+                                                            }
+                                                            @endphp
+                              {{intdiv($sum,60)}}min:{{$sum%60}} sec
+                                   </small>
                                                     </p>
 
 
@@ -161,13 +173,13 @@
                                     </div>
                                     </div>
 
-                                
+
                                     @endforeach
-                                    
-                                    
+
+
                                 </div>
                                 <div class="MS-controls">
-                        <button class="MS-left">    
+                        <button class="MS-left">
                              <small class=" jss15 bg-white ">
                                     <span class="material-icons dark  ">
                                         chevron_left
@@ -187,11 +199,11 @@
                         <div id="{{$cate->category_name}}" class="tab-pane fade ">
                             <div id="exampleSlider" class="" >
                                         <div class="MS-content" >
-                                        
+
                                             @foreach($cate->courses as $key=>$cozy)
-                                    
+
                                             <div class=" item  ">
-                                                <div class="m-2"> 
+                                                <div class="m-2">
                                                 <a href="{{route('coursedetail',$cozy->id)}}">
                                                     <div class="card h-350 cardc rounded ">
                                                         <div class="h-220">
@@ -228,10 +240,10 @@
 
                                             </div>
                                             </div>
-                                                            
+
                                             @endforeach
-                                            
-                                            
+
+
                                         </div>
                                         <div class="MS-controls">
                                 <button class="MS-left"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
@@ -240,10 +252,10 @@
 
                             </div>
                         </div>
-                            
+
                     @endforeach
 
-                </div>             
+                </div>
             </div>
         </div>
     </div>

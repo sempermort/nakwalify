@@ -30,6 +30,10 @@ class Course extends Model
     {
         return $this->hasMany(Videos::class);
     }
+    public function wished()
+    {
+        return $this->hasMany(Wishlist::class);
+    }
     public function mediaCover()
     {
         return $this->hasone(Mediacover::class);
