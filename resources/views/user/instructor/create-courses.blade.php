@@ -98,7 +98,7 @@
                                                             <label>Course SubCategory*</label>
                                                             <button type="button"
                                                             data-toggle="modal" data-target="#subcategorymodal"
-                                                            href="" class="btn btnprimary"><i class="fa fa-plus"></i></button>
+                                                             class="btn btnprimary"><i class="fa fa-plus"></i></button>
                                                         </div>
                                                         <select class="form-rounded form-control"
                                                             name="subcategory_Id" for="subcategory_Id" id="subcatig">

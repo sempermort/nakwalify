@@ -26,25 +26,25 @@
 
 @media (max-width: 1200px) {
     #exampleSlider .MS-content .item {
-        width: 25%;
+        width: 30%;
     }
 }
 
 @media (max-width: 992px) {
     #exampleSlider .MS-content .item {
-        width: 33.3333%;
+        width: 35.3333%;
     }
 }
 
 @media (max-width: 767px) {
     #exampleSlider .MS-content .item {
-        width: 50%;
+        width: 60%;
     }
 }
 
 @media (max-width: 500px) {
     #exampleSlider .MS-content .item {
-        width: 100%;
+        width: 90%;
     }
 }
 
