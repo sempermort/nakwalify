@@ -391,7 +391,7 @@ var player;
             if ((data.errors)) {
                 alert(data.errors);
             } else {
-            alert("wished");
+           
 
             }
         },

@@ -33,6 +33,8 @@
     <img src="{{asset('assets/images/loading.svg')}}" class="loading-overlay-img"/>
     <progress class="" value="0" id="progressob"></progress>
 </div>
+
+
         <header class="position-absolute w-100" style="z-index:9;">
 
             <nav class="navbar navbar-expand-lg fixed-top backg mainavba " id="mainavbar" style="height:70px; ">
@@ -577,6 +579,17 @@
                 </div>
             </div>
         </div>
+
+
+
+
+  <div class="toast position-absolute m-4" data-delay="1000"  style="top:30%; left:50%;" role="alert" aria-live="assertive" aria-atomic="true">
+ 
+  <div class="toast-body pr-5 pl-5">
+   <p class="font-weight-lighter mb-0">Course added to WishList.</p> 
+   
+  </div>
+</div>
         <footer class=" bg-darknavy ">
             <div class="container ">
                 <div class="row">
@@ -812,8 +825,14 @@ function ajaxedw(coz_id,user_id,urlo,vel,vid_id)
             if ((data.errors)) {
                 alert(data.errors);
             } else {
-            alert("wished");
-
+              
+                if(data["0"].wishtype=="wish"){
+                    $('.toast').toast({
+                    animation: false,
+                    delay: 2000
+                });
+                $('.toast').toast('show');
+                }
             }
         },
         error: function (data) {
